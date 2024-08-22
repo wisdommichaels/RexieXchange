@@ -1,0 +1,127 @@
+body{
+  padding: 0;
+  margin: 30px;
+  background-color: rgb(34,34,34);
+}
+ .card {
+    width: 100%;
+    border-radius: 25px;
+    background: #181d83;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /* .card:hover {
+    transform: scale(1.05);
+  } */
+  
+  .card .top-section {
+    height: 500px;
+    width: 90%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgb(106,98,240) 0%, rgb(165,171,242) 100%);
+    position: relative;
+    margin-top: 20px;
+    /* border-top-left-radius: 50px; */
+  }
+  
+  .card .top-section .border {
+    border-bottom-right-radius: 20px;
+    height: 50px;
+    width: 85%;
+    background: white;
+    background: #181d83;
+    position: relative;
+    transform: skew(-40deg);
+    box-shadow: -10px -10px 0 0 #181d83;
+  }
+  
+  .card .top-section .border::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: -15px;
+    background: rgba(255, 255, 255, 0);
+    border-top-left-radius: 20px;
+    box-shadow: -5px -5px 0 2px #181d83;
+  
+  }
+  
+  .card .top-section::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: rgba(255, 255, 255, 0);
+    height: 15px;
+    width: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: -5px -5px 0 2px #1b233d;
+   
+  }
+  
+  .card .top-section .icons {
+    position: absolute;
+    top: 6px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card .top-section .icons .logo {
+    height: 100%;
+    aspect-ratio: 1;
+    padding-left: 15px ;
+   margin-top: 5px;
+  }
+
+  .nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 18px;
+  }
+
+  .nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card .top-section .icons .logo .top-section {
+    height: 100%;
+  }
+  
+  .card .top-section .icons .social-media {
+    height: 100%;
+    padding: 8px 15px;
+    display: flex;
+    gap: 7px;
+  }
+  
+  .card .top-section .icons .social-media .svg {
+    height: 100%;
+    fill: #1b233d;
+    width: 30px;
+  }
+  
+  .card .top-section .icons .social-media .svg:hover {
+    fill: white;
+  }
+
+ 
