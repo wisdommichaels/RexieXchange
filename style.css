@@ -177,10 +177,4 @@ body{
  .slider-nav a:hover{
     opacity: 1;
   }
-
-  .slider-nav a.active{
-    background: #000;
-  }
-
-  .slider-nav a + a{
-    margin-left: 0.5rem
+  
