@@ -21,7 +21,7 @@ body{
   
   .card .top-section {
     height: 400px;
-    width: 90%;
+    width: 95%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -129,10 +129,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin-left: 55px;
+    width: 95%;
+    /* margin-left: 29px; */
     /* max-width: 90%; */
-    /* margin: auto; */
+    margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
     overflow: hidden;
