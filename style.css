@@ -20,7 +20,7 @@ body{
   
   
   .card .top-section {
-    height: 400px;
+    height: 450px;
     width: 95%;
     border-radius: 30px;
     display: flex;
@@ -207,6 +207,9 @@ body{
   .carousel-slide {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .carousel-slide img {
