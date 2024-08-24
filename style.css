@@ -6,14 +6,14 @@ body{
  .card {
     width: 97%;
     border-radius: 25px;
-    background: #001248;
+    background: #141414;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     box-shadow: rga(100, 100, 111, 0.2) 0px 7px 20px 0px;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -34,13 +34,13 @@ body{
   
   .card .top-section .border {
     border-bottom-right-radius: 20px;
-    height: 120px;
-    width: 85%;
+    height: 70px;
+    width: 80%;
     background: white;
-    background:#001248;
+    background:#141414;
     position: relative;
     transform: skew(-40deg);
-    box-shadow: -10px -10px 0 0 #001248;
+    box-shadow: -10px -10px 0 0 #141414;
     border: none;
   }
   
@@ -53,7 +53,7 @@ body{
     right: -15px;
     /* background: rgba(255, 255, 255, 0); */
     border-top-left-radius: 20px;
-    box-shadow: -5px -5px 0 2px #001248;
+    box-shadow: -5px -5px 0 2px#141414;
   
   }
   
@@ -66,7 +66,7 @@ body{
     height: 15px;
     width: 15px;
     border-top-left-radius: 15px;
-    /* box-shadow: -5px -5px 0 2px #1b233d; */
+    box-shadow: -5px -5px 0 2px #141414;
    
   }
   
@@ -83,7 +83,7 @@ body{
     height: 100%;
     aspect-ratio: 1;
     padding-left: 15px ;
-   margin-top: 5px;
+   margin-top: 10px;
   }
 
   .nav ul{
@@ -123,7 +123,6 @@ body{
   }
   
   .login-button{
-    /* background-color: #021b67; */
     color: white;
     border: none;
     font-size: 15px;
@@ -143,7 +142,6 @@ body{
   }
 
   .signup-button{
-    /* background-color: #021b67; */
     color: white;
     border: none;
     padding: 6px 9px;
@@ -162,26 +160,7 @@ body{
     background-position: right bottom;
     color: black;
   }
-  /* .card .top-section .icons .logo .top-section {
-    height: 100%;
-  }
-  
- card .top-section .icons .social-media {
-    height: 100%;
-    padding: 8px 15px;
-    display: flex;
-    gap: 7px;
-  }
-  
-  .card .top-section .icons .social-media .svg {
-    height: 100%;
-    fill: #1b233d;
-    width: 30px;
-  }
-  
-  .card .top-section .icons .social-media .svg:hover {
-    fill: white;
-  } */
+
  
 
   .carousel-container {
@@ -190,8 +169,6 @@ body{
     justify-content: center;
     align-items: center;
     width: 95%;
-    /* margin-left: 29px; */
-    /* max-width: 90%; */
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -204,18 +181,18 @@ body{
     transition: transform 0.5s ease-in-out;
   }
   
-  .carousel-slide {
+  .carousel-slide  {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
   
   .carousel-slide img {
     width: 100%;
     object-fit: cover;
-    /* border-radius: 0.5rem; */
+    border-radius: 0.5rem;
   }
   
   .carousel-button {
