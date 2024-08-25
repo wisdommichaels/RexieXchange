@@ -117,7 +117,7 @@ body{
     padding-top: 5px;
     
     &:hover {
-      color: rgb(2, 88, 135);
+      color: rgb(91, 190, 243);
       font-weight: bold;
     }
   }
