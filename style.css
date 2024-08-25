@@ -1,9 +1,22 @@
 body{
+  margin: 0;
   padding: 0;
-  margin: 20px;
+}
+
+#black{
+  background-color: rgb(34,34,34);
+  padding-top: 50px;
+}
+
+.section{
   background-color: rgb(34,34,34);
 }
- .card {
+
+.flex{
+  column-gap: 0.6px;
+}
+
+.card {
     width: 97%;
     border-radius: 25px;
     background: #141414;
@@ -12,7 +25,7 @@ body{
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: px;
     padding-bottom: 30px;
     box-shadow: rga(100, 100, 111, 0.2) 0px 7px 20px 0px;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
