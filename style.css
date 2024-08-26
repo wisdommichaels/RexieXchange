@@ -274,3 +274,15 @@ button{
   .carousel-indicator.active {
     background: rgba(255, 255, 255, 1);
   }
+
+  .scroll-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state - fully opaque and in its original position */
+.scroll-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
