@@ -4,28 +4,39 @@ body{
 }
 
 #black{
-  background-color: rgb(34,34,34);
-  padding-top: 50px;
+  background-color: #121c3d;
+  /* padding-top: 50px; */
 }
 
 .section{
-  background-color: rgb(34,34,34);
+  background-color: rgb(193, 196, 208);
 }
 
 .flex{
   column-gap: 0.7px;
 }
 
+.relative:hover .object-cover{
+  opacity: 0.9;
+  transform: translateY(-10px);
+  transition: 0.5s;
+  scale: 0.8;
+}
+
+button{
+    margin-top: 1.2rem!important;
+}
+
 .card {
     width: 97%;
     border-radius: 25px;
-    background: #141414;
+    /* background: ; */
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: px;
+    /* margin-top: px; */
     padding-bottom: 30px;
     box-shadow: rga(100, 100, 111, 0.2) 0px 7px 20px 0px;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -38,8 +49,7 @@ body{
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(45deg, 
-    rgb(156, 212, 189) 0%, rgb(91, 190, 243) 100%);
+    background: linear-gradient(45deg, rgb(62,91,243) 0%, rgb(91, 190, 243) 100%);
     position: relative;
     margin-top: 30px;
     /* border-top-left-radius: 50px; */
@@ -50,10 +60,10 @@ body{
     height: 70px;
     width: 80%;
     background: white;
-    background:#141414;
+    background:#121c3d;
     position: relative;
     transform: skew(-40deg);
-    box-shadow: -10px -10px 0 0 #141414;
+    box-shadow: -10px -10px 0 0 #121c3d;
     border: none;
   }
   
@@ -66,7 +76,7 @@ body{
     right: -15px;
     /* background: rgba(255, 255, 255, 0); */
     border-top-left-radius: 20px;
-    box-shadow: -5px -5px 0 2px#141414;
+    box-shadow: -5px -5px 0 2px #121c3d;
   
   }
   
@@ -79,7 +89,7 @@ body{
     height: 15px;
     width: 15px;
     border-top-left-radius: 15px;
-    box-shadow: -5px -5px 0 2px #141414;
+    box-shadow: -5px -5px 0 2px #121c3d;
    
   }
   
