@@ -4,12 +4,12 @@ body{
 }
 
 #black{
-  background-color: #121c3d;
+  background-color: #093583;
   /* padding-top: 50px; */
 }
 
-.section{
-  background-color: rgb(193, 196, 208);
+section{
+  background-color: rgb(209, 211, 215);
 }
 
 .flex{
@@ -60,10 +60,10 @@ button{
     height: 70px;
     width: 80%;
     background: white;
-    background:#121c3d;
+    background:#093583;
     position: relative;
     transform: skew(-40deg);
-    box-shadow: -10px -10px 0 0 #121c3d;
+    box-shadow: -10px -10px 0 0 #093583;
     border: none;
   }
   
@@ -76,7 +76,7 @@ button{
     right: -15px;
     /* background: rgba(255, 255, 255, 0); */
     border-top-left-radius: 20px;
-    box-shadow: -5px -5px 0 2px #121c3d;
+    box-shadow: -5px -5px 0 2px #093583;
   
   }
   
