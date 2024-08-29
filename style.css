@@ -1,15 +1,18 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Telegraf', sans-serif; 
+  /* background-color: #28292A;                                     */
 }
 
 #black{
-  background-color: #093583;
-  /* padding-top: 50px; */
+  background-color: rgb(255,255,255);
+  width: 100%;
+  margin: auto;
 }
 
 section{
-  background-color: rgb(209, 211, 215);
+  background-color: rgb(255,255,255);;
 }
 
 .flex{
@@ -28,7 +31,7 @@ button{
 }
 
 .card {
-    width: 97%;
+    width: 100%;
     border-radius: 25px;
     /* background: ; */
     overflow: hidden;
@@ -44,12 +47,13 @@ button{
   
   
   .card .top-section {
-    height: 450px;
-    width: 95%;
-    border-radius: 30px;
+    height: 530px;
+    width: 98%;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(45deg, rgb(62,91,243) 0%, rgb(91, 190, 243) 100%);
+    background-color: rgb(221,228,239);
+    /* background: linear-gradient(45deg, rgb(62,91,243) 0%, rgb(91, 190, 243) 100%); */
     position: relative;
     margin-top: 30px;
     /* border-top-left-radius: 50px; */
@@ -60,10 +64,10 @@ button{
     height: 70px;
     width: 80%;
     background: white;
-    background:#093583;
+    background:rgb(255,255,255);
     position: relative;
     transform: skew(-40deg);
-    box-shadow: -10px -10px 0 0 #093583;
+    box-shadow: -10px -10px 0 0 rgb(255,255,255);
     border: none;
   }
   
@@ -76,7 +80,7 @@ button{
     right: -15px;
     /* background: rgba(255, 255, 255, 0); */
     border-top-left-radius: 20px;
-    box-shadow: -5px -5px 0 2px #093583;
+    box-shadow: -5px -5px 0 2px rgb(255,255,255);
   
   }
   
@@ -120,28 +124,29 @@ button{
     padding-right: 25px;
     padding-top: 7px;
     padding-bottom: 7px;
+    background-color: rgb(221,228,239);
     transition: background-color 1s ease-in-out, color 1s ease-in-out;
     &:hover {
-      background-color: #FFFFFF;
+      background-color: #003459;
     }
   }
 
   .nav ul:hover li a{
     background-position: right bottom;
-    color: black;
+    color: white;
   }
 
   .nav ul li a{
     text-decoration: none;
-    color: white;
+    color: #003459;
     font-size: 15px;
     transition: color 0.3s ease;
     cursor: pointer;
     padding-top: 5px;
-    
+    font-weight: bold;
     &:hover {
-      color: rgb(91, 190, 243);
-      font-weight: bold;
+      color: rgb(250,74,0);
+     
     }
   }
   
@@ -155,7 +160,7 @@ button{
     cursor: pointer;
     transition: background-color 1s ease-in-out, color 1s ease-in-out;
     &:hover {
-      background-color: #FFFFFF;
+      background-color: #003459;
     }
   }
 
@@ -164,25 +169,42 @@ button{
     color: black;
   }
 
-  .signup-button{
-    color: white;
-    border: none;
-    padding: 6px 9px;
-    border-radius: 9px;
+
+    .signup-button {
     margin-top: 10px;
+    padding: 6px 9px;
+    text-align: center;
     font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
     cursor: pointer;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-    &:hover {
-      background-color: #FFFFFF;
-    }
+    transition: ease-out 0.5s;
+    border: none;
+    border-radius: 9px;
+    box-shadow: inset 0 0 0 0 #725AC1;
+  }
+  
+  .signup-button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #003459;;
+  }
+  
+  .signup-button:active {
+    transform: scale(0.9);
   }
 
   
-  .signup-button:hover{
+  /* .signup-button:hover{
     background-position: right bottom;
-    color: black;
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #003459;
   }
+
+  .signup-button:active{
+    transform: scale(0.9)
+  } */
 
  
 
