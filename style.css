@@ -151,22 +151,27 @@ button{
   }
   
   .login-button{
-    color: white;
-    border: none;
-    font-size: 15px;
-    padding: 6px 9px;
-    border-radius: 9px;
     margin-top: 10px;
+    padding: 6px 9px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
     cursor: pointer;
-    transition: background-color 1s ease-in-out, color 1s ease-in-out;
-    &:hover {
-      background-color: #003459;
-    }
+    transition: ease-out 0.7s;
+    border: none;
+    border-radius: 9px;
   }
 
   .login-button:hover{
-    background-position: right bottom;
-    color: black;
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #003459;;
+  }
+
+  .login-button:active {
+    transform: scale(0.9);
   }
 
 
@@ -180,10 +185,9 @@ button{
     color: white;
     background-color: black;
     cursor: pointer;
-    transition: ease-out 0.5s;
+    transition: ease-out 0.7s;
     border: none;
     border-radius: 9px;
-    box-shadow: inset 0 0 0 0 #725AC1;
   }
   
   .signup-button:hover {
@@ -194,17 +198,6 @@ button{
   .signup-button:active {
     transform: scale(0.9);
   }
-
-  
-  /* .signup-button:hover{
-    background-position: right bottom;
-    color: white;
-    box-shadow: inset 0 -100px 0 0 #003459;
-  }
-
-  .signup-button:active{
-    transform: scale(0.9)
-  } */
 
  
 
