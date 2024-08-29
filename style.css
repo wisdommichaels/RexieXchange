@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Telegraf', sans-serif; 
-  /* background-color: #28292A;                                     */
 }
 
 #black{
@@ -11,9 +10,6 @@ body{
   margin: auto;
 }
 
-section{
-  background-color: rgb(255,255,255);;
-}
 
 .flex{
   column-gap: 0.7px;
@@ -33,14 +29,12 @@ button{
 .card {
     width: 100%;
     border-radius: 25px;
-    /* background: ; */
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    /* margin-top: px; */
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     box-shadow: rga(100, 100, 111, 0.2) 0px 7px 20px 0px;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -53,10 +47,8 @@ button{
     display: flex;
     flex-direction: column;
     background-color: rgb(221,228,239);
-    /* background: linear-gradient(45deg, rgb(62,91,243) 0%, rgb(91, 190, 243) 100%); */
     position: relative;
     margin-top: 30px;
-    /* border-top-left-radius: 50px; */
   }
   
   .card .top-section .border {
@@ -78,7 +70,6 @@ button{
     height: 15px;
     top: 0;
     right: -15px;
-    /* background: rgba(255, 255, 255, 0); */
     border-top-left-radius: 20px;
     box-shadow: -5px -5px 0 2px rgb(255,255,255);
   
@@ -89,7 +80,6 @@ button{
     position: absolute;
     top: 30px;
     left: 0;
-    background: rgba(255, 255, 255, 0);
     height: 15px;
     width: 15px;
     border-top-left-radius: 15px;
@@ -222,9 +212,6 @@ button{
   .carousel-slide  {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
   }
   
   .carousel-slide img {
