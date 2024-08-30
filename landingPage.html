@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/telegraf" rel="stylesheet">
+    <style>
+        @keyframes marquee-ltr {
+            from { transform: translateX(0%); }
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes marquee-rtl {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0%); }
+        }
+
+        .marquee-ltr {
+            display: flex;
+            white-space: nowrap;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        .marquee-rtl {
+            display: flex;
+            white-space: nowrap;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        .marquee-ltr {
+            animation-name: marquee-ltr;
+        }
+
+       .marquee-rtl {
+            animation-name: marquee-rtl;
+       }
+
+       
+       .marquee-rtl:hover {
+           animation-play-state: paused;
+       }
+
+       .marquee-ltr:hover{
+        animation-play-state: paused;
+       }
+
+        .blur-in-out {
+            position: relative;
+            overflow: hidden;
+            /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
+        }
+
+        .marquee-content {
+            display: flex;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <section id="black">
+        <div class="card">
+          <div class="top-section">
+            <div class="border"></div>
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+            <a class="text-none" href=""><img src="./assets/banner1.png" alt="Image 1"></a>
+          </div>
+          <div class="carousel-slide">
+            <a class="text-none" href=""><img src="./assets/banner2.png" alt="Image 1"></a>
+          </div>
+          <div class="carousel-slide">
+            <a class="text-none" href=""><img src="./assets/banner3.png" alt="Image 1"></a>
+          </div>
+        </div>
+        <button class="carousel-button carousel-button-left"><</button>
+        <button class="carousel-button carousel-button-right">></button>
+    
+        <div class="carousel-indicators">
+          <div class="carousel-indicator active" data-slide="0"></div>
+          <div class="carousel-indicator" data-slide="1"></div>
+          <div class="carousel-indicator" data-slide="2"></div>
+        </div>
+      </div>
+        <div class="icons">
+          <div class="logo">
+          </div>
+            <nav class="nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Giftcard</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Rewards</a></li>
+              </ul>
+            </nav>
+            <div class="logins flex justify-between items-center gap-3 mr-8 mt-3">
+              <a href="#" class="login-button text-[#003459]  bg-[#FFFFFF] font-normal">LOGIN</a>
+              <a href="#" class="signup-button text-[#003459] bg-[#FFFFFF] font-normal">SIGN UP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <div class="flex justify-center items-center font-bold mt-3 ">
+        <h1 class="text-[20px] bg-[#003459] text-white py-2 px-5 rounded-md">Top Gift Cards Rates Today</h1>
+    </div>
+    <section class="bg-[#ded flex flex-col">
+        <div class="container mx-auto mt-4">
+            <!-- First Row - Left to Right -->
+            <div class="blur-in-out overflow-hidden">
+                <div class="marquee-ltr">
+                    <div class="marquee-content">
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/amazonpng.svg" alt="Gift Card 1" class="w-full h-40 object-cover rounded-md">
+                            <h2 class="text-lg font-semibold mt-2 text-[#003459]">Amazon Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/applecardpng.svg" alt="Gift Card 2" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">iTunes Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦50</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/razergoldpng.svg" alt="Gift Card 3" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Razer Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦25</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/steampng.svg" alt="Gift Card 4" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Steam Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦75</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="./assets/SVG/walmartgiftcardpng.svg" alt="Gift Card 1" class="w-full h-40 object-cover rounded-md">
+                            <h2 class="text-lg font-semibold mt-2 text-[#003459]">Walmart Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                        
+                        <!-- Duplicated Cards-->
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/amazonpng.svg" alt="Gift Card 1" class="w-full h-40 object-cover rounded-md">
+                            <h2 class="text-lg font-semibold mt-2 text-[#003459]">Amazon Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/applecardpng.svg" alt="Gift Card 2" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">iTunes Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦50</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/razergoldpng.svg" alt="Gift Card 3" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Razer Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦25</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/steampng.svg" alt="Gift Card 4" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Steam Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦75</p>
+                            <p class="text-[#003459]">Country: US</p>
+                       </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="./assets/SVG/walmartgiftcardpng.svg" alt="Gift Card 1" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Walmart Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Second Row - Right to Left -->
+            <div class="blur-in-out overflow-hidden mt-10">
+                <div class="marquee-rtl">
+                    <div class="marquee-content">
+                       <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/googleplaypng.svg" alt="Gift Card 5" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Google Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/vanillapng.svg" alt="Gift Card 6" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Vanilla Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦50</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/xboxpng.svg" alt="Gift Card 7" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Xbox Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦25</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/playstationpng.svg" alt="Gift Card 8" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">PlayStation Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦75</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                          <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/mastercardpng.svg" alt="Gift Card 5" class="w-full h-40 object-cover rounded-md">
+                            <h2 class="text-lg font-semibold mt-2 text-[#003459]">Mastercard Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+
+                        <!-- Duplicated Cards -->
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/googleplaypng.svg" alt="Gift Card 5" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Google Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/vanillapng.svg" alt="Gift Card 6" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Vanilla Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦50</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/xboxpng.svg" alt="Gift Card 7" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Xbox Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦25</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/playstationpng.svg" alt="Gift Card 8" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">PlayStation Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦75</p>
+                            <p class="text-[#003459]">Country: US</p>
+                        </div>
+                         <div class="bg-[#DDE4EF] shadow-lg rounded-lg w-64 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                            <img src="/assets/SVG/mastercardpng.svg" alt="Gift Card 5" class="w-full h-40 object-cover rounded-md">
+                           <h2 class="text-lg font-semibold mt-2 text-[#003459]">Mastercard Gift Card</h2>
+                            <p class="text-[#003459]">Value:₦100</p>
+                            <p class="text-[#003459]">Country: US</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-end items-end mb-4">
+            <button class="bg-[#fa4b00ec] text-white rounded-md text-center text-[20px] font-[550] py-2 px-7 mr-8 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#fa4b00]">Sell Now!</button>
+        </div>
+    </section>
+
+    <section class="bg-[#F5F5FA] pt-8 mt-2 flex flex-col justify-center items-center m-auto w-[98%] rounded-[40px] ">
+        <div class="flex justify-center items-center flex-col mt-5">
+            <h1 class="text-[25px] font-semibold text-[#003459] ">How it Works?</h1>
+            <p class="text-[18px] pt-3">Simple redeem your gift cards with great price via Whatsapp</p>
+        </div>
+        <div class="flex justify-center items-center mt-4 ">
+            <img class="w-[700px]" src="/assets/howToUse.png" alt="" srcset="">
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
