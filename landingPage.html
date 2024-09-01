@@ -73,14 +73,13 @@
 
         .carousel-track {
         display:flex;
-        animation: scroll 20s linear infinite;
+        animation: scroll 25s linear infinite;
     }
 
   
     .carousel-card {
         display: inline-block;
         margin: 0 1rem;
-        overflow: hidden;
         background: linear-gradient(to right, #D9D9D9, #FAF5F5);
         border-radius: 10px;
         padding: 1rem;
@@ -89,7 +88,7 @@
     }
 
     /* Pause on hover */
-    .carousel-container:hover .carousel-track {
+    .carousel-track :hover {
         animation-play-state: paused;
     }
 
@@ -382,7 +381,7 @@
         </section>
       </section>
 
-      <section>
+      <section class="overflow-hidden">
         <div>
             <h1>Don't just take our word for it</h1>
             <p>Read what our clients have to say</p>
@@ -403,7 +402,7 @@
             </div>
             <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
                 <div>
-                    <div class="ml-10 absolute"><img src="./assets/SVG/svg1.svg" alt=""></div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
                 </div>
                 <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"Redeeming my gift card on this site was a breeze! The process was straightforward, and I received my rewards instantly. Super convenient!"...</p>
                 <div class="flex items-center  ml-9 mb-3">
