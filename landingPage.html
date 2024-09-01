@@ -63,6 +63,45 @@
             display: flex;
             padding: 20px;
         }
+
+        .carousel-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel-track {
+        display:flex;
+        animation: scroll 20s linear infinite;
+    }
+
+  
+    .carousel-card {
+        display: inline-block;
+        margin: 0 1rem;
+        overflow: hidden;
+        background: linear-gradient(to right, #D9D9D9, #FAF5F5);
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+    }
+
+    /* Pause on hover */
+    .carousel-container:hover .carousel-track {
+        animation-play-state: paused;
+    }
+
+    /* Animation keyframes */
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
     </style>
 
 </head>
@@ -342,6 +381,108 @@
           </div>
         </section>
       </section>
-    <script src="index.js"></script>
+
+      <section>
+        <div>
+            <h1>Don't just take our word for it</h1>
+            <p>Read what our clients have to say</p>
+        </div>
+        <div class="carousel-track gap-5" >
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"This is by far the best gift card redeeming site I've used. The platform is intuitive, and I loved the instant confirmation with good rate. I'll definitely be using it again!"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Wisdom Michael</p>
+                        <p class="text-[12px] leading-5">Software Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="/assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"Redeeming my gift card on this site was a breeze! The process was straightforward, and I received my rewards instantly. Super convenient!"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Teslim Musa</p>
+                        <p class="text-[12px] leading-5">Web Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Kola Wole</p>
+                        <p class="text-[12px] leading-5">AI Programmer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"I was impressed with how smooth the redemption process was on this site. The instructions were clear, and I got my credits in minutes. Great experience!"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Augustine Anhike</p>
+                        <p class="text-[12px] leading-5">Frontend Web Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"I’m so happy with how easy it was to redeem my gift card on this site. Everything was seamless, and I had my reward in no time. Excellent service!"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Nikhil Alzare</p>
+                        <p class="text-[12px] leading-5">Backend Software Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"What a fantastic experience! This site made redeeming my gift card so simple. I loved the variety of options I could choose from, and the process was fast and efficient"...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">Bethel json</p>
+                        <p class="text-[12px] leading-5">UX/UI Designer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-card w-full sm:w-[45%] bg-gradient-to-r from-[#D9D9D9] to-[#FAF5F5] rounded-md sm:m-auto ml-3 mr-3 mt-16  sm:mt-16 py-3 flex-col justify-center items-center">
+                <div>
+                   <div class="ml-10 absolute"><img src="./assets/svg1.svg" alt=""></div>
+                </div>
+                <p class="leading-6 line-clamp-5 mt-10 mb-5 ml-8 text-[18px]">"This website makes it so easy to redeem gift cards! I love how quickly I can convert them into rewards. Plus, the platform is user-friendly and secure."...</p>
+                <div class="flex items-center  ml-9 mb-3">
+                    <div class="w-10"><img src="./assets/Ellipse 21.svg" alt=""></div>
+                    <div class="line-clamp-3 px-2">
+                        <p class="text-[18px] font-semibold leading-5 ">>Mr David O</p>
+                        <p class="text-[12px] leading-5">Fullstack Software Developer</p>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
+      </section>
+      <script src="index.js"></script>
 </body>
 </html>
