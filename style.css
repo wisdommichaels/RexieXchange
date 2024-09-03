@@ -2,15 +2,15 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Telegraf', sans-serif;
-  /* background-color: #141313;  */
+  background-color: rgb(221,228,239);
+  box-sizing: border-box; 
 }
 
 #black{
-  background-color: rgb(255,255,255);
+  background-color: rgb(221,228,239);
   width: 100%;
   margin: auto;
 }
-
 
 .flex{
   column-gap: 0.7px;
@@ -42,12 +42,12 @@ button{
   
   
   .card .top-section {
-    height: 530px;
+    /* height: 530px; */
     width: 98%;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(221,228,239);
+    background-color: #003459;
     position: relative;
     margin-top: 30px;
   }
@@ -57,10 +57,10 @@ button{
     height: 70px;
     width: 80%;
     background: white;
-    background:rgb(255,255,255);
+    background:rgb(221,228,239);
     position: relative;
     transform: skew(-40deg);
-    box-shadow: -10px -10px 0 0 rgb(255,255,255);
+    box-shadow: -10px -10px 0 0 rgb(221,228,239);
     border: none;
   }
   
@@ -72,7 +72,7 @@ button{
     top: 0;
     right: -15px;
     border-top-left-radius: 20px;
-    box-shadow: -5px -5px 0 2px rgb(255,255,255);
+    box-shadow: -5px -5px 0 2px rgb(221,228,239);
   
   }
   
@@ -312,7 +312,7 @@ button{
 
   .login-button:hover{
     color: white;
-    box-shadow: inset 0 -100px 0 0 #003459;
+    box-shadow: inset 0 -100px 0 0 rgb(250,74,0);
   }
 
   .login-button:active {
@@ -337,7 +337,7 @@ button{
   
   .signup-button:hover {
     color: white;
-    box-shadow: inset 0 -100px 0 0 #003459;;
+    box-shadow: inset 0 -100px 0 0 rgb(250,74,0);
   }
   
   .signup-button:active {
