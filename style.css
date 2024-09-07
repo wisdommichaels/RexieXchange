@@ -568,6 +568,7 @@ ul {
 
 .container span{
   font-size: 12px;
+  /* padding-top: 10px; */
 }
 
 .container a{
@@ -581,13 +582,13 @@ ul {
   background-color: #003459;
   color: #fff;
   font-size: 12px;
-  padding: 10px 15px;
+  padding: 15px 50px ;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin: 20px auto;
   cursor: pointer;
 }
 
@@ -597,7 +598,7 @@ ul {
 }
 
 .container form{
-    background-color: #fff;
+    background-color: #ECF0F6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -607,15 +608,20 @@ ul {
 }
 
 .container input{
-  background-color: #eee;
-  border: 2 solid transparent ;
-  border-color: #003459;
-  margin: 8px 0;
-  padding: 10px 15px;
-  font-size: 13px;
-  border-radius: 8px;
+   background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 14px 10px -3px;
+  border-inline: 2px solid transparent;
   width: 60%;
   outline: none;
+}
+
+.container input:focus{
+  outline: none;
+  border-inline: 2px solid #12B1D1;
 }
 
 .form-container{
@@ -627,6 +633,11 @@ ul {
 
 .form-container h1{
   color: #003459;
+}
+
+form a{
+  color: #003459;
+  font-size: 20px;
 }
 
 .sign-in{
@@ -665,18 +676,33 @@ ul {
 }
 
 .social-icons{
-  margin: 20px 0;
+  margin: 20px 4px 0px;
+  
 }
 
 .social-icons a{
-  border: 1px solid #ccc;
-  border-radius: 20%;
+  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+  border: 5px solid white;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 3px 4px;
+  aspect-ratio: 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin: 0 3px;
-  width: 40px;
-  height: 40px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-icons a:hover{
+  transform: scale(1.2);
+}
+
+.social-icons a:active{
+  transform: scale(0.9);
 }
 
 .toggle-container{
