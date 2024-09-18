@@ -13,11 +13,11 @@
     <div class="card">
       <div class="top-section">
         <div class="border"></div>
-          <div class="carousel-track flex flex-col justify-center items-center w-full p-10 mb-6">
-            <h1 class="sm:text-[50px] text-[16px] font-bold pt-5 text-white mb-4 text-center">Trade your <span class="text-[#E7500F]">Gift Card</span> all in <br> one place</h1>
+          <div class="  flex flex-col justify-center items-center w-full p-10 mb-6">
+            <h1 class="sm:text-[50px] text-[16px] font-bold pt-5 text-white mb-4 text-center">Trade your <span class="text-[#E7500F] underline">Gift Card</span> all in <br> one place</h1>
             
-          <div class="w-full max-w-md mb-6 flex justify-center items-center">
-            <input class="w-[65%] p-2 sm:w-full sm:p-3 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7500F] " type="text" placeholder="Search gift cards..."/> 
+          <div class="subscribe w-full max-w-md mb-6 flex justify-center items-center">
+            <input class=" sm:w-full sm:p-3 " type="text" placeholder="Search gift cards..."/> 
           </div>
             
           <div class="w-full max-w-md mb-8 flex justify-center items-center">
@@ -37,8 +37,8 @@
             </select>
           </div>
             
-             <button class="carousel-button carousel-button-left"><</button>
-             <button class="carousel-button carousel-button-right">></button>
+             <button class="carousel-button carousel-button-left"></button>
+             <button class="carousel-button carousel-button-right"></button>
         </div>
     <div class="icons">
       <div class="logo">
@@ -77,9 +77,9 @@
             <li><a href="#">Rewards</a></li>
           </ul>
         </nav>
-        <div class="logins flex justify-between items-center gap-3 mr-8 mt-3">
-          <a href="#" class="login-button text-[#161D6F]  bg-[#FFFFFF] font-normal">LOGIN</a>
-          <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal">SIGN UP</a>
+        <div class="logins flex justify-between items-center gap-3 mr-4 mt-7">
+          <a href="#" class="login-button text-[#161D6F]  bg-[#FFFFFF] font-normal text-[13px] hover:bg-[#cccccc]">DASHBOARD</a>
+          <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[13px]">LOG-OUT</a>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
   </div>
 </section>
 <section class="section min-h-screen bg-[#F5F5FA] rounded-[40px] m-auto w-[98%] mb-8">
-  <div class="flex justify-around items-center flex-wrap gap-y-8 pt-8 pb-8 ml-6 mr-6 b-[#020cbd] mt-4 rounded-2xl">
+  <div class="flex justify-around items-center flex-wrap gap-y-8 pt-8 pb-8 ml-6 mr-6  mt-4 rounded-2xl">
     <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/razergoldpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
@@ -466,12 +466,12 @@
       <div class="flex justify-center items-center mt-20 pl-20">
           <h2 class="text-[#161D6F] text-2xl"><b>Register now so you don't miss <br> our Gift Card hot deals</b></h2>
         </div>
-        <div class="flex justify-center items-center border rounded-md px-2 py-2  mt-20 mr-24 bg-[#FFFFFF]">
-            <form action="" method="post" class="flex justify-center items-center border-[#99A2A5]">
-        <input type="email" name="email" id="email" placeholder="Enter your Email" class="border rounded-md py-1 pl-5 pr-36 border-[#99A2A5] mr-3">
-        <button class="bg-[#e7500f] rounded-md transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#ff4d00] text-white text-center px-4 py-1">Subscribe Now</button>
-    </form>
-    </div>
+        <div class="flex justify-center items-center  mt-20 mr-24 w-[50%]">
+          <form action="" method="post" class="subscribe w-full flex justify-center items-center gap-2 border-[#99A2A5]">
+      <input type="email" name="email" id="email" placeholder="Enter your Email">
+      <button class="bg-[#e7500f] px-3 py-3  transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#ff4d00] text-white text-center">Subscribe Now</button>
+  </form>
+  </div>
 </section>
 
 <section class="flex justify-between bg-[#DDE4EF] pt-4 pb-8 w-[97%] m-auto"> 
@@ -590,6 +590,29 @@
 </div>
 </footer>
 </section>
-<script src="/Client/index.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.scroll-card');
+
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerBottom) {
+                card.classList.add('show');
+            } else {
+                card.classList.remove('show');
+            }
+        });
+    };
+
+    // Trigger the function on page load and scroll
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
+});
+
+</script>
 </body>
 </html>

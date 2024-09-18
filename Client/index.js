@@ -1,5 +1,7 @@
   // JavaScript for carousel functionality
   const track = document.querySelector('.carousel-track');
+  console.log(track.children);
+  
   const slides = Array.from(track.children);
   const nextButton = document.querySelector('.carousel-button-right');
   const prevButton = document.querySelector('.carousel-button-left');
