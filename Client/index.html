@@ -10,7 +10,43 @@
 </head>
 <body>
 <section id="black">
-    <div class="card">
+  <nav class="bg-[#161D6F] p-4 rounded-b-lg sm:hidden pt-8">
+    <div class="flex justify-between items-center ml-3">
+      <span class="text-white text-xl font-semibold ml-">MyApp</span>
+      <img src="https://via.placeholder.com/150" alt="User Image" class=" w-10 mr-3 h-10 rounded-full object-cover">
+    </div>
+    <div id="menu" class="mt-4 flex justify-center gap-5 text-[14px] items-center text-white">
+      <a href="#home" class="   font-bold hover:text-gray-300 underline">Home</a>
+      <a href="#giftcard" class=" hover:text-gray-300 underline underline-offset-2 text-[#E7500F]"> Sell Gift Card</a>
+      <a href="#Dashboard" class=" text-white  hover:text-gray-300">Dashboard</a>
+    </div>
+  </nav>
+  <section class="sm:hidden">
+    <h1 class="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-5 text-white text-center m-3 mb-0 rounded-t-lg">Trade your <span class="text-[#161D6F] underline">Gift Card</span> all in <br> one place</h1>
+    <div class="flex justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-3 mt-0 rounded-b-lg">
+    <div class="w-full px-4 shadow-sm mb-2 ml-4 flex justify-center items-center">
+      <input class=" w-full  rounded-lg sm:p-3 py-1 pl-3" type="text" placeholder="Search gift cards..."/> 
+    </div>
+      
+    <div class="w-full max-w-md mb-2 flex justify-center items-center">
+      <select id="category" class="w-[60%] px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#161D6F]">
+      <option class="text-[14px] sm:text-[18px]" value="">Select</option>
+      <option class="text-[14px] sm:text-[18px]"  value="1">Razer Gift Card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="2">Apple&iTunes</option>
+      <option class="text-[14px] sm:text-[18px]"  value="3">Amazon Gift Card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="4">Steam Gift Card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="5">Walmart Gift Card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="6">eBay Gift card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="7">American Express</option>
+      <option class="text-[14px] sm:text-[18px]"  value="8">Google Play Gift Card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="9">Vanilla Gift card</option>
+      <option class="text-[14px] sm:text-[18px]"  value="10">PlayStation</option>
+      <option class="text-[14px] sm:text-[18px]"  value="11">Mastercard Gift Card</option>
+      </select>
+    </div>
+  </div>
+  </section>
+    <div class="card hidden sm:flex">
       <div class="top-section">
         <div class="border"></div>
           <div class="  flex flex-col justify-center items-center w-full p-10 mb-6">
@@ -36,9 +72,6 @@
             <option class="text-[14px] sm:text-[18px]"  value="11">Mastercard Gift Card</option>
             </select>
           </div>
-            
-             <button class="carousel-button carousel-button-left"></button>
-             <button class="carousel-button carousel-button-right"></button>
         </div>
     <div class="icons">
       <div class="logo">
@@ -74,12 +107,12 @@
             </div>
             
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Rewards</a></li>
+            <li><a href="#">Dashboard</a></li>
           </ul>
         </nav>
-        <div class="logins flex justify-between items-center gap-3 mr-4 mt-7">
-          <a href="#" class="login-button text-[#161D6F]  bg-[#FFFFFF] font-normal text-[13px] hover:bg-[#cccccc]">DASHBOARD</a>
-          <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[13px]">LOG-OUT</a>
+        <div class="logins flex justify-between items-center gap-3 mr-8 mt-7">
+          <img src="https://via.placeholder.com/150" alt="User Image" class="sm:w-12 w-10 sm:h-12 mt-2  h-10 rounded-full object-cover">
+          <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[11px] text-center ">ACCT SETTINGS</a>
         </div>
       </div>
     </div>

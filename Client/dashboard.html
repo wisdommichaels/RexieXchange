@@ -9,14 +9,38 @@
 </head>
 <body>
     <section id="black">
-        <div class="card">
+        <nav class="bg-[#161D6F] p-4 rounded-b-lg sm:hidden pt-8">
+            <div class="flex justify-between items-center ml-3">
+              <span class="text-white text-xl font-semibold ml-">MyApp</span>
+              <img src="https://via.placeholder.com/150" alt="User Image" class=" w-10 mr-3 h-10 rounded-full object-cover">
+            </div>
+            <div id="menu" class="mt-4 flex justify-center gap-5 text-[14px] items-center text-white">
+              <a href="#home" class="   font-bold hover:text-gray-300 ">Home</a>
+              <a href="#giftcard" class="  hover:text-gray-300"> Sell Gift Card</a>
+              <a href="#Dashboard" class=" hover:text-gray-300 underline underline-offset-2 text-[#E7500F]">Dashboard</a>
+            </div>
+          </nav>
+          <section class="sm:hidden w-full">
+            <div class="shadow-lg p-6 rounded-lg m-2 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+                <h2 class="text-[20px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
+                <div class="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
+                  <div class="flex-col justify-center items-center">
+                    <p class="text-gray-800 sm:text-[16px] text-[12px]">Total Balance: <span></span></p>
+                    <p class="font-bold text-white sm:text-[20px] text-[16px]">₦10,250.00</p>
+                  </div>
+                  <button class="sm:w-[25%] flex justify-center items-center w-[30%] text-[14px] sm:text-[14px] bg-[#161D6F] text-white font-semibold py-4 rounded-lg hover:bg-[#1823a0] transition duration-200 ease-in-out">
+                    Withdraw <span class="sm:block hidden">Funds</span> 
+                  </button>
+                </div>
+              </div>
+          </section>
+        <div class="card hidden sm:flex">
           <div class="top-section">
             <div class="border"></div>
             <div class="flex items-center justify-center">
                 <div class="bg-white shadow-lg w-full sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-b-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <h2 class="text-[14px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
                   <div class="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
-                    <!-- <img src="https://via.placeholder.com/150" alt="User Image" class="sm:w-16 w-10 sm:h-16 h-10 rounded-full object-cover"> -->
                     <div class="flex-col justify-center items-center">
                       <!-- <h2 class="hidden sm:block sm:text-[16px] text-[14px] font-semibold text-gray-800">John Doe</h2> -->
                       <p class="text-gray-800 sm:text-[16px] text-[10px]">Total Balance: <span></span></p>
@@ -73,5 +97,80 @@
         </div>
       </div>
     </section>
+
+    <section class="container mx-auto p-4 ">
+        <h1 class="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
+    
+        <div class="overflow-x rounded-xl">
+          <table class="min-w-full bg-white border shadow-lg rounded-xl">
+            <thead>
+              <tr class="bg-[#161D6F] text-white ml-9 text-left text-sm leading-normal rounded-xl">
+                  <th class="py-3 px-4">Gift Card</th>
+                  <th class="py-3 px-1">Amount</th>
+                  <th class="py-3 px-8">Date</th>
+                <th class="py-3 px-8">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-black text-sm">
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Amazon</td>
+                  <td class="py-3 px-4">$100</td>
+                  <td class="py-3 px-4">2024-09-20</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">iTunes</td>
+                  <td class="py-3 px-4">$50</td>
+                  <td class="py-3 px-4">2024-09-18</td>
+                <td class="py-3 px-4">
+                  <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-lg">Pending</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Google Play</td>
+                  <td class="py-3 px-4">$25</td>
+                  <td class="py-3 px-4">2024-09-15</td>
+                <td class="py-3 px-4">
+                  <span class="bg-red-200 text-red-800 text-xs font-semibold px-2 py-1 rounded-lg">Failed</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Walmart</td>
+                  <td class="py-3 px-4">$250</td>
+                  <td class="py-3 px-4">2024-09-12</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Razer Gold</td>
+                  <td class="py-3 px-4">$150</td>
+                  <td class="py-3 px-4">2024-09-12</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Steam</td>
+                  <td class="py-3 px-4">$1000</td>
+                  <td class="py-3 px-4">2024-09-12</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                  <td class="py-3 px-4">Vanilla</td>
+                  <td class="py-3 px-4">$10</td>
+                  <td class="py-3 px-4">2024-09-12</td>
+                  <td class="py-3 px-4">
+                  <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 </body>
 </html>

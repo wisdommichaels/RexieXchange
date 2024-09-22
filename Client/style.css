@@ -657,7 +657,7 @@ ul {
 
 .subscribe input:focus{
   outline: none;
-  border-inline: 2px solid #FA4A00;
+  border-inline: 2px solid #161D6F;
 }
 
 .container input:focus{

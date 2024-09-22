@@ -10,7 +10,18 @@
   </head>
   <body>
     <section id="black">
-      <div class="card">
+      <nav class="bg-[#161D6F] p-4 rounded-b-lg sm:hidden pt-8">
+        <div class="flex justify-between items-center ml-3">
+          <span class="text-white text-xl font-semibold ml-">GiftHub</span>
+          <img src="https://via.placeholder.com/150" alt="User Image" class=" w-10 mr-3 h-10 rounded-full object-cover">
+        </div>
+        <div id="menu" class="mt-4 flex justify-center gap-5 text-[14px] items-center text-white">
+          <a href="#home" class="   font-bold hover:text-gray-300 underline underline-offset-2 text-[#E7500F]">Home</a>
+          <a href="#giftcard" class=" text-white  hover:text-gray-300"> Sell Gift Card</a>
+          <a href="#Dashboard" class=" text-white  hover:text-gray-300">Dashboard</a>
+        </div>
+      </nav>
+      <div class="card hidden sm:flex">
         <div class="top-section rounded-none">
           <div class="border"></div>
           <div class="icons">
@@ -93,8 +104,8 @@
       </div>
     </section>
     <section class="w-full sm:w-[98%] mx-auto bg-white p-3 sm:p-8 sm:shadow-lg sm:rounded-lg">
-      <h2 class="md:text-2xl text-[14px] font-bold text-gray-800 mb-8 text-center">
-        Countries Trading Gift Cards and Their Rates
+      <h2 class="md:text-2xl text-[12px] font-bold text-gray-800 mb-8 text-center">
+        Countries Trading <span class="text-[#E7500F] sm:hidden">Amazon </span>Gift Cards and Their Rates
       </h2>
       <div class="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div class="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8">Country</div>
