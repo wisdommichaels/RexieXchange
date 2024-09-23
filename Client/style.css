@@ -550,9 +550,9 @@ ul {
   /* box-shadow: 0 5px rgba(0,0,0,0.35); */
   position: relative;
   overflow: hidden;
-  width: 768px;
+  width: 60%;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 500px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -623,15 +623,25 @@ ul {
 }
 
 .container input{
-   background: white;
+  background: white;
   border: none;
   padding: 15px 20px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: px;
   box-shadow: #cff0ff 0px 14px 10px -3px;
   border-inline: 2px solid transparent;
   width: 60%;
   outline: none;
+}
+
+
+
+.container label {
+  font-size: 10px;
+  color: #161D6F;
+  margin-top: 15px;
+  margin-right: 20px;
+  font-weight: bold;
 }
 
 .subscribe input{
