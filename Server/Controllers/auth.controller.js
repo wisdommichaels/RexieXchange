@@ -5,13 +5,13 @@ import generateTokenAndSetCookie from "../Utils/generateToken.js";
 export const signup = async (req, res) => {
     try {
         const {username, email, password, confirmPassword} = req.body;
-        // if (!username || !email || !password || !confirmPassword) {
-        //     return res.status(400).json({ message: "All fields are required" });
-        // }
+        if (!username || !email || !password || !confirmPassword) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
         if (password !== confirmPassword) {
             return res.status(400).json({ message: "Passwords do not match" });
         }
-        const user= await User.findOne ({username})
+        const user= await User.findOne({username})
         
         if(user){
             return res.status(400).json({message: "User already exists" });
@@ -28,7 +28,6 @@ export const signup = async (req, res) => {
             username, 
             email, 
             password: hashedPassword,
-            confirmPassword: hashedPassword,
         });
 
         if(newUser){
