@@ -636,14 +636,11 @@ ul {
 
 
 
-.container .label {
+.container label {
   font-size: 10px;
   color: #161D6F;
   margin-top: 15px;
   margin-right: 20px;
-  display: flex;
-  justify-content: end;
-  align-items:start;
   /* font-weight: bold; */
 }
 
