@@ -12,6 +12,10 @@
     body{
         background-color: #101035;
     }
+    #message{
+        color: rgb(253, 41, 41);
+        margin-top: 10px;
+    }
 </style>
 <body>
     <div class="container" id="container">
@@ -29,9 +33,10 @@
                <label for="email">Email</label>  
                <input type="email" placeholder="Email">
                <label for="password">Password</label> 
-               <input type="password" placeholder="Password">
+               <input type="password"  id="password" placeholder="Enter Password">
                <label for="confirm-password">Confirm-Password</label>
-               <input type="confirm-password" placeholder="Confirm-Password">
+               <input type="password" id="confirm_password" placeholder="Confirm Password">
+               <span id="message" class="error"></span>
                <button>Sign Up</button>
             </form>
         </div>
@@ -71,6 +76,39 @@
     </div>
 
     
- <script src="/Client/login.js"></script> 
+ <script>
+             // js for login/signup page.
+             const container = document.getElementById('container');
+       const registerBtn = document.getElementById('register');
+       const loginBtn = document.getElementById('login');
+       
+       registerBtn.addEventListener('click', ()=>{
+           container.classList.add('active');
+       });
+       
+       loginBtn.addEventListener('click', ()=>{
+           container.classList.remove('active');
+       });
+       
+       
+       function checkPasswordMatch() {
+           const password = document.getElementById('password').value;
+           const confirmPassword = document.getElementById('confirm_password').value;
+           const message = document.getElementById('message');
+             
+           if (password !== confirmPassword) {
+               message.textContent = "Passwords do not match!";
+               return false; // Prevent form submission
+           } else {
+               message.textContent = ""; // Clear the error message
+               return true; // Allow form submission
+             }
+           }
+       
+           // Optional: Check passwords in real-time as the user types
+           document.getElementById('confirm_password').addEventListener('input', function() {
+             checkPasswordMatch();
+           });
+ </script>
 </body>
 </html>
