@@ -6,6 +6,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    .custom-select {
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+      outline: none;
+      width: 80%;
+      background: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 20px;
+      border-inline: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+   
+    .custom-select:hover {
+      background-color:  #e2e8f0; 
+      border-color: #161D6F;
+    }
+
+    
+    .custom-select::-webkit-scrollbar {
+      display: none; 
+    }
+
+  .btn{
+  display: block;
+  width: 80%;
+  font-weight: bold;
+  background: linear-gradient(45deg, #161D6F 0%, #1422bd 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 2px auto;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow:#161D6F 0px 23px 10px -20px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: #161D6F 0px 15px 10px -10px;
+}
+  </style>
 </head>
 <body>
     <section id="black">
@@ -42,7 +91,6 @@
                   <h2 class="text-[14px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
                   <div class="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
                     <div class="flex-col justify-center items-center">
-                      <!-- <h2 class="hidden sm:block sm:text-[16px] text-[14px] font-semibold text-gray-800">John Doe</h2> -->
                       <p class="text-gray-800 sm:text-[16px] text-[10px]">Total Balance: <span></span></p>
                       <p class="font-bold text-white sm:text-[20px] text-[14px]">₦10,250.00</p>
                     </div>
@@ -97,6 +145,127 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex justify-center items-center w-[95%] sm:w-full m-auto mt-2 rounded-lg sm:rounded-none sm:p-7">
+      <div class="sm:w-1/2  mx-auto p-4">
+           <h2 class="sm:text-2xl text-[16px] font-bold text-center text-[#161D6F] mb-4">RATE CALCULATOR</h2>
+        <form id="currency-form" class="space-y-4 w-full">
+          
+          <div class="flex flex-col mb-4">
+            <label for="amount" class="mb-1 text-sm m-auto text-[#161D6F] text-[10px] sm:text-[16px]">Enter Amount</label>
+            <input class="custom-select custom-arrow cursor-text w-full sm:w-1/2" type="text" id="amount" placeholder="Amount in foreign currency">
+          </div>
+          
+         
+          <div class="flex flex-col mb-4">
+            <label for="currency" class="mb-1 text-sm m-auto  text-[#161D6F] text-[10px] sm:text-[16px]">Select Currency:</label>
+            <select id="currency" class="custom-select custom-arrow w-full sm:w-1/2">
+              <option value="">Select Currency</option>
+              <option value="usd">USD - United States Dollar</option>
+              <option value="eur">EUR - Euro</option>
+              <option value="gbp">GBP - British Pound</option>
+              <option value="cad">CAD - Canadian Dollar</option>
+              <option value="aud">AUD - Australian Dollar</option>
+              <option value="twd">TWD - Taiwan Dollar</option>
+              <option value="sgd">SGD - Singapore Dollar</option>
+              <option value="brl">BRL - Indian Rupee</option>
+              <option value="hkd">HKD - Hong Kong Dollar</option>
+              <option value="mxn">MXN - Mexican Peso</option>
+              <option value="thb">THB - Thai Baht</option>
+              <option value="jpy">JPY - Japanese Yen</option>
+              <option value="nzd">NZD - New Zealand Dollar</option>
+              <option value="sek">SEK - Swedish Krona</option>
+              <option value="inr">INR - Indian Rupee</option>
+              <option value="zar">ZAR - South African Rand</option>
+              <option value="kes">KES - Kenyan Shilling</option>
+              <option value="eur">EUR - Greece</option>
+              <option value="dkk">DKK - Denmark</option>
+              <option value="nok">NOK - Norway</option>
+              <option value="eur">EUR - Germany</option>
+              <option value="eur">EUR - France</option>
+              <option value="eur">EUR - Italy</option>
+              <option value="eur">EUR - Spain</option>
+              <option value="eur">EUR - Netherlands</option>
+              <option value="eur">EUR - Belgium</option>
+              <option value="eur">EUR - Switzerland</option>
+              <option value="eur">EUR - Austria</option>
+              <option value="eur">EUR - Portugal</option>
+              <option value="eur">EUR - Finland</option>
+              <option value="eur">EUR - Sweden</option>
+              <option value="aed">AED - United Arab Emirates</option>
+              <option value="cny">CNY - China</option>
+              <option value="pln">PLN - Poland</option>
+            </select>
+          </div>
+    
+          <div class="custom-select hidden  custom-arrow sm:w-1/2 w-full" id="result" class="mt-4 text-lg font-semibold text-center text-[#161D6F]"></div>
+         
+          <div class="text-center">
+            <button class="btn text-[14px] sm:text-[16px] w-full sm:w-1/2" type="submit" >
+              Convert to Naira
+            </button>
+          </div>
+        </form>
+      </div>
+    
+      <div class="sm:w-1/2 mx-auto p-4 sm:pr-24 ">
+        <h2 class="sm:text-2xl text-[16px] font-bold text-[#161D6F] text-center mb-4">GIFT CARD DETAILS</h2>
+    
+        <form id="gift-card-form" class="w-full space-y-4 ">
+        <div class="sm:flex justify-center items-center gap-5">
+          <div class="sm:mb-0 mb-2 text-center sm:w-1/2">
+            <label for="category" class="text-sm text-center text-[#161D6F] sm:text-[16px]">Gift Card Category</label>
+            <select id="category" name="category" class="custom-select custom-arrow w-full">
+              <option value="">Select Category</option>
+              <option value="Razer">Razer Gift Card</option>
+              <option value="Amazon">Amazon</option>
+              <option value="iTunes">Apple&iTunes</option>
+              <option value="Google Play">Google Play</option>
+              <option value="Steam">Steam</option>
+              <option value="Walmart">Walmart</option>
+              <option value="MasterCard">MasterCard</option>
+              <option value="PlayStation">PlayStation</option>
+              <option value="eBay">eBay Gift card</option>
+              <option value="American Express">American Express</option>
+              <option value="Vanilla">Vanilla</option>
+              <option value="Visa">Visa</option>
+            </select>
+          </div>
+    
+          
+          <div class="sm:mb-0 mb-2 text-center sm:w-1/2">
+            <label for="country" class="text-sm text-[#161D6F] sm:text-[16px]  text-center">Country</label>
+            <select id="country" name="country" class="custom-select custom-arrow w-full">
+              <option value="">Select Country</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="Japan">Japan</option>
+            </select>
+          </div>
+        </div>
+    
+        <div class="sm:flex justify-center items-center w-full gap-5">
+    
+          <div class="sm:mb-0 mb-2  text-center sm:w-1/2">
+            <label for="cardNumber" class="text-sm text-[#161D6F] sm:text-[16px]">Gift Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter Gift Card Number" class=" custom-select custom-arrow w-full cursor-text">
+          </div>
+         
+          <div class="sm:mb-0 mb-2  text-center sm:w-1/2">
+            <label for="giftCardImage" class="text-sm m-auto text-[#161D6F] sm:text-[16px]">Gift Card Image</label>
+            <input type="file" id="giftCardImage" name="giftCardImage" accept="image/*" class=" custom-select custom-arrow cursor-text w-full">
+          </div>
+        </div>
+        
+          <div class="text-center">
+            <button type="submit" class="btn text-[14px] sm:text-[16px] w-full">Sell</button>
+          </div>
+        </form>
+      </div>
+    
+    </section>  
 
     <section class="container mx-auto p-4">
         <h1 class="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
