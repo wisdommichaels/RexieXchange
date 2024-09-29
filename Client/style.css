@@ -547,7 +547,7 @@ ul {
 .container{
   background-color: #ECF0F6;
   border-radius: 30px;
-  /* box-shadow: 0 5px rgba(0,0,0,0.35); */
+  box-shadow: 0 5px rgba(0,0,0,0.35);
   position: relative;
   overflow: hidden;
   width: 60%;
@@ -586,7 +586,7 @@ ul {
   font-size: 12px;
   padding: 15px 50px ;
   border: 1px solid transparent;
-  box-shadow: #cff0ff 0px 14px 10px -3px;
+  box-shadow: #cff0ff 0px 6px 10px -3px;
   border-radius: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;

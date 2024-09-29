@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 1px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+    }
+    
+
+    input:focus {
+  outline: none;
+  border-inline: 2px solid #161D6F;
+}
+
+    input:hover {
+      background-color:  #e2e8f0; 
+      border-color: #161D6F;
+    }
+
+    
+
+  .btn{
+  display: block;
+  width: 80%;
+  font-weight: bold;
+  background: linear-gradient(45deg, #161D6F 0%, #1422bd 100%);
+  color: white;
+  padding-block: 1px;
+  margin: 20px auto;
+  border-radius: 20px;
+  /* box-shadow: rgba(5, 23, 31, 0.878) 0px 20px 10px -15px; */
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow:#161D6F 0px 23px 10px -20px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: #161D6F 0px 15px 10px -10px;
+}
+  </style>
+</head>
+<body class="bg-[#DDE4EF]">
+
+  <nav class="bg-[#161D6F] shadow-lg sm:mt-8 rounded-b-lg sm:rounded-none">
+    <div class="containe mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center">
+        <span class="ml-2 text-lg font-semibold text-gray-700 dark:text-white">MyLogo</span>
+    </div>
+
+ 
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="text-white  hover:text-[#FA4A00]">Home</a>
+        <a href="#" class="text-white hover:text-[#FA4A00]">Giftcard</a>
+        <a href="#" class="text-white  hover:text-[#FA4A00]">Blog</a>
+        <a href="#" class="text-white hover:text-[#FA4A00]">Dashboard</a>
+      </div>
+
+     
+      <div class="flex items-center space-x-4">
+        <img id="profile-pic" src="https://via.placeholder.com/50x50" alt="Profile Pic" class="h-12 w-12 rounded-full">
+        <span class="hidden md:inline text-gray-700 dark:text-gray-300">John Doe</span>
+        <button class="text-[12px] px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+          My Profile
+        </button>
+      </div>
+    </div>
+
+  
+    <div id="menu" class="sm:hidden mt-2 pb-5 flex justify-center gap-5 text-[14px] items-center text-white">
+        <a href="#home" class="   font-bold hover:text-gray-300 ">Home</a>
+        <a href="#giftcard" class="  hover:text-gray-300"> Sell Gift Card</a>
+        <a href="#Dashboard" class=" hover:text-gray-300">Dashboard</a>
+      </div>
+  </nav>
+
+  <section class="flex-col justify-center items-center">
+    <div class=" bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-lg rounded-lg sm:w-[50%] p-6 flex-col justify-center items-center">
+        <!-- Profile Picture -->
+        <div class="flex justify-center items-center space-x-4 mb-6">
+          <img id="profile-pic" class="h-12 w-12 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Profile Picture">
+          <div>
+            <label for="profile-pic-upload" class="text-[#161D6F] cursor-pointer hover:underline">Change Profile Picture</label>
+            <input type="file" id="profile-pic-upload" class="hidden" accept="image/*" onchange="loadFile(event)">
+          </div>
+        </div>
+  
+        <!-- Edit Username -->
+        <div class="mb-4 w-full flex-col justify-center items-center sm:w-[50%] m-auto">
+          <label for="username" class="block text-[#161D6F] font-semibold mb-1 text-center">Username</label>
+            <input class="p-4" type="text" id="username" placeholder="Enter your username">
+        </div>
+  
+        <!-- Change Password -->
+        <div class="mb-4 flex-col justify-center items-center sm:w-[50%] m-auto">
+          <label for="current-password" class="block text-[#161D6F] font-semibold mb-1 text-center">Current Password</label>
+          <input class="p-4" type="password" id="current-password" placeholder="Enter current password">
+        </div>
+  
+        <div class="mb-4 flex-col justify-center items-center sm:w-[50%] m-auto">
+          <label for="new-password" class="block text-[#161D6F] text-center font-semibold mb-1">New Password</label>
+          <input class="p-4" type="password" id="new-password" placeholder="Enter new password">
+        </div>
+  
+        <div class="mb-4 flex-col justify-center items-center sm:w-[50%] m-auto">
+          <label for="confirm-password" class="block text-[#161D6F] font-semibold mb-1 text-center">Confirm New Password</label>
+          <input class="p-4" type="password" id="confirm-password" placeholder="Confirm new password">
+        </div>
+  
+        <!-- Save Changes Button -->
+        <div class="flex justify-center items-center sm:w-[50%] m-auto">
+          <button class="btn px-3 py-3 w-full">Save Changes</button>
+        </div>
+    </div>
+  </section>
+
+  <script>
+   // JavaScript to update profile picture preview
+   const loadFile = (event) => {
+      const output = document.getElementById('profile-pic');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+  </script>
+</body>
+</html>

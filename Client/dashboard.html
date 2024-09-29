@@ -27,6 +27,11 @@
       border-color: #161D6F;
     }
 
+    .custom-select:focus {
+  outline: none;
+  border-inline: 2px solid #161D6F;
+}
+
     
     .custom-select::-webkit-scrollbar {
       display: none; 
@@ -137,9 +142,66 @@
                 <li><a href="#">Rewards</a></li>
               </ul>
             </nav>
-            <div class="logins flex justify-between items-center gap-3 mr-12 mt-10">
-                 <img src="https://via.placeholder.com/150" alt="User Image" class="sm:w-12 w-10 sm:h-12 mt-2  h-10 rounded-full object-cover">
-              <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[8px]">ACCT <br> SETTINGS</a>
+            <div class="logins flex justify-between items-center gap-3 mr-6 mt-10">
+                 <img id="profile-pic" src="https://via.placeholder.com/150" alt="User Image" class="sm:w-12 w-10 sm:h-12 mt-2  h-10 rounded-full object-cover">
+                 <span class="text-white text-[13px] pt-3 leading-4">Wisdom <br> Michael</span>
+            <div class="relative">
+            <div class="relative group">
+              <button class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[11px] px-3 py-3">My Profile</button>
+              <div class="absolute right-0 mt-2 bg-[#DDE4EF] shadow-lg rounded-lg hidden group-hover:block w-48 ">
+                <ul class="py-2">
+                  <li>
+                    <button onclick="toggleSettingsDropdown()" class="block w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
+                      Account Settings
+                    </button>
+                  </li>
+                  <li>
+                    <a href="#" class="block w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100 ">
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id="settings-dropdown" class="hidden absolute z-20 right-0 top-16 bg-[#DDE4EF] shadow-lg rounded-lg w-72 p-6 opacity-0 translate-x-4 transition-all duration-300 ease-in-out">
+      
+              <!-- Profile Picture -->
+              <div class="flex items-center space-x-4 mb-6">
+                <img id="profile-pic" class="h-16 w-16 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Profile Picture">
+                <div>
+                  <label for="profile-pic-upload" class="text-[#161D6F] cursor-pointer hover:underline">Change Profile Picture</label>
+                  <input type="file" id="profile-pic-upload" class="hidden" accept="image/*" onchange="loadFile(event)">
+                </div>
+              </div>
+        
+              <!-- Edit Username -->
+              <div class="mb-4">
+                <label for="username" class="block text-[#161D6F] font-semibold mb-1">Username</label>
+                  <input class="p-4" type="text" id="username" placeholder="Enter your username" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+              </div>
+        
+              <!-- Change Password -->
+              <div class="mb-4">
+                <label for="current-password" class="block text-[#161D6F] font-semibold mb-1">Current Password</label>
+                <input class="p-4" type="password" id="current-password" placeholder="Enter current password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+              </div>
+        
+              <div class="mb-4">
+                <label for="new-password" class="block text-[#161D6F] font-semibold mb-1">New Password</label>
+                <input class="p-4" type="password" id="new-password" placeholder="Enter new password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+              </div>
+        
+              <div class="mb-4">
+                <label for="confirm-password" class="block text-[#161D6F] font-semibold mb-1">Confirm New Password</label>
+                <input class="p-4" type="password" id="confirm-password" placeholder="Confirm new password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+              </div>
+        
+              <!-- Save Changes Button -->
+              <div class="flex justify-end">
+                <button class="btn px-3 py-3 w-full">Save Changes</button>
+              </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>
@@ -341,5 +403,50 @@
           </table>
         </div>
       </section>
+
+      <script>
+        const conversionRates = {
+          'usd': 760, // Example conversion rate for USD to Naira
+          'eur': 820, // Example conversion rate for EUR to Naira
+          'gbp': 900, // Example conversion rate for GBP to Naira
+          'cad': 580, // Example conversion rate for CAD to Naira
+          'aud': 540  // Example conversion rate for AUD to Naira
+        };
+    
+        document.getElementById('currency-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+    
+          const amount = parseFloat(document.getElementById('amount').value);
+          const currency = document.getElementById('currency').value;
+          const conversionRate = conversionRates[currency];
+    
+          if (!isNaN(amount) && conversionRate) {
+            const convertedAmount = amount * conversionRate;
+            document.getElementById('result').textContent = `${amount} ${currency.toUpperCase()} = ₦${convertedAmount.toLocaleString()}`;
+            document.getElementById('result').classList.remove('hidden');
+          } else {
+            document.getElementById('result').textContent = "Please enter a valid amount.";
+          }
+        });
+
+         
+    // Toggle account settings dropdown visibility and smooth transition
+    function toggleSettingsDropdown() {
+      const dropdown = document.getElementById('settings-dropdown');
+      dropdown.classList.toggle('hidden');
+      dropdown.classList.toggle('opacity-0');
+      dropdown.classList.toggle('translate-x-4');
+    }
+
+    // JavaScript to update profile picture preview
+    const loadFile = (event) => {
+      const output = document.getElementById('profile-pic');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src) // free memory
+      }
+    };
+      </script>
+    
 </body>
 </html>
