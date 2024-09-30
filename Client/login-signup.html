@@ -16,8 +16,35 @@
         color: rgb(253, 41, 41);
         margin-top: 10px;
     }
+
+    .login-div{
+        display: flex;
+        justify-content: center;
+      
+    }
+    .photo{
+        width: 50%;
+        height: 100vh;
+        background-color: #101035;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+
+        height: 96%;
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 </style>
 <body>
+    <div class="login-div">
+        <div class="photo">
+            <img src="./assets/LOGINPHOTO.png" alt="">
+        </div> 
+
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
@@ -73,6 +100,7 @@
             </div>
         </div>
     </div>
+</div>
 
     
  <script>

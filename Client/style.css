@@ -546,16 +546,13 @@ ul {
 
 .container{
   background-color: #ECF0F6;
-  border-radius: 30px;
-  box-shadow: 0 5px rgba(0,0,0,0.35);
+  /* border-radius: 30px;
+  box-shadow: 0 5px rgba(0,0,0,0.35); */
   position: relative;
   overflow: hidden;
-  width: 60%;
+  width: 50%;
   max-width: 100%;
   min-height: 500px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding: 20px 20px;
 }
 
@@ -765,14 +762,14 @@ ul {
   height: 100%;
   overflow: hidden;
   transition: all 0.6s ease-in-out;
-  border-radius: 150px 0 0 100px;
+  /* border-radius: 150px 0 0 100px; */
   z-index: 1000;
   
 }
 
 .container.active .toggle-container{
   transform: translateX(-100%);
-  border-radius: 0 150px 100px 0;
+  /* border-radius: 0 150px 100px 0; */
 }
 
 .toggle{
