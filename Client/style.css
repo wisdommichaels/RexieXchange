@@ -679,57 +679,9 @@ ul {
   transition: all 0.6s ease-in-out;
 }
 
-.form-container h1{
-  color: #161D6F;
-}
 
-.form-container form .a{
-  color: #161D6F;
-  margin-top: 17px;
-  font-size: 12px;
-}
 
-.sign-in{
-  left: 0;
-  width: 50%;
-  z-index: 2;
-}
-
-.container.active .sign-in{
-    transform: translateX(100%);
-}
-
-.sign-up{
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.active .sign-up{
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-  animation: move 0.6s;
-}
-
-@keyframes move {
-  0%, 49.99% {
-      opacity: 0;
-      z-index: 1;
-  }
-  50%, 100%{
-      opacity: 1;
-      z-index: 5;
-  } 
-}
-
-.social-icons{
-  margin: 20px p 0px;
-  
-}
-
-.social-icons a{
+/* .social-icons a{
   background: linear-gradient(45deg, #161D6F 0%, rgb(44, 39, 127) 100%);
   border: 5px solid white;
   color: white;
@@ -744,79 +696,12 @@ ul {
   align-items: center;
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
   transition: all 0.2s ease-in-out;
-}
+} */
 
-.social-icons a:hover{
+/* .social-icons a:hover{
   transform: scale(1.2);
-}
+} */
 
-.social-icons a:active{
+/* .social-icons a:active{
   transform: scale(0.9);
-}
-
-.toggle-container{
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  transition: all 0.6s ease-in-out;
-  /* border-radius: 150px 0 0 100px; */
-  z-index: 1000;
-  
-}
-
-.container.active .toggle-container{
-  transform: translateX(-100%);
-  /* border-radius: 0 150px 100px 0; */
-}
-
-.toggle{
-   background-image: url(assets/download\ \(2\).jpeg);
-   /* background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat; */
-    height: 100%;
-    background: linear-gradient(288dg, #074b7d, #095ab7);
-    color: #fff;
-    position: relative;
-    left: -100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.container.active .toggle{
-  transform: translateX(50%);
-}
-
-.toggle-panel{
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  top: 0;
-  transform: translateX(0);
-}
-
-.toggle-left{
-  transform: translateX(-200%);
-}
-
-.container.active .toggle-left{
-  transform: translateX(0);
-}
-
-.toggle-right{
-  right: 0;
-  transform: translateX(0);
-}
-
-.container.active .toggle-right{
-  transform: translateX(200%);
-}
+} */
