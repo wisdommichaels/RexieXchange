@@ -10,27 +10,35 @@
 </head>
 <body>
 <section id="black">
-  <nav class="bg-[#161D6F] p-4 rounded-b-lg sm:hidden pt-8">
+  <nav class="bg-[#161D6F] p-4 rounded-b- sm:hidden pt-8">
     <div class="flex justify-between items-center ml-3">
       <span class="text-white text-xl font-semibold ml-">MyApp</span>
       <img src="https://via.placeholder.com/150" alt="User Image" class=" w-10 mr-3 h-10 rounded-full object-cover">
     </div>
-    <div id="menu" class="mt-4 flex justify-center gap-5 text-[14px] items-center text-white">
+    <div id="menu" class="mt-4 flex justify-center gap-5 text-[16px] items-center text-white">
       <a href="#home" class="   font-bold hover:text-gray-300 underline">Home</a>
       <a href="#giftcard" class=" hover:text-gray-300 underline underline-offset-2 text-[#E7500F]"> Sell Gift Card</a>
       <a href="#Dashboard" class=" text-white  hover:text-gray-300">Dashboard</a>
     </div>
   </nav>
   <section class="sm:hidden">
-    <h1 class="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-5 text-white text-center m-3 mb-0 rounded-t-lg">Trade your <span class="text-[#161D6F] underline">Gift Card</span> all in <br> one place</h1>
-    <div class="flex justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-3 mt-0 rounded-b-lg">
-    <div class="w-full px-4 shadow-sm mb-2 ml-4 flex justify-center items-center">
-      <input class=" w-full  rounded-lg sm:p-3 py-1 pl-3" type="text" placeholder="Search gift cards..."/> 
+    <h1 class="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-5 text-white text-center m- mb-0">Trade your <span class="text-[#161D6F] underline">Gift Card</span> all in <br> one place</h1>
+    <div class="flex-col justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m- mt-0 rounded-b-lg">
+    <div class="w-[70%] rounded-lg gap-2 shadow-sm mb-3 py-1 m-auto flex justify-start items-center bg-white">
+      <div class="flex items-center  pointer-events-none bg-white pl-5 rounded-lg ">
+        <svg class="text-gray-400" xmlns="http://www.w3.org/2000/svg"  
+        viewBox="0 0 50 50" 
+        width="20px" 
+        height="20px">
+        <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/>
+        </svg>
+      </div>
+      <input class="border-none py-1 cursor-text w-full focus:outline-none " type="text" placeholder="Search gift cards..."/> 
     </div>
       
-    <div class="w-full max-w-md mb-2 flex justify-center items-center">
-      <select id="category" class="w-[60%] px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#161D6F]">
-      <option class="text-[14px] sm:text-[18px]" value="">Select</option>
+    <div class="w-full max-w-md mb-2 pb-3 flex justify-center items-center">
+      <select id="category" class="w-[60%] px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#161D6F]">
+      <option class="text-[14px] sm:text-[18px]" value="">Select Card Category</option>
       <option class="text-[14px] sm:text-[18px]"  value="1">Razer Gift Card</option>
       <option class="text-[14px] sm:text-[18px]"  value="2">Apple&iTunes</option>
       <option class="text-[14px] sm:text-[18px]"  value="3">Amazon Gift Card</option>
@@ -52,13 +60,21 @@
           <div class="  flex flex-col justify-center items-center w-full p-10 mb-6">
             <h1 class="sm:text-[50px] text-[16px] font-bold pt-5 text-white mb-4 text-center">Trade your <span class="text-[#E7500F] underline">Gift Card</span> all in <br> one place</h1>
             
-          <div class="subscribe w-full max-w-md mb-6 flex justify-center items-center">
-            <input class=" sm:w-full sm:p-3 " type="text" placeholder="Search gift cards..."/> 
+          <div class="searchbar w-[50%] gap-2 mb-6 flex justify-start items-center">
+            <div class="flex items-center pointer-events-none bg-white  ">
+              <svg class="text-gray-400" xmlns="http://www.w3.org/2000/svg"  
+               viewBox="0 0 50 50" 
+               width="25px" 
+               height="25px">
+               <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/>
+             </svg>
+            </div>
+            <input class="w-full focus:outline-none"  type="text" placeholder="Search gift cards..."/> 
           </div>
             
-          <div class="w-full max-w-md mb-8 flex justify-center items-center">
+          <div class="w-[70%] mb-8 flex justify-center items-center">
             <select id="category" class="w-[50%] px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7500F]">
-            <option class="text-[14px] sm:text-[18px]" value="">Select Category</option>
+            <option class="text-[14px] sm:text-[18px]" value="">Select GiftCard Category</option>
             <option class="text-[14px] sm:text-[18px]"  value="1">Razer Gift Card</option>
             <option class="text-[14px] sm:text-[18px]"  value="2">Apple&iTunes</option>
             <option class="text-[14px] sm:text-[18px]"  value="3">Amazon Gift Card</option>
@@ -112,26 +128,42 @@
         </nav>
         <div class="logins flex justify-between items-center gap-3 mr-8 mt-7">
           <img src="https://via.placeholder.com/150" alt="User Image" class="sm:w-12 w-10 sm:h-12 mt-2  h-10 rounded-full object-cover">
-          <a href="#" class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[11px] text-center ">ACCT SETTINGS</a>
+          <div class="relative group">
+            <button class="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[11px] px-3 py-3">My Profile</button>
+            <div class="absolute right-0 mt-2 bg-[#DDE4EF] shadow-lg rounded-lg hidden group-hover:block w-48 ">
+              <ul class="py-2">
+                <li>
+                  <button onclick="toggleSettingsDropdown()" class="block w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
+                    Account Settings
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="block w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100 ">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="">
-  <div class="section-title flex justify-center items-center bg-[#161D6F] w-1/6 shadow-md shadow-slate-500 m-auto rounded-md  p-3 mt-5">
-    <h1 class="font-bold text-white">Gift Cards</h1>
+<section>
+  <div class="section-title flex justify-center items-center bg-[#161D6F] sm:w-[20%] w-[60%] shadow-md shadow-slate-500 m-auto rounded-md p-3 mt-">
+    <h1 class="font-bold text-[12px] sm:text-[14px] text-white">Gift Cards</h1>
   </div>
 </section>
-<section class="section min-h-screen bg-[#F5F5FA] rounded-[40px] m-auto w-[98%] mb-8">
-  <div class="flex justify-around items-center flex-wrap gap-y-8 pt-8 pb-8 ml-6 mr-6  mt-4 rounded-2xl">
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+<section class="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto w-[98%] mb-8 p-5 sm:p-0">
+  <div class="flex flex-wrap justify-center items-center gap-8 py-8  mt-4 rounded-2xl">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/razergoldpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Razer Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1" src="/Client/assets/tag.png" alt="">
                   <p class="text-white mt-2 font-bold">₦1184.38</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -140,13 +172,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/applecardpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Apple&iTunes</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1117.28</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -155,13 +187,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/steampng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Steam Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1379.87</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -170,13 +202,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/amazonpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Amazon Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦800.99</p>
                 </div>
                 <button class="mt-5 bg-[#5FC0F0] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#81d0f7] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -185,13 +217,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/walmartgiftcardpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Walmart Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦713.49</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -200,13 +232,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/ebaypng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">eBay Gift card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1100.81</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -215,13 +247,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/americanexpresspng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">American Express</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1100.81</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -230,13 +262,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/googleplaypng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">Google Play Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦750.99</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -245,13 +277,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/vanillapng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">Vanilla Gift card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦713.49</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -260,13 +292,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/playstationpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">PlayStation</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦700</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -275,13 +307,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/cvspng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">CVS pharmacy</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦600.65</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -290,13 +322,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/footlockerpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold ">Foot Locker Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1110.94</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -305,13 +337,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/mastercardpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Mastercard Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1208.95</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -320,13 +352,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/netspendpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Netspend</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦655.71</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -335,13 +367,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/robloxpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Roblox</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦409.73</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -350,13 +382,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/visapng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">VISA</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1202.61</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -365,13 +397,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/walmartmoneypng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Walmart MoneyCard</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦29.99</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -380,13 +412,13 @@
               </div>
       </div>
     </div>  
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/gamestoppng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">GameStop</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦29.99</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -396,13 +428,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/nordstrompng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Nordstrom</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦962.98</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -412,13 +444,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/paysafecardpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Paysafecard</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦29.99</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -428,13 +460,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/sephorapng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Sephora Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1110.53</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -444,13 +476,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/xboxpng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Xbox Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦881.03</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -460,13 +492,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/nikepng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Nike Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1106.48</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -476,13 +508,13 @@
       </div>
     </div>  
     
-    <div class="max-w-sm w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
+    <div class="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div class="relative group mt-2 mr-2">
           <img src="/Client/assets/SVG/macyspng.svg" alt="Product Image" class="w-full h-30 sm:h-42 object-cover rounded-lg">
           <div class="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 class="text-white text-xl font-semibold">Macy's Gift Card</h1>
             <div class="flex justify-center items-center">
-              <img class="w-8 pt-2 pr-1" src="/assets/tag.png" alt="">
+              <img class="w-8 pt-2 pr-1"  src="/Client/assets/tag.png"alt="">
                   <p class="text-white mt-2 font-bold">₦1070.17</p>
                 </div>
                 <button class="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">

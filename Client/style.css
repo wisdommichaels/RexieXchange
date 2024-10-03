@@ -651,6 +651,15 @@ ul {
   width: 60%;
   outline: none;
 }
+.searchbar{
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: #cff0ff 0px 5px 10px -3px;
+  border-inline: 2px solid transparent;
+  outline: none;
+}
 
 .subscribe button{
   border: none;
@@ -661,13 +670,7 @@ ul {
   outline: none;
 }
 
-
-.subscribe input:focus{
-  outline: none;
-  border-inline: 2px solid #161D6F;
-}
-
-.container input:focus{
+.searchbar:focus{
   outline: none;
   border-inline: 2px solid #161D6F;
 }
