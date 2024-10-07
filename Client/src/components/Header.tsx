@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
-    <nav className="nav">
+    <nav className="nav mt-1">
           <ul>
-            <li><Link to={'/'}>Home</Link></li>
+            <li><Link to={'/'} className="focus:text-[#E7500F]">Home</Link></li>
             <div className="menu">
               <div className="item">
                 <a href="#" className="link">
@@ -26,14 +26,18 @@ const Header = () => {
                     <Link to={'/buy'} className="submenu-link"> Buy Gift Card </Link>
                   </div>
                   <div className="submenu-item">
-                    <a href="#" className="submenu-link"> Check Rate  </a>
+                  <Link to={'/checkrate'} className="submenu-link"> Check Rate  </Link>
                   </div>
                 </div>
               </div>
             </div>
             
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li>
+              <Link to={'/Blog'}> Blog </Link>
+            </li>
+            <li>
+            <Link to={'/dashboard'}> Dashboard </Link> 
+            </li>
           </ul>
         </nav>
   )

@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom"
+
 const Footer = () => {
   return (
     <footer className="bg-[#161D6F] pt-16">
   <section className="flex justify-between items-center bg-[#DDE4EF] pb-5 rounded-t-[40px] w-[97%] m-auto ">
-      <div className="flex justify-center items-center mt-20 pl-20">
+      <div className="flex justify-center items-center mt-20 pl-20 ">
           <h2 className="text-[#161D6F] text-2xl"><b>Register now so you don't miss <br/> our Gift Card hot deals</b></h2>
         </div>
         <div className="flex justify-center items-center  mt-20 mr-24 w-[50%]">
           <form action="" method="post" className="subscribe w-full flex justify-center items-center gap-2 border-[#99A2A5]">
-      <input type="email" name="email" id="email" placeholder="Enter your Email"/>
-      <button className="bg-[#e7500f] px-3 py-3  transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#ff4d00] text-white text-center">Subscribe Now</button>
+      <input className="input" type="email" name="email" id="email" placeholder="Enter your Email"/>
+      <button className="bg-[#161D6F] px-3 py-3 mt-4   transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center">Subscribe Now</button>
   </form>
   </div>
 </section>
@@ -16,11 +18,10 @@ const Footer = () => {
 <section className="flex justify-between bg-[#DDE4EF] pt-4 pb-8 w-[97%] m-auto"> 
 <nav className=" flex pl-20">
     <ul className=" flex gap-8 text-[#161D6F]">
-        <li>Home</li>
-        <li>About</li>
-        <li>Pricing</li>
-        <li>Contact</li>
-        <li>FAQs</li>
+    <Link to={'/'}>Home</Link>
+    <Link to={'/about'}>About</Link>
+    <Link to={'/blog'}>Blog</Link>
+    <Link to={'/contact'}>Contact</Link>
     </ul>
 </nav>
 <div className="flex gap-8 pr-24 text-white">
@@ -57,7 +58,7 @@ const Footer = () => {
           width="16"
           height="16"
           fill="currentColor"
-          className="bi bi-github"
+          className="bi bi-facebook"
           viewBox="0 0 18 16"
           xmlSpace="preserve"
         >
@@ -118,13 +119,13 @@ const Footer = () => {
 </section>
 
 <section className="bg-[#DDE4EF] w-[97%]  m-auto">
-<div className="flex justify-center items-center border rounded-full border-[#ff4d00] ml-20 mr-24"></div>
+<div className="flex justify-center items-center border rounded-full border-[#161D6F] ml-20 mr-24"></div>
 </section>
 <div className="w-[97%]  m-auto flex justify-between items-center bg-[#DDE4EF] pb-10 text-[#99A2A5] pt-6">
 <p className="ml-20">© 2024 Gifthub. All rights reserved.</p>
 <div className="flex gap-8 mr-24">
-    <a href="">Terms of Service</a>
-    <a href="">Privacy Policy</a>
+<Link to={'/'}> Terms of Service</Link>
+<Link to={'/'}>Privacy Policy</Link>
 </div>
 </div>
 </footer>

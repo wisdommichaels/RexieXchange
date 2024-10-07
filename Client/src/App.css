@@ -91,10 +91,13 @@ body {
 }
 
 .card .top-section .icons .logo {
-  height: 100%;
   aspect-ratio: 1;
-  padding-left: 15px;
-  margin-top: 10px;
+  margin-left: 50px;
+  padding-bottom: 50px;
+}
+
+.card .top-section .icons .logo .top-section {
+  height: 100%;
 }
 
 .nav ul {
@@ -199,7 +202,7 @@ body {
   top: 100%;
   border-radius: 0 0 16px 16px;
   left: 0;
-  width: 100%;
+  width: 200%;
   overflow: hidden;
   border: 1px solid #cccccc;
   opacity: 0;
@@ -669,6 +672,59 @@ ul {
   transition: all 0.6s ease-in-out;
 }
 
+.custom-select {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  width: 80%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  border-inline: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+
+.custom-select:hover {
+  background-color:  #e2e8f0; 
+  border-color: #161D6F;
+}
+
+.custom-select:focus {
+outline: none;
+border-inline: 2px solid #161D6F;
+}
+
+
+.custom-select::-webkit-scrollbar {
+  display: none; 
+}
+
+.btn{
+display: block;
+width: 80%;
+font-weight: bold;
+background: linear-gradient(45deg, #161D6F 0%, #1422bd 100%);
+color: white;
+padding-block: 15px;
+margin: 2px auto;
+border-radius: 20px;
+border: none;
+transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+transform: scale(1.03);
+box-shadow:#161D6F 0px 23px 10px -20px;
+}
+
+.btn:active {
+transform: scale(0.95);
+box-shadow: #161D6F 0px 15px 10px -10px;
+}
+
 /* .social-icons a{
   background: linear-gradient(45deg, #161D6F 0%, rgb(44, 39, 127) 100%);
   border: 5px solid white;
@@ -693,3 +749,278 @@ ul {
 /* .social-icons a:active{
   transform: scale(0.9);
 } */
+
+
+/* landingpage css */
+@keyframes marquee-ltr {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
+.marquee-ltr {
+  display: flex;
+  white-space: nowrap;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.marquee-rtl {
+  display: flex;
+  white-space: nowrap;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.marquee-ltr {
+  animation-name: marquee-ltr;
+}
+
+.marquee-rtl {
+  animation-name: marquee-rtl;
+}
+
+
+.marquee-rtl:hover {
+ animation-play-state: paused;
+}
+
+.marquee-ltr:hover{
+animation-play-state: paused;
+}
+
+/* .blur-in-out {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 95%, transparent);
+} */
+
+.marquee-content {
+  display: flex;
+}
+
+
+.track {
+display:flex;
+animation: scroll 40s linear infinite;
+animation-play-state: running;
+}
+
+
+.carousel-card {
+display: inline-block;
+border-radius: 10px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+flex-shrink: 0;
+}
+
+/* Pause on hover */
+.track:hover {
+animation-play-state: paused;
+}
+
+/* Animation keyframes */
+@keyframes scroll {
+0% {
+  transform: translateX(0%);
+}
+100% {
+  transform: translateX(-100%);
+}
+}
+
+/* settings css */
+.input {
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+    }
+    
+
+    .input:focus {
+  outline: none;
+  border-inline: 2px solid #161D6F;
+}
+
+    .input:hover {
+      background-color:  #e2e8f0; 
+      border-color: #161D6F;
+    }
+
+    
+
+  .btn{
+  display: block;
+  width: 80%;
+  font-weight: bold;
+  background: linear-gradient(45deg, #161D6F 0%, #1422bd 100%);
+  color: white;
+  padding-block: 1px;
+  margin: 20px auto;
+  border-radius: 20px;
+  /* box-shadow: rgba(5, 23, 31, 0.878) 0px 20px 10px -15px; */
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow:#161D6F 0px 23px 10px -20px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: #161D6F 0px 15px 10px -10px;
+}
+
+.signup-button {
+    margin-top: 10px;
+    padding: 6px 9px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #161D6F;
+    background-color: white;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: none;
+    border-radius: 9px;
+  }
+  
+  .signup-button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 rgb(250,74,0);
+  }
+  
+  .signup-button:active {
+    transform: scale(0.9);
+  }
+
+  /* login css */
+
+  .login-div{
+    display: flex;
+    justify-content: center;
+  
+}
+.photo{
+    width: 50%;
+    height: 100vh;
+    background-color: #101035;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+
+    height: 96%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ .rotate-container {
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.input{
+background: white;
+border: none;
+border-radius: 20px;
+box-shadow: #cff0ff 0px 10px 10px -3px;
+border-inline: 2px solid transparent;
+outline: none;
+}
+
+.input:focus{
+outline: none;
+border-inline: 2px solid #161D6F;
+}
+
+/* a{
+color: #161D6F;
+margin-top: 17px;
+font-size: 13px;
+} */
+
+.media-icons{
+background: linear-gradient(45deg, #161D6F 0%, rgb(44, 39, 127) 100%);
+border: 5px solid white;
+color: white;
+padding: 20px;
+border-radius: 50%;
+width: 45px;
+height: 45px;
+margin: 3px 4px;
+aspect-ratio: 1;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+transition: all 0.2s ease-in-out;
+}
+
+.media-icons:hover{
+transform: scale(1.2);
+}
+
+.media-icons:active{
+    transform: scale(0.9);
+}
+
+.btnn{
+  background: linear-gradient(45deg, #161D6F 0%, #1422bd 100%);
+color: #fff;
+font-size: 12px;
+padding: 15px 50px;
+border: 1px solid transparent;
+box-shadow: #cff0ff 0px 6px 10px -3px;
+border-radius: 20px;
+font-weight: 600;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+margin: 12px auto;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+
+.btnn:hover {
+transform: scale(1.03);
+box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+background-color: rgb(22, 17, 103);
+}
+
+.btnn:active {
+transform: scale(0.95);
+box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.show-signup {
+  transform: rotateY(180deg);
+}
+
+.login, .signup {
+  backface-visibility: hidden;
+}
+
+.signup {
+  transform: rotateY(180deg);
+}
+
+

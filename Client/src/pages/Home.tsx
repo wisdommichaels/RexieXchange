@@ -1,25 +1,15 @@
-import { Link } from "react-router-dom"
+
 import Footer from "../components/Footer"
 import Header from "../components/Header"
+import Mylogo from "../components/Mylogo"
+import Username from "../components/Username"
+import Mobileheader from "../components/Mobileheader"
 
 const Home = () => {
-    const toggleSettingsDropdown = ()=>{
-
-    }
   return (
     <div>
 <section id="black">
-  <nav className="bg-[#161D6F] p-4 rounded-b- sm:hidden pt-8">
-    <div className="flex justify-between items-center ml-3">
-      <span className="text-white text-xl font-semibold ml-">MyApp</span>
-      <img src="https://via.placeholder.com/150" alt="User Image" className=" w-10 mr-3 h-10 rounded-full object-cover"/>
-    </div>
-    <div id="menu" className="mt-4 flex justify-center gap-5 text-[16px] items-center text-white">
-      <Link to={'/'} className="   font-bold hover:text-gray-300 underline">Home</Link>
-      <Link to={'/giftcard'} className=" hover:text-gray-300 underline underline-offset-2 text-[#E7500F]"> Sell Gift Card</Link>
-      <Link to={'/dashboard'} className=" text-white  hover:text-gray-300">Dashboard</Link>
-    </div>
-  </nav>
+ <Mobileheader/>
   <section className="sm:hidden">
     <h1 className="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-5 text-white text-center m- mb-0">Trade your <span className="text-[#161D6F] underline">Gift Card</span> all in <br/> one place</h1>
     <div className="flex-col justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m- mt-0 rounded-b-lg">
@@ -90,34 +80,16 @@ const Home = () => {
         </div>
     <div className="icons">
       <div className="logo">
+      <Mylogo/>
       </div>
         <Header/>
-        <div className="logins flex justify-between items-center gap-3 mr-8 mt-7">
-          <img src="https://via.placeholder.com/150" alt="User Image" className="sm:w-12 w-10 sm:h-12 mt-2  h-10 rounded-full object-cover"/>
-          <div className="relative group">
-            <button className="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal text-[11px] px-3 py-3">My Profile</button>
-            <div className="absolute right-0 mt-2 bg-[#DDE4EF] shadow-lg rounded-lg hidden group-hover:block w-48 ">
-              <ul className="py-2">
-                <li>
-                  <button onClick={()=>toggleSettingsDropdown} className="block w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
-                    Account Settings
-                  </button>
-                </li>
-                <li>
-                  <a href="#" className="block w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100 ">
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <Username/>
       </div>
     </div>
   </div>
 </section>
 <section>
-  <div className="section-title flex justify-center items-center bg-[#161D6F] sm:w-[20%] w-[60%] shadow-md shadow-slate-500 m-auto rounded-md p-3 mt-">
+  <div className="section-title flex justify-center items-center bg-[#161D6F] sm:w-[20%] w-[60%] shadow-md shadow-slate-500 m-auto rounded-md p-3 mb-3">
     <h1 className="font-bold text-[12px] sm:text-[14px] text-white">Gift Cards</h1>
   </div>
 </section>
@@ -125,7 +97,7 @@ const Home = () => {
   <div className="flex flex-wrap justify-center items-center gap-8 py-8  mt-4 rounded-2xl">
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/razergoldpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\razergoldpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Razer Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -140,7 +112,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/applecardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\applecardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Apple&iTunes</h1>
             <div className="flex justify-center items-center">
@@ -155,7 +127,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/steampng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\steampng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Steam Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -170,7 +142,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/amazonpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\amazonpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Amazon Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -185,7 +157,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/walmartgiftcardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\walmartgiftcardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Walmart Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -200,7 +172,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/ebaypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\ebaypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">eBay Gift card</h1>
             <div className="flex justify-center items-center">
@@ -215,7 +187,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/americanexpresspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\americanexpresspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">American Express</h1>
             <div className="flex justify-center items-center">
@@ -230,7 +202,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/googleplaypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\googleplaypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">Google Play Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -245,7 +217,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/vanillapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\vanillapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">Vanilla Gift card</h1>
             <div className="flex justify-center items-center">
@@ -260,7 +232,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/playstationpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\playstationpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">PlayStation</h1>
             <div className="flex justify-center items-center">
@@ -275,7 +247,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/cvspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\cvspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">CVS pharmacy</h1>
             <div className="flex justify-center items-center">
@@ -290,7 +262,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/footlockerpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\footlockerpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold ">Foot Locker Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -305,7 +277,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/mastercardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\mastercardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Mastercard Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -320,7 +292,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/netspendpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\netspendpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Netspend</h1>
             <div className="flex justify-center items-center">
@@ -335,7 +307,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/robloxpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\robloxpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Roblox</h1>
             <div className="flex justify-center items-center">
@@ -350,7 +322,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/visapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\visapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">VISA</h1>
             <div className="flex justify-center items-center">
@@ -365,7 +337,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/walmartmoneypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\walmartmoneypng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Walmart MoneyCard</h1>
             <div className="flex justify-center items-center">
@@ -380,7 +352,7 @@ const Home = () => {
     </div>  
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/gamestoppng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\gamestoppng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">GameStop</h1>
             <div className="flex justify-center items-center">
@@ -396,7 +368,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/nordstrompng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\nordstrompng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Nordstrom</h1>
             <div className="flex justify-center items-center">
@@ -412,7 +384,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/paysafecardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\paysafecardpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Paysafecard</h1>
             <div className="flex justify-center items-center">
@@ -428,7 +400,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/sephorapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\sephorapng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Sephora Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -444,7 +416,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/xboxpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\xboxpng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Xbox Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -460,7 +432,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/nikepng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\nikepng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Nike Gift Card</h1>
             <div className="flex justify-center items-center">
@@ -476,7 +448,7 @@ const Home = () => {
     
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">
-          <img src="/Client/assets/SVG/macyspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+          <img src="src\assets\SVG\macyspng.svg" alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-xl font-semibold">Macy's Gift Card</h1>
             <div className="flex justify-center items-center">

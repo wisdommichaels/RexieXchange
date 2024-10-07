@@ -1,18 +1,19 @@
-import Header from "../components/Header";
+
+import Header from "../components/Header"
 import Footer from "../components/Footer";
 import Mylogo from "../components/Mylogo";
 import Username from "../components/Username";
 import Mobileheader from "../components/Mobileheader";
 
-const Sell = () => {
+const Dashboard = () => {
   return (
     <div>
-      <section id="black">
-          <Mobileheader/>
+   <section id="black">
+        <Mobileheader/>
           <section  className="sm:hidden w-full">
-            <div  className="shadow-lg p-6 rounded-lg m-2 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+            <div  className="shadow-lg p-6 rounded-lg mx-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                 <h2  className="text-[20px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
-                <div  className="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
+                <div  className="flex items-center justify-between space-x-2 mb-6 sm:mx-10">
                   <div  className="flex-col justify-center items-center">
                     <p  className="text-gray-800 sm:text-[16px] text-[12px]">Total Balance: <span></span></p>
                     <p  className="font-bold text-white sm:text-[20px] text-[16px]">₦10,250.00</p>
@@ -34,7 +35,7 @@ const Sell = () => {
                       <p  className="text-gray-800 sm:text-[16px] text-[10px]">Total Balance: <span></span></p>
                       <p  className="font-bold text-white sm:text-[20px] text-[14px]">₦10,250.00</p>
                     </div>
-                    <button  className="sm:w-[25%] flex justify-center items-center w-[30%] text-[10px] sm:text-[14px] bg-[#161D6F] text-white font-semibold py-2 rounded-lg hover:bg-[#1823a0] transition duration-200 ease-in-out">
+                    <button  className="sm:w-[25%] flex justify-center items-center w-[30%] text-[10px] sm:text-[14px] bg-[#161D6F] text-white font-semibold sm:py-2 rounded-lg hover:bg-[#1823a0] transition duration-200 ease-in-out">
                       Withdraw <span  className="sm:block hidden">Funds</span> 
                     </button>
                   </div>
@@ -45,7 +46,7 @@ const Sell = () => {
             <Mylogo/>
           </div>
            <Header/>
-            <Username/>
+            <Username/>   
           </div>
         </div>
       </div>
@@ -64,7 +65,7 @@ const Sell = () => {
          
           <div  className="flex flex-col mb-4">
             <label  htmlFor="currency"  className="mb-1 text-sm m-auto  text-[#161D6F] text-[10px] sm:text-[16px]">Select Currency:</label>
-            <select id="currency"  className="custom-select custom-arrow w-full sm:w-1/2">
+            <select id="currency"  className="custom-select custom-arrow w-full sm:w-1/2 py-8">
               <option value="">Select Currency</option>
               <option value="usd">USD - United States Dollar</option>
               <option value="eur">EUR - Euro</option>
@@ -251,4 +252,4 @@ const Sell = () => {
   )
 }
 
-export default Sell
+export default Dashboard
