@@ -11,6 +11,7 @@ const American = () => {
     <div>
 <section id="black">
      <Mobileheader/>
+     <Header>
       <div  className="card hidden sm:flex">
         <div  className="top-section rounded-none">
           <div  className="border"></div>
@@ -18,16 +19,15 @@ const American = () => {
             <div  className="logo">
                 <Mylogo/>
             </div>
-            <Header/>
             <Username/>
           </div>
           <div  className="flex justify-center items-center mx-auto p-10">
             <div  className="w-[45%] ml-5">
               <img
                  className="w-[400px] rounded-lg transform transition duration-500 hover:scale-110 hover:shadow-xl"
-                src="src/assets/SVG/americanexpresspng.svg"
-                alt="Gift Card Image"
-              />
+                 src="src/assets/SVG/americanexpresspng.svg"
+                 alt="Gift Card Image"
+                 />
             </div>
 
             <div  className="w-1/2 pl-8">
@@ -47,6 +47,7 @@ const American = () => {
           </div>
         </div>
       </div>
+      </Header>
     </section>
     <Countryrates/>
     <Footer/>

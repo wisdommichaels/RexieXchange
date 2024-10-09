@@ -9,7 +9,8 @@ const TestimonialCard: React.FC<{ name: string, role:string, thumbnail:string, t
                     </div>
                 </div>
                   <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">{testimony}</p>
-            </div>  )
+        </div>  
+    )
 }
 
 export default TestimonialCard

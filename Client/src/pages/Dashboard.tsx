@@ -10,6 +10,8 @@ const Dashboard = () => {
     <div>
    <section id="black">
         <Mobileheader/>
+        <Header>    
+
           <section  className="sm:hidden w-full">
             <div  className="shadow-lg p-6 rounded-lg mx-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                 <h2  className="text-[20px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
@@ -45,11 +47,11 @@ const Dashboard = () => {
           <div  className="logo">
             <Mylogo/>
           </div>
-           <Header/>
             <Username/>   
           </div>
         </div>
       </div>
+        </Header>
     </section>
 
     <section  className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex justify-center items-center w-[95%] sm:w-full m-auto mt-2 rounded-lg sm:rounded-none sm:p-7">

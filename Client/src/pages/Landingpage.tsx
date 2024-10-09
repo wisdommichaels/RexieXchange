@@ -2,9 +2,11 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
+import Mobileheader from "../components/Mobileheader"
 function Landingpage() {
   return (
     <div>
+    <Mobileheader/>
     <Header>
     <div className="carousel-container">
         <div className="carousel-track">
@@ -250,159 +252,15 @@ function Landingpage() {
             <p className="text-[#aeaeb1] font-normal sm:text-[22px] text-[14px]  ">Read what our clients have to say</p>
         </div>
         <div className="track sm:mt-5 mt-3">
-          <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-                <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                        <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Wisdom Michael</p>
-                        <p className="sm:text-[12px] text-[10px] leading-3">Software Developer</p>
-                    </div>
-                </div>
-                <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">This is by far the best gift card redeeming site I've used. The platform is intuitive, and I loved the instant confirmation with good rate. I'll definitely be using it again!...</p>
-            </div>
-          {/* <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-                <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Teslim Musa</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Web Designer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"Redeeming my gift card on this site was a breeze! The process was straightforward, and I received my rewards instantly. Super convenient!"...</p>
-            </div> */}
-            <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-            <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-            <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-         {/* <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5"></p>
-                       <p className="sm:text-[12px] text-[10px] leading-3"></p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...</p>
-            </div> */}
-         {/* <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-                
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Augustine Anhike</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Frontend Web Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"I was impressed with how smooth the redemption process was on this site. The instructions were clear, and I got my credits in minutes. Great experience!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-                
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Nikhil Alzare</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Backend Software Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"I’m so happy with how easy it was to redeem my gift card on this site. Everything was seamless, and I had my reward in no time. Excellent service!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Bethel json</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">UX/UI Designer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"What a fantastic experience! This site made redeeming my gift card so simple. I loved the variety of options I could choose from, and the process was fast and efficient"...</p>
-            </div> */}
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Mr David O</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Fullstack Software Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"This website makes it so easy to redeem gift cards! I love how quickly I can convert them into rewards. Plus, the platform is user-friendly and secure."...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-             
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Wisdom Michael</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Software Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"This is by far the best gift card redeeming site I've used. The platform is intuitive, and I loved the instant confirmation with good rate. I'll definitely be using it again!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               <div className="ml-10 absolute"><img src="src/assets/svg1.svg" alt=""/></div>
-              <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                   <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                   <div className="line-clamp-3 px-2">
-                      <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Teslim Musa</p>
-                      <p className="sm:text-[12px] text-[10px] leading-3">Web Designer</p>
-                   </div>
-               </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"Redeeming my gift card on this site was a breeze! The process was straightforward, and I received my rewards instantly. Super convenient!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Kola Wole</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">AI Programmer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-2 h-[1lh] overflow-hidden mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px] text-white">"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-         
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Augustine Anhike</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Frontend Web Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"I was impressed with how smooth the redemption process was on this site. The instructions were clear, and I got my credits in minutes. Great experience!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-            
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Nikhil Alzare</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Backend Software Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"I’m so happy with how easy it was to redeem my gift card on this site. Everything was seamless, and I had my reward in no time. Excellent service!"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-            
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Bethel json</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">UX/UI Designer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-5 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"What a fantastic experience! This site made redeeming my gift card so simple. I loved the variety of options I could choose from, and the process was fast and efficient"...</p>
-            </div>
-         <div className="carousel-card w-[95%] h-[130px] sm:h-full sm:w-[45%] bg-gradient-to-r from-[#a7b4ca] to-[#6d87ad] rounded-md sm:m-auto sm:ml-2 sm:mr-2 ml-1 mr-1 py-3 sm:px-0 px-3 flex-col justify-center items-center">
-               <div className="flex items-center sm:ml-9 ml-4 sm:pt-5">
-                    <div className="sm:w-10 w-8"><img src="src/assets/SVG/Ellipse 21.svg" alt=""/></div>
-                    <div className="line-clamp-3 px-2">
-                       <p className="sm:text-[18px] text-[12px] font-semibold leading-5">Mr David O</p>
-                       <p className="sm:text-[12px] text-[10px] leading-3">Fullstack Software Developer</p>
-                    </div>
-                </div>
-                  <p className="line-clamp-2 mt-1.5 sm:mb-5 mb-5 sm:ml-8 sm:text-[18px] text-[14px]">"This website makes it so easy to redeem gift cards! I love how quickly I can convert them into rewards. Plus, the platform is user-friendly and secure."...</p>
-            </div>
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          
         </div>
       </section>
   <Footer/>

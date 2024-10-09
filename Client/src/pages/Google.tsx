@@ -11,6 +11,7 @@ const Google = () => {
     <div>
   <section id="black">
       <Mobileheader/>
+      <Header>
       <div  className="card hidden sm:flex">
         <div  className="top-section rounded-none">
           <div  className="border"></div>
@@ -18,7 +19,6 @@ const Google = () => {
             <div  className="logo">
                 <Mylogo/>
             </div>
-           <Header/>
            <Username/>
           </div>
           <div  className="flex justify-center items-center mx-auto p-10">
@@ -46,6 +46,7 @@ const Google = () => {
           </div>
         </div>
       </div>
+      </Header>
     </section>
     <Countryrates/>
     <Footer/>
