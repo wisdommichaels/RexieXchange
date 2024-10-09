@@ -1,29 +1,37 @@
 
 import Footer from "../components/Footer"
-import Header from "../components/Header"
+// import Header from "../components/Header"
 import Mylogo from "../components/Mylogo"
 import Username from "../components/Username"
 import Mobileheader from "../components/Mobileheader"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
-  document.addEventListener('DOMContentLoaded', function() {
+  const Navigate = useNavigate() 
+  const goaway = () => {
+    console.log("i am here");
+    
+    Navigate('village')
+  }
+    
+    const revealOnScroll = () => {      
+      const triggerBottom = window.innerHeight * 0.85;
+      const cards = document.querySelectorAll('.scroll-card');
+        cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
 
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    const cards = document.querySelectorAll('.scroll-card');
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
+            if (cardTop < triggerBottom) {
+                card.classList.add('show');
+            } else {
+                card.classList.remove('show');
+            }
+        });
+    };
 
-        if (cardTop < triggerBottom) {
-            card.classList.add('show');
-        } else {
-            card.classList.remove('show');
-        }
-    });
-  };
-  revealOnScroll();
-  window.addEventListener('scroll', revealOnScroll);
-});
+    // Trigger the function on page load and scroll
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
+
 
   return (
     <div>
@@ -47,7 +55,7 @@ const Home = () => {
     <div className="w-full max-w-md mb-2 pb-3 flex justify-center items-center">
       <select id="category" className="w-[60%] px-4 py-3 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#161D6F]">
       <option className="text-[14px] sm:text-[18px]" value="">Select Card Category</option>
-      <option className="text-[14px] sm:text-[18px]"  value="1">Razer Gift Card</option>
+      <option className="text-[14px] sm:text-[18px]"   value="1" onClick={goaway}> Razer Gift Card</option>
       <option className="text-[14px] sm:text-[18px]"  value="2">Apple&iTunes</option>
       <option className="text-[14px] sm:text-[18px]"  value="3">Amazon Gift Card</option>
       <option className="text-[14px] sm:text-[18px]"  value="4">Steam Gift Card</option>
@@ -83,7 +91,7 @@ const Home = () => {
           <div className="w-[70%] mb-8 flex justify-center items-center">
             <select id="category" className="w-[50%] px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E7500F]">
             <option className="text-[14px] sm:text-[18px]" value="">Select GiftCard Category</option>
-            <option className="text-[14px] sm:text-[18px]"  value="1">Razer Gift Card</option>
+            <option className="text-[14px] sm:text-[18px]"   value="1" onClick={goaway}> Razer Gift Card</option>
             <option className="text-[14px] sm:text-[18px]"  value="2">Apple&iTunes</option>
             <option className="text-[14px] sm:text-[18px]"  value="3">Amazon Gift Card</option>
             <option className="text-[14px] sm:text-[18px]"  value="4">Steam Gift Card</option>
@@ -101,9 +109,9 @@ const Home = () => {
       <div className="logo">
       <Mylogo/>
       </div>
-        <Header>
+        {/* <Header>
           stuff
-        </Header>
+        </Header> */}
         <Username/>
       </div>
     </div>

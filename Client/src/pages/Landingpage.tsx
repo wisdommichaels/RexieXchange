@@ -2,11 +2,11 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
-import Mobileheader from "../components/Mobileheader"
+// import Mobileheader from "../components/Mobileheader"
 function Landingpage() {
   return (
     <div>
-    <Mobileheader/>
+    {/* <Mobileheader/> */}
     <Header>
     <div className="carousel-container">
         <div className="carousel-track">
