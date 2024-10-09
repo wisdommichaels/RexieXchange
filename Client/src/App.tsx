@@ -6,25 +6,26 @@ import NotFound from './pages/NotFound'
 import Razergold from './pages/Razergold'
 import Apple from './pages/Apple'
 import Amazon from './pages/Amazon'
-import Landingpage from './pages/landingpage'
+import Landingpage from './pages/Landingpage'
 import American from './pages/American'
 import Ebay from './pages/Ebay'
 import Google from './pages/Google'
-import Mastercard from './pages/MAstercard'
+import Mastercard from './pages/Mastercard'
 import Playstation from './pages/Playstation'
 import Steam from './pages/Steam'
 import Vanilla from './pages/Vanilla'
 import Walmart from './pages/Walmart'
 import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
-import Login from './pages/login'
+import Login from './pages/Login'
+import { useState } from 'react'
 
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<HomeRoute/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<Sell/>}/>
@@ -48,3 +49,10 @@ function App() {
 }
 
 export default App
+
+
+const HomeRoute = () => {
+  const [isloggedin, setIsLoggedin] = useState(true)
+  // setIsLoggedin(true)
+  return isloggedin?<Home/>:<Landingpage/> 
+}
