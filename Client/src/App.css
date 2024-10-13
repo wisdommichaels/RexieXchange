@@ -37,7 +37,6 @@ body {
 }
 
 .card .top-section {
-  /* height: 530px; */
   width: 98%;
   border-radius: 40px;
   display: flex;
@@ -1019,4 +1018,14 @@ font-size: 13px;
 
 .signup {
   transform: rotateY(180deg);
+}
+
+
+.dropdown-menu {
+  display: none;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }

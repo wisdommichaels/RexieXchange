@@ -1,67 +1,14 @@
 import { Link } from "react-router-dom";
 import Mylogo from "./Mylogo";
 import Username from "./Username";
-const Navbar = () => {
-  return (
-    <nav className="nav mt-1">
-      <ul>
-        <li>
-          <Link to={"/"} className="focus:text-[#E7500F]">
-            Home
-          </Link>
-        </li>
-        <div className="menu">
-          <div className="item">
-            <a href="#" className="link">
-              <span> Gift Card </span>
-              <svg viewBox="0 0 360 360" xmlSpace="preserve">
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    id="XMLID_225_"
-                    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
-                  ></path>
-                </g>
-              </svg>
-            </a>
-            <div className="submenu">
-              <div className="submenu-item">
-                <Link to={"/sell"} className="submenu-link">
-                  Sell Gift Card
-                </Link>
-              </div>
-              <div className="submenu-item">
-                <Link to={"/buy"} className="submenu-link">
-                  {" "}
-                  Buy Gift Card{" "}
-                </Link>
-              </div>
-              <div className="submenu-item">
-                <Link to={"/checkrate"} className="submenu-link">
-                  {" "}
-                  Check Rate{" "}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <li>
-          <Link to={"/Blog"}> Blog </Link>
-        </li>
-        <li>
-          <Link to={"/dashboard"}> Dashboard </Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+import Navbar from "./Navbar";
 
 const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   let isloggedin = true;
   return (
     <section id="black">
       {isloggedin ? (
-        <div className="bg-[#161D6F] px-4 py-6  sm:hidden  flex justify-between items-center">
+        <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
           <Username />
         </div>
       ) : (
@@ -108,9 +55,9 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div className="logo">
               <Mylogo />
             </div>
-            <Navbar />
+            <Navbar/>
             {isloggedin ? (
-              <Username />
+              <Username/>
             ) : (
               <div className="logins flex justify-between items-center gap-3 mr-8 mt-3">
                 <Link

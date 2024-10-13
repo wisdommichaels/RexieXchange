@@ -1,36 +1,12 @@
 import Countryrates from "../components/Countryrates"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-import { Link } from "react-router-dom"
-import Mylogo from "../components/Mylogo"
-import Username from "../components/Username"
-
 
 const Vanilla = () => {
   return (
     <div>
  <section id="black">
-      <nav  className="bg-[#161D6F] p-4 rounded-b-lg sm:hidden pt-8">
-        <div  className="flex justify-between items-center ml-3">
-          <span  className="text-white text-xl font-semibold ml-">GiftHub</span>
-          <img src="https://via.placeholder.com/150" alt="User Image"  className=" w-10 mr-3 h-10 rounded-full object-cover"/>
-        </div>
-        <div id="menu"  className="mt-4 flex justify-center gap-5 text-[14px] items-center text-white">
-        <Link to={'/'} className="   font-bold hover:text-gray-300 underline underline-offset-2 text-[#E7500F]">Home</Link>
-        <Link to={'/sell'} className=" text-white  hover:text-gray-300"> Sell Gift Card</Link>
-        <Link to={'/dashboard'}  className=" text-white  hover:text-gray-300">Dashboard</Link>
-        </div>
-      </nav>
-      <div  className="card hidden sm:flex">
-        <div  className="top-section rounded-none">
-          <div  className="border"></div>
-          <div  className="icons">
-            <div  className="logo">
-                <Mylogo/>
-            </div>
-          <Header/>
-         <Username/>
-          </div>
+    <Header>
           <div  className="flex justify-center items-center mx-auto p-10">
             <div  className="w-[45%] ml-5">
               <img
@@ -54,9 +30,11 @@ const Vanilla = () => {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+      </Header>
     </section>
+    <h2  className="md:text-2xl text-[14px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg sm:rounded-t-lg w-full sm:w-[98%] mx-auto pt-8">
+        Countries Trading Vanilla Gift Cards and Their Rates
+      </h2>
     <Countryrates/>
     <Footer/>
     </div>

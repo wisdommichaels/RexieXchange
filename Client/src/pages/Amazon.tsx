@@ -12,16 +12,7 @@ const Amazon = () => {
 <section id="black">
       <Mobileheader/>
       <Header>
-      <div  className="card hidden sm:flex">
-        <div  className="top-section rounded-none">
-          <div  className="border"></div>
-          <div  className="icons">
-            <div  className="logo">
-                <Mylogo/>
-            </div>
-           <Username/>
-          </div>
-          <div  className="flex justify-center items-center mx-auto p-10">
+          <div  className="flex justify-center items-center mx-auto p-10 mt-16">
             <div  className="w-[45%] ml-5">
               <img className="w-[400px] rounded-lg transform transition duration-500 hover:scale-110 hover:shadow-xl"
                 src="src/assets/SVG/amazonpng.svg"
@@ -44,10 +35,11 @@ const Amazon = () => {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-         </Header>
+    </Header>
 </section>
+<h2  className="md:text-2xl text-[14px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg sm:rounded-t-lg w-full sm:w-[98%] mx-auto pt-8">
+        Countries Trading Amazon Gift Cards and Their Rates
+      </h2>
     <Countryrates/>
     <Footer/>
     {/* <script>

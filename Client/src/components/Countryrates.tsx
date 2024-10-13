@@ -3,10 +3,8 @@ import { Link } from "react-router-dom"
 const Countryrates = () => {
   return (
     <div>
-    <section  className="w-full sm:w-[98%] mx-auto bg-white p-3 sm:p-8 sm:shadow-lg sm:rounded-lg">
-      <h2  className="md:text-2xl text-[14px] font-bold text-gray-800 mb-8 text-center">
-        Countries Trading Gift Cards and Their Rates
-      </h2>
+    <section  className="w-full sm:w-[98%] mx-auto bg-white p-3 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
+    
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6">Currency Code</div>
@@ -14,7 +12,7 @@ const Countryrates = () => {
       </div>
 
         <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
                 <svg  className="w-[40%] sm:w-[9%]" 
                 xmlns="http://www.w3.org/2000/svg"
@@ -148,10 +146,10 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
      <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -224,11 +222,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" >
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -287,11 +285,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -357,11 +355,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
        
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -404,11 +402,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
     
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" >
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -500,11 +498,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" >
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -588,11 +586,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" >
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -631,11 +629,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -726,11 +724,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" >
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -777,11 +775,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div> 
     
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -825,11 +823,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -884,11 +882,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div> 
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-         <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+          <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -929,11 +927,11 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div> 
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
             <svg  className="w-[40%] sm:w-[9%]"
               xmlns="http://www.w3.org/2000/svg"
@@ -975,13 +973,13 @@ const Countryrates = () => {
               Sell
             </Link>
           </div>
-        </a>
+          </Link>
     </div>
 </section>
 
 <section id="additionalRows"  className="space-y-4 hidden">
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1033,11 +1031,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
     
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1075,11 +1073,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1118,11 +1116,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div> 
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1177,11 +1175,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
         
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1220,11 +1218,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1267,11 +1265,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1310,11 +1308,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
           
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1408,11 +1406,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1454,11 +1452,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
           
     <div   className="space-y-2 sm:px-8 lg:px-10">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1504,11 +1502,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1547,11 +1545,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
         
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1588,11 +1586,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1654,11 +1652,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
           
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1716,11 +1714,11 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
           
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
-        <a  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1" href="">
+         <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1759,7 +1757,7 @@ const Countryrates = () => {
                 Sell
               </Link>
             </div>
-        </a>
+          </Link>
     </div>
 
 </section>

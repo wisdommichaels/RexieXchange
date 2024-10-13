@@ -2,13 +2,11 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
-// import Mobileheader from "../components/Mobileheader"
 function Landingpage() {
   return (
     <div>
-    {/* <Mobileheader/> */}
     <Header>
-    <div className="carousel-container">
+    <div className="carousel-container overflow-x-hidden">
         <div className="carousel-track">
           <div className="carousel-slide">
           <Link to={'/'} className="text-none"><img src="src/assets/banner1.png" alt="Image 1"/></Link>
@@ -20,8 +18,8 @@ function Landingpage() {
     <Link to={'/'} className="text-none"><img src="src/assets/banner3.png" alt="Image 1"/></Link>
     </div>
   </div>
-  <button className="carousel-button carousel-button-left w-5 h-0 sm:w-12 sm:h-12 text-[10px] sm:text-[15px] pb-5 sm:pb-0 sm:pt-0">{"<"}</button>
-  <button className="carousel-button carousel-button-right w-5 h-0 sm:w-12 sm:h-12 text-[10px] sm:text-[15px] pb-5 sm:pb-0 sm:pt-0">{">"}</button>
+  <Link to={'/'} className="carousel-button carousel-button-left w-5 h-0 sm:w-12 sm:h-12 text-[10px] sm:text-[15px] pb-5 sm:pb-0 sm:pt-0">{"<"}</Link>
+  <Link to={'/'}className="carousel-button carousel-button-right w-5 h-0 sm:w-12 sm:h-12 text-[10px] sm:text-[15px] pb-5 sm:pb-0 sm:pt-0">{">"}</Link>
 
   <div className="carousel-indicators">
     <div className="carousel-indicator active" data-slide="0"></div>

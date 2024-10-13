@@ -2,30 +2,30 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#161D6F] pt-16 overflow-x-hidden">
-  <section className="flex justify-between items-center bg-[#DDE4EF] pb-5 rounded-t-[40px] w-[97%] m-auto ">
-      <div className="flex justify-center items-center mt-20 pl-20 ">
-          <h2 className="text-[#161D6F] text-2xl"><b>Register now so you don't miss <br/> our Gift Card hot deals</b></h2>
+    <footer className="bg-[#161D6F] sm:pt-16 overflow-x-hidden">
+  <section className="sm:flex justify-between items-center bg-[#DDE4EF] pb-5 sm:rounded-t-[40px] w-[97%] m-auto ">
+      <div className="flex justify-center items-center mt-5 sm:mt-20 mx-auto ">
+          <h2 className="text-[#161D6F] sm:text-2xl text-12 text-center sm:text-left pt-4 sm:pt-0"><b>Register now so you don't miss <br/> our Gift Card hot deals</b></h2>
         </div>
-        <div className="flex justify-center items-center  mt-20 mr-24 w-[50%]">
-          <form action="" method="post" className="subscribe w-full flex justify-center items-center gap-2 border-[#99A2A5]">
-      <input className="input" type="email" name="email" id="email" placeholder="Enter your Email"/>
-      <button className="bg-[#161D6F] px-3 py-3 mt-4   transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center">Subscribe Now</button>
+        <div className="flex justify-center items-center sm:mt-20 mx-auto sm:w-[50%] sm:pl-10">
+          <form action="" method="post" className="subscribe w-full flex justify-center items-center gap-3 sm:gap-0  border-[#99A2A5]">
+      <input className="w-1/2 input" type="email" name="email" id="email" placeholder="Enter your Email"/>
+      <Link to={"/"}  className=" bg-[#161D6F] sm:px-5 sm:py-3 px-2 py-3 rounded-lg text- mt-4 sm:ml-6 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center">Subscribe Now</Link>
   </form>
   </div>
 </section>
 
-<section className="flex justify-between bg-[#DDE4EF] pt-4 pb-8 w-[97%] m-auto"> 
-<nav className=" flex pl-20">
-    <ul className=" flex gap-8 text-[#161D6F]">
-    <Link to={'/'}>Home</Link>
-    <Link to={'/about'}>About</Link>
-    <Link to={'/blog'}>Blog</Link>
-    <Link to={'/contact'}>Contact</Link>
+<section className="sm:flex justify-between items-center bg-[#DDE4EF] sm:pt-5 pb-4 w-[97%] m-auto"> 
+<nav className=" flex justify-center items-center sm:ml-[65px] mb-4">
+    <ul className=" flex sm:gap-8 gap-12 text-[#161D6F]">
+    <Link to={'/'} className="hover:text-[#FA4A00]">Home</Link>
+    <Link to={'/about'} className="hover:text-[#FA4A00]">About</Link>
+    <Link to={'/blog'}className="hover:text-[#FA4A00]">Blog</Link>
+    <Link to={'/contact'}className="hover:text-[#FA4A00]">Contact</Link>
     </ul>
 </nav>
-<div className="flex gap-8 pr-24 text-white">
-  <ul className="example-2">
+<div className="flex justify-center items-center sm:gap-8  sm:mr-[80px] text-white">
+  <ul className="example-2 gap-6">
     <li className="icon-content">
       <a
         href="https://linkedin.com/"
@@ -119,11 +119,11 @@ const Footer = () => {
 </section>
 
 <section className="bg-[#DDE4EF] w-[97%]  m-auto">
-<div className="flex justify-center items-center border rounded-full border-[#161D6F] ml-20 mr-24"></div>
+<div className="flex justify-center items-center border rounded-full border-[#161D6F] w-[90%] mx-auto"></div>
 </section>
-<div className="w-[97%]  m-auto flex justify-between items-center bg-[#DDE4EF] pb-10 text-[#99A2A5] pt-6">
-<p className="ml-20">© 2024 Gifthub. All rights reserved.</p>
-<div className="flex gap-8 mr-24">
+<div className="w-[97%] text-center m-auto sm:flex justify-between items-center bg-[#DDE4EF] sm:pb-10 pb-5 text-[#99A2A5] pt-3">
+<p className="sm:ml-20">© 2024 Gifthub. All rights reserved.</p>
+<div className="flex gap-8 sm:mr-24 justify-center pt-2 ">
 <Link to={'/'}> Terms of Service</Link>
 <Link to={'/'}>Privacy Policy</Link>
 </div>

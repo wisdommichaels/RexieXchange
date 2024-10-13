@@ -1,7 +1,28 @@
+import axios from "axios";
+import { useState } from "react";
 import { Link } from "react-router-dom"
 function Login() {
-  const toggleForms = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+ const handleLogin = () => { 
+  // Make a request to your backend to handle the login logic
+  axios.post("http://localhost:4005/login", {
+    email,
+    password
+  }).then((response) => {
+    console.log(response.data)
+
+  })
+  .catch((error) => console.log(error));
+  
   }
+ 
+  function toggleForms(): void {
+  const container = document.querySelector('.rotate-container') as HTMLElement | null;
+  if (container) {
+    container.classList.toggle('show-signup');
+  }
+}
   return (
     <div className="bg-[#101035]">
           <div className="login-div">
@@ -21,14 +42,14 @@ function Login() {
         <Link to={'/'} className="media-icons"><i className="fa-brands fa-apple text-white"></i></Link>
         <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
         </div>
-        <form className="w-full flex flex-col justify-center items-center">
+        <form onSubmit={handleLogin} className="w-full flex flex-col justify-center items-center">
           <div className="mb-4 w-[85%] flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Email</label>
-            <input type="email" placeholder="Enter your E-mail" className="w-full sm:w-[50%] py-3 px-5 input"/>
+            <input type="email" placeholder="Enter your E-mail" value={email} onChange={e=>setEmail(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
           </div>
          <div className="w-[85%] sm:-w-[60%] flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Password</label>
-            <input type="password" placeholder="Enter your Password"className="w-full sm:w-[50%] py-3 px-5 input"/>
+            <input type="password" placeholder="Enter your Password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
           </div>
           <a className="text-[#161D6F] text-[12px] hover:underline" href="#">Forgot your password?</a>
           <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>

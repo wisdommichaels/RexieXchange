@@ -1,5 +1,5 @@
 import Footer from "../components/Footer"
-import Header from "../components/Header";
+import { Link } from "react-router-dom"
 
 const Settings = () => {
     const loadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -10,46 +10,22 @@ const Settings = () => {
       };
   return (
     <div>
-        <nav className="bg-[#161D6F] shadow-lg rounded-b-lg sm:rounded-none">
-    <div className="containe mx-auto px-4 py-3 flex justify-between items-center">
-    <div className="flex items-center">
-    <img className="w-[50px] h-[50px] pb-12" src="src\assets\mylogo.png" alt="" />
-        <div className="flex-col justify-center items-center leading-4 pb-9">
-        <h1 className="font-bold text-[24px] text-white">GiftHub</h1>
-        <p className="text-[8px] text-white pl-1 font-bold">Exchange with Ease</p>
-        </div>
-    </div>
-
- 
-        <Header/>
-      {/* <div className="hidden md:flex space-x-8">
-        <a href="#" className="text-white  hover:text-[#FA4A00]">Home</a>
-        <a href="#" className="text-white hover:text-[#FA4A00]">Giftcard</a>
-        <a href="#" className="text-white  hover:text-[#FA4A00]">Blog</a>
-        <a href="#" className="text-white hover:text-[#FA4A00]">Dashboard</a>
-      </div> */}
-
+        <nav className="bg-[#161D6F] shadow-lg py-3">
+    <div className="containe mx-auto px-4 py-3 flex justify-between items-center sm:mx-14">
+    <Link to={"/"} className="signup-button px-5 flex justify-center items-center gap-2 text-[11px] py-2 ">
+    <svg fill="#000000" width="10px" height="10px" viewBox="0 0 52 52" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z"/></svg>
+          BACK
+        </Link>
      
-      <div className="flex items-center space-x-4">
-        <img id="profile-pic" src="https://via.placeholder.com/50x50" alt="Profile Pic" className="h-12 w-12 rounded-full"/>
-        <span className="hidden md:inline text-gray-700 dark:text-gray-300">John Doe</span>
-        <button className="signup-button">
-          My Profile
-        </button>
+      <div className=" hidden sm:flex items-center space-x-1 mt-1">
+        <img id="profile-pic" src="https://via.placeholder.com/50x50" alt="Profile Pic" className="h-12 w-12 mt-2 rounded-full"/>
+        <span className="md:inline text-white pt-3">Wisdom Michael</span>
       </div>
     </div>
-
-  
-    <div id="menu" className="sm:hidden mt-2 pb-5 flex justify-center gap-5 text-[14px] items-center text-white">
-        <a href="#home" className="   font-bold hover:text-gray-300 ">Home</a>
-        <a href="#giftcard" className="  hover:text-gray-300"> Sell Gift Card</a>
-        <a href="#Dashboard" className=" hover:text-gray-300">Dashboard</a>
-      </div>
   </nav>
 
   <section className="flex-col justify-center items-center">
-    <div className=" bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-lg rounded-lg sm:w-[50%] sm:h-[100%] sm:my-8 p-6 flex-col justify-center items-center">
-       
+    <div className=" bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-lg sm:rounded-lg sm:w-[50%] sm:h-[100%] sm:my-8 p-6 flex-col justify-center items-center">
         <div className="flex justify-center items-center space-x-4 mb-4">
           <img id="profile-pic" className="h-12 w-12 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Profile Picture"/>
           <div>
@@ -60,7 +36,7 @@ const Settings = () => {
   
       
         <div className="mb-4 w-full flex-col justify-center items-center sm:w-[50%] m-auto">
-          <label htmlFor="username" className="block text-[#161D6F] font-semibold mb-1 text-center">Username</label>
+          <label htmlFor="username" className="block text-[#161D6F] font-semibold mb-1 text-center">Edit Username</label>
             <input className="p-3 input" type="text" id="username" placeholder="Enter your username"/>
         </div>
   

@@ -1,15 +1,12 @@
 import Countryrates from "../components/Countryrates"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-import Mobileheader from "../components/Mobileheader"
-
 
 const Mastercard = () => {
   return (
     <div>
-    <Mobileheader/>
     <Header>
-    <div  className="flex flex-col md:flex-row justify-center items-center mx-auto p-4 md:p-10">
+    <div  className="flex flex-col md:flex-row justify-center items-center mx-auto p-4 mt-[70px]">
             <div  className="w-full md:w-[45%] ml-0 md:ml-5 mb-4 md:mb-0">
               <img
                  className="w-full md:w-[400px] rounded-lg transform transition duration-500 hover:scale-110 hover:shadow-xl"
@@ -34,6 +31,9 @@ const Mastercard = () => {
             </div>
           </div>
     </Header>
+    <h2  className="md:text-2xl text-[14px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg sm:rounded-t-lg w-full sm:w-[98%] mx-auto pt-8">
+        Countries Trading Mastercard Gift Cards and Their Rates
+      </h2>
     <Countryrates/>
     <Footer/>
     </div>
