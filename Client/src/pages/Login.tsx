@@ -1,20 +1,25 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
- const handleLogin = () => { 
+ const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
   // Make a request to your backend to handle the login logic
-  axios.post("http://localhost:4005/login", {
+  axios.post("http://localhost:4005/api/auth/login", {
     email,
     password
   }).then((response) => {
     console.log(response.data)
-
+    navigate('/')
   })
-  .catch((error) => console.log(error));
-  
+  .catch((error) => {
+    console.log(error)
+    setError(error?.response?.data?.error)
+  });
   }
  
 //   function toggleForms(): void {
@@ -51,10 +56,11 @@ function Login() {
             <label className="text-[#161D6F] text-[14px]">Password</label>
             <input type="password" placeholder="Enter your Password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
           </div>
+          {error && <p>{error}</p>}
           <a className="text-[#161D6F] text-[12px] hover:underline" href="#">Forgot your password?</a>
           <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
         </form>
-        <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button>
+        {/* <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button> */}
       </div>
 
     
@@ -94,7 +100,7 @@ function Login() {
           <button type="submit" className="btnn w-full">Sign Up</button>
         </div>
         </form>
-        <button onClick={()=>toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button>
+        {/* <button onClick={()=>toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button> */}
       </div>
 
     </div>

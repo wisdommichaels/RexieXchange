@@ -114,7 +114,7 @@ const Home = () => {
         </svg>
       </div>
 
-      <div className="absolute mt-1 w-60 bg-white rounded-md shadow-lg dropdown-menu z-0">
+      <div className="absolute mt-1 w-60 bg-white rounded-md shadow-lg dropdown-menu z-[1000]">
       <Link to={"/razergold"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Razer Gift Card</Link>
       <Link to={"/apple"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Apple&iTunes</Link>
     <Link to={"/amazon"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Amazon Gift Card</Link>

@@ -55,6 +55,9 @@ export default App
 
 const HomeRoute = () => {
   const [isloggedin, setIsLoggedin] = useState(false)
-  // setIsLoggedin(true)
+  useState(() => {
+    setIsLoggedin(true)
+  })
+  
   return isloggedin?<Home/>:<Landingpage/> 
 }
