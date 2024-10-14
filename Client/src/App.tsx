@@ -19,7 +19,7 @@ import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
 import Login from './pages/Login'
 import { useState } from 'react'
-import Checkrate from './pages/checkrate'
+import Checkrate from './pages/Checkrate'
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<Sell/>}/>
-        <Route path='/checkrate' element={<Checkrate/>}/>
+        <Route path='/Checkrate' element={<Checkrate/>}/>
         <Route path='/razergold' element={<Razergold/>}/>
         <Route path='/apple' element={<Apple/>}/>
         <Route path='/amazon' element={<Amazon/>}/>
@@ -54,7 +54,7 @@ export default App
 
 
 const HomeRoute = () => {
-  const [isloggedin, setIsLoggedin] = useState(true)
+  const [isloggedin, setIsLoggedin] = useState(false)
   // setIsLoggedin(true)
   return isloggedin?<Home/>:<Landingpage/> 
 }

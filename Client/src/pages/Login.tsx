@@ -17,12 +17,12 @@ function Login() {
   
   }
  
-  function toggleForms(): void {
-  const container = document.querySelector('.rotate-container') as HTMLElement | null;
-  if (container) {
-    container.classList.toggle('show-signup');
-  }
-}
+//   function toggleForms(): void {
+//   const container = document.querySelector('.rotate-container') as HTMLElement | null;
+//   if (container) {
+//     container.classList.toggle('show-signup');
+//   }
+// }
   return (
     <div className="bg-[#101035]">
           <div className="login-div">

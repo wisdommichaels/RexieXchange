@@ -4,7 +4,7 @@ import Username from "./Username";
 import Navbar from "./Navbar";
 
 const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  let isloggedin = true;
+  let isloggedin = false;
   return (
     <section id="black">
       {isloggedin ? (
