@@ -26,7 +26,7 @@ body {
 .card {
   width: 100%;
   border-radius: 25px;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1021,11 +1021,11 @@ font-size: 13px;
 }
 
 
-.dropdown-menu {
+.dropdownn-menu {
   display: none;
 }
 
 
-.dropdown:hover .dropdown-menu {
+.dropdownn:hover .dropdown-menu {
   display: block;
 }

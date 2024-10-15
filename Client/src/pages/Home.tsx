@@ -5,6 +5,7 @@ import Username from "../components/Username"
 import Mobileheader from "../components/Mobileheader"
 import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
+import Dropdown from "../components/Dropdown"
 
 const Home = () => {
     const revealOnScroll = () => {      
@@ -31,9 +32,9 @@ const Home = () => {
         menu.classList.toggle('hidden');
       }
     });
-    
-    
 
+    
+  
   return (
     <div>
 <section id="black">
@@ -52,30 +53,8 @@ const Home = () => {
       </div>
       <input className="border-none py-1 cursor-text w-full focus:outline-none " type="text" placeholder="Search gift cards..."/> 
     </div>
-    <div className="dropdown">
-    <div className="w-full max-w-md mb-2 pb-3 flex justify-center items-center">
-    <div className="flex items-center justify-between w-60 px-4 py-2 bg-white  rounded-md cursor-pointer">
-        <span className="text-gray-700">Select a Giftcard option</span>
-
-        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </div>
-
-      <div className="absolute mt-1 w-60 bg-white rounded-md shadow-lg dropdown-menu z-0">
-      <Link to={"/razergold"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Razer Gift Card</Link>
-      <Link to={"/apple"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Apple&iTunes</Link>
-    <Link to={"/amazon"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Amazon Gift Card</Link>
-    <Link to={"/steam"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Steam Gift Card</Link>
-    <Link to={"/walmart"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Walmart Gift Card</Link>
-    <Link to={"/ebay"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">eBay Gift card</Link>
-    <Link to={"/american"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">American Express</Link>
-    <Link to={"/google"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Google Play Gift Card</Link>
-    <Link to={"/vanilla"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Vanilla Gift card</Link>
-    <Link to={"/playstation"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">PlayStation</Link>
-    <Link to={"/mastercard"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mastercard Gift Card</Link>
-  </div>
-    </div>
+    <div className="flex justify-center items-center">
+      <Dropdown/>
     </div>
   </div>
   </section>
@@ -103,34 +82,8 @@ const Home = () => {
             </div>
             <input className="w-full focus:outline-none"  type="text" placeholder="Search gift cards..."/> 
           </div>
-            
-
-    <div  className="dropdown">
-      <div className="flex items-center justify-between w-60 px-4 py-2 bg-white  rounded-md cursor-pointer">
-        <span className="text-gray-700">Select a Giftcard option</span>
-
-        <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </div>
-
-      <div className="absolute mt-1 w-60 bg-white rounded-md shadow-lg dropdown-menu z-[1000]">
-      <Link to={"/razergold"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Razer Gift Card</Link>
-      <Link to={"/apple"}className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Apple&iTunes</Link>
-    <Link to={"/amazon"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Amazon Gift Card</Link>
-    <Link to={"/steam"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Steam Gift Card</Link>
-    <Link to={"/walmart"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Walmart Gift Card</Link>
-    <Link to={"/ebay"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">eBay Gift card</Link>
-    <Link to={"/american"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">American Express</Link>
-    <Link to={"/google"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Google Play Gift Card</Link>
-    <Link to={"/vanilla"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Vanilla Gift card</Link>
-    <Link to={"/playstation"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">PlayStation</Link>
-    <Link to={"/mastercard"} className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Mastercard Gift Card</Link>
+          <Dropdown/>
   </div>
-    </div>
-  
-  </div>
-  
     </div>
   </div>
 </section>

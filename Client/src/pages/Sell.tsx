@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Username from "../components/Username";
-
 const Sell = () => {
   return (
     <div>
@@ -43,11 +42,11 @@ const Sell = () => {
     
           
           <div  className="sm:mb-0 mb-2 text-center sm:w-1/2">
-            <label  htmlFor="country"  className="text-sm text-[#161D6F] sm:text-[16px]  text-center">Country</label>
+            <label  htmlFor="country"  className="text-sm text-[#161D6F] sm:text-[16px]  text-center">Country/Currency Code</label>
             <select id="country" name="country"  className="custom-select custom-arrow w-full">
               <option value="">Select Country</option>
-              <option value="United States">United States</option>
-              <option value="United Kingdom">United Kingdom</option>
+              <option value="United States">USA/USD</option>
+              <option value="United Kingdom">UK/EUR</option>
               <option value="Canada">Canada</option>
               <option value="Germany">Germany</option>
               <option value="Japan">Japan</option>

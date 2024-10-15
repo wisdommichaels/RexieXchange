@@ -56,7 +56,7 @@ function Login() {
             <label className="text-[#161D6F] text-[14px]">Password</label>
             <input type="password" placeholder="Enter your Password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
           </div>
-          {error && <p>{error}</p>}
+          {error && <p className="">{error}</p>}
           <a className="text-[#161D6F] text-[12px] hover:underline" href="#">Forgot your password?</a>
           <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
         </form>
