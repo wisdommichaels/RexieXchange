@@ -18,8 +18,9 @@ import Walmart from './pages/Walmart'
 import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
 import Login from './pages/Login'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Checkrate from './pages/Checkrate'
+import { useAuthStore } from './store/authStore'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
         <Route path='/' element={<HomeRoute/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
-        <Route path='/sell' element={<Sell/>}/>
+        <Route path='/sell' element={<ProtectedRoutes> <Sell/> </ProtectedRoutes>}/>
         <Route path='/Checkrate' element={<Checkrate/>}/>
         <Route path='/razergold' element={<Razergold/>}/>
         <Route path='/apple' element={<Apple/>}/>
@@ -52,6 +53,16 @@ function App() {
 
 export default App
 
+const ProtectedRoutes: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const {user, checkAuth} = useAuthStore()
+  useEffect(() => {
+    if(!user){
+      checkAuth()
+    }
+  })
+  return user?children:<Login/>
+
+}
 
 const HomeRoute = () => {
   const [isloggedin, setIsLoggedin] = useState(false)

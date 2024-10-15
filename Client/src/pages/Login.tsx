@@ -1,25 +1,21 @@
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
+import { useAuthStore } from "../store/authStore";
 function Login() {
+  const { login, error } = useAuthStore();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
- const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   // Make a request to your backend to handle the login logic
-  axios.post("http://localhost:4005/api/auth/login", {
-    email,
-    password
-  }).then((response) => {
-    console.log(response.data)
-    navigate('/')
-  })
-  .catch((error) => {
-    console.log(error)
-    setError(error?.response?.data?.error)
-  });
+  try {
+    await login(email, password);
+    navigate('/');
+  } catch (error) {
+    console.log(error);    
+  }
+  
   }
  
 //   function toggleForms(): void {
