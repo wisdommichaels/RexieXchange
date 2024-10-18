@@ -37,16 +37,17 @@ export const useAuthStore = create<AuthStore>((set) => ({
     
     
     checkAuth: async () => {
-        try {
-            const response = await axios(`${api_url}/checkAuth`);
-            set({ user: response.data.user });
-        } catch (error) {
-            if (axios.isAxiosError(error) && error.response?.status === 401) {
-                window.location.href = '/login';
-                set({ user: null });
+        set({user: {name: 'John Doe'}})
+    //     try {
+    //         const response = await axios(`${api_url}/checkAuth`);
+    //         set({ user: response.data.user });
+    //     } catch (error) {
+    //         if (axios.isAxiosError(error) && error.response?.status === 401) {
+    //             window.location.href = '/login';
+    //             set({ user: null });
             
-        }
-    }
+    //     }
+    // }
     }
 }))
 

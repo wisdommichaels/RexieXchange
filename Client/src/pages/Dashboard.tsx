@@ -3,11 +3,43 @@ import Header from "../components/Header"
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import Mobiledashboard from "../components/Mobiledashboard";
+import Username from "../components/Username";
+import Mobilefooter from "../components/Mobilefooter";
 
 const Dashboard = () => {
   return (
     <div>
+        <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3">
+        <Link
+          to={"/"}
+          className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3 "
+        >
+          <svg className="sm-w-10 sm:h-10"
+            fill="#000000"
+            width="14px"
+            height="14px"
+            viewBox="0 0 52 52"
+            data-name="Layer 1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z" />
+          </svg>
+          <span className="hidden sm:block">BACK</span>
+        </Link>
+
+        <h2 className=" sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24 ">
+          DashBoard
+        </h2>
+
+        <div className="hidden sm:block">
+          <Username />
+        </div>
+      </nav>
+      <Mobiledashboard/>
+
    <section id="black">
+    <div className="hidden sm:block">
         <Header>    
         <div  className="sm:flex items-center justify-center sm:mt-24 mt-2">
                 <div  className="bg-white shadow-lg w-[95%] sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
@@ -24,7 +56,7 @@ const Dashboard = () => {
                 </div>
             </div>
         </Header>
-     <Mobiledashboard/>
+     </div>
     </section>
     <section  className="container mx-auto p-4">
         <h1  className="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
@@ -96,11 +128,64 @@ const Dashboard = () => {
                   <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
                 </td>
               </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
+              <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
+                  <td  className="py-3 px-4">Vanilla</td>
+                  <td  className="py-3 px-4">$10</td>
+                  <td  className="py-3 px-4">2024-09-12</td>
+                  <td  className="py-3 px-4">
+                  <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <Footer/>
+      <Mobilefooter/>
+
+      <div className="hidden sm:block">
+        <Footer/>  
+      </div>
+
     </div>
   )
 }

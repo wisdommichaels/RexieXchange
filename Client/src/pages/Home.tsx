@@ -40,9 +40,10 @@ const Home = () => {
 <section id="black">
        <Mobileheader/>
   <section className="sm:hidden">
-    <h1 className="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-5 text-white text-center m- mb-0">Trade your <span className="text-[#161D6F] underline">Gift Card</span> all in <br/> one place</h1>
-    <div className="flex-col justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m- mt-0 rounded-b-lg">
-    <div className="w-[70%] rounded-lg gap-2 shadow-sm mb-3 py-1 m-auto flex justify-start items-center bg-white">
+    <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-2 text-white text-center mb-0">Trade your <span className="text-[#161D6F]">Gift Card</span> all in <br/> one place</h1>
+    <h1 className="sm:text-[50px] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] text-[16px] font-bold p-2 pt-3 text-white text-center mb-0">Trade your <span className="text-[#161D6F]">Gift Card</span> all in one place</h1>
+    <div className="flex-col justify-center items-center mb-3 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] rounded-b-lg">
+    <div className="w-[80%] rounded-lg gap-2 shadow-sm mb-3 py-1 m-auto flex justify-start items-center bg-white">
       <div className="flex items-center  pointer-events-none bg-white pl-5 rounded-lg ">
         <svg className="text-gray-400" xmlns="http://www.w3.org/2000/svg"  
         viewBox="0 0 50 50" 
@@ -53,7 +54,7 @@ const Home = () => {
       </div>
       <input className="border-none py-1 cursor-text w-full focus:outline-none " type="text" placeholder="Search gift cards..."/> 
     </div>
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center pb-5">
       <Dropdown/>
     </div>
   </div>
@@ -68,8 +69,8 @@ const Home = () => {
       <Navbar/>
         <Username/>
       </div>
-      <div className="  flex flex-col justify-center items-center w-full p-10 mb-6">
-            <h1 className="sm:text-[50px] text-[16px] font-bold pt-5 text-white mb-4 text-center">Trade your <span className="text-[#E7500F] underline">Gift Card</span> all in <br/> one place</h1>
+      <div className=" flex flex-col justify-center items-center w-full p-10 mb-6">
+            <h1 className="sm:text-[50px] text-[16px] font-bold pt-8 text-white mb-4 text-center">Trade your <span className="text-[#E7500F] underline">Gift Card</span> all in <br/> one place</h1>
             
           <div className="searchbar w-[50%] gap-2 mb-6 flex justify-start items-center">
             <div className="flex items-center pointer-events-none bg-white  ">
@@ -92,7 +93,7 @@ const Home = () => {
     <h1 className="font-bold text-[12px] sm:text-[14px] text-white">Gift Cards</h1>
   </div>
 </section>
-<section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto w-[98%] mb-8 p-5 sm:p-0">
+<section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto w-[98%] mb-8 px-5 sm:p-0">
   <div className="flex flex-wrap justify-center items-center gap-8 py-8  mt-4 rounded-2xl">
     <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
       <div className="relative group mt-2 mr-2">

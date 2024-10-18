@@ -27,24 +27,24 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<HomeRoute/>}/>
+        <Route path='/' element={<ProtectedRoutes> <HomeRoute/> </ProtectedRoutes>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<ProtectedRoutes> <Sell/> </ProtectedRoutes>}/>
-        <Route path='/Checkrate' element={<Checkrate/>}/>
-        <Route path='/razergold' element={<Razergold/>}/>
-        <Route path='/apple' element={<Apple/>}/>
-        <Route path='/amazon' element={<Amazon/>}/>
-        <Route path='/american' element={<American/>}/>
-        <Route path='/ebay' element={<Ebay/>}/>
-        <Route path='/google' element={<Google/>}/>
-        <Route path='/mastercard' element={<Mastercard/>}/>
-        <Route path='/playstation' element={<Playstation/>}/>
-        <Route path='/steam' element={<Steam/>}/>
-        <Route path='/vanilla' element={<Vanilla/>}/>
-        <Route path='/walmart' element={<Walmart/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/settings' element={<Settings/>}/>
+        <Route path='/Checkrate' element={<ProtectedRoutes><Checkrate/></ProtectedRoutes>}/>
+        <Route path='/razergold' element={<ProtectedRoutes><Razergold/></ProtectedRoutes>}/>
+        <Route path='/apple' element={<ProtectedRoutes><Apple/></ProtectedRoutes>}/>
+        <Route path='/amazon' element={<ProtectedRoutes><Amazon/></ProtectedRoutes>}/>
+        <Route path='/american' element={<ProtectedRoutes><American/></ProtectedRoutes>}/>
+        <Route path='/ebay' element={<ProtectedRoutes><Ebay/></ProtectedRoutes>}/>
+        <Route path='/google' element={<ProtectedRoutes><Google/></ProtectedRoutes>}/>
+        <Route path='/mastercard' element={<ProtectedRoutes><Mastercard/></ProtectedRoutes>}/>
+        <Route path='/playstation' element={<ProtectedRoutes><Playstation/></ProtectedRoutes>}/>
+        <Route path='/steam' element={<ProtectedRoutes><Steam/></ProtectedRoutes>}/>
+        <Route path='/vanilla' element={<ProtectedRoutes><Vanilla/></ProtectedRoutes>}/>
+        <Route path='/walmart' element={<ProtectedRoutes><Walmart/></ProtectedRoutes>}/>
+        <Route path='/dashboard' element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>}/>
+        <Route path='/settings' element={<ProtectedRoutes><Settings/></ProtectedRoutes>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </>
@@ -61,14 +61,10 @@ const ProtectedRoutes: React.FC<{ children: React.ReactNode }> = ({ children }) 
     }
   })
   return user?children:<Login/>
-
+  
 }
 
-const HomeRoute = () => {
-  const [isloggedin, setIsLoggedin] = useState(false)
-  useState(() => {
-    setIsLoggedin(true)
-  })
-  
-  return isloggedin?<Home/>:<Landingpage/> 
+const HomeRoute = ({}) => {
+  const {user} = useAuthStore()  
+  return user?<Home/>:<Landingpage/> 
 }

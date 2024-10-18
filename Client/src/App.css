@@ -507,15 +507,11 @@ ul {
   height: 100%;
 }
 
-.example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
   background-color: #0274b3;
 }
 
-.example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"] ~ .tooltip {
-  background-color: #24262a;
-}
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
   background: linear-gradient(
@@ -528,10 +524,12 @@ ul {
     #fd1f1f
   );
 }
-.example-2 .icon-content a[data-social="NPM"] .filled,
-.example-2 .icon-content a[data-social="NPM"] ~ .tooltip {
-  background-color: #ff0000;
+
+.example-2 .icon-content a[data-social="twitter"] .filled,
+.example-2 .icon-content a[data-social="twitter"] ~ .tooltip {
+  background-color: #24262a;
 }
+
 
 /* login/signup css */
 

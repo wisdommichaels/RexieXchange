@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Username = () => {
   return (
     <div>
-        <div className="logins flex justify-between items-center gap-2 mr-6">
+        <div className="logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
   <img id="profile-pic" src="https://via.placeholder.com/150" alt="User Image" className="sm:w-12 w-10 sm:h-12 mt-2 h-10 rounded-full object-cover" />
   <div className="group relative">
     <div className="group relative dropdown flex">
@@ -16,10 +16,11 @@ const Username = () => {
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </div>
-      <div className="absolute right-0 mt-12 bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-48 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
-        <ul className="py-2">
+    </div>
+      <div className="absolute right-0  bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-30 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
+        <ul className="py-2 sm:pt-10">
           <li>
-            <Link to={'/settings'} className="block w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
+            <Link to={'/settings'} className="block text-16 w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
               Account Settings
             </Link>
           </li>
@@ -30,9 +31,8 @@ const Username = () => {
           </li>
         </ul>
       </div>
-    </div>
   </div>
-</div>
+        </div>
 
     </div>
   )
