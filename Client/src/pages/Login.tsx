@@ -18,12 +18,17 @@ function Login() {
   
   }
  
-//   function toggleForms(): void {
-//   const container = document.querySelector('.rotate-container') as HTMLElement | null;
-//   if (container) {
-//     container.classList.toggle('show-signup');
-//   }
-// }
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+  function toggleForms(): void {
+  const container = document.querySelector('.rotate-container') as HTMLElement | null;
+  if (container) {
+    container.classList.toggle('show-signup');
+  }
+}
   return (
     <div className="bg-[#101035]">
           <div className="login-div">
@@ -50,13 +55,31 @@ function Login() {
           </div>
          <div className="w-[85%] sm:-w-[60%] flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Password</label>
-            <input type="password" placeholder="Enter your Password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
+            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
+            <input
+              type={passwordVisible ? "text" : "password"}
+              id="password"
+              className=" focus:outline-none bg-transparent "
+              placeholder="Enter your password" 
+              value={password} onChange={e=>setPassword(e.target.value)}
+            />
+            <div
+              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {passwordVisible ? (
+               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
+              ) : (
+                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
+              )}
+            </div>
+          </div>
           </div>
           {error && <p className="">{error}</p>}
-          <a className="text-[#161D6F] text-[12px] hover:underline" href="#">Forgot your password?</a>
+          <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
           <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
         </form>
-        {/* <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button> */}
+        <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button>
       </div>
 
     
@@ -83,12 +106,50 @@ function Login() {
         <div className="sm:flex justify-center items-center  w-[85%] gap-5">
          <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Password</label>
-            <input type="password" placeholder="Enter your Password" id="password"className="w-full py-3 px-5 input"/>
+            {/* <input type="password" placeholder="Enter your Password" id="password" className="w-full py-3 px-5 input"/> */}
+            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
+            <input
+              type={passwordVisible ? "text" : "password"}
+              id="password"
+              className=" focus:outline-none bg-transparent "
+              placeholder="Enter your password" 
+              value={password} onChange={e=>setPassword(e.target.value)}
+            />
+            <div
+              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {passwordVisible ? (
+               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
+              ) : (
+                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
+              )}
+            </div>
+          </div>
           </div>
 
          <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Confirm-Password</label>
-            <input type="password" placeholder="Enter your Password"  id="confirm_password" className="w-full py-3 px-5 input"/>
+            {/* <input type="password" placeholder="Enter your Password"  id="confirm_password" className="w-full py-3 px-5 input"/> */}
+            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
+            <input
+              id="confirm_password" 
+              type={passwordVisible ? "text" : "password"}
+              className=" focus:outline-none bg-transparent "
+              placeholder="Enter your password" 
+              value={password} onChange={e=>setPassword(e.target.value)}
+            />
+            <div
+              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              onClick={togglePasswordVisibility}
+            >
+              {passwordVisible ? (
+               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
+              ) : (
+                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
+              )}
+            </div>
+          </div>
             <span className="text-red-800 error" id="message"></span>
           </div>
         </div>

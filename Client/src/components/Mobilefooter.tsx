@@ -5,7 +5,7 @@ const Mobilefooter = () => {
     <div>
       <div
         id="menu"
-        className="bg-[#161D6F] w-full fixed bottom-0 left-0 z-10 flex sm:hidden justify-between px-6 py-3 mt-5  text-[16px] items-center text-white"
+        className="bg-[#161D6F] w-full fixed bottom-0 left-0 z-10 flex sm:hidden justify-between px-6 pb-3 pt-2 mt-5  text-[16px] items-center text-white"
       >
          <Link to={"/"}className="flex flex-col justify-center items-center">
           <img src="src\assets\SVG\homeicon.svg" alt=""/>

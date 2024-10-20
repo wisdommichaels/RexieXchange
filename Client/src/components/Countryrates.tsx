@@ -3,12 +3,12 @@ import { Link } from "react-router-dom"
 const Countryrates = () => {
   return (
     <div>
-    <section  className="w-full sm:w-[98%] mx-auto bg-white p-3 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
+    <section  className="w-full sm:w-[98%] h-100vh mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
     
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
-        <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8">Country</div>
-        <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6">Currency Code</div>
-        <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] sm:pr-6">Gift Card Rate</div>
+        <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
+        <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
+        <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] sm:pr-2 pr-6">Gift Card Rate</div>
       </div>
 
         <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
@@ -137,9 +137,9 @@ const Countryrates = () => {
             </svg>
             United States
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">USD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">USD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦1200</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦1200</span>
                   <Link to={'/sell'} 
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -213,9 +213,9 @@ const Countryrates = () => {
             </svg>
             United Kingdom
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">GBP</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">GBP</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">£1 = ₦1200</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">£1 = ₦1200</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -276,9 +276,9 @@ const Countryrates = () => {
             </svg>
             Singapore
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">SGD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">SGD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦1200</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦1200</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -346,9 +346,9 @@ const Countryrates = () => {
             </svg>
             Hong Kong
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">HKD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">HKD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦100</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦100</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -393,9 +393,9 @@ const Countryrates = () => {
             </svg>
             Canada
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">CAD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">CAD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦1000</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦1000</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -489,9 +489,9 @@ const Countryrates = () => {
             </svg>
             Australia
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">AUD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">AUD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦800</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦800</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -577,9 +577,9 @@ const Countryrates = () => {
             </svg>
             Mexico
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">MXN</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">MXN</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1 = ₦50</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1 = ₦50</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -620,9 +620,9 @@ const Countryrates = () => {
             </svg>
             France
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -715,9 +715,9 @@ const Countryrates = () => {
             </svg>
             Taiwan
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">TWD</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">TWD</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">NT$1 = ₦1300</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">NT$1 = ₦1300</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -766,9 +766,9 @@ const Countryrates = () => {
             </svg>
             Brazil
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">BRL</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">BRL</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">$1R = ₦200</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">$1R = ₦200</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -814,9 +814,9 @@ const Countryrates = () => {
             </svg>
             Switzerland
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">CHF</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">CHF</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">CHF1 = ₦1000</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">CHF1 = ₦1000</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -873,9 +873,9 @@ const Countryrates = () => {
             </svg>
             Spain
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -918,9 +918,9 @@ const Countryrates = () => {
             </svg>
             Thailand
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">THB</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">THB</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">฿1 = ₦40</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">฿1 = ₦40</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -964,9 +964,9 @@ const Countryrates = () => {
             </svg>
             Denmark
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">DKK</div>
+          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">DKK</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-8  text-[10px] sm:text-[16px]">kr1 = ₦150</span>
+            <span  className="pl-12  text-[10px] sm:text-[16px]">kr1 = ₦150</span>
                      <Link to={'/sell'}
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
             >
@@ -1022,9 +1022,9 @@ const Countryrates = () => {
               </svg>
               South Africa
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">ZAR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">ZAR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">R1 = ₦70</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">R1 = ₦70</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1064,9 +1064,9 @@ const Countryrates = () => {
               </svg>
               Germany
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1107,9 +1107,9 @@ const Countryrates = () => {
               </svg>
               Netherlands
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1166,9 +1166,9 @@ const Countryrates = () => {
               </svg>
               Spain
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1209,9 +1209,9 @@ const Countryrates = () => {
               </svg>
               Italy
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1256,9 +1256,9 @@ const Countryrates = () => {
               </svg>
               Portugal
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1299,9 +1299,9 @@ const Countryrates = () => {
               </svg>
               Japan
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">JPY</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">JPY</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">¥1 = ₦10</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">¥1 = ₦10</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1397,9 +1397,9 @@ const Countryrates = () => {
               </svg>
               New Zealand
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">NZD</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">NZD</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">NZD1 = ₦500</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">NZD1 = ₦500</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1443,9 +1443,9 @@ const Countryrates = () => {
               </svg>
               Sweden
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">SEK</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">SEK</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">kr1 = ₦70</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">kr1 = ₦70</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1493,9 +1493,9 @@ const Countryrates = () => {
               </svg>
               Norway
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">NOK</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">NOK</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">¥1 = ₦100</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">¥1 = ₦100</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1536,9 +1536,9 @@ const Countryrates = () => {
               </svg>
               Italy
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1577,9 +1577,9 @@ const Countryrates = () => {
               </svg>
               Poland
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">PLN</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">PLN</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">zł1 = ₦300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">zł1 = ₦300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1643,9 +1643,9 @@ const Countryrates = () => {
               </svg>
               Greece
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">EUR</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">EUR</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">€1 = ₦1300</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1705,9 +1705,9 @@ const Countryrates = () => {
               </svg>
               China
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">CNY</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">CNY</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">¥1 = ₦100</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">¥1 = ₦100</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >
@@ -1748,9 +1748,9 @@ const Countryrates = () => {
               </svg>
               United Arab Emirates
             </div>
-            <div  className="w-1/3 sm:pl-12 pl-10 text-[10px] sm:text-[16px]">AED</div>
+            <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">AED</div>
             <div  className="w-1/3 flex justify-between items-center">
-              <span  className="pl-8  text-[10px] sm:text-[16px]">AED1 = ₦200</span>
+              <span  className="pl-12  text-[10px] sm:text-[16px]">AED1 = ₦200</span>
                        <Link to={'/sell'}
                  className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >

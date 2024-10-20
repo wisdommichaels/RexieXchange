@@ -44,13 +44,13 @@ const Dropdown = () => {
             to="/razergold"
             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
           >
-            Razer Gift Card
+            RazerGold Gift Card
           </Link>
           <Link
             to="/apple"
             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
           >
-            Apple&iTunes
+            Apple&iTunes Gift Card
           </Link>
           <Link
             to="/amazon"
@@ -74,13 +74,13 @@ const Dropdown = () => {
             to="/ebay"
             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
           >
-            eBay Gift card
+            eBay Gift Card
           </Link>
           <Link
             to="/american"
             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
           >
-            American Express
+            American Express Gift Card
           </Link>
           <Link
             to="/google"
@@ -98,7 +98,7 @@ const Dropdown = () => {
             to="/playstation"
             className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
           >
-            PlayStation
+            PlayStation Gift Card
           </Link>
           <Link
             to="/mastercard"

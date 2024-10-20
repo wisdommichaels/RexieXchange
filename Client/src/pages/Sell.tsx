@@ -36,7 +36,7 @@ const Sell = () => {
       <section className="bg-gradient-to-r h-[80vh] sm:h-[60%] from-[#a2bae3] to-[#668bc2] sm:flex justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
         <div className="sm:w-1/2 mx-auto p-4 pt-8 sm:pt-4">
           <h2 className="sm:text-2xl text-[16px] font-bold text-[#161D6F] text-center mb-4">
-            GIFT CARD DETAILS
+            INPUT YOUR GIFT CARD DETAILS
           </h2>
 
           <form id="gift-card- htmlForm" className="w-full space-y-4 ">
@@ -136,7 +136,6 @@ const Sell = () => {
           </form>
         </div>
       </section>
-
       {/* <section  className="container mx-auto p-4">
         <h1  className="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
     
@@ -220,3 +219,5 @@ const Sell = () => {
 };
 
 export default Sell;
+
+
