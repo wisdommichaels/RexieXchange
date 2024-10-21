@@ -18,7 +18,7 @@ import Walmart from './pages/Walmart'
 import Dashboard from './pages/Dashboard'
 import Settings from './pages/Settings'
 import Login from './pages/Login'
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import Checkrate from './pages/Checkrate'
 import { useAuthStore } from './store/authStore'
 
@@ -31,7 +31,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<ProtectedRoutes> <Sell/> </ProtectedRoutes>}/>
-        <Route path='/Checkrate' element={<ProtectedRoutes><Checkrate/></ProtectedRoutes>}/>
+        <Route path='/checkrate' element={<ProtectedRoutes><Checkrate/></ProtectedRoutes>}/>
         <Route path='/razergold' element={<ProtectedRoutes><Razergold/></ProtectedRoutes>}/>
         <Route path='/apple' element={<ProtectedRoutes><Apple/></ProtectedRoutes>}/>
         <Route path='/amazon' element={<ProtectedRoutes><Amazon/></ProtectedRoutes>}/>

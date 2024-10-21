@@ -1,32 +1,85 @@
-import { Link } from "react-router-dom"
-import Username from "../components/Username"
-import Footer from "../components/Footer"
-import Mobilefooter from "../components/Mobilefooter"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Username from '../components/Username';
+import Mobilefooter from '../components/Mobilefooter';
+import Footer from '../components/Footer';
 
-const Checkrate = () => {
+const Checkrate: React.FC = () => {
+  interface ConversionRates {
+    [key: string]: number;
+  }
+
+  // Conversion rates mapping
+  const conversionRates: ConversionRates = {
+    usd: 760, 
+    eur: 820, 
+    gbp: 900, 
+    cad: 580,  
+    aud: 540,
+    nzd: 520, 
+    jpy: 100, 
+    sgd: 560, 
+    chf: 800, 
+    mxn: 2300,
+    twd: 30, 
+    thb: 3000, 
+    krw: 1200, 
+    vnd: 24000, 
+    myr: 40,
+    php: 500, 
+    hkd: 90, 
+    idr: 14000, 
+    rub: 70, 
+    huf: 300,
+    brl: 46, 
+    zar: 1550, 
+    inr: 80, 
+    cny: 750, 
+    sek: 1020,
+    dkk: 780, 
+    pln: 420, 
+    bdt: 85, 
+    lkr: 100, 
+    sll: 8000,
+  };
+
+  // React state to store amount, currency, and result
+  const [amount, setAmount] = useState<string>('');
+  const [currency, setCurrency] = useState<string>('');
+  const [result, setResult] = useState<string>('');
+  const [showResult, setShowResult] = useState<boolean>(false); // To toggle result visibility
+
+
+  // Handle form submission
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const amountValue = parseFloat(amount);
+    const conversionRate = conversionRates[currency];
+
+    if (!isNaN(amountValue) && conversionRate) {
+      const convertedAmount = amountValue * conversionRate;
+      setResult(`${amountValue} ${currency.toUpperCase()} = ₦${convertedAmount.toLocaleString()}`);
+      setShowResult(true); // Show the result on successful submission
+    } else {
+      setResult('Please enter a valid amount.');
+      setShowResult(true); // Show the error message as well
+    }
+  };
+
   return (
     <div>
-         <nav className="bg-[#161D6F] shadow-lg sm:flex justify-between items-center hidden">
-            <div className="containe mx-auto px-4 py-3 flex justify-between items-center sm:mx-14 w-full">
-                 <Link to={"/"} className="signup-button px-5 flex justify-center items-center gap-2 text-[11px] py-2 ">
-                  <svg fill="#000000" width="10px" height="10px" viewBox="0 0 52 52" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z"/></svg>
-                  BACK
-               </Link>
-             <Username/>
-           </div>
-        </nav>
-        <nav className="bg-[#161D6F] shadow-lg flex sm:justify-between items-center py-3 sm:hidden">
+      <nav className="bg-[#161D6F] shadow-lg flex sm:justify-between items-center py-3">
         <Link
-          to={"/"}
-          className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3 "
+          to="/"
+          className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3"
         >
-          <svg className="sm-w-10 sm:h-10"
+          <svg
+            className="sm-w-10 sm:h-10"
             fill="#000000"
             width="14px"
             height="14px"
             viewBox="0 0 52 52"
-            data-name="Layer 1"
-            id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z" />
@@ -34,83 +87,92 @@ const Checkrate = () => {
           <span className="hidden sm:block">BACK</span>
         </Link>
 
-        <h2 className=" sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24 ">
-          Check Rate
-        </h2>
+        <h2 className="sm:text-[24px] text-[18px] text-white pt-3 pl-24">Check Rate</h2>
 
         <div className="hidden sm:block">
-          <Username />
+        <Username />
         </div>
-</nav>
-        <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] mx-3 mt-4 sm:m-0 rounded-md sm:rounded-none">
-        <div  className="sm:w-1/2  mx-auto p-4 sm:pt-20 pt-48 ">
-           <h2  className="sm:text-2xl text-[16px] font-bold text-center text-[#161D6F] mb-4">RATE CALCULATOR</h2>
-        <form id="currency- htmlForm"  className="space-y-4 w-full">
-          
-          <div  className="flex flex-col mb-4">
-            <label  htmlFor="amount"  className="mb-1 text-sm m-auto text-[#161D6F] text-[10px] sm:text-[16px]">Enter Amount</label>
-            <input  className="custom-select custom-arrow cursor-text w-full sm:w-[80%]" type="text" id="amount" placeholder="Amount in Foreign currency"/>
-          </div>
-          
-         
-          <div  className="flex flex-col mb-4">
-            <label  htmlFor="currency"  className="mb-1 text-sm m-auto  text-[#161D6F] text-[10px] sm:text-[16px]">Select Currency:</label>
-            <select id="currency"  className="custom-select custom-arrow w-full sm:w-[80%]">
-              <option value="">Select Currency</option>
-              <option value="usd">USD - United States Dollar</option>
-              <option value="eur">EUR - Euro</option>
-              <option value="gbp">GBP - British Pound</option>
-              <option value="cad">CAD - Canadian Dollar</option>
-              <option value="aud">AUD - Australian Dollar</option>
-              <option value="twd">TWD - Taiwan Dollar</option>
-              <option value="sgd">SGD - Singapore Dollar</option>
-              <option value="brl">BRL - Indian Rupee</option>
-              <option value="hkd">HKD - Hong Kong Dollar</option>
-              <option value="mxn">MXN - Mexican Peso</option>
-              <option value="thb">THB - Thai Baht</option>
-              <option value="jpy">JPY - Japanese Yen</option>
-              <option value="nzd">NZD - New Zealand Dollar</option>
-              <option value="sek">SEK - Swedish Krona</option>
-              <option value="inr">INR - Indian Rupee</option>
-              <option value="zar">ZAR - South African Rand</option>
-              <option value="kes">KES - Kenyan Shilling</option>
-              <option value="eur">EUR - Greece</option>
-              <option value="dkk">DKK - Denmark</option>
-              <option value="nok">NOK - Norway</option>
-              <option value="eur">EUR - Germany</option>
-              <option value="eur">EUR - France</option>
-              <option value="eur">EUR - Italy</option>
-              <option value="eur">EUR - Spain</option>
-              <option value="eur">EUR - Netherlands</option>
-              <option value="eur">EUR - Belgium</option>
-              <option value="eur">EUR - Switzerland</option>
-              <option value="eur">EUR - Austria</option>
-              <option value="eur">EUR - Portugal</option>
-              <option value="eur">EUR - Finland</option>
-              <option value="eur">EUR - Sweden</option>
-              <option value="aed">AED - United Arab Emirates</option>
-              <option value="cny">CNY - China</option>
-              <option value="pln">PLN - Poland</option>
-            </select>
-          </div>
-    
-          <div  className="custom-select hidden  custom-arrow sm:w-1/2 w-full  mt-4 text-lg font-semibold text-center text-[#161D6F]" id="result"></div>
-         
-          <div  className="text-center">
-            <button  className="btnn text-[14px] sm:text-[16px] w-full sm:w-[80%]" type="submit" >
-              Convert to Naira
-            </button>
-          </div>
-        </form>
-      </div>
-      </section>
-      <Mobilefooter/>
-      <div className="hidden sm:block">
-      <Footer/>
-      </div>
-      
-    </div>
-  )
-}
+      </nav>
 
-export default Checkrate
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] mx-3 mt-4 sm:m-0 rounded-md sm:rounded-none">
+        <div className="sm:w-1/2 mx-auto p-4 sm:pt-20 pt-48">
+          <h2 className="sm:text-2xl text-[16px] font-bold text-center text-[#161D6F] mb-4">
+            CHECK YOUR GIFT CARD RATE
+          </h2>
+          <form id="currency-form" onSubmit={handleSubmit} className="space-y-4 w-full">
+            <div className="flex flex-col mb-4">
+              <label htmlFor="amount" className="mb-1 text-sm m-auto text-[#161D6F] text-[10px] sm:text-[16px]">
+                Enter Amount
+              </label>
+              <input
+                className="custom-select custom-arrow cursor-text w-full sm:w-[80%]"
+                type="text"
+                id="amount"
+                placeholder="Amount in Foreign currency"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
+            </div>
+
+            <div className="flex flex-col mb-4">
+              <label htmlFor="currency" className="mb-1 text-sm m-auto text-[#161D6F] text-[10px] sm:text-[16px]">
+                Select Currency
+              </label>
+              <select
+                id="currency"
+                className="custom-select custom-arrow w-full sm:w-[80%]"
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+              >
+                <option value="">Select Currency</option>
+                <option value="usd">USD - United States Dollar</option>
+                <option value="eur">EUR - Euro</option>
+                <option value="gbp">GBP - British Pound</option>
+                <option value="cad">CAD - Canadian Dollar</option>
+                <option value="aud">AUD - Australian Dollar</option>
+                <option value="nzd">NZD - New Zealand Dollar</option>
+                <option value="jpy">JPY - Japanese Yen</option>
+                <option value="sgd">SGD - Singapore Dollar</option>
+                <option value="chf">CHF - Swiss Franc</option>
+                <option value="mxn">MXN - Mexican Peso</option>
+                <option value="twd">TWD - Taiwan Dollar</option>
+                <option value="thb">THB - Thai Baht</option>
+                <option value="krw">KRW - South Korean Won</option>
+                <option value="vnd">VND - Vietnamese Dong</option>
+                <option value="myr">MYR - Malaysian Ringgit</option>
+                <option value="php">PHP - Philippine Peso</option>
+                <option value="hkd">HKD - Hong Kong Dollar</option>
+                <option value="idr">IDR - Indonesian Rupiah</option>
+                <option value="rub">RUB - Russian Ruble</option>
+                <option value="brl">BRL - Brazilian Real</option>
+                <option value="zar">ZAR - South African Rand</option>
+                <option value="inr">INR - Indian Rupee</option>
+                <option value="cny">CNY - Chinese Yuan</option>
+                <option value="sek">SEK - Swedish Krona</option>
+              </select>
+            </div>
+
+            {showResult && (
+              <div className="custom-select sm:w-[80%] w-full mt-4 text-lg font-semibold text-center text-[#161D6F]" id="result">
+                <p>{result}</p>
+              </div>
+            )}
+
+            <div className="text-center">
+              <button className="btnn text-[14px] sm:text-[16px] w-full sm:w-[80%]" type="submit">
+                Convert to Naira
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <Mobilefooter />
+      <div className="hidden sm:block">
+       <Footer />
+      </div>
+    </div>
+  );
+};
+
+export default Checkrate;

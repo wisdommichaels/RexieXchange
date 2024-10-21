@@ -24,7 +24,7 @@ const Sell = () => {
           <span className="hidden sm:block">BACK</span>
         </Link>
 
-        <h2 className=" sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24 ">
+        <h2 className=" sm:text-[24px] text-[18px] text-white  pt-3 pl-24 ">
           Sell Gift card
         </h2>
 

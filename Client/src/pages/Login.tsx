@@ -23,12 +23,8 @@ function Login() {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  function toggleForms(): void {
-  const container = document.querySelector('.rotate-container') as HTMLElement | null;
-  if (container) {
-    container.classList.toggle('show-signup');
-  }
-}
+
+
   return (
     <div className="bg-[#101035]">
           <div className="login-div">
@@ -106,7 +102,6 @@ function Login() {
         <div className="sm:flex justify-center items-center  w-[85%] gap-5">
          <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Password</label>
-            {/* <input type="password" placeholder="Enter your Password" id="password" className="w-full py-3 px-5 input"/> */}
             <div className="relative w-full sm:w-[50%] py-3 px-5 input">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -130,7 +125,6 @@ function Login() {
 
          <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Confirm-Password</label>
-            {/* <input type="password" placeholder="Enter your Password"  id="confirm_password" className="w-full py-3 px-5 input"/> */}
             <div className="relative w-full sm:w-[50%] py-3 px-5 input">
             <input
               id="confirm_password" 
@@ -157,38 +151,14 @@ function Login() {
           <button type="submit" className="btnn w-full">Sign Up</button>
         </div>
         </form>
-        {/* <button onClick={()=>toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button> */}
+        <button onClick={()=>toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button>
       </div>
 
     </div>
   </div>
 </div>
     </div>
-  //    <script>
-  //    function toggleForms() {
-  //      const container = document.querySelector('.rotate-container');
-  //      container.classList.toggle('show-signup');
-  //    }
- 
-  //    function checkPasswordMatch() {
-  //           const password = document.getElementById('password').value;
-  //           const confirmPassword = document.getElementById('confirm_password').value;
-  //           const message = document.getElementById('message');
-              
-  //           if (password !== confirmPassword) {
-  //               message.textContent = "Passwords do not match!";
-  //               return false; // Prevent form submission
-  //           } else {
-  //               message.textContent = ""; // Clear the error message
-  //               return true; // Allow form submission
-  //             }
-  //           }
-        
-  //           // Optional: Check passwords in real-time as the user types
-  //           document.getElementById('confirm_password').addEventListener('input', function() {
-  //             checkPasswordMatch();
-  //           });
-  //  </script>
+  
   )
 }
 

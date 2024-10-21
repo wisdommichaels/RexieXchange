@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
-const Countryrates = () => {
+const Countryrates: React.FC = () => {
+    // State to control whether the additional rows are shown or hidden
+    const [isVisible, setIsVisible] = useState(false);
+
+    // Function to toggle visibility and button text
+    const handleToggle = () => {
+      setIsVisible(!isVisible); // Toggle visibility
+    };
   return (
     <div>
     <section  className="w-full sm:w-[98%] h-100vh mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
@@ -975,9 +983,8 @@ const Countryrates = () => {
           </div>
           </Link>
     </div>
-</section>
-
-<section id="additionalRows"  className="space-y-4 hidden">
+    
+<section className={`${isVisible ? '' : 'hidden'}`} id="additionalRows">
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
          <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
@@ -1761,13 +1768,15 @@ const Countryrates = () => {
     </div>
 
 </section>
+</section>
+
 
       <div  className="text-center mt-6 mb-5">
-        <button
-          id="showMoreButton"
+        <button 
+          id="showMoreButton" onClick={handleToggle}
            className="bg-[#161D6F] text-white sm:px-6 px-3 py-2 rounded-lg hover:bg-[#1522ad] text-[10px] sm:text-[16px]"
         >
-          View More
+           {isVisible ? 'View Less' : 'View More'}
         </button>
       </div>
     </div>
