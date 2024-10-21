@@ -1,9 +1,10 @@
 import axios from 'axios';
 import {create} from 'zustand';
 import { api_url } from '../utils/constants';
+import api from '../utils/api';
 
 interface AuthStore {
-    user: { name: string } | null;
+    user: { _id: string, username:string, email:string, createdAt:Date, updatedAt:Date } | null;
     loading: boolean;
     error: string | null;
     login: (email: string, password: string) => Promise<any>;
@@ -22,8 +23,9 @@ export const useAuthStore = create<AuthStore>((set) => ({
             const response = await axios.post(`${api_url}/auth/login`, {
                 email,
                 password
-            })
+            });
                 console.log(response.data)
+                localStorage.setItem('token', response.data.token)
                 return response.data
                 set({ loading: false })
             } catch (error:any) {
@@ -37,17 +39,16 @@ export const useAuthStore = create<AuthStore>((set) => ({
     
     
     checkAuth: async () => {
-        set({user: {name: 'John Doe'}})
-    //     try {
-    //         const response = await axios(`${api_url}/checkAuth`);
-    //         set({ user: response.data.user });
-    //     } catch (error) {
-    //         if (axios.isAxiosError(error) && error.response?.status === 401) {
-    //             window.location.href = '/login';
-    //             set({ user: null });
+        try {
+            const response = await api.get(`${api_url}/auth/checkAuth`);
+            set({ user: response.data });
+        } catch (error) {
+            if (axios.isAxiosError(error) && error.response?.status === 401) {
+                window.location.href = '/login';
+                set({ user: null });
             
-    //     }
-    // }
+        }
+    }
     }
 }))
 

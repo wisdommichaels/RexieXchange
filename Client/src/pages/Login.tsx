@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../store/authStore";
 function Login() {
-  const { login, error } = useAuthStore();
+  const { login, error, user } = useAuthStore();  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +11,7 @@ function Login() {
   // Make a request to your backend to handle the login logic
   try {
     await login(email, password);
+    console.log(user); 
     navigate('/');
   } catch (error) {
     console.log(error);    
@@ -58,7 +59,7 @@ function Login() {
             <div className="relative w-full sm:w-[50%] py-3 px-5 input">
             <input
               type={passwordVisible ? "text" : "password"}
-              id="password"
+              // id="password"
               className=" focus:outline-none bg-transparent "
               placeholder="Enter your password" 
               value={password} onChange={e=>setPassword(e.target.value)}

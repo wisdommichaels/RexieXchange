@@ -60,12 +60,16 @@ export const login = async (req, res) => {
        if(!user || !isPasswordCorrect){
            return res.status(400).json({ error: "Invalid username or password" });
        }
+        // generateTokenAndSetCookie(newUser._id, res);
+        console.log("got here");
+        const token = await generateTokenAndSetCookie(user._id, res);
 
-       generateTokenAndSetCookie(user._id, res);
+        
         res.status(200).json({ 
             _id: user._id,
             username: user.username,
             email: user.email,
+            token:token
         });
         
     } catch (error) {
@@ -85,4 +89,20 @@ export const logout = async (req, res) => {
         console.log("Error in logout controller", error.message);
         res.status(500).json({error:"internal Server Error"}); 
     }
+}
+
+export const checkAuth= async (req, res) => {
+    try {
+        console.log(req.userId);
+        
+        const user = await User.findById(req.userId).select("-password");
+        if(!user){
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.status(200).json(user);
+    } catch (error) {
+        console.log("Error in checkAuth controller", error.message);
+        res.status(500).json({error:"internal Server Error"});  
+    }
+    
 }

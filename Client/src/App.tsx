@@ -21,8 +21,13 @@ import Login from './pages/Login'
 import { useEffect} from 'react'
 import Checkrate from './pages/Checkrate'
 import { useAuthStore } from './store/authStore'
+import { useCardStore } from './store/cardStore'
 
 function App() {
+  const { getCards } = useCardStore()
+  useEffect(() =>{
+    getCards()
+  })
 
   return (
     <>

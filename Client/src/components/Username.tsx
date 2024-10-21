@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useAuthStore } from "../store/authStore"
 
 const Username = () => {
+  const { user } = useAuthStore()
+
   return (
     <div>
         <div className="logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
@@ -8,7 +11,7 @@ const Username = () => {
   <div className="group relative">
     <div className="group relative dropdown flex">
       <div className="flex cursor-pointer">
-        <span className="text-white text-[14px] font-bold pt-3 leading-4">Wisdom Michael</span>
+        <span className="text-white text-[14px] font-bold pt-3 leading-4">{user?.username}</span>
         <svg className="w-[25px] h-[25px] pt-3 text-white font-bold hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
