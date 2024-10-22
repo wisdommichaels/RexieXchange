@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import giftcardRoutes from "./routes/giftcard.routes.js";
 import CardRate from "./Models/rateModel.js";
+import GiftCard from "./Models/giftcardModel.js";
 
 dotenv.config()
 
@@ -190,7 +191,113 @@ const populateCard =async() => {
     console.log("successful");
 }
 
-populateCard();
+const populateGiftCard =async () => {
+    await GiftCard.create([
+        {
+            name: "Apple/Itunes",
+            desc: "The Apple iTunes Gift Card is your gateway to an endless world of music, movies, TV shows, apps, games, books, and more on the App Store, iTunes, and Apple Music. this card offers a flexible and convenient way to make purchases across Apple platforms and the Apple ecosystem.",
+            subDesc:["Available in various denominations.", "Can be traded both with physical Card or E-code with the best rate.", "Redeemable on the App Store, and also on GiftHub."],
+            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729558949/applecardpng_x0d8rz.svg",
+            rates:[
+                {
+                    rate: 1000,
+                    rateDetails:CardRate.findOne({countryName:"United States"})._id
+                },
+                {
+                    rate: 5000,
+                    rateDetails:CardRate.findOne({countryName:"Poland"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"China"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Hong Kong"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Canada"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Austrilia"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Mexico"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Singapore"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Brazil"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Thailand"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Spain"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Denmark"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Germany"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"South Africa"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Nertherland"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Italy"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Portugal"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Japan"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"New Zealand"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"Sweden"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"France"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"China"})._id
+                },
+                {
+                    rate: 1200,
+                    rateDetails:CardRate.findOne({countryName:"China"})._id
+                },
+        ]
+        }
+    ])
+    console.log("successful");
+}
+
+// populateGiftCard();
 
 app.get('/', (req, res) =>{
     res.end ("server is working")
