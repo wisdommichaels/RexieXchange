@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import giftcardRoutes from "./routes/giftcard.routes.js";
-import GiftCard from "./Models/giftcardModel.js";
+import CardRate from "./Models/rateModel.js";
 
 dotenv.config()
 
@@ -23,133 +23,174 @@ app.use(cors(
 const PORT = process.env.PORT || 3000;
 
 const populateCard =async() => {
-
-    await GiftCard.create([
+    await CardRate.create([
         {
-            name: "Apple/Itunes Gift Card",
-            value: 1700,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729558949/applecardpng_x0d8rz.svg"
+            countryName:"United States",
+            currencyCode:"USD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602032/unitedstate_fu7bmx.svg"
         },
         {
-            name: "RazerGold Gift Card",
-            value: 1510,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557031/razergoldpng_sfpvpq.svg"
+            countryName:"United Kingdom",
+            currencyCode:"GBP",
+            currencySymbol: "£",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602032/unitedkingdom_xjx79l.svg"
         },
         {
-            name: "Amazon Gift Card",
-            value: 1000,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729556260/amazonpng_eit9uq.svg"
+            countryName:"Singapore",
+            currencyCode:"SGD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602030/singapore_cblnoc.svg"
         },
         {
-            name: "Steam Gift Card",
-            value: 1800,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557182/steampng_eqpqr8.svg"
+            countryName:"Hong Kong",
+            currencyCode:"HKD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602032/unitedstate_fu7bmx.svg"
         },
         {
-            name: "Walmart Gift Card",
-            value: 1745,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557184/walmartgiftcardpng_lwmkm6.svg"
+            countryName:"Canada",
+            currencyCode:"CAD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/canada_tlghw6.svg"
         },
         {
-            name: "eBay Gift card",
-            value: 1900,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557179/ebaypng_thjw6g.svg"
+            countryName:"Austrilia",
+            currencyCode:"AUD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/australia_q7ke0l.svg"
         },
         {
-            name: "American Express",
-            value: 1300,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557179/americanexpresspng_fggzy8.svg"
+            countryName:"Mexico",
+            currencyCode:"MXN",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602029/mexico_scoh0h.svg"
         },
         {
-            name: "Google Play Gift Card",
-            value: 1190,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557452/googleplaypng_g9wjwo.svg"
+            countryName:"France",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602026/france_kxbm04.svg"
         },
         {
-            name: "Vanilla Gift card",
-            value: 1200,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557183/vanillapng_yhhuat.svg"
+            countryName:"Taiwan",
+            currencyCode:"TWD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602031/taiwan_p7jd8m.svg"
         },
         {
-            name: "PlayStation Gift Card",
-            value: 1850,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557589/playstationpng_o6yawf.svg"
+            countryName:"Brazil",
+            currencyCode:"BRL",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/brazil_v8y5eh.svg"
         },
         {
-            name: "CVS pharmacy Gift Card",
-            value: 1740,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557179/cvspng_tog4nz.svg"
+            countryName:"Switzerland",
+            currencyCode:"CHF",
+            currencySymbol: "FR",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602031/switzerland_dvog4a.svg"
         },
         {
-            name: "Foot Locker Gift Card",
-            value: 1720,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557671/footlockerpng_uejqnu.svg"
+            countryName:"Spain",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602031/spain_z51fop.svg"
         },
         {
-            name: "Mastercard Gift Card",
-            value: 1790,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557180/mastercardpng_kicfjl.svg"
+            countryName:"Thailand",
+            currencyCode:"THB",
+            currencySymbol: "฿",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602032/thailand_vbolyf.svg"
         },
         {
-            name: "Netspend Gift Card",
-            value: 1560,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557775/netspendpng_aizaux.svg"
+            countryName:"Denmark",
+            currencyCode:"DKK",
+            currencySymbol: "kr",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/dernmark_iwmeag.svg"
         },
         {
-            name: "Roblox Gift Card",
-            value: 1630,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557032/robloxpng_pc0isq.svg"
+            countryName:"South Africa",
+            currencyCode:"ZAR",
+            currencySymbol: "R",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602030/southafrica_j6zyqw.svg"
         },
         {
-            name: "VISA Gift Card",
-            value: 1810,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557183/visapng_nrji67.svg"
+            countryName:"Germany",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602026/germany_l8u4sb.svg"
         },
         {
-            name: "Walmart Money Gift Card",
-            value: 1355,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557185/walmartmoneypng_qxsxhu.svg"
+            countryName:"Nertherland",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/nerthaland_iukly2.svg"
         },
         {
-            name: "GameStop Gift Card",
-            value: 1930,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557875/gamestoppng_skkfaz.svg"
+            countryName:"Italy",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602029/italy_phlrwe.svg"
         },
         {
-            name: "Nordstrom Gift Card",
-            value: 1670,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/nordstrompng_dhw0po.svg"
+            countryName:"Portugal",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602029/portugal_rvngpl.svg"
         },
         {
-            name: "Paysafecard Gift Card",
-            value: 1180,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl.svg"
+            countryName:"Japan",
+            currencyCode:"JPY",
+            currencySymbol: "¥",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602029/japan_rva6al.svg"
         },
         {
-            name: "Sephora Gift Card",
-            value: 1420,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557182/sephorapng_mfeszx.svg"
+            countryName:"New Zealand",
+            currencyCode:"NZD",
+            currencySymbol: "$",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602026/newzealand_m82cer.svg"
         },
         {
-            name: "Xbox Gift Card",
-            value: 1380,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557186/xboxpng_l8trod.svg"
+            countryName:"Sweden",
+            currencyCode:"SEK",
+            currencySymbol: "kr",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602031/sweeden_oeq4r3.svg"
         },
         {
-            name: "Nike  Gift Card",
-            value: 1710,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557180/nikepng_soyoub.svg"
+            countryName:"Norway",
+            currencyCode:"NOK",
+            currencySymbol: "kr",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602027/norway_r2xgkq.svg"
         },
         {
-            name: "Macy's Gift Card",
-            value: 1730,
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729558892/macyspng_beixhc.svg"
+            countryName:"Poland",
+            currencyCode:"PLN",
+            currencySymbol: "zł",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602028/poland_splozi.svg"
+        },
+        {
+            countryName:"Greece",
+            currencyCode:"EUR",
+            currencySymbol: "€",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602027/greece_cyoips.svg"
+        },
+        {
+            countryName:"China",
+            currencyCode:"CNY",
+            currencySymbol: "¥",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602025/chaina_ys6hcb.svg"
+        },
+        {
+            countryName:"United Arab Emirates",
+            currencyCode:"AED",
+            currencySymbol: "د.إ",
+            flag: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729602032/unitedarb_kxyzmy.svg"
         },
     ])
     console.log("successful");
 }
 
-// populateCard();
+populateCard();
 
 app.get('/', (req, res) =>{
     res.end ("server is working")
