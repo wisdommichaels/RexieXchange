@@ -1,8 +1,14 @@
 import GiftCard from "../Models/giftcardModel.js";
+import CardRate from "../Models/rateModel.js"
 
 export const getGiftCards = async (req, res) => {
     try {
-        const giftCards = await GiftCard.find({});
+        const giftCards = await GiftCard.find()
+        .populate({
+            path: "rates.rateDetails",
+            model: "Card_rate",
+            select: "countryName currencyCode currencySymbol flag",
+        })
         res.status(200).json(giftCards);
     } catch (error) {
         console.log("Error in get giftCards controller", error.message);

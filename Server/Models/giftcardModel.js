@@ -20,7 +20,7 @@ const giftCardSchema = new mongoose.Schema({
         rate:Number,
         rateDetails:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: "CardRate",
+            ref: "Card_rate",
         }
     }],
 },{timestamps :true}) 

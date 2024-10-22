@@ -4,7 +4,7 @@ import { api_url } from '../utils/constants';
 import api from '../utils/api';
 
 interface CardStore {
-    cards: [{ imageUrl: string, name:string, value:number }] | null;
+    cards: [{ imageUrl: string, desc:string, subDesc:[string], name:string, rates:[{rateDetails:{countryName:string, currencyCode:string, currencySymbol:string, flag:string }, value:number}] }] | null;
     loading: boolean;
     error: string | null;
     updateCard: (name: string, value: number) => Promise<any>;
