@@ -1,25 +1,9 @@
 import mongoose from "mongoose";
 const giftCardrateSchema = new mongoose.Schema({
-    imageUrl:{
-        type:String,
-        required:true,
-    },   
-    countryname:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    currencycode:{
-        type:String,
-        required:true,
-    },
-    rate:{
-        type:Number,
-        required:true,
-        unique:true
-    },
-   
-   
+        countryname:String,
+        currencycode:String,
+        currencySymbol:String,
+        flag:String,   
 },{timestamps :true}) 
 
 const CardRate = mongoose.model('Card_rate', giftCardrateSchema);

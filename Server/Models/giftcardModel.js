@@ -5,15 +5,24 @@ const giftCardSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
-    value:{
-        type:Number,
+    desc:{
+        type:String,
         required:true,
-        unique:true
+    },
+    subDesc:{
+        type:[String],
     },
     imageUrl:{
         type:String,
         required:true,
     },   
+    rates:[{
+        rate:Number,
+        rateDetails:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "CardRate",
+        }
+    }],
 },{timestamps :true}) 
 
 const GiftCard = mongoose.model('gift_cards', giftCardSchema);
