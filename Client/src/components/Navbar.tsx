@@ -29,15 +29,17 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="submenu-item">
-                <Link to={"/buy"} className="submenu-link">
+                <Link to={"/checkrate"} className="submenu-link">
                   {" "}
-                  Buy Gift Card{" "}
+                  Check Rate
+                  {" "}
                 </Link>
               </div>
               <div className="submenu-item">
-                <Link to={"/checkrate"} className="submenu-link">
+                <Link to={"/buy"} className="submenu-link">
                   {" "}
-                  Check Rate{" "}
+                  Buy Gift Card
+                  {" "}
                 </Link>
               </div>
             </div>

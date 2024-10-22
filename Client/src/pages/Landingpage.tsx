@@ -35,7 +35,7 @@ function Landingpage() {
 
   <section className="flex flex-col">
         <div className="container mx-auto sm:mt-4 bg-[#fff] rounded-none">
-            <div className="blur-in-out overflow-x-hidden-hidden">
+            <div className="blur-in-out">
                 <div className="marquee-ltr">
                     <div className="marquee-content">
                           <div className="bg-[#DDE4EF] shadow-lg rounded-lg w-72 sm:w-72 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
@@ -105,7 +105,7 @@ function Landingpage() {
                 </div>
             </div>
 
-            <div className="blur-in-out overflow-hidden mt-10">
+            <div className="blur-in-out mt-10">
                 <div className="marquee-rtl">
                     <div className="marquee-content">
                        <div className="bg-[#DDE4EF] shadow-lg rounded-lg w-72 sm:w-72 p-4 mx-2 transition-transform duration-200 transform hover:scale-110">

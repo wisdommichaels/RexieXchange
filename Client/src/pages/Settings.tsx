@@ -2,8 +2,10 @@ import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter";
+import { useAuthStore } from "../store/authStore";
 
 const Settings = () => {
+  const { user } = useAuthStore()
     const loadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
@@ -45,41 +47,41 @@ const Settings = () => {
       </div> */}
 
   <section className="flex flex-col md:flex-row justify-center p-3 ">
-        <div className="flex-col justify-center items-center  m-auto sm:w-[40%] w-full sm:h-[70vh] pb-10 sm:mt-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-t-lg">
+        <div className="flex-col justify-center items-center shadow-xl  m-auto sm:w-[40%] w-full sm:h-[60vh] pb-12 sm:pb-0 mb-5 sm:mb-0 sm:mt-10 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
           <div className="flex justify-center items-center pt-8">
           <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.placeholder.com/150" alt="Profile Picture"/>
           </div>
           <div className="flex justify-center items-center bg-white w-fit mx-auto px-4 py-1 rounded-md">
             <div className="flex justify-center items-center">
+            <img className="w-4 h-4" src="src\assets\editicon.png" alt="" />
             <label htmlFor="profile-pic-upload" className="text-[#161D6F] cursor-pointer">Edit</label>
-            <img className="w-3 h-3" src="src\assets\editicon.png" alt="" />
             </div>
             <input type="file" id="profile-pic-upload" className="hidden underline-offset-0" accept="image/*" onChange={(event: React.ChangeEvent<HTMLInputElement>) => loadFile(event)}/>
           </div>
           <div className="flex-col justify-center items-center mt-3 m-auto text-center">
-          <h1 id="username" className="font-bold text-20 text-[#161D6F]">Wisdom Michael</h1>
-          <h2 id="email" className="text-14 text-[#161D6F]">iamrexie83@gmail.com</h2>
+          <h1 id="username" className="font-bold text-20 text-[#161D6F]">{user?.username}</h1>
+          <h2 id="email" className="text-14 text-[#161D6F] mt-1">{user?.email}</h2>
           </div>
         </div>
-    <div className="h-[80vh] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-lg sm:rounded-lg sm:w-[50%] w-full sm:h-[100%] sm:my-10  py-10 px-5 flex-col justify-center items-center">
+    <div className="h-[80vh] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-xl rounded-lg sm:w-[50%] w-full sm:h-[100%] sm:my-10  py-10 px-5 flex-col justify-center items-center">
         <div className="mb-6 w-full flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="username" className="block text-[#161D6F] font-semibold mb-1 text-center">Edit Username</label>
+          <label htmlFor="username" className="block text-[#161D6F] font-semibold  text-center">Edit Username</label>
             <input className="p-4 sm:p-3 input" type="text" id="username" placeholder="Enter your username"/>
         </div>
   
       
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="current-password" className="block text-[#161D6F] font-semibold mb-1 text-center">Current Password</label>
+          <label htmlFor="current-password" className="block text-[#161D6F] font-semibold  text-center">Current Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="current-password" placeholder="Enter current password"/>
         </div>
   
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="new-password" className="block text-[#161D6F] text-center font-semibold mb-1">New Password</label>
+          <label htmlFor="new-password" className="block text-[#161D6F] text-center font-semibold">New Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="new-password" placeholder="Enter new password"/>
         </div>
   
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="confirm-password" className="block text-[#161D6F] font-semibold mb-1 text-center">Confirm New Password</label>
+          <label htmlFor="confirm-password" className="block text-[#161D6F] font-semibold text-center">Confirm New Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="confirm-password" placeholder="Confirm new password"/>
         </div>
   

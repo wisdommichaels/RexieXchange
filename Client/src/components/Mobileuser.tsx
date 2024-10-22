@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
+import { useAuthStore } from "../store/authStore"
 
 const Mobileuser = () => {
+  const {user} = useAuthStore()
   return (
     <div>
    <div className="flex justify-between items-center w-full sm:hidden bg-[#161D6F] py-4 px-4">
@@ -13,7 +15,7 @@ const Mobileuser = () => {
       className="sm:w-12 w-12 sm:h-12 h-12 mt-2 rounded-full object-cover"
     />
     <span id="username" className="text-white text-[16px] font-bold pt-3 leading-4">
-      Wisdom Michael
+      {user?.username}
     </span>
   </div>
 
@@ -33,7 +35,7 @@ const Mobileuser = () => {
     </div>
 
   
-    <div className="absolute right-0 bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-40 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
+    <div className="absolute right-0 bg-[#DDE4EF] mt-2 dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-40 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
       <ul className="py-2">
         <li>
           <Link

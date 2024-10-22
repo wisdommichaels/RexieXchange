@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
+import { useAuthStore } from "../store/authStore"
 const Mobiledashboard = () => {
+  const {user} = useAuthStore()
   return (
     <div>
           <div  className="flex sm:hidden items-center justify-center sm:mt-24 mt-5">
                 <div  className="bg-white shadow-lg w-[95%] sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
-                  <h2  className="text-[16px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello John Doe</h2>
+                  <h2  className="text-[16px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello {user?.username}</h2>
                   <div  className="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
                     <div  className="flex-col justify-center items-center">
                       <p  className="text-gray-800 sm:text-[16px] text-[10px]">Total Balance: <span></span></p>
