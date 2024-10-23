@@ -22,10 +22,12 @@ import { useEffect} from 'react'
 import Checkrate from './pages/Checkrate'
 import { useAuthStore } from './store/authStore'
 import { useCardStore } from './store/cardStore'
+import Rates from './pages/Rates'
 
 function App() {
-  const { getCards } = useCardStore()
+  const { getCards, cards } = useCardStore()
   useEffect(() =>{
+    if(!cards)
     getCards()
   })
 
@@ -37,6 +39,7 @@ function App() {
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<ProtectedRoutes> <Sell/> </ProtectedRoutes>}/>
         <Route path='/checkrate' element={<Checkrate/>}/>
+        <Route path='/rate/:name' element={<ProtectedRoutes><Rates/></ProtectedRoutes>}/>
         <Route path='/razergold' element={<ProtectedRoutes><Razergold/></ProtectedRoutes>}/>
         <Route path='/apple' element={<ProtectedRoutes><Apple/></ProtectedRoutes>}/>
         <Route path='/amazon' element={<ProtectedRoutes><Amazon/></ProtectedRoutes>}/>

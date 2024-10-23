@@ -3,8 +3,12 @@ import {create} from 'zustand';
 import { api_url } from '../utils/constants';
 import api from '../utils/api';
 
-interface CardStore {
-    cards: [{ imageUrl: string, desc:string, subDesc:[string], name:string, rates:[{rateDetails:{countryName:string, currencyCode:string, currencySymbol:string, flag:string }, value:number}] }] | null;
+export interface Card { imageUrl: string, desc:string, subDesc:[string], name:string, rates:[{rateDetails:{countryName:string, currencyCode:string, currencySymbol:string, flag:string }, rate:number}] }
+
+export interface CardStore {
+    cards: [
+        { imageUrl: string, desc:string, subDesc:[string], name:string, rates:[{rateDetails:{countryName:string, currencyCode:string, currencySymbol:string, flag:string }, rate:number}] }
+    ] | null;
     loading: boolean;
     error: string | null;
     updateCard: (name: string, value: number) => Promise<any>;

@@ -109,7 +109,7 @@ const Home = () => {
             <h1 className="text-white text-[16px] font-semibold">{card.name} Gift Card</h1>
             <div className="flex justify-center items-center">
               <img className="w-8 pt-2 pr-1" src="src/assets/tag.png" alt=""/>
-                  <p className="text-white mt-2 font-bold">100{card.rates[0].rateDetails. currencySymbol} = ₦{card.rates[0].value}</p>
+                  <p className="text-white mt-2 font-bold">1{card.rates[0].rateDetails.currencySymbol} = ₦{card.rates[0].rate}</p>
                 </div>
                 <Link to={"/sell"} className="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
                   Sell
