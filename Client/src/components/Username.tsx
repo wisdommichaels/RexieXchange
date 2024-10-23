@@ -21,7 +21,7 @@ const Username = () => {
       </div>
     </div>
       <div className="absolute right-0  bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-30 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
-        <ul className="py-2 sm:pt-10">
+        <ul className="py-2">
           <li>
             <Link to={'/settings'} className="block text-16 w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
               Account Settings

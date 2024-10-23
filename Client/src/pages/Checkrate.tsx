@@ -87,7 +87,7 @@ const Checkrate: React.FC = () => {
           <span className="hidden sm:block">BACK</span>
         </Link>
 
-        <h2 className="sm:text-[24px] text-[18px] text-white pt-3 pl-24">Check Rate</h2>
+        <h2 className="sm:text-[24px] text-[18px] text-white pt-3 pl-24 sm:pl-0 text-center">Check Rate</h2>
 
         <div className="hidden sm:block">
         <Username />
@@ -95,10 +95,13 @@ const Checkrate: React.FC = () => {
       </nav>
 
       <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] mx-3 mt-4 sm:m-0 rounded-md sm:rounded-none">
-        <div className="sm:w-1/2 mx-auto p-4 sm:pt-20 pt-48">
-          <h2 className="sm:text-2xl text-[16px] font-bold text-center text-[#161D6F] mb-4">
+          <div className='p-5'>
+          <h1 className="sm:text-2xl text-[16px] font-bold text-[#161D6F] mb-2">
             CHECK YOUR GIFT CARD RATE
-          </h2>
+          </h1>
+          <p>Enter your gift card details in each field bellow to calculate how much is the value of your gift card in naira on GiftHub.</p>
+          </div>
+        <div className="sm:w-1/2 mx-auto p-4 sm:pt-7 pt-7">
           <form id="currency-form" onSubmit={handleSubmit} className="space-y-4 w-full">
             <div className="flex flex-col mb-4">
               <label htmlFor="amount" className="mb-1 text-sm m-auto text-[#161D6F] text-[10px] sm:text-[16px]">

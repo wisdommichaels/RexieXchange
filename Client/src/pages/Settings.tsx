@@ -46,9 +46,11 @@ const Settings = () => {
         <span className="md:inline text-white pt-3">Wisdom Michael</span>
       </div> */}
 
-  <section className="flex flex-col md:flex-row justify-center p-3 ">
-        <div className="flex-col justify-center items-center shadow-xl  m-auto sm:w-[40%] w-full sm:h-[60vh] pb-12 sm:pb-0 mb-5 sm:mb-0 sm:mt-10 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
-          <div className="flex justify-center items-center pt-8">
+  <section className="flex flex-col md:flex-row justify-center p-3">
+    <div className=" m-auto sm:w-[35%] w-full sm:mt-10 mb-4">
+        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
+          <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
+          <div className="flex justify-center items-center">
           <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.placeholder.com/150" alt="Profile Picture"/>
           </div>
           <div className="flex justify-center items-center bg-white w-fit mx-auto px-4 py-1 rounded-md">
@@ -58,30 +60,49 @@ const Settings = () => {
             </div>
             <input type="file" id="profile-pic-upload" className="hidden underline-offset-0" accept="image/*" onChange={(event: React.ChangeEvent<HTMLInputElement>) => loadFile(event)}/>
           </div>
-          <div className="flex-col justify-center items-center mt-3 m-auto text-center">
+          <div className="flex-col justify-center items-center pb-10 pt-3 m-auto text-center">
           <h1 id="username" className="font-bold text-20 text-[#161D6F]">{user?.username}</h1>
           <h2 id="email" className="text-14 text-[#161D6F] mt-1">{user?.email}</h2>
           </div>
         </div>
-    <div className="h-[80vh] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] m-auto shadow-xl rounded-lg sm:w-[50%] w-full sm:h-[100%] sm:my-10  py-10 px-5 flex-col justify-center items-center">
+        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full text-center mt-4 sm:mt-8  p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
+          <h1 className=" text-2xl text-[#161D6F] pb-5">ACCOUNT DETAILS</h1>
+          <div className="flex justify-center items-center mb-5 gap-3">
+            <p className="text-[#161D6F] font-bold ">Account Number :</p>
+            <p className="underline">09967636849</p>
+          </div>
+          <div className="flex justify-center items-center mb-5 gap-3">
+            <p className="text-[#161D6F] font-bold ">Account Name :</p>
+            <p  className="underline">osaghale Christiana</p>
+          </div>
+          <div className="flex justify-center items-center mb-5 gap-3">
+            <p className="text-[#161D6F] font-bold ">Bank Name  :</p>
+            <p  className="underline">Kuda Bank</p>
+          </div>
+        </div>
+        </div>
+        
+        <div className="w-full sm:p-0 sm:w-[60%] flex-col justify-center items-center sm:my-10 mb-20  m-auto">
+           <div className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  shadow-xl rounded-lg  w-full pb-8 px-5 flex-col justify-center items-center">
+            <h1 className="text-2xl text-[#161D6F] text-center p-6">EDIT PROFILE</h1>
         <div className="mb-6 w-full flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="username" className="block text-[#161D6F] font-semibold  text-center">Edit Username</label>
+          <label htmlFor="username" className="block text-[#161D6F]   text-center">Edit Username</label>
             <input className="p-4 sm:p-3 input" type="text" id="username" placeholder="Enter your username"/>
         </div>
   
       
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="current-password" className="block text-[#161D6F] font-semibold  text-center">Current Password</label>
+          <label htmlFor="current-password" className="block text-[#161D6F]  text-center">Current Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="current-password" placeholder="Enter current password"/>
         </div>
   
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="new-password" className="block text-[#161D6F] text-center font-semibold">New Password</label>
+          <label htmlFor="new-password" className="block text-[#161D6F] text-center ">New Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="new-password" placeholder="Enter new password"/>
         </div>
   
         <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="confirm-password" className="block text-[#161D6F] font-semibold text-center">Confirm New Password</label>
+          <label htmlFor="confirm-password" className="block text-[#161D6F]  text-center">Confirm New Password</label>
           <input className="p-4 sm:p-3 input" type="password" id="confirm-password" placeholder="Confirm new password"/>
         </div>
   
@@ -89,6 +110,7 @@ const Settings = () => {
         <div className="flex justify-center items-center sm:w-[80%] m-auto">
           <button className="btn px-3 py-4 w-full">Save Changes</button>
         </div>
+    </div>
     </div>
   </section>
   <div className="hidden sm:block">
