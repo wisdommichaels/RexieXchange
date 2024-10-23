@@ -199,37 +199,37 @@ const populateGiftCard =async () => {
     } 
     await GiftCard.create([
         {
-            name: "Visa",
-            desc: "The Visa Gift Card is a versatile prepaid card that offers a world of shopping opportunities. It is accepted wherever American Express is accepted, including both online and in-store purchases. With no fees after purchase, it is a great way to give the gift of choice, allowing recipients to shop at millions of locations worldwide.",
-            subDesc:["Available in various denominations.", "Can be traded both with physical Card or E-code with the best rate.", "Redeemable at any Visa location and on GiftHub."],
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557183/visapng_nrji67.svg",
+            name: "Paysafe",
+            desc: "The PaysafeGift Card is a versatile prepaid card that offers a world of shopping opportunities. It is accepted wherever American Express is accepted, including both online and in-store purchases. With no fees after purchase, it is a great way to give the gift of choice, allowing recipients to shop at millions of locations worldwide.",
+            subDesc:["Available in various denominations.", "Can be traded both with physical Card or E-code with the best rate.", "Redeemable at any Paysafe location and on GiftHub."],
+            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl.svg",
             rates:[
                 {
-                    rate: 1000,
+                    rate: 500,
                     rateDetails:finder("United States")
                 },
                 {
-                    rate: 800,
+                    rate: 200,
                     rateDetails:finder("Canada")
                 },
                 {
-                    rate: 600,
+                    rate: 200,
                     rateDetails:finder("Austrilia")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("United Kingdom")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Spain")
                 },
                 {
-                    rate: 900,
+                    rate: 450,
                     rateDetails:finder("Singapore")
                 },
                 {
-                    rate: 40,
+                    rate: 100,
                     rateDetails:finder("Brazil")
                 },
                 {
@@ -237,7 +237,7 @@ const populateGiftCard =async () => {
                     rateDetails:finder("Mexico")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("France")
                 },
                 {
@@ -245,7 +245,7 @@ const populateGiftCard =async () => {
                     rateDetails:finder("Thailand")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Switzerland")
                 },
                 {
@@ -261,7 +261,7 @@ const populateGiftCard =async () => {
                     rateDetails:finder("Norway")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Germany")
                 },
                 {
@@ -273,15 +273,15 @@ const populateGiftCard =async () => {
                     rateDetails:finder("South Africa")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Nertherland")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Italy")
                 },
                 {
-                    rate: 800,
+                    rate: 500,
                     rateDetails:finder("Portugal")
                 },
                 {
@@ -289,15 +289,15 @@ const populateGiftCard =async () => {
                     rateDetails:finder("Japan")
                 },
                 {
-                    rate: 600,
+                    rate: 400,
                     rateDetails:finder("New Zealand")
                 },
                 {
-                    rate: 400,
+                    rate: 40,
                     rateDetails:finder("Sweden")
                 },
                 {
-                    rate: 1000,
+                    rate: 500,
                     rateDetails:finder("Greece")
                 },
                 {

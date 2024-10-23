@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { useEffect } from "react"
+import { useCardStore } from "../store/cardStore"
 
 const Countryrates: React.FC = () => {
+  const { cards } = useCardStore()
+
+  useEffect(() => console.log(cards),[])
+
     // State to control whether the additional rows are shown or hidden
     const [isVisible, setIsVisible] = useState(false);
 
@@ -12,17 +18,18 @@ const Countryrates: React.FC = () => {
   return (
     <div>
     <section  className="w-full sm:w-[98%] h-100vh mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
-    
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
         <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] sm:pr-2 pr-6">Gift Card Rate</div>
       </div>
+    {cards?.map((card) =>
 
+      <div>
         <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
          <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
-                <svg  className="w-[40%] sm:w-[9%]" 
+                {/* <svg  className="w-[40%] sm:w-[9%]" 
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
                 >
@@ -142,7 +149,8 @@ const Countryrates: React.FC = () => {
               fill="#fff"
               d="M13.539 14.744L14.13 14.315 13.399 14.315 13.173 13.619 12.947 14.315 12.216 14.315 12.808 14.744 12.582 15.44 13.173 15.01 13.765 15.44 13.539 14.744z"
               ></path>
-            </svg>
+            </svg> */}
+            <img src={card.imageUrl} alt="" />
             United States
           </div>
           <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">USD</div>
@@ -156,7 +164,9 @@ const Countryrates: React.FC = () => {
           </div>
           </Link>
     </div>
-     <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
+      </div>)
+        }
+     {/* <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
          <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
           <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
               <svg  className="w-[40%] sm:w-[9%]"
@@ -983,8 +993,8 @@ const Countryrates: React.FC = () => {
           </div>
           </Link>
     </div>
-    
-<section className={`${isVisible ? '' : 'hidden'}`} id="additionalRows">
+     */}
+{/* <section className={`${isVisible ? '' : 'hidden'}`} id="additionalRows">
       <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">
          <Link to={"/sell"}  className="flex sm:flex-row items-center justify-between sm:justify-between border-b-[1px] border-[#d2d2d5] sm:pb-3 pb-1">
             <div  className="w-[20%] sm:w-1/3 flex-col justify-center sm:justify-start text-[10px] sm:text-[16px]">
@@ -1767,7 +1777,7 @@ const Countryrates: React.FC = () => {
           </Link>
     </div>
 
-</section>
+</section> */}
 </section>
 
 
