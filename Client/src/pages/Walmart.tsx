@@ -50,7 +50,7 @@ const Walmart = () => {
 
             <div  className="w-1/2 pl-8">
               <h2  className="text-3xl font-bold text-white mb-4">
-                Walmart Gift Card
+                Walmart moneycard Gift Card
               </h2>
               <p  className="text-white mb-4">
                 The Walmart Gift Card provides access to a wide variety of products, including groceries, electronics, clothing, household items, and much more. Whether you're shopping online or in-store, Walmart Gift Cards can be used across all Walmart locations and their website, making it the perfect gift for anyone. Convenient and easy to use, it gives you the flexibility to shop for whatever you need.

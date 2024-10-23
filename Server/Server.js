@@ -192,110 +192,126 @@ const populateCard =async() => {
 }
 
 const populateGiftCard =async () => {
-    const rateDetails= await CardRate.find()
+    const rateDetails = await CardRate.find()
     const finder = (country)=>{
 
         return rateDetails.find(r => r.countryName === country)
     } 
     await GiftCard.create([
         {
-            name: "Apple/Itunes",
-            desc: "The Apple iTunes Gift Card is your gateway to an endless world of music, movies, TV shows, apps, games, books, and more on the App Store, iTunes, and Apple Music. this card offers a flexible and convenient way to make purchases across Apple platforms and the Apple ecosystem.",
-            subDesc:["Available in various denominations.", "Can be traded both with physical Card or E-code with the best rate.", "Redeemable on the App Store, and also on GiftHub."],
-            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729558949/applecardpng_x0d8rz.svg",
+            name: "Visa",
+            desc: "The Visa Gift Card is a versatile prepaid card that offers a world of shopping opportunities. It is accepted wherever American Express is accepted, including both online and in-store purchases. With no fees after purchase, it is a great way to give the gift of choice, allowing recipients to shop at millions of locations worldwide.",
+            subDesc:["Available in various denominations.", "Can be traded both with physical Card or E-code with the best rate.", "Redeemable at any Visa location and on GiftHub."],
+            imageUrl: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557183/visapng_nrji67.svg",
             rates:[
                 {
                     rate: 1000,
+                    rateDetails:finder("United States")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Canada")
+                },
+                {
+                    rate: 600,
+                    rateDetails:finder("Austrilia")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("United Kingdom")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Spain")
+                },
+                {
+                    rate: 900,
+                    rateDetails:finder("Singapore")
+                },
+                {
+                    rate: 40,
+                    rateDetails:finder("Brazil")
+                },
+                {
+                    rate: 50,
+                    rateDetails:finder("Mexico")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("France")
+                },
+                {
+                    rate: 50,
+                    rateDetails:finder("Thailand")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Switzerland")
+                },
+                {
+                    rate: 33,
+                    rateDetails:finder("Taiwan")
+                },
+                {
+                    rate: 150,
+                    rateDetails:finder("Denmark")
+                },
+                {
+                    rate: 160,
+                    rateDetails:finder("Norway")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Germany")
+                },
+                {
+                    rate: 130,
+                    rateDetails:finder("Hong Kong")
+                },
+                {
+                    rate: 40,
+                    rateDetails:finder("South Africa")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Nertherland")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Italy")
+                },
+                {
+                    rate: 800,
+                    rateDetails:finder("Portugal")
+                },
+                {
+                    rate: 70,
+                    rateDetails:finder("Japan")
+                },
+                {
+                    rate: 600,
+                    rateDetails:finder("New Zealand")
+                },
+                {
+                    rate: 400,
+                    rateDetails:finder("Sweden")
+                },
+                {
+                    rate: 1000,
+                    rateDetails:finder("Greece")
+                },
+                {
+                    rate: 250,
                     rateDetails:finder("Poland")
                 },
-                // {
-                //     rate: 5000,
-                //     rateDetails:CardRate.findOne({countryName:"Poland"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"China"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Hong Kong"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Canada"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Austrilia"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Mexico"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Singapore"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Brazil"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Thailand"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Spain"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Denmark"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Germany"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"South Africa"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Nertherland"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Italy"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Portugal"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Japan"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"New Zealand"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"Sweden"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"France"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"China"})._id
-                // },
-                // {
-                //     rate: 1200,
-                //     rateDetails:CardRate.findOne({countryName:"China"})._id
-                // },
+                {
+                    rate: 1000,
+                    rateDetails:finder("China")
+                },
+                {
+                    rate: 200,
+                    rateDetails:finder("United Arab Emirates")
+                },
         ]
         }
     ])
