@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get("/", getGiftCards);
 router.put("/update-card", updateGiftCard);
+router.put("/sell-card",);
 
 export default router;

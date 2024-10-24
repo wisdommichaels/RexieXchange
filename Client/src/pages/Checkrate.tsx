@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Username from '../components/Username';
 import Mobilefooter from '../components/Mobilefooter';
 import Footer from '../components/Footer';
+import Progress from '../components/Progress';
 
 const Checkrate: React.FC = () => {
   interface ConversionRates {
@@ -69,7 +69,7 @@ const Checkrate: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-[#161D6F] shadow-lg flex sm:justify-between items-center py-3">
+      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 gap-8">
         <Link
           to="/"
           className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3"
@@ -87,16 +87,13 @@ const Checkrate: React.FC = () => {
           <span className="hidden sm:block">BACK</span>
         </Link>
 
-        <h2 className="sm:text-[24px] text-[18px] text-white pt-3 pl-24 sm:pl-0 text-center">Check Rate</h2>
+        <h2 className="sm:text-[24px] text-[18px] text-white pt-3  text-center">Check Rate</h2>
 
-        <div className="hidden sm:block">
-        <Username />
-        </div>
       </nav>
 
-      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] mx-3 mt-4 sm:m-0 rounded-md sm:rounded-none">
-          <div className='p-5'>
-          <h1 className="sm:text-2xl text-[16px] font-bold text-[#161D6F] mb-2">
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7 sm:pb-9 mx-3 sm:m-0">
+          <div className='p-5 sm:pt-8'>
+          <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
             CHECK YOUR GIFT CARD RATE
           </h1>
           <p>Enter your gift card details in each field bellow to calculate how much is the value of your gift card in naira on GiftHub.</p>
@@ -169,7 +166,7 @@ const Checkrate: React.FC = () => {
           </form>
         </div>
       </section>
-
+      <Progress/>
       <Mobilefooter />
       <div className="hidden sm:block">
        <Footer />

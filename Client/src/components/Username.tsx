@@ -11,7 +11,7 @@ const Username = () => {
   <div className="group relative">
     <div className="group relative dropdown flex">
       <div className="flex cursor-pointer">
-        <span className="text-white text-[14px] font-bold pt-3 leading-4">{user?.username}</span>
+        <span className="text-white text-[13px] pt-3 font-semibold leading-4">{user?.username}</span>
         <svg className="w-[25px] h-[25px] pt-3 text-white font-bold hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
@@ -20,16 +20,18 @@ const Username = () => {
         </svg>
       </div>
     </div>
-      <div className="absolute right-0  bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-30 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
+      <div className="absolute right-0  bg-[#DDE4EF] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-[153px] opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
         <ul className="py-2">
           <li>
-            <Link to={'/settings'} className="block text-16 w-full text-left px-4 py-2 text-[#161D6F] hover:bg-gray-100">
-              Account Settings
+            <Link to={'/settings'} className="flex justify-between text-16 w-full text-left px-4 py-2  text-[#161D6F] hover:bg-gray-100">
+              My Profile
+              <img className="w-[20px] h-[20px] text-[#161D6F]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729743643/icons8-user-50_1_n4nhpf.png" alt=""/>
             </Link>
           </li>
           <li>
-            <Link to={'/'} className="block w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100">
+            <Link to={'/'} className="flex justify-between w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100">
               Logout
+              <img className="w-4 h-4" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/logouticon_bs56u0.png" alt="" />
             </Link>
           </li>
         </ul>

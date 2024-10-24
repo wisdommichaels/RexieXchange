@@ -6,8 +6,11 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import giftcardRoutes from "./routes/giftcard.routes.js";
+import transactionRoutes from "./routes/transaction.routes.js";
 import CardRate from "./Models/rateModel.js";
 import GiftCard from "./Models/giftcardModel.js";
+// import SalesTransaction from "./Models/sellModel.js";
+import User from "./Models/userModel.js";
 
 dotenv.config()
 
@@ -318,7 +321,165 @@ const populateGiftCard =async () => {
     console.log("successful");
 }
 
-// populateGiftCard();
+// const populatetransaction = async () => {
+//     const finder = (_id)=>{
+
+//         return userId.find(r => r.User._id === _id)//find the user with the id
+//     } 
+//     await  SalesTransaction.create([
+//         {
+//             cardname:"Apple",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl",
+//             status:['pending', 'completed', 'cancelled'],
+//             amount: 1000,
+//             user: finder(UserId[0]._id) // user with id 1
+//         },
+//         {
+//             cardname:"Amazon",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Razer",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Steam",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Google Play",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         }, 
+//         {
+//             cardname:"Vanilla",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Mastercard",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Xbox",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"PlayStation",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"ebay",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"playsafe",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"wallmart",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"walmart Money",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"American express",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Visa",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Sephora",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Nike",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Nordstrom",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Macy's",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Game Stop",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Netspend",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Roblox",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Footlocker",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+//         {
+//             cardname:"Cvs Pharmacy",
+//             countrycode:"USD",
+//             cadnumber: 123456789,
+//             cardimage:"https://res.cloudinary.com/duwfbyhyq/image/upload/v1729557181/paysafecardpng_olragl"
+//         },
+      
+
+//     ])
+//     console.log("successful")
+// }
+// populateSellCard();
 
 app.get('/', (req, res) =>{
     res.end ("server is working")
@@ -327,6 +488,7 @@ app.get('/', (req, res) =>{
 
 app.use("/api/auth", authRoutes);
 app.use("/api/giftcard", giftcardRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);

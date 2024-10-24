@@ -11,7 +11,7 @@ const Navbar = () => {
         </li>
         <div className="menu">
           <div className="item">
-            <a href="#" className="link">
+          <Link to={"/rate/"}className="link">
               <span> Gift Card </span>
               <svg viewBox="0 0 360 360" xmlSpace="preserve">
                 <g id="SVGRepo_iconCarrier">
@@ -21,7 +21,7 @@ const Navbar = () => {
                   ></path>
                 </g>
               </svg>
-            </a>
+              </Link>
             <div className="submenu">
               <div className="submenu-item">
                 <Link to={"/sell"} className="submenu-link">

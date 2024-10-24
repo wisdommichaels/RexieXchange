@@ -33,11 +33,13 @@ const Sell = () => {
         </div>
       </nav>
 
-      <section className="bg-gradient-to-r h-[80vh] sm:h-[60%] from-[#a2bae3] to-[#668bc2] sm:flex justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
-          
-          <h2 className="sm:text-2xl text-[16px] font-bold text-[#161D6F] text-center mb-4">
-            INPUT YOUR GIFT CARD DETAILS
-          </h2>
+      <section className="bg-gradient-to-r h-[80vh] sm:h-[60%] from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
+      <div className='p-5 mb-5'>
+          <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
+           INPUT YOUR GIFT CARD DETAILS
+          </h1>
+          <p>Enter your gift card details in each field bellow to sell your gift card on GiftHub.</p>
+          </div>
         <div className="sm:w-1/2 mx-auto p-4 pt-8 sm:pt-4">
 
           <form id="gift-card- htmlForm" className="w-full space-y-4 ">

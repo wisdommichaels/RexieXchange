@@ -1,5 +1,5 @@
 import GiftCard from "../Models/giftcardModel.js";
-import CardRate from "../Models/rateModel.js"
+// import CardRate from "../Models/rateModel.js"
 
 export const getGiftCards = async (req, res) => {
     try {

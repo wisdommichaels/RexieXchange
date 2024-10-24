@@ -99,16 +99,16 @@ const Home = () => {
     <h1 className="font-bold text-[12px] sm:text-[14px] text-white">Gift Cards</h1>
   </div>
 </section>
-<section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto w-[98%] mb-8 px-5 sm:p-0">
-  <div className="flex flex-wrap justify-center items-center gap-8 py-8  mt-4 rounded-2xl">
+<section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto w-[98%] mb-8 sm:p-0">
+  <div className="flex flex-wrap justify-center items-center sm:gap-8 gap-5 py-8  mt-4 rounded-2xl">
     {cards?.map((card) =>
       <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
-      <div className="relative group mt-2 mr-2">
-          <img src={card.imageUrl} alt="Product Image" className="w-full h-30 sm:h-42 object-cover rounded-lg"/>
+      <div className="relative group sm:mt-2 sm:mr-2 p-1 sm:p-0">
+          <img src={card.imageUrl} alt="Product Image" className="w-full h-30 sm:h-42 object-cover sm:rounded-lg"/>
           <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
             <h1 className="text-white text-[16px] font-semibold">{card.name} Gift Card</h1>
             <div className="flex justify-center items-center">
-              <img className="w-8 pt-2 pr-1" src="src/assets/tag.png" alt=""/>
+              <img className="w-8 pt-2 pr-1" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/tag_m6zbjc.png" alt=""/>
                   <p className="text-white mt-2 font-bold">1{card.rates[0].rateDetails.currencySymbol} = ₦{card.rates[0].rate}</p>
                 </div>
                 <Link to={"/sell"} className="mt-2 bg-[#FA4A00] text-white px-5 py-1 font-bold rounded-lg shadow hover:bg-[#161D6F] transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -116,9 +116,23 @@ const Home = () => {
                 </Link>
               </div>
       </div>
+      <div className="flex-col sm:hidden justify-center items-center bg-[#161D6F] w-full py-2 px-2 mb-1">
+    <div>
+    </div>
+    <div className="">
+      <h1 className="text-white text-[14px] ">{card.name} Gift Card</h1>
+      
+        <div className="flex items-center pt-2 pb-2">
+        <img className="w-5 h-4"  src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/tag_m6zbjc.png" alt=""/>
+      <p className="flex text-white text-[16px]">1{card.rates[0].rateDetails.currencySymbol} = ₦{card.rates[0].rate}</p>
+        </div>
+        <Link to={"/sell"}><p className="mt-2 bg-[#86a4d3]   text-white py-2  rounded-lg text-center">Sell</p></Link>
+    </div>
+  </div>
     </div>)
     }    
   </div>
+ 
 </section>
 <Footer/>
 

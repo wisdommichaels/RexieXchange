@@ -4,21 +4,20 @@ import { Card } from "../store/cardStore"
 
 const Countryrates: React.FC<{name: string | undefined, data:Card|null|undefined}> = ({name, data}) => {
 
-
     // State to control whether the additional rows are shown or hidden
     const [isVisible, setIsVisible] = useState(false);
-    const [showMore, setShowMore] = useState<number|undefined>(5);
+    const [showMore, setShowMore] = useState<number|undefined>(10);
 
     // Function to toggle visibility and button text
     const handleToggle = () => {
-      setShowMore(showMore === 5? data?.rates.length : 5); // Toggle number of rows displayed
+      setShowMore(showMore === 10? data?.rates.length : 10); // Toggle number of rows displayed
       setIsVisible(!isVisible); // Toggle visibility
     };
   return (
     <div>
     <section  className="w-full sm:w-[98%] h-100vh mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
-        <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">{name}</div>
+        <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
         <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] sm:pr-2 pr-6">Gift Card Rate</div>
       </div>

@@ -529,6 +529,10 @@ ul {
 .example-2 .icon-content a[data-social="twitter"] ~ .tooltip {
   background-color: #24262a;
 }
+.example-2 .icon-content a[data-social="email"] .filled,
+.example-2 .icon-content a[data-social="email"] ~ .tooltip {
+  background-color: #e71717;
+}
 
 
 /* login/signup css */

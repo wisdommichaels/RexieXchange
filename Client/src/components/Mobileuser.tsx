@@ -48,10 +48,10 @@ const Mobileuser = () => {
         <li>
           <Link
             to={'/'}
-            className="flex w-full gap-3 px-4 py-2 text-[#161D6F] hover:bg-gray-100"
+            className="flex justify-between w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100"
           >
             Logout
-            <img className="w-6 h-6" src="src\assets\logouticon.png" alt="" />
+            <img className="w-5 h-5" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/logouticon_bs56u0.png" alt="" />
           </Link>
         </li>
       </ul>

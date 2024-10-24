@@ -34,7 +34,7 @@ function Login() {
     <div className="bg-[#101035]">
           <div className="login-div">
         <div className="photo hidden sm:flex">
-            <img src="src/assets/LOGINPHOTO.png" alt=""/>
+            <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
         </div> 
    
   <div className="w-full sm:w-1/2 m-auto flex items-center justify-center">
