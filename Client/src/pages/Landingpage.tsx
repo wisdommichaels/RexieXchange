@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
+import Carousel from "../components/carousel"
 function Landingpage() {
   return (
     <div>
@@ -9,13 +10,14 @@ function Landingpage() {
     <div className="carousel-container overflow-x-hidden">
         <div className="carousel-track">
           <div className="carousel-slide">
-          <Link to={'/'} className="text-none"><img src="src/assets/banner1.png" alt="Image 1"/></Link>
+          {/* <Link to={'/'} className="text-none"><img src="src/assets/banner1.png" alt="Image 1"/></Link>
     </div>
     <div className="carousel-slide">
     <Link to={'/'} className="text-none"><img src="src/assets/banner2.png" alt="Image 1"/></Link>
     </div>
     <div className="carousel-slide">
-    <Link to={'/'} className="text-none"><img src="src/assets/banner3.png" alt="Image 1"/></Link>
+    <Link to={'/'} className="text-none"><img src="src/assets/banner3.png" alt="Image 1"/></Link> */}
+
     </div>
   </div>
   <Link to={'/'} className="carousel-button carousel-button-left w-5 h-0 sm:w-12 sm:h-12 text-[10px] sm:text-[15px] pb-5 sm:pb-0 sm:pt-0">{"<"}</Link>
