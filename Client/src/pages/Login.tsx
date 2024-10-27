@@ -1,13 +1,45 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../store/authStore";
+import { toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Login() {
+  const notify = () => toast("Login Successful!");
   const { login, error, user } = useAuthStore();  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  interface FormErrors {
+    email?: string;
+    password?: string;
+  }
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const validateForm = () => {
+    const newErrors: FormErrors = {};
+
+    if (!email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Email format is invalid';
+    }
+
+    if (!password) {
+      newErrors.password = 'Password is required';
+    } else if (password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+  if (validateForm()) {
+    console.log('Form is valid. Submitting data...');
+  }
   // Make a request to your backend to handle the login logic
   try {
     await login(email, password);
@@ -53,10 +85,11 @@ function Login() {
           <div className="mb-4 w-[85%] flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Email</label>
             <input type="email" placeholder="Enter your E-mail" value={email} onChange={e=>setEmail(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
+             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
           </div>
          <div className="w-[85%] sm:-w-[60%] flex flex-col justify-center items-center">
             <label className="text-[#161D6F] text-[14px]">Password</label>
-            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
+            <div className="relative w-full sm:w-[50%] py-3 px-5 input focus:">
             <input
               type={passwordVisible ? "text" : "password"}
               // id="password"
@@ -75,10 +108,12 @@ function Login() {
               )}
             </div>
           </div>
+          {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
           </div>
           {error && <p className="">{error}</p>}
           <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
-          <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
+          <button onClick={notify} type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
+          <ToastContainer />
         </form>
         <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button>
       </div>

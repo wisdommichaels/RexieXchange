@@ -2,11 +2,36 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
-import Carousel from "../components/carousel"
+import Username from "../components/Username";
+import Mylogo from "../components/Mylogo";
 function Landingpage() {
+  let isloggedin = true;
   return (
     <div>
     <Header>
+    {isloggedin ? (
+        <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
+          <Username/>
+        </div>
+      ) : (
+        <div className="bg-[#161D6F] p-4 pl-2 sm:hidden pt-3 flex justify-between">
+          <Mylogo />
+          <div className="pt-5 space-x-3">
+            <Link
+              to={"/Login"}
+              className="login-button text-[#161D6F] text-[12px] py-2 px-3 bg-[#FFFFFF] font-semibold"
+            >
+              LOGIN
+            </Link>
+            <Link
+              to={"/signup"}
+              className="signup-button text-[#161D6F]  text-[12px] py-2 px-3  bg-[#FFFFFF] font-semibold"
+            >
+              SIGN UP
+            </Link>
+          </div>
+        </div>
+      )}
     <div className="carousel-container overflow-x-hidden">
         <div className="carousel-track">
           <div className="carousel-slide">

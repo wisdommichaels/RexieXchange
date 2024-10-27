@@ -4,6 +4,8 @@ body {
   font-family: "Telegraf", sans-serif;
   background-color: rgb(221, 228, 239);
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  
 }
 
 #black {

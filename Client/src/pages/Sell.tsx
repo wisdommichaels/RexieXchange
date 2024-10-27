@@ -43,6 +43,21 @@ const Sell = () => {
         <div className="sm:w-1/2 mx-auto p-4 pt-8 sm:pt-4">
 
           <form id="gift-card- htmlForm" className="w-full space-y-4 ">
+          <div className="sm:mb-0 mb-10  text-center w-full">
+                <label
+                  htmlFor="cardNumber"
+                  className="text-[16px] text-[#161D6F] sm:text-[16px]"
+                >
+                  Amount
+                </label>
+                <input
+                  type="text"
+                  id="amount"
+                  name="amount"
+                  placeholder="Enter Trade Amount"
+                  className=" custom-select custom-arrow w-full cursor-text"
+                />
+              </div>
             <div className="sm:flex justify-center items-center gap-5">
               <div className="sm:mb-0 mb-10  text-center sm:w-1/2">
                 <label
@@ -123,7 +138,7 @@ const Sell = () => {
                   id="giftCardImage"
                   name="giftCardImage"
                   accept="image/*"
-                  className=" custom-select custom-arrow cursor-text w-full"
+                  className=" custom-select custom-arrow cursor-pointer w-full"
                 />
               </div>
             </div>

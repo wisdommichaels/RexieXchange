@@ -40,18 +40,19 @@ const Mobileuser = () => {
         <li>
           <Link
             to={'/settings'}
-            className="block text-[16px] w-full text-center py-2 text-[#161D6F] hover:bg-gray-100"
+            className="flex items-center gap-3 px-4 text-[16px] w-full text-center py-2 text-[#161D6F] hover:bg-gray-100"
           >
-            Account Settings
+             <img className="w-[20px] h-[20px] text-[#161D6F]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729743643/icons8-user-50_1_n4nhpf.png" alt=""/>
+            My Profile
           </Link>
         </li>
         <li>
           <Link
             to={'/'}
-            className="flex justify-between w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100"
+            className="flex gap-3 items-center w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100"
           >
-            Logout
             <img className="w-5 h-5" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/logouticon_bs56u0.png" alt="" />
+            Logout
           </Link>
         </li>
       </ul>
