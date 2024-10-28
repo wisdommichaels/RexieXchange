@@ -20,7 +20,17 @@ function Login() {
     const newErrors: FormErrors = {};
 
     if (!email) {
-      newErrors.email = 'Email is required';
+      toast.error('Email is required',{
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        className: 'custom-toast',
+        progressClassName: 'custom-toast-progress',
+      });
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = 'Email format is invalid';
     }
