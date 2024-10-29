@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { api_url } from '../utils/constants';
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ const useSignup = () => {
     if (!success) return;
     setLoading(true);
     try {
-      const response = await fetch('/api/auth/signup', {
+      const response = await fetch(`${api_url}/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

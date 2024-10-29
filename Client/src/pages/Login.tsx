@@ -111,8 +111,11 @@ function Login() {
     e.preventDefault();
     // console.log(inputs);
     try {
-      await signup(inputs.email, inputs.password, inputs.username, inputs.confirmPassword);
+      console.log(inputs.email, inputs.password, inputs.username, inputs.confirmPassword);
+      
+      await signup(inputs.username, inputs.email, inputs.password, inputs.confirmPassword);
       console.log("Signup success");
+      navigate('/')
     } catch (error) {
       console.log("Signup error:", error);
     }

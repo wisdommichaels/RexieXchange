@@ -67,12 +67,12 @@ export const useAuthStore = create<AuthStore>((set) => ({
             });
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token)
-                return response.data
                 set({ loading: false })
+                return response.data
             } catch (error:any) {
                 console.log(error)
-                return error
                 set({ loading: false, error: error instanceof Error ? error.message : 'An unknown error occurred' })
+                return error
         }
     },
 

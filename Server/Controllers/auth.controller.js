@@ -8,7 +8,7 @@ export const signup = async (req, res) => {
         if (!username || !email || !password || !confirmPassword) {
             return res.status(400).json({ message: "All fields are required" });
         }
-        if (password !== confirmPassword) {
+        if (password != confirmPassword) {
             return res.status(400).json({ message: "Passwords do not match" });
         }
         const user= await User.findOne({username})
