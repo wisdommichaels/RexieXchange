@@ -7,6 +7,7 @@ import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter"
 import { Card, useCardStore } from "../store/cardStore"
 import { useEffect, useState } from "react"
+import Signup from "../components/Signup"
 
 const Rates = () => {
     const { cards } = useCardStore()

@@ -10,7 +10,7 @@ import transactionRoutes from "./routes/transaction.routes.js";
 import CardRate from "./Models/rateModel.js";
 import GiftCard from "./Models/giftcardModel.js";
 // import SalesTransaction from "./Models/sellModel.js";
-import User from "./Models/userModel.js";
+// import User from "./Models/userModel.js";
 
 dotenv.config()
 

@@ -12,6 +12,7 @@ import Checkrate from './pages/Checkrate'
 import { useAuthStore } from './store/authStore'
 import { useCardStore } from './store/cardStore'
 import Rates from './pages/Rates'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   const { getCards, cards } = useCardStore()
@@ -33,6 +34,7 @@ function App() {
         <Route path='/settings' element={<ProtectedRoutes><Settings/></ProtectedRoutes>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
+      <ToastContainer />
     </>
   )
 }

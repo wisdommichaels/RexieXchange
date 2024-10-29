@@ -5,6 +5,8 @@ import { verifyToken } from '../middleware/verifyToken.js';
 const router = express.Router();
 
 router.post("/signup", signup);
+
+// Middleware to verify token before accessing protected routes
 router.get("/checkAuth", verifyToken, checkAuth);
 
 router.post("/login", login);

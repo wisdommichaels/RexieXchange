@@ -1,209 +1,295 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
-import { toast, ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import useSignup from "../hooks/useSignup.ts";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import useSignup from "../hooks/useSignup";
+
+
 function Login() {
-  const notify = () => toast("Login Successful!");
+
+//   // signup function starts
+//    const [inputs, setInputs] = useState({
+//     username: "",
+//     email: "",
+//     password: "",
+//     confirmPassword: "",  
+//     });  
+
+// // Destructure signup function from useAuthStore
+//   const { signup, loading } = useAuthStore();
+
+//   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     if (!validateForm()) return;
+//     console.log(inputs);
+
+//     try {
+//       await signup(inputs.email, inputs.password, inputs.username, inputs.confirmPassword);
+//       console.log(user);
+//     } catch (error) {
+//       console.log("Signup error:", error);
+//     }
+//   };
+
+  // login function starts
   const { login, error, user } = useAuthStore();  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState<ErrorType>({ email: '', password: '',});
 
-  interface FormErrors {
+
+  // const [confirmPassword, setConfirmPassword] = useState("");  // New state for confirm password
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    try {
+      await login(email, password);
+      console.log(user); 
+      navigate('/');
+    } catch (error) {
+      console.log("Login error:", error);    
+    }
+  };
+  // logins funtion ends....
+
+
+
+// error interface
+  interface ErrorType {
     email?: string;
     password?: string;
+    confirmPassword?: string;  // Error for confirm password
+    username?: string;
   }
-  const [errors, setErrors] = useState<FormErrors>({});
-
   const validateForm = () => {
-    const newErrors: FormErrors = {};
+    const newErrors: ErrorType = {};
 
-    if (!email) {
-      toast.error('Email is required',{
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        className: 'custom-toast',
-        progressClassName: 'custom-toast-progress',
-      });
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Email format is invalid';
+    if (!email || !password) {
+      toast.error('Please fill in all fields!', { position: 'top-center' });
+      return false;
+    }
+    else if (!/\S+@\S+\.\S+/.test(email)) {
+      toast.error('Email format is invalid!', { position: 'top-center' });
+      newErrors.email = 'Email format is invalid!';
+      setErrors(newErrors);
+      return false;
+
     }
 
-    if (!password) {
-      newErrors.password = 'Password is required';
-    } else if (password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters';
+    if (password.length < 6) {
+      toast.error('Password must be at least 6 characters!', { position: 'top-center' });
+      newErrors.password = 'Password must be at least 6 characters!';
+      setErrors(newErrors);
+      return false;
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    // if (password && confirmPassword && password !== confirmPassword) {
+    //   newErrors.confirmPassword = 'Passwords do not match';
+    // }
+
+    return true;
   };
 
- const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  if (validateForm()) {
-    console.log('Form is valid. Submitting data...');
-  }
-  // Make a request to your backend to handle the login logic
-  try {
-    await login(email, password);
-    console.log(user); 
-    navigate('/');
-  } catch (error) {
-    console.log(error);    
-  }
-  
-  }
- 
-  const [passwordVisible, setPasswordVisible] = useState(false);
 
+// signup functions starts
+
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password:"",
+    confirmPassword:""
+  })
+
+  const {signup, loading} = useSignup()
+
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // console.log(inputs);
+    try {
+      await signup(inputs.email, inputs.password, inputs.username, inputs.confirmPassword);
+      console.log("Signup success");
+    } catch (error) {
+      console.log("Signup error:", error);
+    }
+  
+  };
+
+
+
+  // Hide and show password function
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  function toggleForms(): void {
-  const container = document.querySelector('.rotate-container') as HTMLElement | null;
-  if (container) {
-    container.classList.toggle('show-signup');
-  }
-}
+  // Hide and show password function ends
+
+
+  // rotate form funtion
+  const toggleForms = () => {
+    const container = document.querySelector('.rotate-container') as HTMLElement | null;
+    if (container) {
+      container.classList.toggle('show-signup');
+    }
+  };
+  // rotate form funtion
+
+
   return (
     <div className="bg-[#101035]">
-          <div className="login-div">
+      <div className="login-div">
         <div className="photo hidden sm:flex">
-            <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
         </div> 
-   
-  <div className="w-full sm:w-1/2 m-auto flex items-center justify-center">
-    <div className="rotate-container w-full sm:w-1/2 form-container bg-[#DDE4EF] shadow-lg flex justify-center items-center">
 
-      <div className="login flex flex-col justify-center items-center space-y-4 w-full">
-        <h1 className="text-lg font-semibold text-[#161D6F] text-center mt-5">Hello, Welcome Back to GiftHub</h1>
-        <h2 className="text-3xl font-bold text-[#161D6F]">Login</h2>
-        <span className="text-[12px] text-[#292a2b] m-5">or Login with</span>
-        <div className="social-icons">
-        <Link to={'/'}className="media-icons"><i className="fa-brands fa-google-plus-g"></i></Link>
-        <Link to={'/'} className="media-icons"><i className="fa-brands fa-apple text-white"></i></Link>
-        <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
-        </div>
-        <form onSubmit={handleLogin} className="w-full flex flex-col justify-center items-center">
-          <div className="mb-4 w-[85%] flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Email</label>
-            <input type="email" placeholder="Enter your E-mail" value={email} onChange={e=>setEmail(e.target.value)} className="w-full sm:w-[50%] py-3 px-5 input"/>
-             {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
-          </div>
-         <div className="w-[85%] sm:-w-[60%] flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Password</label>
-            <div className="relative w-full sm:w-[50%] py-3 px-5 input focus:">
-            <input
-              type={passwordVisible ? "text" : "password"}
-              // id="password"
-              className=" focus:outline-none bg-transparent "
-              placeholder="Enter your password" 
-              value={password} onChange={e=>setPassword(e.target.value)}
-            />
-            <div
-              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-              onClick={togglePasswordVisibility}
-            >
-              {passwordVisible ? (
-               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
-              ) : (
-                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
-              )}
+        <div className="w-full sm:w-1/2 m-auto flex items-center justify-center">
+          <div className="rotate-container w-full sm:w-1/2 form-container bg-[#DDE4EF] shadow-lg flex justify-center items-center">
+
+            <div className="login flex flex-col justify-center items-center space-y-4 w-full">
+              <h1 className="text-2xl font-semibold text-[#161D6F] text-center pt-7">Hello, Welcome Back to GiftHub</h1>
+              <h2 className="text-lg font-bold text-[#161D6F]">Login</h2>
+              <span className="text-[12px] text-[#292a2b]">or Login with</span>
+              <div className="social-icons">
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-google-plus-g"></i></Link>
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-apple text-white"></i></Link>
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
+              </div>
+              <form onSubmit={handleLogin} className="w-full flex flex-col justify-center items-center">
+                <div className="w-[85%] flex flex-col justify-center items-center">
+                  <label className="text-[#161D6F] text-[14px]">Email</label>
+                  <input 
+                    type="email" 
+                    placeholder="Enter your E-mail" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    className={`w-full sm:w-[50%] py-3 px-5 inpute ${errors.email ? 'border-red-500' : ''}`}
+                  />
+                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+                </div>
+                <div className="w-[85%] sm:-w-[60%] flex flex-col justify-center items-center">
+                  <label className="text-[#161D6F] text-[14px] mt-2">Password</label>
+                  <div className="relative w-full sm:w-[50%]">
+                    <input
+                      type={passwordVisible ? "text" : "password"}
+                      className={`focus:outline-none inpute w-full py-3 px-8 ${errors.email ? 'border-red-500' : ''}`}
+                      placeholder="Enter your password" 
+                      value={password} 
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <div
+                      className="absolute inset-y-1 right-0 pr-6 flex items-center cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {passwordVisible ? (
+                        <img className='w-5 h-5' src="src/assets/showpasswordicon.png" alt="" />
+                      ) : (
+                        <img className='w-5 h-5' src="src/assets/hidepasswordicon.png" alt="" />
+                      )}
+                    </div>
+                  </div>
+                  {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+                </div>
+                {error && <p className="text-red-500">{error}</p>}
+                <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
+                <button type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
+              </form>
+              <button onClick={toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className="hover:underline">Sign Up</span></button>
             </div>
-          </div>
-          {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
-          </div>
-          {error && <p className="">{error}</p>}
-          <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
-          <button onClick={notify} type="submit" className="btnn w-[85%] sm:w-[42%]">Login</button>
-          <ToastContainer />
-        </form>
-        <button onClick={()=>toggleForms} className="mt-4 pb-5 text-[#161D6F]">Don't have an account? <span className=" hover:underline">Sign Up</span></button>
-      </div>
 
-    
-      <div className="signup absolute inset-0 flex flex-col justify-center items-center space-y-4">
-        <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
-        <span className="text-[12px] text-[#292a2b] m-5">or Sign Up with</span> 
-        <div className="social-icons">
-        <Link to={'/'} className="media-icons"><i className="fa-brands fa-google-plus-g text-white p-4"></i></Link>
-        <Link to={'/'} className="media-icons"><i className="fa-brands fa-apple text-white"></i></Link>
-        <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
-        </div>
-        <form className="w-full flex flex-col justify-center items-center">
-          <div className="sm:flex justify-center items-center w-[85%] gap-5">
-         <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Username</label>
-            <input type="text" placeholder="Enter your Username"  className="w-full py-3 px-5 input"/>
-          </div>
-         <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Email</label>
-            <input type="email" placeholder="Enter your E-mail" className="w-full py-3 px-5 input"/>
-          </div>
-        </div>
+             {/* Signup Form */}
+            <div className="signup absolute inset-0 flex flex-col justify-center items-center space-y-4">
+              <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
+              <span className="text-[12px] text-[#292a2b] m-5">or Sign Up with</span> 
+              <div className="social-icons">
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-google-plus-g text-white p-4"></i></Link>
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-apple text-white"></i></Link>
+                <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
+              </div>
+              <form onSubmit={handleSignup}  className="w-full flex flex-col justify-center items-center">
+                <div className="sm:flex justify-center items-center w-[85%] gap-5">
+                  <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
+                    <label className="text-[#161D6F] text-[14px]">Username</label>
+                    <input 
+                      type="text" 
+                      placeholder="Enter your Username"  
+                      className={`w-full py-3 px-5 inpute ${errors.username ? 'border-red-500' : ''}`}
+                      value={inputs.username}
+                      onChange={(e) => setInputs({...inputs, username: e.target.value})}
+                    />
+                  </div>
+                  <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
+                    <label className="text-[#161D6F] text-[14px]">Email</label>
+                    <input 
+                      type="email" 
+                      placeholder="Enter your E-mail" 
+                      className={`w-full py-3 px-5 inpute ${errors.email ? 'border-red-500' : ''}`} 
+                      value={inputs.email}
+                      onChange={(e) => setInputs({...inputs, email: e.target.value})}
+                    />
+                    {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+                  </div>
+                </div>
 
-        <div className="sm:flex justify-center items-center  w-[85%] gap-5">
-         <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Password</label>
-            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
-            <input
-              type={passwordVisible ? "text" : "password"}
-              id="password"
-              className=" focus:outline-none bg-transparent "
-              placeholder="Enter your password" 
-              value={password} onChange={e=>setPassword(e.target.value)}
-            />
-            <div
-              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-              onClick={togglePasswordVisibility}
-            >
-              {passwordVisible ? (
-               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
-              ) : (
-                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
-              )}
+                <div className="sm:flex justify-center items-center  w-[85%] gap-5">
+                  <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
+                    <label className="text-[#161D6F] text-[14px]">Password</label>
+                    <div className="relative w-full">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        className={`focus:outline-none inpute w-full py-3 px-8 ${errors.password ? 'border-red-500' : ''}`}
+                        placeholder="Enter your password" 
+                        value={inputs.password}
+                        onChange={(e) => setInputs({...inputs, password: e.target.value})}
+                      />
+                      <div
+                        className="absolute inset-y-1 right-0 pr-6 flex items-center cursor-pointer"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {passwordVisible ? (
+                          <img className='w-5 h-5' src="src/assets/showpasswordicon.png" alt="" />
+                        ) : (
+                          <img className='w-5 h-5' src="src/assets/hidepasswordicon.png" alt="" />
+                        )}
+                      </div>
+                    </div>
+                    {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+                  </div>
+
+                  <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
+                    <label className="text-[#161D6F] text-[14px]">Confirm Password</label>
+                    <div className="relative w-full">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        className={`focus:outline-none inpute w-full py-3 px-8 ${errors.confirmPassword ? 'border-red-500' : ''}`}
+                        placeholder="Confirm your password" 
+                        value={inputs.confirmPassword}
+                      onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
+                      />
+                      <div
+                        className="absolute inset-y-1 right-0 pr-4 flex items-center cursor-pointer"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {passwordVisible ? (
+                          <img className='w-5 h-5' src="src/assets/showpasswordicon.png" alt="" />
+                        ) : (
+                          <img className='w-5 h-5' src="src/assets/hidepasswordicon.png" alt="" />
+                        )}
+                      </div>
+                    </div>
+                    {errors.confirmPassword && <p className="mt-1  text-sm text-red-500">{errors.confirmPassword}</p>}
+                  </div>
+                </div>
+
+                <div className="sm:flex justify-center items-center w-[85%]">
+                  <button type="submit" className="btnn w-full">Sign Up</button>
+                </div>
+              </form>
+              <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button>
             </div>
-          </div>
-          </div>
-
-         <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
-            <label className="text-[#161D6F] text-[14px]">Confirm-Password</label>
-            <div className="relative w-full sm:w-[50%] py-3 px-5 input">
-            <input
-              id="confirm_password" 
-              type={passwordVisible ? "text" : "password"}
-              className=" focus:outline-none bg-transparent "
-              placeholder="Enter your password" 
-              value={password} onChange={e=>setPassword(e.target.value)}
-            />
-            <div
-              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-              onClick={togglePasswordVisibility}
-            >
-              {passwordVisible ? (
-               <img className='w-5 h-5' src="src\assets\showpasswordicon.png" alt="" />
-              ) : (
-                <img className='w-5 h-5' src="src\assets\hidepasswordicon.png" alt="" />
-              )}
-            </div>
-          </div>
-            <span className="text-red-800 error" id="message"></span>
-          </div>
-        </div>
-        <div className="sm:flex justify-center items-center w-[85%]">
-          <button type="submit" className="btnn w-full">Sign Up</button>
-        </div>
-        </form>
-        <button onClick={()=>toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline">Login</span></button>
-      </div>
-
     </div>
   </div>
 </div>

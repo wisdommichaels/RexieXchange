@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Username from "../components/Username";
 import Mobilefooter from "../components/Mobilefooter";
+import Signup from "../components/Signup";
 const Sell = () => {
   return (
     <div>
@@ -154,6 +155,9 @@ const Sell = () => {
           </form>
         </div>
       </section>
+
+
+
       {/* <section  className="container mx-auto p-4">
         <h1  className="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
     
