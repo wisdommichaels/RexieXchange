@@ -287,7 +287,7 @@ function Login() {
                   </div>
                 </div>
 
-                <div className="sm:flex justify-center items-center w-[85%]">
+                <div className={`sm:flex justify-center items-center w-[85%] ${loading && "opacity-25"}`}>
                   <button type="submit" className="btnn w-full">Sign Up</button>
                 </div>
               </form>
