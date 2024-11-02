@@ -1,94 +1,91 @@
-// import React, { useEffect, useRef, useState } from "react";
-// import "./Carousel.css"; // Assume styles for the carousel
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
-// interface CarouselProps {
-//   images: ["https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810211/banner2_gekq7z.png", "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810204/banner3_euxdtg.png", "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810334/banner2_kr7x5r.png"]; // Array of image URLs for the carousel
-// }
+const Carousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const slides = [
+    { src: "src/assets/banner1.png", alt: "Image 1" },
+    { src: "src/assets/banner2.png", alt: "Image 2" },
+    { src: "src/assets/banner3.png", alt: "Image 3" }
+  ];
 
-// const Carousel: React.FC<CarouselProps> = ({ images }) => {
-//   const trackRef = useRef<HTMLDivElement>(null);
-//   const [currentSlide, setCurrentSlide] = useState(0);
-//   const slideCount = images.length;
-//   const intervalTime = 3000; // Auto slide interval
+  const moveToSlide = (index: number) => {
+    setCurrentSlide(index);
+    const track = trackRef.current;
+    const slideWidth = track?.children[0]?.clientWidth || 0;
+    if (track) {
+      track.style.transform = `translateX(-${slideWidth * index}px)`;
+    }
+  };
 
-//   // Function to set the position of each slide
-//   const setSlidePosition = (slides: HTMLDivElement[], slideWidth: number) => {
-//     slides.forEach((slide, index) => {
-//       slide.style.left = `${slideWidth * index}px`;
-//     });
-//   };
+  const nextSlide = () => moveToSlide((currentSlide + 1) % slides.length);
+  const prevSlide = () => moveToSlide((currentSlide - 1 + slides.length) % slides.length);
 
-//   // Function to move to the target slide
-//   const moveToSlide = (targetSlide: number) => {
-//     const track = trackRef.current;
-//     if (!track) return;
+  useEffect(() => {
+    const slideWidth = trackRef.current?.children[0]?.clientWidth || 0;
+    slides.forEach((_, index) => {
+      if (trackRef.current?.children[index]) {
+        trackRef.current.children[index].setAttribute("style", `left: ${slideWidth * index}px`);
+      }
+    });
+  }, []);
 
-//     const slides = Array.from(track.children) as HTMLDivElement[];
-//     const slideWidth = slides[0].getBoundingClientRect().width;
-//     track.style.transform = `translateX(-${slides[targetSlide].style.left})`;
-//     setCurrentSlide(targetSlide);
-//   };
+  useEffect(() => {
+    slideIntervalRef.current = setInterval(nextSlide, 3000);
+    return () => clearInterval(slideIntervalRef.current as NodeJS.Timeout);
+  }, [currentSlide]);
 
-//   // Handling the previous button click
-//   const handlePrevClick = () => {
-//     setCurrentSlide((prev) => (prev - 1 + slideCount) % slideCount);
-//   };
+  const handleIndicatorClick = (index: number) => {
+    clearInterval(slideIntervalRef.current as NodeJS.Timeout);
+    moveToSlide(index);
+  };
 
-//   // Handling the next button click
-//   const handleNextClick = () => {
-//     setCurrentSlide((prev) => (prev + 1) % slideCount);
-//   };
+  return (
+    <div className="carousel-container overflow-x-hidden w-full sm:w-[95%] mx-auto pt-4">
+      <div
+        className="carousel-track flex transition-transform duration-500 rounded-lg"
+        ref={trackRef}
+        style={{ width: `${100 * slides.length}%` }}
+      >
+        {slides.map((slide, index) => (
+          <div
+            className="carousel-slide w-full sm:w-1/2 lg:w-1/3"
+            key={index}
+            style={{ flex: "0 0 100%" }}
+          >
+            <Link to="" className="text-none">
+              <img src={slide.src} alt={slide.alt} className="w-full h-auto object-cover " />
+            </Link>
+          </div>
+        ))}
+      </div>
+      <button
+        onClick={prevSlide}
+        className="carousel-button carousel-button-left absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-12 sm:h-12  rounded-full shadow-md flex justify-center items-center sm:text-lg text-sm font-bold z-10"
+      >
+        {"<"}
+      </button>
+      <button
+        onClick={nextSlide}
+        className="carousel-button carousel-button-right absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-12 sm:h-12 rounded-full shadow-md flex justify-center items-center sm:text-lg text-sm font-bold z-10"
+      >
+        {">"}
+      </button>
+      <div className="carousel-indicators flex justify-center mt-2 space-x-2">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => handleIndicatorClick(index)}
+            className={`carousel-indicator w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer ${
+              index === currentSlide ? "bg-[#758DB1]" : "bg-gray-300"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-//   // Auto slide effect
-//   useEffect(() => {
-//     const track = trackRef.current;
-//     if (!track) return;
-
-//     const slides = Array.from(track.children) as HTMLDivElement[];
-//     const slideWidth = slides[0].getBoundingClientRect().width;
-//     setSlidePosition(slides, slideWidth);
-
-//     const interval = setInterval(() => {
-//       handleNextClick();
-//     }, intervalTime);
-
-//     return () => clearInterval(interval); // Cleanup on component unmount
-//   }, [currentSlide]);
-
-//   useEffect(() => {
-//     moveToSlide(currentSlide);
-//   }, [currentSlide]);
-
-//   return (
-//     <div className="carousel">
-//       <button className="carousel-button-left" onClick={handlePrevClick}>
-//         {"<"}
-//       </button>
-//       <div className="carousel-track-container">
-//         <div className="carousel-track" ref={trackRef}>
-//           {images.map((image, index) => (
-//             <div key={index} className="carousel-slide">
-//               <img src={image} alt={`Slide ${index}`} />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       <button className="carousel-button-right" onClick={handleNextClick}>
-//         {">"}
-//       </button>
-//       <div className="carousel-indicators">
-//         {images.map((_, index) => (
-//           <button
-//             key={index}
-//             className={`carousel-indicator ${
-//               index === currentSlide ? "active" : ""
-//             }`}
-//             onClick={() => setCurrentSlide(index)}
-//           ></button>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Carousel;
+export default Carousel;

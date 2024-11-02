@@ -344,8 +344,8 @@ body {
   align-items: center;
   width: 95%;
   margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
   border-radius: 0.5rem;
 }
@@ -589,7 +589,7 @@ ul {
 }
 
 .container button:hover {
-  transform: scale(1.03);
+  /* transform: scale(1.03); */
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
   background-color: rgb(22, 17, 103);
 }
@@ -979,7 +979,7 @@ margin-top: 17px;
 font-size: 13px;
 } */
 
-.media-icons {
+/* .media-icons {
   background: linear-gradient(45deg, #161d6f 0%, rgb(44, 39, 127) 100%);
   border: 5px solid white;
   color: white;
@@ -994,15 +994,15 @@ font-size: 13px;
   align-items: center;
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
   transition: all 0.2s ease-in-out;
-}
+} */
 
-.media-icons:hover {
+/* .media-icons:hover {
   transform: scale(1.2);
 }
 
 .media-icons:active {
   transform: scale(0.9);
-}
+} */
 
 .btnn {
   background: linear-gradient(45deg, #161d6f 0%, #1422bd 100%);
@@ -1031,6 +1031,34 @@ font-size: 13px;
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
 }
 
+.btnnn {
+  background: #fff;
+  color: #161d6f;
+  font-size: 12px;
+  padding: 8px 50px;
+  border: 1px solid transparent;
+  box-shadow: #cff0ff 0px 6px 10px -3px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 1px auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnnn:hover {
+  color: white;
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  background-color:  #1a248e;
+}
+
+.btnnn:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
 .show-signup {
   transform: rotateY(180deg);
 }
@@ -1052,4 +1080,10 @@ font-size: 13px;
 
 .dropdownn:hover .dropdown-menu {
   display: block;
+}
+
+/* category css */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

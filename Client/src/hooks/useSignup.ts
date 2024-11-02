@@ -43,10 +43,10 @@ function handleInputsErrors({ username, email, password, confirmPassword }: { us
       toast.error('Password must be at least 6 characters long!', { position: 'top-center' });
       return false;
     }
-    // if (password !== confirmPassword) {
-    //     toast.error('Passwords do not match!', { position: 'top-center' });
-    //     return false;
-    //   }
+    if (password !== confirmPassword) {
+        toast.error('Passwords do not match!', { position: 'top-center' });
+        return false;
+    }
   
     return true;
   }

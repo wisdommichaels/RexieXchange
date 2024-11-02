@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="bg-[#161D6F] sm:pt-16 overflow-x-hidden">
-  <section className="sm:flex justify-between items-center bg-[#DDE4EF] pb-5 sm:rounded-t-[40px] w-[97%] m-auto ">
+  <section className="sm:flex justify-between items-center bg-[#DDE4EF] pb-5 sm:rounded-t-[40px] w-[97%] m-auto rounded-t-md">
       <div className="flex justify-center items-center mt-5 sm:mt-20 mx-auto ">
           <h2 className="text-[#161D6F] sm:text-2xl text-12 text-center sm:text-left pt-4 sm:pt-0"><b>Register now so you don't miss <br/> our Gift Card hot deals</b></h2>
         </div>
@@ -16,7 +16,7 @@ const Footer = () => {
 </section>
 
 <section className="sm:flex justify-between items-center bg-[#DDE4EF] sm:pt-5 pb-4 w-[97%] m-auto"> 
-<nav className=" flex justify-center items-center sm:ml-[65px] mb-4">
+<nav className=" flex justify-center items-center sm:ml-[65px] mb-4 pt-3">
     <ul className=" flex sm:gap-8 gap-12 text-[#161D6F]">
     <Link to={'/'} className="hover:text-[#FA4A00]">Home</Link>
     <Link to={'/about'} className="hover:text-[#FA4A00]">About</Link>
@@ -26,9 +26,9 @@ const Footer = () => {
 </nav>
 
 <div className="flex justify-center items-center">
-<h2 className="text-[#161D6F] sm:text-1xl text-12 text-center sm:text-left pt-4 sm:pt-0 pr-2"><b>Follow us on</b></h2>
+<h2 className="text-[#161D6F] sm:text-1xl text-10 text-center sm:text-left sm:pt-0 ">Follow us on</h2>
 <div className="flex justify-center items-center sm:gap-8  sm:mr-[80px] text-white">
-  <ul className="example-2 gap-3">
+  <ul className="example-2 sm:gap-3">
     <li className="icon-content">
       <a
         href="https://facebook.com/"

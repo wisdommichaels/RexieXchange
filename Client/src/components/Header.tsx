@@ -7,24 +7,24 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   let isloggedin = false;
   return (
     <section id="black">
-   
+{/*    
       <div
         id="menu"
-        className="flex sm:hidden justify-center rounded-b-lg pb-5 bg-[#161D6F] gap-14 font-semibold text-[14px] items-center text-white"
+        className="flex sm:hidden justify-center rounded-b-lg pb-8 bg-[#161D6F] gap-8  text-[14px] items-center text-white"
       >
         <Link
           to={"/"}
-          className="  hover:text-gray-300 underline underline-offset-2 text-[#E7500F]"
+          className="bg-white text-[#161D6F]  rounded-lg py-2 px-4 shadow-md"
         >
           Home
         </Link>
-        <Link to={"/sell"} className=" ">
+        <Link to={"/sell"} className=" bg-white text-[#161D6F]  rounded-lg py-2 px-4 shadow-md">
           Sell Gift Card
         </Link>
-        <Link to={"/dashboard"} className="">
-          Dashboard
+        <Link to={"/checkrate"} className="bg-white text-[#161D6F] rounded-lg py-2 px-4 shadow-md">
+          Check Rate
         </Link>
-      </div>
+      </div> */}
       <div className="card hidden sm:flex">
         <div className="top-section h-52 sm:h-[530px] rounded-none">
           <div className="border"></div>
