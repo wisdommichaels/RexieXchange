@@ -869,7 +869,7 @@ ul {
   border: none;
   border-radius: 20px;
   margin-top: 1px;
-  box-shadow: #cff0ff 0px 10px 10px -5px;
+  /* box-shadow: #cff0ff 0px 10px 10px -5px; */
   border-inline: 2px solid transparent;
   transition: all 0.3s ease-in-out;
 }

@@ -34,7 +34,7 @@ const Sell = () => {
         </div>
       </nav>
 
-      <section className="bg-gradient-to-r h-[100vh] sm:h-[60%] from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
+      <section className="h-[100vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
       <div className='p-5 mb-5'>
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
            INPUT YOUR GIFT CARD DETAILS
@@ -232,7 +232,7 @@ const Sell = () => {
           </table>
         </div>
       </section> */}
-      <CustomerReviewForm />
+     
       <div className="hidden sm:block">
         <Footer />
       </div>

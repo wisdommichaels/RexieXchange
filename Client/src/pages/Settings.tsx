@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
+import CustomerReviewForm from "../components/Review";
 
 const Settings = () => {
   const { user } = useAuthStore()
@@ -113,22 +114,14 @@ const Settings = () => {
     </div>
     </div>
   </section>
+  <CustomerReviewForm />
+
+
   <div className="hidden sm:block">
   <Footer/>
   </div>
   <Mobilefooter/>
   
-
-  {/* <script>
-   // JavaScript to update profile picture preview
-   const loadFile = (event) => {
-      const output = document.getElementById('profile-pic');
-      output.src = URL.createObjectURL(event.target.files[0]);
-      output.onload = function() {
-        URL.revokeObjectURL(output.src)
-      }
-    };
-  </script> */}
     </div>
   )
 }

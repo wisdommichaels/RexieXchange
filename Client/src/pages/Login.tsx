@@ -243,7 +243,7 @@ function Login() {
                 <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
                 <button type="submit" className="btnn w-[85%] sm:w-[60%]">Login</button>
                 <span className="text-[12px] text-[#161D6F] font-bold ">OR</span>
-                <div className=" flex justify-center items-center btnnn w-[85%] sm:w-[60%]">
+                <div className=" flex justify-center items-center btnnn w-[85%] sm:w-[60%] border-2 border-[#161D6F] hover:border-[#DDE4EF]">
                 <img className="w-8 h-8" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1730212714/7123025_logo_google_g_icon_x1edae.svg" alt="" />
                 <div>LOGIN WITH GOOGLE</div>
                 </div>
@@ -341,7 +341,7 @@ function Login() {
                 </div>
                 <span className="text-[12px] py-1 font-bold text-[#161D6F]">OR</span>
                 <div className={`sm:flex justify-center items-center w-[85%]`}>
-                  <button className="btnnn w-full flex justify-center items-center">
+                  <button className="btnnn w-full flex justify-center items-center  border-2 border-[#161D6F] hover:border-[#DDE4EF]">
                     <div className="flex justify-center items-center">
                     <img className="w-8 h-8" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1730212714/7123025_logo_google_g_icon_x1edae.svg" alt="" />
                     Sign Up with Google
