@@ -1,10 +1,10 @@
 import express from 'express';
-import { getTransaction, sell, updateTransaction } from '../Controllers/transaction.countroller.js';
+import { sellGiftCard } from '../Controllers/sell.controller.js';
+
 
 const router = express.Router();
 
-router.get("/", getTransaction);
-router.put("/update-transaction",  updateTransaction);
-router.put("/sell-transaction", sell);
+// post all transactions
+router.post("/", sellGiftCard);
 
 export default router;

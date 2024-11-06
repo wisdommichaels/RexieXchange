@@ -59,11 +59,11 @@ const CustomerReviewForm: React.FC = () => {
 
   return (
    
-      <div className="w-full sm:w-[60%] mb-3 flex-col justify-self-end mr-4 p-8 shadow-xl rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+      <div className="w-full sm:w-[59%] mb-3 flex-col justify-self-end mr-7 p-8 shadow-xl rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
         <h2 className="text-2xl text-center mb-4 text-[#161D6F]">LEAVE A REVIEW</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-[#161D6F] font-medium">
+            <label htmlFor="name" className="block text-[#161D6F] font-medium pl-5">
               Name
             </label>
             <input
@@ -76,7 +76,7 @@ const CustomerReviewForm: React.FC = () => {
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-[#161D6F] font-medium">
+            <label htmlFor="email" className="block text-[#161D6F] font-medium  pl-5">
               Email
             </label>
             <input
@@ -89,7 +89,7 @@ const CustomerReviewForm: React.FC = () => {
             />
           </div>
           <div>
-            <label htmlFor="rating" className="block text-[#161D6F] font-medium">
+            <label htmlFor="rating" className="block text-[#161D6F] font-medium  pl-5">
               Rating
             </label>
             <div className="flex gap-2 mt-1">
@@ -115,7 +115,7 @@ const CustomerReviewForm: React.FC = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="review" className="block text-[#161D6F] font-medium">
+            <label htmlFor="review" className="block text-[#161D6F] font-medium  pl-5">
               Review
             </label>
             <textarea
