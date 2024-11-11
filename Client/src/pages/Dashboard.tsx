@@ -49,13 +49,13 @@ const Dashboard = () => {
         </Header>
      </div>
     </section>
-    <section  className="container mx-auto p-4">
+    <section  className="container mx-auto p-4 mb-5">
         <h1  className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
     
         <div  className="overflow-x-auto rounded-xl">
           <table  className="min-w-full bg-white border shadow-lg rounded-xl">
             <thead>
-              <tr  className="bg-[#161D6F] text-white text-center text-[12px] leading-normal rounded-xl">
+              <tr  className="bg-[#668bc2] text-[#161D6F] text-center text-[12px] leading-normal rounded-xl">
                   <th  className="py-4 px-4">Gift Card</th>
                   <th  className="py-3 px-1">Amount</th>
                   <th  className="py-3 px-8">Date</th>
@@ -66,7 +66,7 @@ const Dashboard = () => {
               <tr  className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm ">
                   <td  className="py-3 px-4">Amazon</td>
                   <td  className="py-3 px-4">$100</td>
-                  <td  className="py-3 px-4">2024-09-20</td>
+                  <td  className="py-3 px-4 text-[10px]">2024-09-20</td>
                 <td  className="py-3 px-4">
                   <span  className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-lg">Completed</span>
                 </td>

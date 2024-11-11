@@ -194,8 +194,9 @@ function Login() {
 
         <div className="w-full sm:w-1/2 m-auto flex items-center justify-center">
           <div className="rotate-container w-full sm:w-1/2 form-container bg-[#DDE4EF] shadow-lg flex justify-center items-center">
-
-            <div className="login flex flex-col justify-center items-center space-y-4 w-full">
+          {/* <div className="rotate-container sm:bg-none bg-[url('https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png')] bg-cover bg-center w-full sm:w-1/2 form-container bg-[#DDE4EF] shadow-lg flex justify-center items-center"> */}
+          {/* <div className="absolute inset-0 bg-[#161D6F]  bg-opacity-40 backdrop-blur-sm"></div> */}
+            <div className="login relative flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="sm:text-2xl text-xl  font-semibold text-[#161D6F] text-center pt-7">Hello, Welcome Back to GiftHub</h1>
               <h2 className="text-[16px] text-[#161D6F] pb-3">Please enter your login details to continue!</h2>
               {/* <span className="text-[12px] text-[#292a2b]">or Login with</span> */}
