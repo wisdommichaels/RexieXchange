@@ -1,6 +1,6 @@
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
-import Username from "../components/Username"
+// import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
 import CustomerReviewForm from "../components/Review";
