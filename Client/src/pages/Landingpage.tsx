@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
 import Mylogo from "../components/Mylogo";
-import Carousel from "../components/Carousel.tsx";
+// import Carousel from "../components/Carousel.tsx";
 import HamburgerMenu from "../components/Hamburger";
 import { useCardStore } from "../store/cardStore";
 import { useEffect } from "react";
@@ -42,12 +42,13 @@ function Landingpage() {
        
     {/* header carousel */}
     <Header>
-        <Carousel/>
+      <div></div>
+        {/* <Carousel/> */}
     </Header>
 
      {/*mobile carousel  */}
      <div className="sm:hidden mx-4">
-      <Carousel/>
+      {/* <Carousel/> */}
       </div>  
 
 <div className="flex justify-center items-center font-bold sm:mt-3 m-4">

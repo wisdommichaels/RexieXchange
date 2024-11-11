@@ -9,7 +9,7 @@ import { useCardStore } from "../store/cardStore"
 import { useEffect } from "react"
 import Mobilefooter from "../components/Mobilefooter"
 import Mobileuser from "../components/Mobileuser"
-import Carousel from "../components/Carousel.tsx"
+// import Carousel from "../components/Carousel.tsx"
 import GiftCardCategories from "../components/Category"
 
 
@@ -73,7 +73,7 @@ const Home = () => {
   </div>
 
   <div className="sm:hidden mx-4">
-      <Carousel/>
+      {/* <Carousel/> */}
       </div>  
   </section>
 
