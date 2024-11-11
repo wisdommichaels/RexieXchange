@@ -19,26 +19,27 @@ function Landingpage() {
           <Username/>
         </div> */}
   
-      <div className="bg-[#161D6F] sm:hidden pt-3 flex justify-between items-center w-full">
-         <div className="w-1/2  flex">
+      <div className="bg-[#161D6F] sm:hidden py-5 flex justify-between items-center w-full ">
+         <div className=" w-1/2 flex">
             <Mylogo />
           </div>
-          <HamburgerMenu />
-      </div>
-      <div className="logins flex justify-end items-center gap-3 bg-[#161D6F] pb-4 pr-3 sm:hidden">
+          <div className="logins flex justify-center items-center gap-3 bg-[#161D6F] pr-3 sm:hidden">
                 <Link
                   to={"/Login"}
-                  className="login-button text-[#161D6F]  bg-[#FFFFFF] font-normal"
+                  className="login-button text-[#161D6F] text-[12px]  bg-[#FFFFFF] font-normal"
                 >
                   LOGIN
                 </Link>
                 <Link
                   to={"/login"}
-                  className="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal"
+                  className="signup-button text-[#161D6F] text-[12px] bg-[#FFFFFF] font-normal"
                 >
                   SIGN UP
                 </Link>
         </div>
+          {/* <HamburgerMenu /> */}
+      </div>
+      
        
     {/* header carousel */}
     <Header>
