@@ -232,9 +232,9 @@ function Login() {
                       onClick={togglePasswordVisibility}
                     >
                       {passwordVisible ? (
-                        <img className='w-5 h-5' src="src/assets/showpasswordicon.png" alt="" />
+                        <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/showpasswordicon_ifwaqc.png" alt="" />
                       ) : (
-                        <img className='w-5 h-5' src="src/assets/hidepasswordicon.png" alt="" />
+                        <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/hidepasswordicon_vyhpyw.png" alt="" />
                       )}
                     </div>
                   </div>
@@ -303,9 +303,9 @@ function Login() {
                         onClick={togglePasswordVisibility}
                       >
                         {passwordVisible ? (
-                          <img className='w-5 h-5' src="src/assets/showpasswordicon.png" alt="" />
+                          <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/showpasswordicon_ifwaqc.png" alt="" />
                         ) : (
-                          <img className='w-5 h-5' src="src/assets/hidepasswordicon.png" alt="" />
+                          <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/hidepasswordicon_vyhpyw.png" alt="" />
                         )}
                       </div>
                     </div>
