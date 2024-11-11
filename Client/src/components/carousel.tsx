@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const slideIntervalRef = useRef<number | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slides = [
     { src: "src/assets/banner1.png", alt: "Image 1" },
@@ -33,12 +33,12 @@ const Carousel = () => {
   }, []);
 
   useEffect(() => {
-    slideIntervalRef.current = setInterval(nextSlide, 3000);
-    return () => clearInterval(slideIntervalRef.current as NodeJS.Timeout);
+    slideIntervalRef.current = window.setInterval(nextSlide, 3000);
+    return () => clearInterval(slideIntervalRef.current as number);
   }, [currentSlide]);
 
   const handleIndicatorClick = (index: number) => {
-    clearInterval(slideIntervalRef.current as NodeJS.Timeout);
+    clearInterval(slideIntervalRef.current as number);
     moveToSlide(index);
   };
 
