@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import { Card } from "../store/cardStore"
 
-const Countryrates: React.FC<{name: string | undefined, data:Card|null|undefined}> = ({name, data}) => {
+const Countryrates: React.FC<{data:Card|null|undefined}> = ({ data}) => {
 
     // State to control whether the additional rows are shown or hidden
     const [isVisible, setIsVisible] = useState(false);

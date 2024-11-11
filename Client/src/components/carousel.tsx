@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const Carousel = () => {
+const Carousel:React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideIntervalRef = useRef<number | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
