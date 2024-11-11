@@ -79,7 +79,7 @@ const Rates = () => {
     <h2  className="md:text-2xl text-[14px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg sm:rounded-t-lg w-full sm:w-[98%] mx-auto pt-8">
         Countries Trading {pageCard?.name} Gift Cards and Their Rates
       </h2>
-    <Countryrates name={name} data={pageCard}/>
+    <Countryrates data={pageCard}/>
     <Mobilefooter/>
     <div className="hidden sm:block">
     <Footer/>

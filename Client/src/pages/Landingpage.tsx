@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
 import Mylogo from "../components/Mylogo";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel.tsx";
 import HamburgerMenu from "../components/Hamburger";
 import { useCardStore } from "../store/cardStore";
 import { useEffect } from "react";

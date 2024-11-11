@@ -9,7 +9,7 @@ import { useCardStore } from "../store/cardStore"
 import { useEffect } from "react"
 import Mobilefooter from "../components/Mobilefooter"
 import Mobileuser from "../components/Mobileuser"
-import Carousel from "../components/Carousel"
+import Carousel from "../components/Carousel.tsx"
 import GiftCardCategories from "../components/Category"
 
 

@@ -7,7 +7,7 @@ import Mobilefooter from "../components/Mobilefooter";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/Carousel.tsx';
 
 const Sell: React.FC = () => {
   // State variables for form inputs

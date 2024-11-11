@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Mobilefooter from '../components/Mobilefooter';
 import Footer from '../components/Footer';
 import Progress from '../components/Progress';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/Carousel.tsx';
 
 const Checkrate: React.FC = () => {
   interface ConversionRates {
