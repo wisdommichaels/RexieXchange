@@ -1,32 +1,32 @@
 import mongoose from "mongoose";
 const transactionSchema = new mongoose.Schema({
-    cardname:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    countrycode:{
-        type:String,
-        required:true,
-    },
-    cardnumber:{
-        type: Number,
-        required:true,
-    },
-    cardimage:{
-        type:String,
-        required:true,
-    }, 
     amount:{
         type: Number,
         required: true
     },
-    status:{
-        type: String,
-        required: true,
-        enum: ['pending', 'succesful', 'faild'],
-        default: 'pending'
+    cardName:{
+        type:String,
+        required:true,
+        unique:true
     },
+    countryCode:{
+        type:String,
+        required:true,
+    },
+    cardNumber:{
+        type: Number,
+        required:true,
+    },
+    cardImage:{
+        type:String,
+        required:true,
+    }, 
+    // status:{
+    //     type: String,
+    //     required: true,
+    //     enum: ['pending', 'succesful', 'faild'],
+    //     default: 'pending'
+    // },
    
     userId:{
         type: mongoose.Schema.Types.ObjectId,

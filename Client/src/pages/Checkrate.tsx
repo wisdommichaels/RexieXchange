@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Mobilefooter from '../components/Mobilefooter';
 import Footer from '../components/Footer';
 import Progress from '../components/Progress';
+import Carousel from '../components/Carousel';
 
 const Checkrate: React.FC = () => {
   interface ConversionRates {
@@ -69,27 +70,23 @@ const Checkrate: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 gap-8">
-        <Link
-          to="/"
-          className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3"
+      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3  sm:gap-5 gap-[90px] ">
+      <Link
+          to={"/"}
+          className="back-button rounded-full sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-          <svg
-            className="sm-w-10 sm:h-10"
-            fill="#000000"
-            width="14px"
-            height="14px"
-            viewBox="0 0 52 52"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z" />
-          </svg>
-          <span className="hidden sm:block">BACK</span>
+          <img src="src/assets/arrow-.png" alt="" />
+          {/* <span className="hidden sm:block">BACK</span> */}
         </Link>
 
-        <h2 className="sm:text-[24px] text-[18px] text-white pt-3  text-center">Check Rate</h2>
+
+        <h2 className="sm:text-[20px] text-[18px] text-white pt-3 text-center">Check Rate</h2>
 
       </nav>
+
+      <div className="sm:hidden mx-3">
+      <Carousel/>
+      </div> 
 
       <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7 sm:pb-9 mx-3 sm:m-0">
           <div className='p-5 sm:pt-8'>

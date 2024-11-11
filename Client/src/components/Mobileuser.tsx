@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useAuthStore } from "../store/authStore"
 
 
@@ -20,6 +21,10 @@ const Mobileuser = () => {
       {user?.username}
     </span>
   </div>
+  <Link to={"/settings"} className="flex flex-col justify-center items-center pr-2">
+      <img className="w-[35px] h-[35px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/customericon_gq2lmh.png" alt=""/>
+      {/* <p className="  text-[14px] ">My Profile</p> */}
+  </Link>
 </div>
 </div>
   )

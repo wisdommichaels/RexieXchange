@@ -1,10 +1,10 @@
 import SalesTransaction from "../Models/transactionModel.js";
 
 export const sellGiftCard= async (req, res) => {
-    const {cardname, countrycode, cardnumber, cardimage, amount} = req.body;
+    const {amount, cardName, countryCode, cardNumber, cardImage,} = req.body;
     try {
 
-        if (!cardname || !countrycode || !cardnumber || !cardimage || !amount) {
+        if (!amount || !cardName || !countryCode || !cardNumber || !cardImage) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
@@ -13,11 +13,11 @@ export const sellGiftCard= async (req, res) => {
         }
 
         const newTransaction = new SalesTransaction({
-            cardname,
-            countrycode,
-            cardnumber,
-            cardimage,
             amount,
+            cardName,
+            countryCode,
+            cardNumber,
+            cardImage,
             userId: req.userId
         });
 

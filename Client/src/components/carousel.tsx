@@ -43,7 +43,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-container overflow-x-hidden w-full sm:w-[95%] mx-auto pt-4">
+    <div className="carousel-container overflow-x-hidden w-full sm:w-[95%] mx-auto">
       <div
         className="carousel-track flex transition-transform duration-500 rounded-lg"
         ref={trackRef}

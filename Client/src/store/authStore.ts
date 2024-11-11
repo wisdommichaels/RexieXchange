@@ -2,7 +2,6 @@ import axios from 'axios';
 import {create} from 'zustand';
 import { api_url } from '../utils/constants';
 import api from '../utils/api';
-import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 interface AuthStore {

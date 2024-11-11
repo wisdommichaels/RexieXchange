@@ -37,6 +37,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/giftcard", giftcardRoutes);
 app.use("/api/transaction", transactionRoutes);
 app.use("/api/review", reviewRoutes);
+// app.use('/transaction', authMiddleware);
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);
 });

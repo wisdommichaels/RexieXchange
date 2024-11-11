@@ -14,20 +14,9 @@ const Dashboard = () => {
         <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3">
         <Link
           to={"/"}
-          className="signup-button rounded-full sm:rounded-md sm:px-5 sm:py-0 flex justify-center ml-6 items-center gap-2 text-[11px] p-3 "
+          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-          <svg className="sm-w-10 sm:h-10"
-            fill="#000000"
-            width="14px"
-            height="14px"
-            viewBox="0 0 52 52"
-            data-name="Layer 1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M50,24H6.83L27.41,3.41a2,2,0,0,0,0-2.82,2,2,0,0,0-2.82,0l-24,24a1.79,1.79,0,0,0-.25.31A1.19,1.19,0,0,0,.25,25c0,.07-.07.13-.1.2l-.06.2a.84.84,0,0,0,0,.17,2,2,0,0,0,0,.78.84.84,0,0,0,0,.17l.06.2c0,.07.07.13.1.2a1.19,1.19,0,0,0,.09.15,1.79,1.79,0,0,0,.25.31l24,24a2,2,0,1,0,2.82-2.82L6.83,28H50a2,2,0,0,0,0-4Z" />
-          </svg>
-          <span className="hidden sm:block">BACK</span>
+        <img src="src/assets/arrow-.png" alt="" />
         </Link>
 
         <h2 className=" sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24 ">
@@ -61,13 +50,13 @@ const Dashboard = () => {
      </div>
     </section>
     <section  className="container mx-auto p-4">
-        <h1  className="text-2xl font-bold text-center mb-6 text-[#161D6F]">Transaction History</h1>
+        <h1  className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
     
         <div  className="overflow-x-auto rounded-xl">
           <table  className="min-w-full bg-white border shadow-lg rounded-xl">
             <thead>
-              <tr  className="bg-[#161D6F] text-white text-center text-sm leading-normal rounded-xl">
-                  <th  className="py-3 px-4">Gift Card</th>
+              <tr  className="bg-[#161D6F] text-white text-center text-[12px] leading-normal rounded-xl">
+                  <th  className="py-4 px-4">Gift Card</th>
                   <th  className="py-3 px-1">Amount</th>
                   <th  className="py-3 px-8">Date</th>
                 <th  className="py-3 px-8">Status</th>

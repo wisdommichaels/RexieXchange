@@ -4,8 +4,28 @@ const Mobiledashboard = () => {
   const {user} = useAuthStore()
   return (
     <div>
-          <div  className="flex sm:hidden items-center justify-center sm:mt-24 mt-5">
-                <div  className="bg-white shadow-lg w-[95%] sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+          <div  className="flex sm:hidden items-center justify-center m-3">
+          <div className="flex-col justify-center items-center shadow-xl w-full m-auto p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
+          <div className="flex justify-between">
+          <h1 className=" text-2xl text-[#161D6F] pb-5">ACCOUNT DETAILS</h1>
+          <Link to={"/settings"}>
+          <img className="w-5 h-5" src="src\assets\editicon.png" alt="" />
+          </Link>
+          </div>
+          <div className="flex  mb-3 gap-3">
+            <p className="text-[#161D6F] ">Account Number :</p>
+            <p className="underline">09967636849</p>
+          </div>
+          <div className="flex  items-center mb-3 gap-3">
+            <p className="text-[#161D6F]  ">Account Name :</p>
+            <p  className="underline">{user?.username}</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <p className="text-[#161D6F] ">Bank Name  :</p>
+            <p  className="underline">Kuda Bank</p>
+          </div>
+        </div>
+                {/* <div  className="bg-white shadow-lg w-[95%] sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <h2  className="text-[16px] sm:text-[25px] font-bold py-4 sm:mx-10 ">Hello {user?.username}</h2>
                   <div  className="flex items-center justify-between space-x-2 mb-6 sm:mx-10 ">
                     <div  className="flex-col justify-center items-center">
@@ -16,7 +36,7 @@ const Mobiledashboard = () => {
                       Withdraw <span  className="sm:block hidden">Funds</span> 
                     </Link>
                   </div>
-                </div>
+                </div> */}
             </div>
     </div>
   )
