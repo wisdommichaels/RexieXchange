@@ -173,18 +173,8 @@ function Landingpage() {
         </div>
         {
           reviews && 
-        <div className="track sm:mt-5 mt-3">
           <TestimonialCard/>
-
-          {/* <TestimonialCard rating="★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} /> */}
-          
-        </div>
+       
         }
       </section>
   <Footer/>

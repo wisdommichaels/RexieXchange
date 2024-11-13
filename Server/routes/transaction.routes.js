@@ -1,12 +1,10 @@
 import express from 'express';
 import { sellGiftCard } from '../Controllers/sell.controller.js';
-import { authMiddleware } from '../middleware/verifyToken.js';
-import { checkAuth } from '../Controllers/auth.controller.js';
-
+import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
 // post all transactions
-router.post("/", sellGiftCard, authMiddleware, checkAuth);
+router.post("/", verifyToken, sellGiftCard);
 
 export default router;

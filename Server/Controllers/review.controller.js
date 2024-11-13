@@ -1,9 +1,21 @@
 import customerReview from "../Models/reviewModel.js";
+import User from "../Models/userModel.js";
 
 export const postReviews = async (req, res) => {
-  const { name, email, rating, review } = req.body;
+  const { rating, review } = req.body;
 
   try {
+    if (!rating || !review) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+    const details = await User.findById(req.userId);
+    if (!details) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    console.log(details);
+    
+    const name = details.username;
+    const email = details.email;
     const newReview = new customerReview({
       name,
       email,

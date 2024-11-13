@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
+import api from '../utils/api.ts';
 
 const Sell: React.FC = () => {
   // State variables for form inputs
@@ -27,23 +28,15 @@ const Sell: React.FC = () => {
       return;
     }
 
-    // Create form data to send file
-    // const formData = new FormData();
-    // formData.append("amount", amount);
-    // formData.append("cardname", cardName);
-    // formData.append("countrycode", countryCode);
-    // formData.append("cardnumber", cardNumber);
-    // formData.append("cardimage", cardImage);
-
 
     try {
       // Replace `api_url` with your backend API endpoint
-      const response = await axios.post(`${api_url}/transaction`, {
+      const response = await api.post(`${api_url}/transaction`, {
         amount,
         cardName,
         countryCode,
         cardNumber,
-        cardImage,
+        cardImage:"img",
       });
       response.data;
       toast.success("Transaction submitted successfully!");
@@ -91,13 +84,13 @@ const Sell: React.FC = () => {
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
             INPUT YOUR GIFT CARD DETAILS
           </h1>
-          <p>Enter your gift card details in each field below to sell your gift card on GiftHub.</p>
+          <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on GiftHub.</p>
         </div>
         
         <div className="sm:w-1/2 mx-auto p-4 pt-8 sm:pt-4">
           <form onSubmit={handleSubmit} className="w-full space-y-4">
             <div className="sm:mb-0 mb-10 text-center w-full">
-              <label htmlFor="amount" className="text-[16px] text-[#161D6F]">Amount</label>
+              <label htmlFor="amount" className="text-[18px] text-black">Amount</label>
               <input
                 type="text"
                 id="amount"
@@ -111,7 +104,7 @@ const Sell: React.FC = () => {
             {/* Category and Country Select */}
             <div className="sm:flex justify-center items-center gap-5">
               <div className="text-center sm:w-1/2">
-                <label htmlFor="category" className="text-[16px] text-[#161D6F]">Gift Card Category</label>
+                <label htmlFor="category" className="text-[18px] text-black">Gift Card Category</label>
                 <select
                   id="category"
                   value={cardName}
@@ -125,7 +118,7 @@ const Sell: React.FC = () => {
               </div>
 
               <div className="text-center sm:w-1/2">
-                <label htmlFor="country" className="text-[16px] text-[#161D6F]">Country/Currency Code</label>
+                <label htmlFor="country" className="text-[18px] text-black">Country/Currency Code</label>
                 <select
                   id="country"
                   value={countryCode}
@@ -142,7 +135,7 @@ const Sell: React.FC = () => {
             {/* Card Number and Image */}
             <div className="sm:flex justify-center items-center w-full gap-5">
               <div className="text-center sm:w-1/2">
-                <label htmlFor="cardNumber" className="text-[16px] text-[#161D6F]">Gift Card Number</label>
+                <label htmlFor="cardNumber" className="text-[18px] text-black">Gift Card Number</label>
                 <input
                   type="text"
                   id="cardNumber"
@@ -154,7 +147,7 @@ const Sell: React.FC = () => {
               </div>
 
               <div className="text-center sm:w-1/2">
-                <label htmlFor="giftCardImage" className="text-[16px] text-[#161D6F]">Gift Card Image</label>
+                <label htmlFor="giftCardImage" className="text-[18px] text-black">Gift Card Image</label>
                 <input
                   type="file"
                   id="giftCardImage"
@@ -166,7 +159,7 @@ const Sell: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <button type="submit" className="btnn text-[14px] sm:text-[16px] w-full">
+              <button type="submit" className="btnn text-[14px] sm:text-[18px] w-full">
                 Sell
               </button>
             </div>

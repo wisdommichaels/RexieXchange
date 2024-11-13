@@ -7,7 +7,7 @@ import axios from "axios";
 
 export interface TestimonialStore {
    reviews: [
-        {name:string, rating:number, review:string}
+        {name:string, email:string, rating:number, review:string}
     ] | null;
     loading: boolean;
     error: string | null;
@@ -22,13 +22,12 @@ export const useTestimonialStore = create<TestimonialStore>((set) => ({
     error: null,
 
 
-    updateCard: async(name:string, rating:number, testimony:string) => {
+    updateCard: async( rating:number, review:string) => {
         set({ loading: true, error: null });
         try {
             await axios.put(`${api_url}/review/update-review`, {
-                name,
                 rating,
-                testimony
+                review
                 
             });
                 set({ loading: false })
