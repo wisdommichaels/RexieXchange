@@ -3,8 +3,8 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
 import Mylogo from "../components/Mylogo";
-// import Carousel from "../components/Carousel.tsx";
-import HamburgerMenu from "../components/Hamburger";
+import Carousel from "../components/Carousel.tsx";
+// import HamburgerMenu from "../components/Hamburger";
 import { useCardStore } from "../store/cardStore";
 import { useEffect } from "react";
 
@@ -19,7 +19,7 @@ function Landingpage() {
           <Username/>
         </div> */}
   
-      <div className="bg-[#161D6F] sm:hidden py-5 flex justify-between items-center w-full ">
+      <div className="bg-[#161D6F] sm:hidden py-5 pb-10 flex justify-between items-center w-full ">
          <div className=" w-1/2 flex">
             <Mylogo />
           </div>
@@ -43,13 +43,12 @@ function Landingpage() {
        
     {/* header carousel */}
     <Header>
-      <div></div>
-        {/* <Carousel/> */}
+        <Carousel/>
     </Header>
 
      {/*mobile carousel  */}
-     <div className="sm:hidden mx-4">
-      {/* <Carousel/> */}
+     <div className="sm:hidden px-4">
+      <Carousel/>
       </div>  
 
 <div className="flex justify-center items-center font-bold sm:mt-3 m-4">
@@ -165,14 +164,16 @@ function Landingpage() {
             <p className="text-[#aeaeb1] font-normal sm:text-[22px] text-[14px]  ">Read what our clients have to say</p>
         </div>
         <div className="track sm:mt-5 mt-3">
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard role="AI Programmer" name="Kola Wole" thumbnail="src/assets/SVG/Ellipse 21.svg" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard/>
+
+          {/* <TestimonialCard rating="★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
+          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} /> */}
           
         </div>
       </section>

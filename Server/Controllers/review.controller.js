@@ -1,6 +1,6 @@
 import customerReview from "../Models/reviewModel.js";
 
-export const getReviews = async (req, res) => {
+export const postReviews = async (req, res) => {
   const { name, email, rating, review } = req.body;
 
   try {
@@ -19,3 +19,25 @@ export const getReviews = async (req, res) => {
   }
 }
 
+export const getReviews = async (req, res) => {
+  try {
+    const reviews = await customerReview.find();
+    res.status(200).json(reviews);
+  } catch (error) {
+    console.log("Error in getReviews controller", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+
+
+export const updateReview = async (req, res) => {
+  const { name, email, rating, review } = req.body;
+
+  try {
+    const updatedReview = await customerReview.findOneAndUpdate({ name: name }, { email: email, rating: rating, review: review }, { new: true });
+    res.status(200).json(updatedReview);
+  } catch (error) {
+    console.log("Error in updateReview controller", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}

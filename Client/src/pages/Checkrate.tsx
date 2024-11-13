@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Mobilefooter from '../components/Mobilefooter';
 import Footer from '../components/Footer';
 import Progress from '../components/Progress';
-// import Carousel from '../components/Carousel.tsx';
+import Carousel from '../components/Carousel.tsx';
 
 const Checkrate: React.FC = () => {
   interface ConversionRates {
@@ -85,7 +85,7 @@ const Checkrate: React.FC = () => {
       </nav>
 
       <div className="sm:hidden mx-3">
-      {/* <Carousel/> */}
+      <Carousel/>
       </div> 
 
       <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] h-[80vh] sm:h-[80vh] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7 sm:pb-9 mx-3 sm:m-0">
