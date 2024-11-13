@@ -7,7 +7,7 @@ import axios from "axios";
 
 export interface TestimonialStore {
    reviews: [
-        {name:string, rating:number, testimony:string}
+        {name:string, rating:number, review:string}
     ] | null;
     loading: boolean;
     error: string | null;

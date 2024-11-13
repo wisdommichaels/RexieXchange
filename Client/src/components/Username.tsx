@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../store/authStore"
 
 const Username = () => {
   const { user } = useAuthStore()
+  const navigate = useNavigate()
+  const logout = () => {
+    // Implement logout logic here
+    localStorage.removeItem('token');
+    navigate('/landingpage');
+  }
 
   return (
     <div>
@@ -29,10 +35,10 @@ const Username = () => {
             </Link>
           </li>
           <li>
-            <Link to={'/'} className="flex gap-4 items-center w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100">
+            <p onClick={logout} className="flex gap-4 items-center w-full px-4 py-2 text-[#161D6F] hover:bg-gray-100 cursor-pointer">
               <img className="w-4 h-4" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/logouticon_bs56u0.png" alt="" />
               Logout
-            </Link>
+            </p>
           </li>
         </ul>
       </div>

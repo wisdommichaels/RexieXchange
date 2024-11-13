@@ -6,13 +6,21 @@ import Mylogo from "../components/Mylogo";
 import Carousel from "../components/Carousel.tsx";
 // import HamburgerMenu from "../components/Hamburger";
 import { useCardStore } from "../store/cardStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import api from "../utils/api.ts";
 
 
 function Landingpage() {
   const { cards } = useCardStore()
-  
-  useEffect(() => console.log(cards),[])
+  const [reviews, setReviews] = useState()
+  useEffect(() => 
+    {
+    const getReviews = async() =>{
+      const response = await api.get("/review/get-review")
+      setReviews(response.data)
+    }
+      getReviews()
+    },[])
   return (
     <div>
         {/* <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
@@ -163,6 +171,8 @@ function Landingpage() {
             <h1 className="text-white font-normal sm:text-[45px] text-[18px]">Don't just take our word for it</h1>
             <p className="text-[#aeaeb1] font-normal sm:text-[22px] text-[14px]  ">Read what our clients have to say</p>
         </div>
+        {
+          reviews && 
         <div className="track sm:mt-5 mt-3">
           <TestimonialCard/>
 
@@ -172,10 +182,10 @@ function Landingpage() {
           <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
           <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
           <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
-          <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} />
           <TestimonialCard rating=" ★" name="Kola Wole" testimony={`"Trading my gift card here was hassle-free! The website is well-organized, and I appreciated the quick turnaround time for my rewards and fast payment. Highly recommend it!"...`} /> */}
           
         </div>
+        }
       </section>
   <Footer/>
     </div>
