@@ -11,13 +11,15 @@ import Mobilefooter from "../components/Mobilefooter"
 import Mobileuser from "../components/Mobileuser"
 // import Carousel from "../components/Carousel.tsx"
 import GiftCardCategories from "../components/Category"
+import { useAuthStore } from "../store/authStore"
 
 
 
 const Home = () => {
   const { cards } = useCardStore()
+  const { checkAuth} = useAuthStore()
 
-  useEffect(() => console.log(cards),[])
+  useEffect(() => {checkAuth()},[])
 
     const revealOnScroll = () => {      
       const triggerBottom = window.innerHeight * 0.85;
@@ -103,7 +105,7 @@ const Home = () => {
 
         />
       </div>
-          <Dropdown/>
+          {/* <Dropdown/> */}
   </div>
     </div>
   </div>

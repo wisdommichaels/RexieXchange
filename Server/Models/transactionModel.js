@@ -7,27 +7,25 @@ const transactionSchema = new mongoose.Schema({
     cardName:{
         type:String,
         required:true,
-        unique:true
     },
     countryCode:{
         type:String,
         required:true,
     },
     cardNumber:{
-        type: Number,
+        type: String,
         required:true,
     },
     cardImage:{
         type:String,
-        required:true,
+        required: true,
     }, 
-    // status:{
-    //     type: String,
-    //     required: true,
-    //     enum: ['pending', 'succesful', 'faild'],
-    //     default: 'pending'
-    // },
-   
+    status:{
+        type: String,
+        required: true,
+        enum: ['pending', 'succesful', 'faild'],
+        default: 'pending'
+    },
     userId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

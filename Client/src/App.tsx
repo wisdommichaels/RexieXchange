@@ -24,10 +24,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<ProtectedRoutes> <HomeRoute/> </ProtectedRoutes>}/>
+        <Route path='/' element={<HomeRoute/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/landingpage' element={<Landingpage/>}/>
-        <Route path='/sell' element={<ProtectedRoutes> <Sell/> </ProtectedRoutes>}/>
+        {/* <Route path='/landingpage' element={<Landingpage/>}/> */}
+        <Route path='/sell' element={<ProtectedRoutes><Sell/></ProtectedRoutes>}/>
         <Route path='/checkrate' element={<Checkrate/>}/>
         <Route path='/rate/:name' element={<ProtectedRoutes><Rates/></ProtectedRoutes>}/>
         <Route path='/dashboard' element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>}/>
@@ -48,11 +48,10 @@ const ProtectedRoutes: React.FC<{ children: React.ReactNode }> = ({ children }) 
       checkAuth()
     }
   })
-  return user?children:<Login/>
+  return user?children:<Landingpage/>
   
 }
 
 const HomeRoute = ({}) => {
-  const {user} = useAuthStore()  
-  return user?<Home/>:<Landingpage/> 
+  return localStorage.getItem("token")?<Home/>:<Landingpage/> 
 }

@@ -34,7 +34,7 @@ function Login() {
 
 
   // login function starts
-  const { login, error, user } = useAuthStore();  
+  const { login,  checkAuth } = useAuthStore();  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,11 +45,14 @@ function Login() {
     if (!validateLoginForm()) return;
 
     try {
-      await login(email, password);
-      console.log(user); 
-      navigate('/');
-      toast.success('Login successful!', { position: 'top-center' });
-      return true;
+      const success = await login(email, password);
+      if(success){
+        navigate('/');
+        toast.success('Login successful!', { position: 'top-center' });
+        checkAuth();
+      }else{
+        toast.error('Invalid Username or Password!', { position: 'top-center' });
+      }
     } catch (error) {
       console.log("Login error:", error);    
     }
@@ -100,10 +103,9 @@ function Login() {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateSignupForm()) return;
-    try {
-      console.log(inputs.username, inputs.email, inputs.password, inputs.confirmPassword);
-      
+    try {      
       await signup(inputs.username, inputs.email, inputs.password, inputs.confirmPassword);
+      checkAuth();
       navigate('/')
       toast.success('Signup successful!', { position: 'top-center' });
       return true;
@@ -145,6 +147,18 @@ function Login() {
       toast.error('Password must be at least 6 characters!', { position: 'top-center' });
       newErrors.password = 'Password must be at least 6 characters!';
       setErrors(newErrors);
+      return false;
+    }
+
+    if (inputs.password !== inputs.confirmPassword) {
+      toast.error('Passwords do not match!', { position: 'top-center' });
+      newErrors.confirmPassword = 'Passwords do not match';
+      setErrors(newErrors);
+      return false;
+    }
+
+    if (!inputs.password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
+      toast.error('Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-center' });
       return false;
     }
 
@@ -215,7 +229,7 @@ function Login() {
                     onChange={(e) => setEmail(e.target.value)} 
                     className={`w-full py-3 px-5 inpute ${errors.email ? 'border-red-500' : ''}`}
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
+             
                 </div>
                 <div className="w-[85%] sm:w-[60%] flex flex-col justify-center items-center">
                   <label className="text-[#161D6F] text-[14px] mt-2">Password</label>
@@ -238,9 +252,8 @@ function Login() {
                       )}
                     </div>
                   </div>
-                  {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
                 </div>
-                {error && <p className="text-red-500">{error}</p>}
+                {/* {error && <p className="text-red-500">{error}</p>} */}
                 <a className="text-[#161D6F] text-[12px] pt-3 hover:underline" href="#">Forgot your password?</a>
                 <button type="submit" className="btnn w-[85%] sm:w-[60%]">Login</button>
                 <span className="text-[12px] text-[#161D6F] font-bold ">OR</span>
@@ -283,7 +296,6 @@ function Login() {
                       value={inputs.email}
                       onChange={(e) => setInputs({...inputs, email: e.target.value})}
                     />
-                    {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                   </div>
                 </div>
 
@@ -309,7 +321,7 @@ function Login() {
                         )}
                       </div>
                     </div>
-                    {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>}
+                   
                   </div>
 
                   <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
@@ -333,7 +345,7 @@ function Login() {
                         )}
                       </div>
                     </div>
-                    {errors.confirmPassword && <p className="mt-1  text-sm text-red-500">{errors.confirmPassword}</p>}
+    
                   </div>
                 </div>
 

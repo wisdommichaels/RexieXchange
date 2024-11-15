@@ -69,10 +69,10 @@ function Landingpage() {
                 <div className="marquee-ltr">
                     <div className="marquee-content">
                       {cards?.map((card) => 
-                          <div className="bg-[#DDE4EF] shadow-lg rounded-lg w-72 sm:w-72 p-4 mx-2 transition-transform duration-200 transform hover:scale-110 h">
+                          <div className="bg-[#DDE4EF] shadow-lg rounded-lg w-72 sm:w-72 p-4 mx-2 transition-transform duration-200 transform hover:scale-110">
                             <img src={card.imageUrl} alt="Gift Card 1" className="w-full h-40 object-cover rounded-md"/>
-                            <h2 className="sm:text-lg mt-2 text-[#161D6F]">{card.name} Gift Card</h2>
-                            <p className="text-[#161D6F] ">1{card.rates[0].rateDetails.currencySymbol}= ₦{card.rates[0].rate}</p>
+                            <h2 className="sm:text-lg mt-2 text-[#161D6F] font-semibold ">{card.name} Gift Card</h2>
+                            <p className="text-[#161D6F]">1{card.rates[0].rateDetails.currencySymbol}= ₦{card.rates[0].rate}</p>
                             <p className="text-[#161D6F]">{card.rates[0].rateDetails.countryName}</p>
                         </div>
                         )}
@@ -136,8 +136,7 @@ function Landingpage() {
         <div className=" hidden sm:flex justify-center items-center gap-10 mt-20 pb-7">
             <div className="flex flex-col justify-end leading-7 items-center">
                 <h2 className="text-[#161D6F] text-[24px] font-semibold">Busy? <br/>And thinking of where to <br/>trade your gift cards</h2>
-                <p className="text-black text-[16px] pt-3">Trade all your gift card in one Platform.</p>
-                <p className="text-black">With Gifthub Trading makes super easy!</p>
+                <p className="text-black text-[16px] pt-3">Trade all your gift card in one Platform. <br /> With Gifthub Trading makes super easy!</p>
                 <Link to={'/sell'} className="bg-[#161D6F] text-white rounded-md sm:mt-4 mt-2 text-center text-[16px] font-[500] py-1 px-4 w-[38%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
             <div className="sm:w-1/3 w-[90%] sm:mb-8">

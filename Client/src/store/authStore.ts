@@ -67,11 +67,11 @@ export const useAuthStore = create<AuthStore>((set) => ({
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token)
                 set({ loading: false })
-                return response.data
+                return true
             } catch (error:any) {
                 console.log(error)
                 set({ loading: false, error: error instanceof Error ? error.message : 'An unknown error occurred' })
-                return error
+                return false
         }
     },
 
@@ -86,8 +86,9 @@ export const useAuthStore = create<AuthStore>((set) => ({
             set({ user: response.data });
         } catch (error) {
             if (axios.isAxiosError(error) && error.response?.status === 401) {
-                window.location.href = '/login';
-                set({ user: null });
+                localStorage.removeItem('token');
+                window.location.reload();
+                 set({ user: null });
             
         }
     }

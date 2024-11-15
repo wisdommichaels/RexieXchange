@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import Footer from "../components/Footer";
@@ -10,6 +10,7 @@ import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
 import api from '../utils/api.ts';
 
+
 const Sell: React.FC = () => {
   // State variables for form inputs
   const [amount, setAmount] = useState<string>('');
@@ -17,6 +18,36 @@ const Sell: React.FC = () => {
   const [countryCode, setCountryCode] = useState<string>('');
   const [cardNumber, setCardNumber] = useState<string>('');
   const [cardImage, setCardImage] = useState<File | null>(null);
+
+  const handleImageUpload = async (file : File) => {
+    console.log("Uploading");
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "projectImages"); // Replace with your Cloudinary upload preset
+    data.append("cloud_name", "duwfbyhyq"); // Replace with your Cloudinary upload preset
+  
+    try {
+      const response = await fetch(`https://api.cloudinary.com/v1_1/duwfbyhyq/image/upload`, 
+        {
+          method:"POST",
+          body:data
+        }); // Replace with your Cloudinary cloud name
+        const res = await response.json();
+        console.log(res); // Log the URL of the uploaded image
+      return res.secure_url; // Return the URL of the uploaded image
+    } catch (error) {
+      console.error("Image upload failed:", error);
+      return null; // Handle error appropriately
+    }
+  };
+
+  const handleInputChange = async (e:ChangeEvent<HTMLInputElement>) => {
+    const {type, files } = e.target;
+    if (type === "file" && files && files.length > 0) {
+      const imageUrl = await handleImageUpload(files[0]);
+      setCardImage(imageUrl);
+    }
+  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,12 +62,13 @@ const Sell: React.FC = () => {
 
     try {
       // Replace `api_url` with your backend API endpoint
+     
       const response = await api.post(`${api_url}/transaction`, {
         amount,
         cardName,
         countryCode,
         cardNumber,
-        cardImage:"img",
+        cardImage,
       });
       response.data;
       toast.success("Transaction submitted successfully!");
@@ -113,6 +145,8 @@ const Sell: React.FC = () => {
                 >
                   <option value="">Select Category</option>
                   <option value="Razer">Razer Gift Card</option>
+                  <option value="Apple">Apple Gift Card</option>
+                  <option value="Amazon">Amazon Gift Card</option>
                   {/* Add other options as needed */}
                 </select>
               </div>
@@ -127,6 +161,7 @@ const Sell: React.FC = () => {
                 >
                   <option value="">Select Country</option>
                   <option value="United States">USA/USD</option>
+                  <option value="Brazil">USD</option>
                   {/* Add other countries as needed */}
                 </select>
               </div>
@@ -151,7 +186,7 @@ const Sell: React.FC = () => {
                 <input
                   type="file"
                   id="giftCardImage"
-                  onChange={(e) => setCardImage(e.target.files?.[0] || null)}
+                  onChange={handleInputChange}
                   accept="image/*"
                   className="custom-select custom-arrow cursor-pointer w-full"
                 />

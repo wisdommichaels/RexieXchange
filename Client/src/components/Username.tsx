@@ -1,13 +1,13 @@
-import { Link, useNavigate } from "react-router-dom"
+
+import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore"
 
 const Username = () => {
   const { user } = useAuthStore()
-  const navigate = useNavigate()
   const logout = () => {
     // Implement logout logic here
     localStorage.removeItem('token');
-    navigate('/landingpage');
+    window.location.reload()
   }
 
   return (
