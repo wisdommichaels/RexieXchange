@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import Footer from "../components/Footer";
@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
 import api from '../utils/api.ts';
+import { useCardStore } from '../store/cardStore.ts';
 
 
 const Sell: React.FC = () => {
@@ -18,7 +19,13 @@ const Sell: React.FC = () => {
   const [countryCode, setCountryCode] = useState<string>('');
   const [cardNumber, setCardNumber] = useState<string>('');
   const [cardImage, setCardImage] = useState<File | null>(null);
+  const { cards, getCards } = useCardStore()
 
+  useEffect(() => {
+    if(!cards){
+      getCards()
+      }
+  },[cards, name])
   const handleImageUpload = async (file : File) => {
     console.log("Uploading");
     const data = new FormData();
@@ -52,23 +59,23 @@ const Sell: React.FC = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     // Check all fields are filled
-    if (!amount || !cardName || !countryCode || !cardNumber || !cardImage) {
+    if (!amount || !cardName || !countryCode || !cardNumber || !cardImage ) {
       toast.error("All fields are required!");
       return;
     }
+    const rate = cards?.filter(card=> card.name === cardName)[0].rates.find(rate => rate.rateDetails.currencyCode === countryCode)?.rate
 
 
-    try {
-      // Replace `api_url` with your backend API endpoint
-     
+    try {     
       const response = await api.post(`${api_url}/transaction`, {
         amount,
         cardName,
         countryCode,
         cardNumber,
         cardImage,
+        rate
       });
       response.data;
       toast.success("Transaction submitted successfully!");
@@ -144,10 +151,10 @@ const Sell: React.FC = () => {
                   className="custom-select custom-arrow w-full"
                 >
                   <option value="">Select Category</option>
-                  <option value="Razer">Razer Gift Card</option>
-                  <option value="Apple">Apple Gift Card</option>
-                  <option value="Amazon">Amazon Gift Card</option>
-                  {/* Add other options as needed */}
+                  { cards && cards.length > 0 && cards.map(card =>
+                  <option value={card.name}>{card.name}</option>
+                  )
+                  }
                 </select>
               </div>
 
@@ -160,9 +167,9 @@ const Sell: React.FC = () => {
                   className="custom-select custom-arrow w-full"
                 >
                   <option value="">Select Country</option>
-                  <option value="United States">USA/USD</option>
-                  <option value="Brazil">USD</option>
-                  {/* Add other countries as needed */}
+                  { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
+                  <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode}</option>
+                  )}
                 </select>
               </div>
             </div>

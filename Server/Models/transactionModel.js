@@ -4,6 +4,10 @@ const transactionSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    rate:{
+        type: Number,
+        required: true
+    },
     cardName:{
         type:String,
         required:true,

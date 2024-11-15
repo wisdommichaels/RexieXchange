@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     },
     accountDetails:{
         accountName:String,
-        accountNumber:String,
+        accountNumber:Number,
         bankName:String,
     },   
 },{timestamps :true}) 
