@@ -13,6 +13,8 @@ import { useAuthStore } from './store/authStore'
 import { useCardStore } from './store/cardStore'
 import Rates from './pages/Rates'
 import { ToastContainer } from 'react-toastify'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   const { getCards, cards } = useCardStore()
@@ -32,6 +34,8 @@ function App() {
         <Route path='/rate/:name' element={<ProtectedRoutes><Rates/></ProtectedRoutes>}/>
         <Route path='/dashboard' element={<ProtectedRoutes><Dashboard/></ProtectedRoutes>}/>
         <Route path='/settings' element={<ProtectedRoutes><Settings/></ProtectedRoutes>}/>
+        <Route path='/aboutpage' element={<ProtectedRoutes><AboutPage/></ProtectedRoutes>}/>
+        <Route path='/contactpage' element={<ProtectedRoutes><ContactPage/></ProtectedRoutes>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <ToastContainer />

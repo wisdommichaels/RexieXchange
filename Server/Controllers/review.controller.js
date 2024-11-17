@@ -12,7 +12,6 @@ export const postReviews = async (req, res) => {
     if (!details) {
       return res.status(404).json({ message: "User not found" });
     }
-    console.log(details);
     
     const name = details.username;
     const email = details.email;

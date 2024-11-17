@@ -8,6 +8,8 @@ import authRoutes from "./routes/auth.routes.js";
 import giftcardRoutes from "./routes/giftcard.routes.js";
 import transactionRoutes from "./routes/transaction.routes.js";
 import reviewRoutes from "./routes/review.routes.js";
+import newsLatterRoutes from "./routes/newsLatter.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
 
 // import CardRate from "./Models/rateModel.js";
 // import GiftCard from "./Models/giftcardModel.js";
@@ -37,6 +39,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/giftcard", giftcardRoutes);
 app.use("/api/transaction", transactionRoutes);
 app.use("/api/review", reviewRoutes);
+app.use("/api/emails,", newsLatterRoutes);
+app.use("/api/contacts", contactRoutes);
+
 // app.use('/transaction', authMiddleware);
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);

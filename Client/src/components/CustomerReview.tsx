@@ -99,7 +99,7 @@ const CustomerReviewForm: React.FC = () => {
             Submit Review
           </button>
         </form>
-        <ToastContainer position="top-center" autoClose={4000} />
+        <ToastContainer position="top-right" autoClose={3000} />
       </div>
   
   );
