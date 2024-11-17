@@ -27,12 +27,11 @@ body {
 
 .card {
   width: 100%;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   padding-bottom: 20px;
   box-shadow: rga(100, 100, 111, 0.2) 0px 7px 20px 0px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -79,7 +78,7 @@ body {
   height: 15px;
   width: 15px;
   border-top-left-radius: 15px;
-  box-shadow: -5px -5px 0 2px #121c3d;
+  
 }
 
 .card .top-section .icons {

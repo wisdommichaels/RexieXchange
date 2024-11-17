@@ -52,7 +52,7 @@ const Rates = () => {
 </nav>
 <div className="hidden sm:block">
       <Header>
-          <div  className="flex justify-center items-center mx-auto p-10 mt-[50px]">
+          <div  className="flex justify-center items-center mx-auto p-10 mt-[50px] my-10">
             <div  className="w-[45%] ml-5">
               <img
                  className="w-[400px] rounded-lg transform transition duration-500 hover:scale-110 hover:shadow-xl"

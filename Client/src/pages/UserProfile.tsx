@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 // import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
-import CustomerReviewForm from "../components/Review";
+import CustomerReviewForm from "../components/CustomerReview";
 
-const Settings = () => {
+const UserProfile = () => {
   const { user } = useAuthStore()
     const loadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -117,4 +117,4 @@ const Settings = () => {
   )
 }
 
-export default Settings
+export default UserProfile

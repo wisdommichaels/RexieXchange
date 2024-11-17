@@ -4,7 +4,7 @@ import Mylogo from "../components/Mylogo"
 import Username from "../components/Username"
 import { Link } from "react-router-dom"
 import Navbar from "../components/Navbar"
-import Dropdown from "../components/Dropdown"
+
 import { useCardStore } from "../store/cardStore"
 import { useEffect } from "react"
 import Mobilefooter from "../components/Mobilefooter"
@@ -12,6 +12,7 @@ import Mobileuser from "../components/Mobileuser"
 // import Carousel from "../components/Carousel.tsx"
 import GiftCardCategories from "../components/Category"
 import { useAuthStore } from "../store/authStore"
+import Carousel from "../components/Carousel"
 
 
 
@@ -69,18 +70,15 @@ const Home = () => {
       </div>
       <input className="border-none py-2 cursor-text w-full focus:outline-none " type="text" placeholder="Search gift cards..."/> 
     </div>
-    <div className="flex justify-center items-center pb-5">
-      {/* <Dropdown/> */}
-    </div>
   </div>
 
   <div className="sm:hidden mx-4">
-      {/* <Carousel/> */}
+      <Carousel/>
       </div>  
   </section>
 
     <div className="card hidden sm:flex">
-      <div className="top-section">
+      <div className="top-section ">
         <div className="border"></div>
     <div className="icons">
       <div className="logo">
@@ -89,7 +87,7 @@ const Home = () => {
       <Navbar/>
         <Username/>
       </div>
-      <div className=" flex flex-col justify-center items-center w-full p-10 mb-6">
+      <div className=" flex flex-col justify-center items-center w-full p-10 my-14">
             <h1 className="sm:text-[50px] text-[16px] font-bold pt-8 text-white mb-4 text-center">Trade your <span className="text-[#E7500F] underline">Gift Card</span> all in <br/> one place</h1>
         
       <div className="searchbar w-[50%] gap-2 mb-6 flex justify-start items-center">

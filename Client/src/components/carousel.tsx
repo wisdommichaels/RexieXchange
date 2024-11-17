@@ -43,7 +43,7 @@ const Carousel:React.FC = () => {
   };
 
   return (
-    <div className="carousel-container overflow-x-hidden w-full sm:w-[95%] sm:m-auto mx-auto ">
+    <div className="carousel-container overflow-x-hidden w-full sm:w-[95%] sm:mx-auto mx-auto sm:my-10 ">
       <div
         className="carousel-track flex transition-transform duration-500 rounded-lg"
         ref={trackRef}

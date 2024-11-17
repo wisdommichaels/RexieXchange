@@ -35,13 +35,6 @@ const Navbar = () => {
                   {" "}
                 </Link>
               </div>
-              <div className="submenu-item">
-                <Link to={"/buy"} className="submenu-link">
-                  {" "}
-                  Buy Gift Card
-                  {" "}
-                </Link>
-              </div>
             </div>
           </div>
         </div>

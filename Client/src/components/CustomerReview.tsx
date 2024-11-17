@@ -16,7 +16,7 @@ const CustomerReviewForm: React.FC = () => {
 
     // Form validation
     if ( !review) {
-      toast.error('Please enter a review');
+      toast.error(`Please enter a review`);
       return;
     }
     if (rating < 1 || rating > 5) {
@@ -50,7 +50,7 @@ const CustomerReviewForm: React.FC = () => {
 
   return (
    
-      <div className="w-[95%] mx-auto sm:mx-0 sm:w-[59%] mb-3 flex-col justify-self-end sm:mr-7 p-8 shadow-xl rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+      <div className="w-[95%] mx-auto sm:w-[59%] mb-3 flex-col justify-center mt-10 items-center p-8 shadow-xl rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
         <h2 className="text-2xl text-center mb-4 text-[#161D6F]">LEAVE A REVIEW</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

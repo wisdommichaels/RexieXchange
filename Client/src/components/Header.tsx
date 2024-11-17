@@ -4,7 +4,7 @@ import Username from "./Username";
 import Navbar from "./Navbar";
 
 const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  let isloggedin = false;
+  let isloggedin = true;
   return (
     <section id="black">
 {/*    
@@ -26,7 +26,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </Link>
       </div> */}
       <div className="card hidden sm:flex">
-        <div className="top-section h-52 sm:h-[530px] rounded-none">
+        <div className="top-section rounded-none">
           <div className="border"></div>
           {children}
           <div className="icons">
@@ -37,7 +37,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             {isloggedin ? (
               <Username/>
             ) : (
-              <div className="logins flex justify-between items-center gap-3 mr-8 mt-3">
+              <div className="logins flex justify-between items-center gap-3 mr-8 mt-7">
                 <Link
                   to={"/Login"}
                   className="login-button text-[#161D6F]  bg-[#FFFFFF] font-normal"
