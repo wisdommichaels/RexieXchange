@@ -39,7 +39,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/giftcard", giftcardRoutes);
 app.use("/api/transaction", transactionRoutes);
 app.use("/api/review", reviewRoutes);
-app.use("/api/emails,", newsLatterRoutes);
+app.use("/api/email,", newsLatterRoutes);
 app.use("/api/contacts", contactRoutes);
 
 // app.use('/transaction', authMiddleware);

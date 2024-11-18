@@ -1,15 +1,19 @@
 import mongoose from 'mongoose';
 
 const newsLetterSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
     email: {
       type: String,
       required: true,
       unique: true,
     },
-    subscribedAt: {
-      type: Date,
-      default: Date.now,
-    },
+  Timestamp: {
+    type: Date,
+    default: Date.now,
+  },
   });
 
 const newsLetter = mongoose.model('NewsLetter', newsLetterSchema);

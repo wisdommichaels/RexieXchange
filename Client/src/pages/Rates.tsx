@@ -7,6 +7,7 @@ import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter"
 import { Card, useCardStore } from "../store/cardStore"
 import { useEffect, useState } from "react"
+import Loader from "../components/Loader"
 // import Signup from "../components/Signup"
 
 const Rates = () => {
@@ -87,7 +88,7 @@ const Rates = () => {
  
     </div>:
     <div>
-    <h1>loading cards </h1>
+    <Loader/>
     </div>
   )
 }

@@ -58,9 +58,9 @@ const Home = () => {
   <section className="sm:hidden">
     <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#fbfbfb] to-[#668bc2] text-[16px] font-bold p-2 text-white text-center mb-0">Trade your <span className="text-[#161D6F]">Gift Card</span> all in <br/> one place</h1>
     <h1 className="sm:text-[50px] bg-[#161D6F] text-[16px] font-bold p-2 pt-5 text-white text-center mb-0">Trade your Gift Card all in one place</h1>
-    <div className="flex-col justify-center items-center mb-3 bg-[#161D6F] rounded-b-lg">
+    <div className="flex-col justify-center items-center mb-3 pb-3 bg-[#161D6F] rounded-b-lg ">
     <div className="w-[80%] rounded-lg gap-2 shadow-sm mb-3 py-1 m-auto flex justify-start items-center bg-white">
-      <div className="flex items-center  pointer-events-none bg-white pl-5 rounded-lg ">
+      <div className="flex items-center  pointer-events-none bg-white pl-5 rounded-lg">
         <svg className="text-[#161D6F] font-bold" xmlns="http://www.w3.org/2000/svg"  
         viewBox="0 0 50 50" 
         width="22px" 
@@ -108,8 +108,8 @@ const Home = () => {
     </div>
   </div>
 </section>
-<div className="mb-3 sm:hidden">
-  <h1 className="px-5 pt-3 pb-1 text-xl text-[#161D6F]">Category</h1>
+<div className="mb-3">
+  <h1 className="px-5 pt-3 pb-1 text-xl sm:text-2xl text-[#161D6F]">Category</h1>
   <GiftCardCategories/>
 </div>
 <section>

@@ -163,7 +163,7 @@ const Checkrate: React.FC = () => {
           </form>
         </div>
       </section>
-      <Progress/>
+      {/* <Progress/> */}
       <Mobilefooter />
       <div className="hidden sm:block">
        <Footer />

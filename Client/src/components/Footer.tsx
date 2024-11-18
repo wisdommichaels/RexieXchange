@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="bg-[#161D6F] pt-5 overflow-x-hidden">
   <section className="sm:flex justify-between items-center bg-[#DDE4EF] pb-5 sm:rounded-t-[40px] w-[97%] m-auto rounded-t-md">
       <div className="flex justify-center items-center mt-5 sm:mt-20 mx-auto ">
-          <h2 className="text-[#161D6F] sm:text-2xl text-12 text-center sm:text-left pt-4 sm:pt-0"><b>Register now so you don't miss <br/> our Gift Card hot deals</b></h2>
+          <h2 className="text-[#161D6F] sm:text-2xl text-12 text-center sm:text-left pt-4 sm:pt-0"><b>Register now so you don't miss  our<br/> Gift Card hot deals</b></h2>
         </div>
-        <div className="flex justify-center items-center sm:mt-[65px] mx-auto sm:w-[50%] sm:pl-10">
+        <div className="flex justify-center items-center sm:mt-[65px] mx-auto sm:w-[50%]">
          <NewsletterForm />
         </div>
 </section>

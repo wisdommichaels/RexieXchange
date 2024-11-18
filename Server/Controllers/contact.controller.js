@@ -2,7 +2,7 @@ import Contact from "../Models/contactModel.js";
 import User from "../Models/userModel.js";
 
 export const postContacts = async (req, res) => {
-    const {message } = req.body;
+    const {message} = req.body;
     try {
         if (!message) {
             return res.status(400).json({ message: "Please Message is required" });

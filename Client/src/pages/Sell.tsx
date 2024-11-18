@@ -10,6 +10,8 @@ import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
 import api from '../utils/api.ts';
 import { useCardStore } from '../store/cardStore.ts';
+import Progress from '../components/Progress.tsx';
+import Loader from '../components/Loader.tsx';
 
 
 const Sell: React.FC = () => {
@@ -20,6 +22,8 @@ const Sell: React.FC = () => {
   const [cardNumber, setCardNumber] = useState<string>('');
   const [cardImage, setCardImage] = useState<File | null>(null);
   const { cards, getCards } = useCardStore()
+  const [showLoader, setShowLoader] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
 
   useEffect(() => {
     if(!cards){
@@ -78,7 +82,13 @@ const Sell: React.FC = () => {
         rate
       });
       response.data;
-      toast.success("Transaction submitted successfully!");
+      setShowLoader(true);
+
+       setTimeout(() => {
+      setShowLoader(false);
+      setShowProgress(true);
+    }, 3000); // Adjust the delay time as needed (in milliseconds)
+
 
         // Reset form fields
         setAmount('');
@@ -116,98 +126,104 @@ const Sell: React.FC = () => {
 
       <div className="sm:hidden mx-3">
       <Carousel/>
-      </div> 
-
-      <section className="h-[100vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
-        <div className='p-5 mb-5'>
-          <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
-            INPUT YOUR GIFT CARD DETAILS
-          </h1>
-          <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on GiftHub.</p>
+      </div>
+      {!showProgress ? (
+  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
+    <div className='p-5 sm:mb-5'>
+      <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
+        INPUT YOUR GIFT CARD DETAILS
+      </h1>
+      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on GiftHub.</p>
+    </div>
+    
+    <div className="sm:w-1/2 mx-auto p-4 sm:pt-4 relative">
+      <form onSubmit={handleSubmit} className={`w-full space-y-4 ${showLoader ? 'opacity-80' : ''}`}>
+        <div className="sm:mb-0 mb-1 text-center w-full">
+          <label htmlFor="amount" className="text-[18px] text-black">Amount</label>
+          <input
+            type="text"
+            id="amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="Enter Trade Amount"
+            className="custom-select custom-arrow w-full cursor-text"
+          />
         </div>
-        
-        <div className="sm:w-1/2 mx-auto p-4 pt-8 sm:pt-4">
-          <form onSubmit={handleSubmit} className="w-full space-y-4">
-            <div className="sm:mb-0 mb-10 text-center w-full">
-              <label htmlFor="amount" className="text-[18px] text-black">Amount</label>
-              <input
-                type="text"
-                id="amount"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                placeholder="Enter Trade Amount"
-                className="custom-select custom-arrow w-full cursor-text"
-              />
-            </div>
 
-            {/* Category and Country Select */}
-            <div className="sm:flex justify-center items-center gap-5">
-              <div className="text-center sm:w-1/2">
-                <label htmlFor="category" className="text-[18px] text-black">Gift Card Category</label>
-                <select
-                  id="category"
-                  value={cardName}
-                  onChange={(e) =>  setCardName(e.target.value)}
-                  className="custom-select custom-arrow w-full"
-                >
-                  <option value="">Select Category</option>
-                  { cards && cards.length > 0 && cards.map(card =>
-                  <option value={card.name}>{card.name}</option>
-                  )
-                  }
-                </select>
-              </div>
+        {/* Category and Country Select */}
+        <div className="sm:flex justify-center items-center gap-5">
+          <div className="text-center sm:w-1/2 mb-4">
+            <label htmlFor="category" className="text-[18px] text-black">Gift Card Category</label>
+            <select
+              id="category"
+              value={cardName}
+              onChange={(e) =>  setCardName(e.target.value)}
+              className="custom-select custom-arrow w-full"
+            >
+              <option value="">Select Category</option>
+              { cards && cards.length > 0 && cards.map(card =>
+              <option value={card.name}>{card.name} Gift Card</option>
+              )
+              }
+            </select>
+          </div>
 
-              <div className="text-center sm:w-1/2">
-                <label htmlFor="country" className="text-[18px] text-black">Country/Currency Code</label>
-                <select
-                  id="country"
-                  value={countryCode}
-                  onChange={(e) => setCountryCode(e.target.value)}
-                  className="custom-select custom-arrow w-full"
-                >
-                  <option value="">Select Country</option>
-                  { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
-                  <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode}</option>
-                  )}
-                </select>
-              </div>
-            </div>
-
-            {/* Card Number and Image */}
-            <div className="sm:flex justify-center items-center w-full gap-5">
-              <div className="text-center sm:w-1/2">
-                <label htmlFor="cardNumber" className="text-[18px] text-black">Gift Card Number</label>
-                <input
-                  type="text"
-                  id="cardNumber"
-                  value={cardNumber}
-                  onChange={(e) => setCardNumber(e.target.value)}
-                  placeholder="Enter Gift Card Number"
-                  className="custom-select custom-arrow w-full cursor-text"
-                />
-              </div>
-
-              <div className="text-center sm:w-1/2">
-                <label htmlFor="giftCardImage" className="text-[18px] text-black">Gift Card Image</label>
-                <input
-                  type="file"
-                  id="giftCardImage"
-                  onChange={handleInputChange}
-                  accept="image/*"
-                  className="custom-select custom-arrow cursor-pointer w-full"
-                />
-              </div>
-            </div>
-
-            <div className="text-center">
-              <button type="submit" className="btnn text-[14px] sm:text-[18px] w-full">
-                Sell
-              </button>
-            </div>
-          </form>
+          <div className="text-center sm:w-1/2 mb-4">
+            <label htmlFor="country" className="text-[18px] text-black">Country/Currency Code</label>
+            <select
+              id="country"
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              className="custom-select custom-arrow w-full"
+            >
+              <option value="">Select Country</option>
+              { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
+              <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode} {card.rateDetails.countryName}</option>
+              )}
+            </select>
+          </div>
         </div>
-      </section>
+
+        {/* Card Number and Image */}
+        <div className="sm:flex justify-center items-center w-full gap-5">
+          <div className="text-center sm:w-1/2 mb-4">
+            <label htmlFor="cardNumber" className="text-[18px] text-black">Gift Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+              placeholder="Enter Gift Card Number"
+              className="custom-select custom-arrow w-full cursor-text"
+            />
+          </div>
+
+          <div className="text-center sm:w-1/2 mb-4">
+            <label htmlFor="giftCardImage" className="text-[18px] text-black">Gift Card Image</label>
+            <input
+              type="file"
+              id="giftCardImage"
+              onChange={handleInputChange}
+              accept="image/*"
+              className="custom-select custom-arrow cursor-pointer w-full"
+            />
+          </div>
+        </div>
+
+        <div className="text-center">
+          <button type="submit" className="btnn text-[14px] sm:text-[18px] w-full">
+            Sell
+          </button>
+        </div>
+      </form>
+
+      {/* Display Loader */}
+      {showLoader && <Loader />}
+    </div>
+  </section>
+) : (
+  <Progress /> // Show the Progress component after the timeout
+)}
 
       <ToastContainer position="top-center" autoClose={3000} />
       <div className="hidden sm:block">
