@@ -45,9 +45,9 @@ const UserProfile = () => {
         <span className="md:inline text-white pt-3">Wisdom Michael</span>
       </div> */}
 
-  <section className="flex flex-col md:flex-row justify-center p-3">
-    <div className=" m-auto sm:w-[35%] w-full mb-4">
-        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
+  <section className="flex flex-col md:flex-row justify-center p-3 gap-3">
+    <div className=" m-auto sm:w-[40%] w-full mb-4">
+        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:py-5  sm:rounded-lg rounded-lg">
           <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
           <div className="flex justify-center items-center">
           <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.placeholder.com/150" alt="Profile Picture"/>
@@ -88,7 +88,8 @@ const UserProfile = () => {
         </div>
         
         
-           <div className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg  w-full sm:w-[60%] pb-8 px-5 flex-col justify-center items-center">
+        <div className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg  w-full sm:w-[60%] pb-8 px-5 flex-col justify-center items-center">
+        
             <h1 className="text-2xl text-[#161D6F] text-center p-6">EDIT PROFILE</h1>
         <div className="mb-6 w-full flex-col justify-center items-center sm:w-[80%] m-auto">
           <label htmlFor="username" className="block text-[#161D6F]   text-center">Edit Username</label>
@@ -118,7 +119,7 @@ const UserProfile = () => {
     </div>
    
   </section>
-  <section className="mb-[90px]">
+  <section className="mb-[90px] w-[58.3%]  justify-self-end mr-3">
   <CustomerReviewForm />
   </section>
 

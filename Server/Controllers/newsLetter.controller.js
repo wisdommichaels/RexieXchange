@@ -9,14 +9,9 @@ export const postEmails = async (req, res) => {
         if (!email) {
             return res.status(400).json({ error: 'Please Email is required' });
           }
-          const details = await User.findById(req.userId);
-          if (!details) {
-            return res.status(404).json({ error: 'User not found' });
-          }
-          const name = details.username;
+          
 
-      const newSubscription = new newsLetter ({ 
-        name,
+      const newSubscription = new newsLetter({ 
         email,
       });
       await newSubscription.save();

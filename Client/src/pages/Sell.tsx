@@ -217,7 +217,6 @@ const Sell: React.FC = () => {
         </div>
       </form>
 
-      {/* Display Loader */}
       {showLoader && <Loader />}
     </div>
   </section>

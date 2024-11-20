@@ -2,17 +2,23 @@ import { useState } from 'react';
 import api from '../utils/api';
 import { api_url } from '../utils/constants';
 import { toast, ToastContainer } from 'react-toastify';
-import { useAuthStore } from '../store/authStore';
 import axios from 'axios';
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState('');
-  const {user} = useAuthStore();
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
+
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     // Validate email format
     if (!email) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    // to chect if the email is valid
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       toast.error('Please enter a valid email address.');
       return;
     }
@@ -24,17 +30,20 @@ const NewsletterForm = () => {
     // }
 
     try {
+      setIsLoading(true);
       const response = await api.post(`${api_url}/email`, {
         email,
       });
+      setIsLoading(false);
      response.data;
-     toast.success(`Hello ${user?.username} you have successfully subscribe to our Newsletter!`);
+     toast.success(`Hello, Thank you for subscribing to our Newsletter!`);
 
     //  Reset the form
     setEmail('');
 
     // typeScript error handling for Axios errors
     } catch (error) {
+      setIsLoading(false);
       if (axios.isAxiosError(error)) {
         const errorMessage = error.response?.data?.message || 'Subscription failed please try again';
         toast.error(errorMessage);
@@ -55,6 +64,7 @@ const NewsletterForm = () => {
      placeholder="Enter your Email"
      className="w-1/2 input"/>
    
+   {/* Add loading state */}
     <button type="submit" className=" bg-[#161D6F] sm:px-5 sm:py-3 px-2 py-3 rounded-lg text- mt-5 sm:ml-6 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center">Subscribe Now</button>
    </form>
     <ToastContainer position="top-right" autoClose={3000} />

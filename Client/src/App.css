@@ -2,14 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Telegraf", sans-serif;
-  background-color: rgb(221, 228, 239);
+  background-color: rgb(201, 216, 240);
   box-sizing: border-box;
   scroll-behavior: smooth;
   
 }
 
 #black {
-  background-color: rgb(221, 228, 239);
+  background-color: rgb(201, 216, 240);
   width: 100%;
   margin: auto;
 }
@@ -52,10 +52,10 @@ body {
   height: 70px;
   width: 80%;
   background: white;
-  background: rgb(221, 228, 239);
+  background:rgb(201, 216, 240);
   position: relative;
   transform: skew(-40deg);
-  box-shadow: -10px -10px 0 0 rgb(221, 228, 239);
+  box-shadow: -10px -10px 0 0 rgb(201, 216, 240);
   border: none;
 }
 
@@ -67,7 +67,7 @@ body {
   top: 0;
   right: -15px;
   border-top-left-radius: 20px;
-  box-shadow: -5px -5px 0 2px rgb(221, 228, 239);
+  box-shadow: -5px -5px 0 2px rgb(201, 216, 240);
 }
 
 .card .top-section::before {
@@ -111,7 +111,7 @@ body {
   padding-right: 25px;
   padding-top: 7px;
   padding-bottom: 7px;
-  background-color: rgb(221, 228, 239);
+  background-color: rgb(201, 216, 240);
   transition: ease-out 0.5s;
 }
 
@@ -221,7 +221,7 @@ body {
   pointer-events: auto;
   border-top: transparent;
   border-color: #161d6f;
-  background-color: #dde4ef;
+  background-color: #C9D8F0;
 }
 
 .menu .item:hover .link span {

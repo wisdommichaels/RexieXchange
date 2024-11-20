@@ -38,6 +38,7 @@ function App() {
         <Route path='/contactpage' element={<ProtectedRoutes><ContactPage/></ProtectedRoutes>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
+      
       <ToastContainer />
     </>
   )

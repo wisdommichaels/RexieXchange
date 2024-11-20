@@ -16,7 +16,7 @@ const AboutPage = () => {
           About Us
         </h2>
       </nav>
-      <section className=" mx-auto p-10 my-8 w-[70%] bg-[#ECF0F6] rounded-lg text-center text-lg">
+      <section className=" mx-auto p-10 my-8 w-[70%] bg-[#ffffff] rounded-lg text-center text-lg">
         <h1 className="text-4xl font-bold text-center mb-6 text-[#161D6F]">About Us</h1>
         <p className=" text-black mb-6 leading-relaxed">
           Welcome to our Gift Card Trading Platform! We are passionate about providing a secure, easy-to-use, and efficient platform for trading gift cards. Whether you're looking to sell your gift card  at a profitable rate, our platform is designed to make the process seamless.
@@ -34,6 +34,7 @@ const AboutPage = () => {
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
         </div>
+        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING GIFTHUB</p>
       </section>
       </div>
     );

@@ -42,9 +42,9 @@ const GiftCardCategories = () => {
     <div className="relative w-full bg-[#F5F5FA] mb-5">
       <button
         onClick={scrollLeft}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2  hidden lg:block"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 p-1 hidden lg:block rounded-md  bg-[#161D6F] hover:bg-[#1522ad] transition"
       >
-        <img className="w-11" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731941894/icons8-prev-50_lgx3ln.png" alt="" />
+        <img className="w-8" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1732011925/icons8-back-50_cmvkj9.png" alt="" />
       </button>
       
       <div
@@ -64,9 +64,9 @@ const GiftCardCategories = () => {
       
       <button
         onClick={scrollRight}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2  hidden lg:block"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-md p-1 hidden lg:block bg-[#161D6F] hover:bg-[#1522ad] transition"
       >
-      <img className="w-11 " src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731941907/icons8-right-button-50_egucaq.png" alt="" />
+      <img className="w-8 " src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1732011628/icons8-next-50_h4ld8q.png" alt="" />
       </button>
     </div>
   );

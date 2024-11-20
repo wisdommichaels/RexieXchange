@@ -4,7 +4,7 @@ import NewsletterForm from "./NewsLatter"
 const Footer = () => {
   return (
     <footer className="bg-[#161D6F] pt-5 overflow-x-hidden">
-  <section className="sm:flex justify-between items-center bg-[#DDE4EF] pb-5 sm:rounded-t-[40px] w-[97%] m-auto rounded-t-md">
+  <section className="sm:flex justify-between items-center bg-[#C9D8F0] pb-5 sm:rounded-t-[40px] w-[97%] m-auto rounded-t-md">
       <div className="flex justify-center items-center mt-5 sm:mt-20 mx-auto ">
           <h2 className="text-[#161D6F] sm:text-2xl text-12 text-center sm:text-left pt-4 sm:pt-0"><b>Register now so you don't miss  our<br/> Gift Card hot deals</b></h2>
         </div>
@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
 </section>
 
-<section className="sm:flex justify-between items-center bg-[#DDE4EF] sm:pt-5 pb-4 w-[97%] m-auto"> 
+<section className="sm:flex justify-between items-center bg-[#C9D8F0] sm:pt-5 pb-4 w-[97%] m-auto"> 
 <nav className=" flex justify-center items-center sm:ml-[65px] mb-4 pt-3">
     <ul className=" flex sm:gap-8 gap-12 text-[#161D6F]">
     <Link to={'/'} className="hover:text-[#FA4A00]">Home</Link>
@@ -110,15 +110,15 @@ const Footer = () => {
 </div>
 </section>
 
-<section className="bg-[#DDE4EF] w-[97%]  m-auto">
+<section className="bg-[#C9D8F0] w-[97%]  m-auto">
 <div className="flex justify-center items-center border rounded-full border-[#161D6F] w-[90%] mx-auto"></div>
 </section>
-<div className="w-[97%] text-center m-auto sm:flex justify-between items-center bg-[#DDE4EF] sm:pb-10 pb-5 text-[#99A2A5] pt-3">
+<div className="w-[97%] text-center m-auto sm:flex justify-between items-center bg-[#C9D8F0] sm:pb-10 pb-5 text-[#62686b] pt-3">
 <p className="sm:ml-20">© 2024 Gifthub. All rights reserved.</p>
-<div className="flex gap-8 sm:mr-24 justify-center pt-2 ">
+{/* <div className="flex gap-8 sm:mr-24 justify-center pt-2 ">
 <Link to={'/'}> Terms of Service</Link>
 <Link to={'/'}>Privacy Policy</Link>
-</div>
+</div> */}
 </div>
 </footer>
   )
