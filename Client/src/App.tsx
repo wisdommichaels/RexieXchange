@@ -12,7 +12,6 @@ import Checkrate from './pages/Checkrate'
 import { useAuthStore } from './store/authStore'
 import { useCardStore } from './store/cardStore'
 import Rates from './pages/Rates'
-import { ToastContainer } from 'react-toastify'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 
@@ -39,7 +38,7 @@ function App() {
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       
-      <ToastContainer />
+      
     </>
   )
 }

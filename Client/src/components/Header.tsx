@@ -4,7 +4,7 @@ import Username from "./Username";
 import Navbar from "./Navbar";
 
 const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  let isloggedin = true;
+  let isloggedin = false;
   return (
     <section id="black">
 {/*    
@@ -45,7 +45,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   LOGIN
                 </Link>
                 <Link
-                  to={"/signup"}
+                  to={"/login"}
                   className="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal"
                 >
                   SIGN UP

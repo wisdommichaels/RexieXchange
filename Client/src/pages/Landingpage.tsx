@@ -4,10 +4,10 @@ import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
 import Mylogo from "../components/Mylogo";
 import Carousel from "../components/Carousel.tsx";
-// import HamburgerMenu from "../components/Hamburger";
 import { useCardStore } from "../store/cardStore";
 import { useEffect, useState } from "react";
 import api from "../utils/api.ts";
+import OnscrollHeader from "../components/OnscrollHeader.tsx";
 
 
 function Landingpage() {
@@ -25,7 +25,9 @@ function Landingpage() {
     <div>
         {/* <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
           <Username/>
-        </div> */}
+        </div> */}\
+        <OnscrollHeader/>
+
   
       <div className="bg-[#161D6F] sm:hidden py-5 pb-10 flex justify-between items-center w-full ">
          <div className=" w-1/2 flex">

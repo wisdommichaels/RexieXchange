@@ -11,7 +11,7 @@ const Navbar = () => {
         </li>
         <div className="menu">
           <div className="item">
-          <Link to={"/rate/"}className="link">
+          <div className="link cursor-pointer">
               <span> Gift Card </span>
               <svg viewBox="0 0 360 360" xmlSpace="preserve">
                 <g id="SVGRepo_iconCarrier">
@@ -21,7 +21,7 @@ const Navbar = () => {
                   ></path>
                 </g>
               </svg>
-              </Link>
+              </div>
             <div className="submenu">
               <div className="submenu-item">
                 <Link to={"/sell"} className="submenu-link">
@@ -40,10 +40,11 @@ const Navbar = () => {
         </div>
 
         <li>
-          <Link to={"/aboutpage"}> About </Link>
-        </li>
-        <li>
           <Link to={"/dashboard"}> Dashboard </Link>
+        </li>
+        
+        <li>
+          <Link to={"/aboutpage"}> About </Link>
         </li>
       </ul>
     </nav>

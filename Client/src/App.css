@@ -661,11 +661,11 @@ ul {
   outline: none;
 }
 .searchbar {
-  background: white;
+  /* background: white; */
   border: none;
-  padding: 15px 20px;
-  border-radius: 20px;
-  box-shadow: #cff0ff 0px 5px 10px -3px;
+  /* padding: 15px 20px; */
+  /* border-radius: 20px; */
+  /* box-shadow: #cff0ff 0px 5px 10px -3px; */
   border-inline: 2px solid transparent;
   outline: none;
 }
@@ -1033,6 +1033,10 @@ font-size: 13px;
   text-transform: uppercase;
   margin: 12px auto;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnnn{
   transition: all 0.2s ease-in-out;
 }
 

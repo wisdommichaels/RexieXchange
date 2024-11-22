@@ -23,7 +23,7 @@ const useSignup = () => {
     console.log(data);
 
     } catch (error) {
-      toast.error('An error occurred, please try again!', { position: 'top-center' } );
+      toast.error('An error occurred, please try again!', { position: 'top-right' } );
     } finally {
       setLoading(false);
     }
@@ -36,15 +36,15 @@ export default useSignup;
 
 function handleInputsErrors({ username, email, password, confirmPassword }: { username: string, email: string, password: string, confirmPassword: string }): boolean {
     if (!username || !email || !password || !confirmPassword) {
-      toast.error('Please fill in all fields!', { position: 'top-center' });
+      toast.error('Please fill in all fields!', { position: 'top-right' });
       return false;
     }
     if (password.length < 6) {
-      toast.error('Password must be at least 6 characters long!', { position: 'top-center' });
+      toast.error('Password must be at least 6 characters long!', { position: 'top-right' });
       return false;
     }
     if (password !== confirmPassword) {
-        toast.error('Passwords do not match!', { position: 'top-center' });
+        toast.error('Passwords do not match!', { position: 'top-right' });
         return false;
     }
   

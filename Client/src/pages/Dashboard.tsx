@@ -57,8 +57,8 @@ const Dashboard: React.FC = () => {
       <Mobiledashboard/>
 
    <section id="black">
-    <div className="hidden sm:block">
         <Header>    
+    <div className="hidden sm:block">
         <div  className="sm:flex-col items-center justify-center my-[75px] w-[85%] mx-auto p-8">
                 <div className="flex-col justify-center items-center ml-8">
                   <h2  className="text-[16px] sm:text-[25px] font-bold pb-12 text-white">Hello, {user?.username}</h2>
@@ -79,8 +79,8 @@ const Dashboard: React.FC = () => {
                 </div>
                 </div>
             </div>
-        </Header>
      </div>
+        </Header>
     </section>
     <section className="container mx-auto p-4 mb-5">
       <h1 className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>

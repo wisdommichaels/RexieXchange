@@ -1,60 +1,42 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import useSignup from "../hooks/useSignup";
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "../components/Loader";
 
 
 function Login() {
-  
-  // signup function starts
-//    const [inputs, setInputs] = useState({
-//     username: "",
-//     email: "",
-//     password: "",
-//     confirmPassword: "",  
-//     });  
-
-// // Destructure signup function from useAuthStore
-//   const { signup, loading } = useAuthStore();
-
-//   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     if (!validateForm()) return;
-//     console.log(inputs);
-
-//     try {
-//       await signup(inputs.email, inputs.password, inputs.username, inputs.confirmPassword);
-//       console.log(user);
-//     } catch (error) {
-//       console.log("Signup error:", error);
-//     }
-//   };
-
-
   // login function starts
   const { login,  checkAuth } = useAuthStore();  
+  
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<ErrorType>({ email: '', password: '',});
-  
+  const [isloading, setIsLoading] = useState(false);
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateLoginForm()) return;
 
+    setIsLoading(true);
     try {
       const success = await login(email, password);
-      if(success){
-        navigate('/');
-        toast.success('Login successful!', { position: 'top-center' });
-        checkAuth();
-      }else{
-        toast.error('Invalid Username or Password!', { position: 'top-center' });
-      }
+      setTimeout(() => {
+        setIsLoading(false);
+        if (success) {
+          toast.success("Login successful!", { position: "top-right" });
+          checkAuth();
+          navigate("/");
+        } else {
+          toast.error("Invalid Username or Password!", { position: "top-right" });
+        }
+      }, 3000);
     } catch (error) {
-      console.log("Login error:", error);    
+      console.log("Login error:", error);
+      setIsLoading(false);    
     }
   };
   // logins funtion ends....
@@ -65,12 +47,12 @@ function Login() {
     const newErrors: ErrorType = {};
   
     if (!email || !password) {
-      toast.error('Please fill in all fields!', { position: 'top-center' });
+      toast.error('Please fill in all fields!', { position: 'top-right' });
       return false;
     }
 
     if (!/\S+@\S+\.\S+/.test(email)) {
-      toast.error('Email format is invalid!', { position: 'top-center' });
+      toast.error('Email format is invalid!', { position: 'top-right' });
       newErrors.email = 'Email format is invalid!';
       setErrors(newErrors);
       return false;
@@ -78,7 +60,7 @@ function Login() {
     }
 
     if (password.length < 6) {
-      toast.error('Password must be at least 6 characters!', { position: 'top-center' });
+      toast.error('Password must be at least 6 characters!', { position: 'top-right' });
       newErrors.password = 'Password must be at least 6 characters!';
       setErrors(newErrors);
       return false;
@@ -103,14 +85,19 @@ function Login() {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateSignupForm()) return;
-    try {      
+    setIsLoading(true);
+    try {
       await signup(inputs.username, inputs.email, inputs.password, inputs.confirmPassword);
-      checkAuth();
-      navigate('/')
-      toast.success('Signup successful!', { position: 'top-center' });
+      setTimeout(() => {
+        setIsLoading(false);
+        toast.success("Signup successful!", { position: "top-right" });
+        checkAuth();
+        navigate("/");
+      }, 3000);
       return true;
     } catch (error) {
       console.log("Signup error:", error);
+      setIsLoading(false);
     }
   };
   // signup functions ends....
@@ -130,13 +117,13 @@ function Login() {
     const newErrors: ErrorType = {};
 
     if (!inputs.username || !inputs.email || !inputs.password || !inputs.confirmPassword ) {
-      toast.error('Please fill in all fields!', { position: 'top-center' });
+      toast.error('Please fill in all fields!', { position: 'top-right' });
       return false;
     }
 
 
     if (!/\S+@\S+\.\S+/.test(inputs.email)) {
-      toast.error('Email format is invalid!', { position: 'top-center' });
+      toast.error('Email format is invalid!', { position: 'top-right' });
       newErrors.email = 'Email format is invalid!';
       setErrors(newErrors);
       return false;
@@ -144,33 +131,33 @@ function Login() {
     }
 
     if (inputs.password.length < 6) {
-      toast.error('Password must be at least 6 characters!', { position: 'top-center' });
+      toast.error('Password must be at least 6 characters!', { position: 'top-right' });
       newErrors.password = 'Password must be at least 6 characters!';
       setErrors(newErrors);
       return false;
     }
 
     if (inputs.password !== inputs.confirmPassword) {
-      toast.error('Passwords do not match!', { position: 'top-center' });
+      toast.error('Passwords do not match!', { position: 'top-right' });
       newErrors.confirmPassword = 'Passwords do not match';
       setErrors(newErrors);
       return false;
     }
 
     if (!inputs.password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
-      toast.error('Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-center' });
+      toast.error('Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
       return false;
     }
 
     if (inputs.confirmPassword.length < 6) {
-      toast.error('Password must be at least 6 characters!', { position: 'top-center' });
+      toast.error('Password must be at least 6 characters!', { position: 'top-right' });
       newErrors.confirmPassword = 'Password must be at least 6 characters!';
       setErrors(newErrors);
       return false;
     }
 
     if (inputs.password && inputs.confirmPassword && inputs.password !== inputs.confirmPassword) {
-      toast.error('Passwords do not match!', { position: 'top-center' });
+      toast.error('Passwords do not match!', { position: 'top-right' });
       newErrors.confirmPassword = 'Passwords do not match';
       setErrors(newErrors);
       return false;
@@ -201,6 +188,9 @@ function Login() {
 
   return (
     <div className="bg-[#101035]">
+       {isloading ? (
+        <Loader />
+      ) : (
       <div className="login-div">
         <div className="photo hidden sm:flex">
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
@@ -263,6 +253,7 @@ function Login() {
                 </div>
               </form>
               <button onClick={toggleForms} className="mt-4 pb-5 text-[#161D6F] hover:underline">Don't have an account? <span className="font-bold">Sign Up</span></button>
+              <ToastContainer position="top-right" autoClose={3000}/>
             </div>
 
              {/* Signup Form */}
@@ -365,9 +356,12 @@ function Login() {
               <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span></button>
             </div>
     </div>
+
+<ToastContainer position="top-right" autoClose={3000}/>
   </div>
 </div>
-    </div>
+)}
+</div>
   
   )
 }

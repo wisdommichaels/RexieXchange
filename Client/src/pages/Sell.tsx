@@ -4,7 +4,7 @@ import axios from 'axios';
 import Footer from "../components/Footer";
 // import Username from "../components/Username";
 import Mobilefooter from "../components/Mobilefooter";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
@@ -224,7 +224,7 @@ const Sell: React.FC = () => {
   <Progress /> // Show the Progress component after the timeout
 )}
 
-      <ToastContainer position="top-center" autoClose={3000} />
+
       <div className="hidden sm:block">
         <Footer />
       </div>

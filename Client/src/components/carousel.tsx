@@ -7,8 +7,8 @@ const Carousel:React.FC = () => {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slides = [
     { src: "src/assets/banner1.png", alt: "Image 1" },
-    { src: "src/assets/banner2.png", alt: "Image 2" },
-    { src: "src/assets/banner3.png", alt: "Image 3" }
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810211/banner2_gekq7z.png", alt: "Image 2" },
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810204/banner3_euxdtg.png", alt: "Image 3" }
   ];
 
   const moveToSlide = (index: number) => {
@@ -55,7 +55,7 @@ const Carousel:React.FC = () => {
             key={index}
             style={{ flex: "0 0 100%" }}
           >
-            <Link to="" className="text-none">
+            <Link to="/sell" className="text-none">
               <img src={slide.src} alt={slide.alt} className="w-full h-auto object-cover " />
             </Link>
           </div>
