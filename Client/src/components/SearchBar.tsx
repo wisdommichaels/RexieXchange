@@ -10,7 +10,7 @@ const navigate = useNavigate()
   };
 
   return (
-    <div className="searchbar w-[70%] sm:w-[50%] flex justify-center sm:justify-start items-center mx-auto gap-4 py-1 bg-white rounded-lg pl-2 sm:pl-5 sm:shadow-md sm:shadow-slate-400 ">
+    <div className="searchbar w-[70%] sm:w-[50%] flex justify-center sm:justify-start items-center mx-auto gap-4 py-1 bg-white rounded-lg  pl-2 sm:pl-5 sm:shadow-md sm:shadow-slate-400 ">
       <div className="flex items-center bg-white gap-1 sm:w-[85%]">
         <svg
           className="text-gray-400"

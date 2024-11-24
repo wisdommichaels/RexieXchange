@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 const NotFound = () => {
   return (
-    <div>
-       <div className="text-center flex-col justify-center items-center pt-32">
+    <div className="flex flex-col items-center justify-center h-screen w-screen  text-center py-10 px-5">
+       <div className="text-center flex-col justify-center items-center">
     <h1 className="text-9xl font-extrabold text-gray-900">404</h1>
     <p className="text-2xl md:text-3xl font-light text-gray-700 mt-4">
       Oops! Page Not Found.

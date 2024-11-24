@@ -25,7 +25,7 @@ function Landingpage() {
     <div>
         {/* <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
           <Username/>
-        </div> */}\
+        </div> */}
         <OnscrollHeader/>
 
   

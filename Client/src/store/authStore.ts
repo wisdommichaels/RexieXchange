@@ -3,6 +3,7 @@ import {create} from 'zustand';
 import { api_url } from '../utils/constants';
 import api from '../utils/api';
 import "react-toastify/dist/ReactToastify.css";
+import { toast } from 'react-toastify';
 
 interface AuthStore {
     user: { _id: string, username:string, email:string, createdAt:Date, updatedAt:Date } | null;
@@ -24,6 +25,24 @@ export const useAuthStore = create<AuthStore>((set) => ({
     // Function to login user
     login: async(email:string,password:string) => {
         set({ loading: true, error: null });
+         // Validate email and password
+         if (!email || !password) {
+            toast.error('Please enter both email and password');
+            set({ loading: false });
+            return false;
+        }
+
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            toast.error('Email format is invalid!');
+            set({ loading: false });
+            return false;
+        }
+
+        if (password.length < 8) {
+            toast.error('Password must be at least 6 characters long');
+            set({ loading: false });
+            return false;
+        }
         try {
             const response = await axios.post(`${api_url}/auth/login`, {
                 email,
@@ -44,6 +63,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     logout: () => set({ user: null }),
 
 
+    
     // Function to check if user is authenticated
     checkAuth: async () => {
         try {

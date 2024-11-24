@@ -7,6 +7,8 @@ import Mobilefooter from "../components/Mobilefooter";
 import { Card, useCardStore } from "../store/cardStore";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+import CardNotFound from "../components/CardNotFound";
+import OnscrollHeader from "../components/OnscrollHeader";
 // import Signup from "../components/Signup"
 
 const Rates = () => {
@@ -25,7 +27,7 @@ const Rates = () => {
           ) || null
         );
         setIsLoading(false); // Stop loading after timeout
-      }, 2000); // Delay for 2 seconds
+      }, 3000); // Delay for 2 seconds
 
       // Cleanup the timeout on component unmount
       return () => clearTimeout(timer);
@@ -43,6 +45,7 @@ const Rates = () => {
   return cards ? (
     pageCard ? (
       <div>
+        <OnscrollHeader />
         <section id="black">
           <nav className="bg-[#161D6F] shadow-lg flex sm:justify-between items-center py-3 sm:hidden">
             <Link
@@ -72,6 +75,27 @@ const Rates = () => {
               <Username />
             </div>
           </nav>
+          <div className="flex justify-center items-center p-5 bg-[#161D6F] m-3 rounded-md sm:hidden">
+
+                <div className="w-1/2">
+                  <h2 className="text-xl font-bold text-white mb-1">
+                    {pageCard?.name} Gift Card
+                  </h2>
+                  <p className="text-white line-clamp-3 text-[14 px]">{pageCard?.desc}</p>
+                  {/* <ul className="list-disc list-inside text-white">
+                    {pageCard?.subDesc.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul> */}
+                </div>
+                <div className="w-[45%] ml-5">
+                  <img
+                    className="w-[400px] rounded-lg transform transition duration-500 hover:scale-110 hover:shadow-xl"
+                    src={pageCard?.imageUrl}
+                    alt="Gift Card Image"
+                  />
+                </div>
+              </div>
           <div className="hidden sm:block">
             <Header>
               <div className="flex justify-center items-center mx-auto p-10 mt-[50px] my-10">
@@ -108,7 +132,9 @@ const Rates = () => {
         </div>
       </div>
     ) : (
-      <div>Card {name} not found</div>
+      <div>
+        <CardNotFound/>
+      </div>
     )
   ) : null;
 };

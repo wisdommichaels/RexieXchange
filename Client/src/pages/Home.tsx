@@ -116,8 +116,6 @@ const Home = () => {
               </div>
       </div>
       <div className="flex-col sm:hidden justify-center items-center bg-[#161D6F] w-full py-2 px-2 mb-1">
-    <div>
-    </div>
     <div className="">
       <h1 className="text-white text-[14px] ">{card.name} Gift Card</h1>
       
@@ -129,7 +127,8 @@ const Home = () => {
     </div>
   </div>
     </div>)
-    }    
+    }   
+    <p className="sm:hidden text-5 text-gray-500 pt-2">No More Data</p> 
   </div>
  
 </section>

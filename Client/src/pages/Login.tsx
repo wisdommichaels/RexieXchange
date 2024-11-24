@@ -47,7 +47,7 @@ function Login() {
     const newErrors: ErrorType = {};
   
     if (!email || !password) {
-      toast.error('Please fill in all fields!', { position: 'top-right' });
+      toast.error('Please enter both email and password', { position: 'top-right' });
       return false;
     }
 
