@@ -23,6 +23,7 @@ const Sell: React.FC = () => {
   const [cardImage, setCardImage] = useState<File | null>(null);
   const { cards, getCards } = useCardStore()
   const [showLoader, setShowLoader] = useState(false);
+  const [imgLoader, setImgLoader] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
 
 
@@ -39,6 +40,7 @@ const Sell: React.FC = () => {
     data.append("cloud_name", "duwfbyhyq"); // Replace with your Cloudinary upload preset
   
     try {
+      setImgLoader(true)
       const response = await fetch(`https://api.cloudinary.com/v1_1/duwfbyhyq/image/upload`, 
         {
           method:"POST",
@@ -46,8 +48,10 @@ const Sell: React.FC = () => {
         }); // Replace with your Cloudinary cloud name
         const res = await response.json();
         console.log(res); // Log the URL of the uploaded image
-      return res.secure_url; // Return the URL of the uploaded image
+      setImgLoader(false)
+        return res.secure_url; // Return the URL of the uploaded image
     } catch (error) {
+      setImgLoader(false)
       console.error("Image upload failed:", error);
       return null; // Handle error appropriately
     }

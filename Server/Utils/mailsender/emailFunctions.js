@@ -1,5 +1,5 @@
 import {trp, sender} from './config.js';
-import { APPROVAL_REQUEST_TEMPLATE, generateApplicationStatusEmail } from './emailTemplates.js';
+import { APPROVAL_REQUEST_TEMPLATE, generateTransactionStatusEmail } from './emailTemplates.js';
 
 
 export const transactionApprovalRequestEmail = async(email, transactionDetails) => {
@@ -21,13 +21,13 @@ export const transactionApprovalRequestEmail = async(email, transactionDetails) 
     }
 }
 
-const sendApplicationStatusEmail = async (user, status, password) => {
-    const subject = status === 'accepted' ? 'Your Application is Approved' : 'Your Application is Rejected';
+export const sendTransactionStatusEmail = async (user, status, transactionDetails) => {
+    const subject = status === 'accepted' ? 'Your Transacion is Approved' : 'Your Transacion is Rejected';
     const mailOptions = {
       from: sender,
       to: user.email,
       subject: subject,
-      html: generateApplicationStatusEmail(user, status, password),
+      html: generateTransactionStatusEmail(user, status, transactionDetails),
     };
   
     try {

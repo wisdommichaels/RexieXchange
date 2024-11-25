@@ -1,3 +1,5 @@
+import { baseURL } from "../constants.js";
+
 export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
     // const approvalLink = `${baseURL}/api/user/approve?userId=${user._id}&status=accepted`;
     // const rejectionLink = `${baseURL}/api/user/approve?userId=${user._id}&status=rejected`;
@@ -61,6 +63,8 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
               </ul>
               <img src=${cardImage} alt="image of giftcard">
               <p>Please review the application and approve or reject the registration request:</p>
+              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=accepted&secretkey=benten" class="button">Approve</a>
+              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=rejected&secretkey=benten" class="button">Reject</a>
               <p>Thank you!</p>
           </div>
           <div class="footer">
@@ -159,12 +163,12 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
     `;
   };
 
-  export const generateApplicationStatusEmail = (user, status, password) => {
+  export const generateTransactionStatusEmail = (user, status, transactionDetails) => {
     const isSuccess = status === 'accepted';
-    const title = isSuccess ? 'Congratulations!' : 'Application Status';
+    const title = isSuccess ? 'Transaction Successful!' : 'Transaction Failed';
     const message = isSuccess 
       ? `Your application has been approved. Welcome aboard!`
-      : `We regret to inform you that your application has been rejected.`;
+      : `We regret to inform you that your Transaction has been rejected.`;
   
     return `
       <!DOCTYPE html>
@@ -204,9 +208,6 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
               <h1>${title}</h1>
               <p>${message}</p>
               <p>${isSuccess ? `You can now log in to your account and start using our services. with the password below` : 'If you have any questions or would like feedback on your application, please feel free to contact our support team.'}</p>
-              ${isSuccess && `<h2>Your Credentials</h2>
-              <p>Email: ${user.email}</p>
-              <p>Password: ${password}</p>`}
               <p>Best regards,<br>Your App Team</p>
           </div>
           <div class="footer">
