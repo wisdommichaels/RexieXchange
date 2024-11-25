@@ -4,7 +4,7 @@ import axios from 'axios';
 import Footer from "../components/Footer";
 // import Username from "../components/Username";
 import Mobilefooter from "../components/Mobilefooter";
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
 import Carousel from '../components/Carousel.tsx';
@@ -24,6 +24,7 @@ const Sell: React.FC = () => {
   const { cards, getCards } = useCardStore()
   const [showLoader, setShowLoader] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
+
 
   useEffect(() => {
     if(!cards){
@@ -73,6 +74,8 @@ const Sell: React.FC = () => {
 
 
     try {     
+      setShowLoader(true);
+
       const response = await api.post(`${api_url}/transaction`, {
         amount,
         cardName,
@@ -82,7 +85,6 @@ const Sell: React.FC = () => {
         rate
       });
       response.data;
-      setShowLoader(true);
 
        setTimeout(() => {
       setShowLoader(false);
@@ -110,7 +112,11 @@ const Sell: React.FC = () => {
   };
 
   return (
-    <div>
+    <div>  
+      {showLoader && <Loader />}
+    {showProgress && <Progress />}
+    {!showLoader && !showProgress && (
+      <>
       <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
         <Link
           to={"/"}
@@ -127,8 +133,9 @@ const Sell: React.FC = () => {
       <div className="sm:hidden mx-3">
       <Carousel/>
       </div>
-      {!showProgress ? (
-  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7">
+      
+  
+  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-24 rounded-lg sm:rounded-none sm:p-7">
     <div className='p-5 sm:mb-5'>
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
@@ -216,19 +223,17 @@ const Sell: React.FC = () => {
           </button>
         </div>
       </form>
-
-      {showLoader && <Loader />}
+    
     </div>
   </section>
-) : (
-  <Progress /> // Show the Progress component after the timeout
-)}
 
-
+      <ToastContainer position="top-center" autoClose={3000} />
       <div className="hidden sm:block">
         <Footer />
       </div>
       <Mobilefooter />
+       </>
+      )}
     </div>
   );
 };

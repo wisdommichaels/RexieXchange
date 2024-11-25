@@ -21,13 +21,13 @@ export const signup = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
         
-        // const boyProfilePic = `ttps://avatar.iran.liara.run/public/boy?username=${username}`
-        // const girlProfilePic = `ttps://avatar.iran.liara.run/public/girl?username=${username}`
+        const defaultProfilePic = `https://avatar.iran.liara.run/username?username=[firstname+lastname]`;
 
         const newUser = new  User({ 
             username, 
             email, 
             password: hashedPassword,
+            profilePic: defaultProfilePic
         });
 
         if(newUser){
@@ -39,6 +39,7 @@ export const signup = async (req, res) => {
                 _id: newUser._id,
                 username: newUser.username,
                 email: newUser.email,
+                profilePic: newUser.profilePic,
             });
         }else{
             res.status(400).json({ message: "Invalid user data" });

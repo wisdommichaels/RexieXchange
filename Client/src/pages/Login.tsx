@@ -77,7 +77,8 @@ function Login() {
     username: "",
     email: "",
     password:"",
-    confirmPassword:""
+    confirmPassword:"",
+    profilePic: ""
   })
 
   const {signup, loading} = useSignup()
@@ -87,7 +88,7 @@ function Login() {
     if (!validateSignupForm()) return;
     setIsLoading(true);
     try {
-      await signup(inputs.username, inputs.email, inputs.password, inputs.confirmPassword);
+      await signup(inputs.username, inputs.email, inputs.password, inputs.confirmPassword, inputs.profilePic);
       setTimeout(() => {
         setIsLoading(false);
         toast.success("Signup successful!", { position: "top-right" });

@@ -6,7 +6,7 @@ import { useAuthStore } from "../store/authStore";
 import CustomerReviewForm from "../components/CustomerReview";
 
 const UserProfile = () => {
-  const { user } = useAuthStore()
+  const { user} = useAuthStore()
     const loadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
@@ -50,7 +50,7 @@ const UserProfile = () => {
         <div className="flex-col justify-center items-center shadow-xl  m-auto w-full bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:py-5  sm:rounded-lg rounded-lg">
           <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
           <div className="flex justify-center items-center">
-          <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.placeholder.com/150" alt="Profile Picture"/>
+          <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.pom/150laceholder.c" alt="Profile Picture"/>
           </div>
           <div className="flex justify-center items-center bg-white w-fit mx-auto px-4 py-1 rounded-md">
             <div className="flex justify-center items-center gap-1">
@@ -65,7 +65,7 @@ const UserProfile = () => {
           </div>
         </div>
         <div className="flex-col justify-center items-center shadow-xl  m-auto w-full text-center mt-4 sm:mt-8  p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
-          <h1 className=" text-2xl text-[#161D6F] pb-4">CHANGE ACCOUNT DETAILS</h1>
+          <h1 className=" text-2xl text-[#161D6F] pb-4">UPDATE ACCOUNT DETAILS</h1>
           <div className="mb-4 flex-col justify-center items-center sm:w-[80%] m-auto">
           <label htmlFor="current-password" className="block text-[#161D6F]  text-center">Edit Account Number</label>
           <input className="p-4 sm:p-3 input" type="text"  placeholder="Enter current password"/>

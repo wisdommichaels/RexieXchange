@@ -9,7 +9,6 @@ interface AuthStore {
     user: { _id: string, username:string, email:string, createdAt:Date, updatedAt:Date } | null;
     loading: boolean;
     error: string | null;
-    // signup: (username: string, email: string, password: string, confirmPassword: string) => Promise<any>;
     login: (email: string, password: string) => Promise<any>;
     logout: () => void;
     checkAuth: () => void;
@@ -62,7 +61,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     // Function to logout user
     logout: () => set({ user: null }),
 
-
+      
     
     // Function to check if user is authenticated
     checkAuth: async () => {

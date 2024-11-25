@@ -44,7 +44,7 @@ const OnscrollHeader: React.FC = () => {
             src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740667/mylogo_qxoqqk.png"
             alt=""
           />
-          <div className="flex-col justify-center items-center leading-4 pt-2">
+          <div className="flex-col justify-center items-center leading-4 pt-3">
             <h1 className="font-bold sm:text-[24px] text-[14] text-white">
               GiftHub
             </h1>

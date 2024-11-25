@@ -9,6 +9,7 @@ import { useAuthStore } from "../store/authStore";
 import { useEffect, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
+import OnscrollHeader from "../components/OnscrollHeader";
 
 interface Transaction {
   cardName: string;
@@ -38,6 +39,7 @@ const Dashboard: React.FC = () => {
   
   return (
     <div>
+      <OnscrollHeader/>
         <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3">
         <Link
           to={"/"}

@@ -6,7 +6,7 @@ import { api_url } from '../utils/constants';
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
 
-  const signup = async (username: string, email: string, password: string, confirmPassword: string) => {
+  const signup = async (username: string, email: string, password: string, confirmPassword: string, profilPic: string) => {
     const success = handleInputsErrors({ username, email, password, confirmPassword });
     if (!success) return;
     setLoading(true);
@@ -16,10 +16,14 @@ const useSignup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password, confirmPassword }) 
+        body: JSON.stringify({ username, email, password, confirmPassword, profilPic }), 
     });
 
     const data = await response.json();
+    if(data.error){
+      throw new Error(data.error);
+    }
+  
     console.log(data);
 
     } catch (error) {

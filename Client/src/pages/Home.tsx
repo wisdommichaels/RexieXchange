@@ -14,7 +14,7 @@ import GiftCardCategories from "../components/Category"
 import { useAuthStore } from "../store/authStore"
 import Carousel from "../components/Carousel"
 import WhatsAppButton from "../components/WhatsAppButton"
-import SearchBar from "../components/Searchbar"
+import SearchBar from "../components/SearchBar"
 import OnscrollHeader from "../components/OnscrollHeader"
 
 

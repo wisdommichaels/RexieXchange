@@ -20,7 +20,11 @@ const userSchema = new mongoose.Schema({
         accountName:String,
         accountNumber:Number,
         bankName:String,
-    },   
+    },
+    profilePic:{
+        type:String,
+        default: ""
+    },  
 },{timestamps :true}) 
 
 const User = mongoose.model('User', userSchema);
