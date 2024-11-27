@@ -12,9 +12,9 @@ const Username = () => {
 
   return (
     <div>
-        <div className="logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
-  <img id="profile-pic" src="https://via.placeholder.com/150" alt="User Image" className="sm:w-10 w-10 sm:h-10 mt-2 h-10 rounded-full object-cover" />
-  <div className="group relative">
+        <div className="group logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
+  <img id="profile-pic" src={user?.profilePic?user.profilePic:"https://via.placeholder.com/150"} alt="User Image" className="sm:w-10 w-10 sm:h-10 mt-2 h-10 rounded-full" />
+  <div className=" relative">
     <div className="group relative dropdown flex">
       <div className="flex cursor-pointer">
         <span className="text-white text-[13px] pt-3 font-semibold leading-4">{user?.username}</span>
@@ -26,7 +26,7 @@ const Username = () => {
         </svg>
       </div>
     </div>
-      <div className="absolute right-0 top-10  bg-[#C9D8F0] w-32 dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out  opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
+      <div className="absolute -left-5 top-8  bg-[#C9D8F0] min-w-32 w-full dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out  opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
         <ul className="py-2">
           <li>
             <Link to={'/settings'} className="flex gap-3 items-center text-nowrap text-[14px] text-left px-3 py-2  text-[#161D6F] hover:bg-gray-100">

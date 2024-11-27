@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from 'react-toastify';
 
 interface AuthStore {
-    user: { _id: string, username:string, email:string, createdAt:Date, updatedAt:Date } | null;
+    user: { _id: string, username:string, email:string, profilePic:string, createdAt:Date, updatedAt:Date } | null;
     loading: boolean;
     error: string | null;
     login: (email: string, password: string) => Promise<any>;
