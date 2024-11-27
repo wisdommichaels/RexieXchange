@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import Mylogo from "./Mylogo";
 import Username from "./Username";
 import Navbar from "./Navbar";
+import { useEffect, useState } from "react";
 
 const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  let isloggedin = false;
+  const [isLoggedIn, setisLoggedIn] = useState<string | null>(""); 
+  useEffect(() => {
+    setisLoggedIn(localStorage.getItem("token"))
+ },[]);
   return (
     <section id="black">
 {/*    
@@ -34,7 +38,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <Mylogo />
             </div>
             <Navbar/>
-            {isloggedin ? (
+            {isLoggedIn ? (
               <Username/>
             ) : (
               <div className="logins flex justify-between items-center gap-3 mr-8 mt-7">

@@ -54,7 +54,7 @@ export const createTransaction = async (req, res) => {
 };
 
 export const approveTransaction = async (req, res) => {
-  const { transactionId, status,secretkey } = req.query; // Extract userId and status from query parameters
+  const { transactionId, status, secretkey } = req.query; // Extract userId and status from query parameters
   if (!transactionId) {
     return res.status(400).json({ error: "Transaction ID is required." });
   }
@@ -123,7 +123,7 @@ export const approveTransaction = async (req, res) => {
                   ? "Transaction has been accepted."
                   : "Transaction has been rejected."
               }</h1>
-              <a href="">Go back home</a>
+              <a href="/">Go back home</a>
           </div>
       </body>
       </html>

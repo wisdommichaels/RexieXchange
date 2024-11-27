@@ -1,22 +1,37 @@
-// import { createContext, useState } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-// // Define AuthContextType interface or type
-// interface AuthContextType {
-//     user: { _id: string, username: string, email: string, createdAt: Date, updatedAt: Date } | null;
-//     loading: boolean;
-//     error: string | null;
-//     signup: (username: string, email: string, password: string, confirmPassword: string, profilePic: string) => Promise<any>;
-//   }
+// Define the shape of the auth context data
+interface AuthContextType {
+  authUser: Record<string, unknown> | null;
+  setAuthUser: React.Dispatch<React.SetStateAction<Record<string, unknown> | null>>;
+}
 
-// export const AuthContext = createContext<Partial<AuthContextType>>({}); 
+// Create the context with a default value
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// // Usage in your component
-// export const AuthContextProvider: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
-//     const [authUser, setAuthUser] = useState<AuthContextType['user']>(JSON.parse(localStorage.getItem('user') || '{}'));
-  
-//     return (
-//         <AuthContext.Provider value={{ user: authUser, loading: false, error: null, signup: () => Promise.resolve() }}>
-//         {children}
-//       </AuthContext.Provider>
-//     );
-// };
+// Custom hook to use the AuthContext
+export const useAuthContext = (): AuthContextType => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuthContext must be used within an AuthContextProvider");
+  }
+  return context;
+};
+
+// Define the props for the provider
+interface AuthContextProviderProps {
+  children: ReactNode;
+}
+
+export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ children }) => {
+  // Parse the authUser from localStorage, defaulting to null if unavailable
+  const [authUser, setAuthUser] = useState<Record<string, unknown> | null>(
+    () => JSON.parse(localStorage.getItem("authUser") || "null")
+  );
+
+  return (
+    <AuthContext.Provider value={{ authUser, setAuthUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

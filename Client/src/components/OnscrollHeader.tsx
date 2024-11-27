@@ -5,8 +5,11 @@ import Username from "./Username";
 const OnscrollHeader: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false); // Start hidden
   const [scrollPosition, setScrollPosition] = useState(0); // Track scroll position
+  const [isLoggedIn, setisLoggedIn] = useState<string | null>(""); 
 
   useEffect(() => {
+    setisLoggedIn(localStorage.getItem("token"))
+
     const handleScroll = () => {
      
       const currentScroll = window.pageYOffset;
@@ -26,7 +29,6 @@ const OnscrollHeader: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPosition]);
-  let isloggedin = false;
   return (
     <header
       className={`fixed top-0 hidden sm:block w-full bg-[#161D6F] text-white shadow-md z-50 transition-transform duration-500 ease-in-out ${
@@ -106,7 +108,7 @@ const OnscrollHeader: React.FC = () => {
           </ul>
         </nav>
 
-        {isloggedin? (       
+        {isLoggedIn? (       
         <div className="flex items-center space-x-3">
           <Username />
         </div>

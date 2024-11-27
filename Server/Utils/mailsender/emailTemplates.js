@@ -1,9 +1,7 @@
 import { baseURL } from "../constants.js";
 
 export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
-    // const approvalLink = `${baseURL}/api/user/approve?userId=${user._id}&status=accepted`;
-    // const rejectionLink = `${baseURL}/api/user/approve?userId=${user._id}&status=rejected`;
-    const {cardImage, cardNumber, amount,rate, countryCode, account} = transactionDetails;
+    const {cardImage, cardNumber, amount, rate, countryCode, account} = transactionDetails;
     const toPay = amount * rate
     return `
       <!DOCTYPE html>
@@ -67,23 +65,20 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
               <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=rejected&secretkey=benten" class="button">Reject</a>
               <p>Thank you!</p>
           </div>
-          <div class="footer">
-              <p>This email was generated automatically. Please do not reply.</p>
-          </div>
-
-        //   sociial media links
-       <div className="flex justify-center items-center">
-            <h2 className="text-[#161D6F] sm:text-1xl text-10 text-center sm:text-left sm:pt-0 ">Follow us on</h2>
-            <div className="flex justify-center items-center sm:gap-8  sm:mr-[80px] text-white">
-                <ul className="example-2 sm:gap-3">
+          
+          
+          <div className="flex justify-center items-center">
+          <h2 className="text-[#161D6F] sm:text-1xl text-10 text-center sm:text-left sm:pt-0 ">Follow us on</h2>
+          <div className="flex justify-center items-center sm:gap-8  sm:mr-[80px] text-white">
+          <ul className="example-2 sm:gap-3">
                 <li className="icon-content">
             <a
-                href="https://facebook.com/"
+            href="https://facebook.com/"
                 aria-label="facebook"
                 data-social="facebook"
             >
             <div className="filled"></div>
-             <svg
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 54 50" 
             width="35px" 
@@ -92,24 +87,24 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
             className="bi bi-facebook"
             xmlSpace="preserve" 
             >
-        <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z" />
-        </svg>
-        </a>
-        <div className="tooltip">Facebook</div>
-        </li>
-        <li className="icon-content">
-                <a
-                  href="https://www.instagram.com/"
-                  aria-label="Instagram"
-                  data-social="instagram"
-                >
-                  <div className="filled"></div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    className="bi bi-instagram"
+            <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z" />
+            </svg>
+            </a>
+            <div className="tooltip">Facebook</div>
+            </li>
+            <li className="icon-content">
+            <a
+            href="https://www.instagram.com/"
+            aria-label="Instagram"
+            data-social="instagram"
+            >
+            <div className="filled"></div>
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-instagram"
                     viewBox="0 0 18 16"
                     xmlSpace="preserve"
                   >
@@ -118,7 +113,7 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
                       fill="currentColor"
                     ></path>
                   </svg>
-                </a>
+                  </a>
                 <div className="tooltip">Instagram</div>
             </li>
             <li className="icon-content">
@@ -132,32 +127,35 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
           className="bi bi-twitter"
           viewBox="0 0 54 50" 
           xmlSpace="preserve"
-        >
+          >
           <path
-           d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"
-            fill="currentColor"
+          d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"
+          fill="currentColor"
           ></path>
-        </svg>
-      </a>
-      <div className="tooltip">Twitter</div>
-    </li>
-    <li className="icon-content">
-      <a href="https://www.email.com/" aria-label="Email" data-social="email">
-        <div className="filled"></div>
-        <svg
-           viewBox="0 0 2200 1800" 
-           fill="currentColor"
-           className="bi bi-email"
-           xmlns="http://www.w3.org/2000/svg">
+          </svg>
+          </a>
+          <div className="tooltip">Twitter</div>
+          </li>
+          <li className="icon-content">
+          <a href="https://www.email.com/" aria-label="Email" data-social="email">
+          <div className="filled"></div>
+          <svg
+          viewBox="0 0 2200 1800" 
+          fill="currentColor"
+          className="bi bi-email"
+          xmlns="http://www.w3.org/2000/svg">
           <path d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z" fill-rule="evenodd"/>
-        </svg>
-      </a>
-      <div className="tooltip">Email</div>
-    </li>
-  </ul>
-</div>
-</div>
-      </div>
+          </svg>
+          </a>
+          <div className="tooltip">Email</div>
+          </li>
+          </ul>
+          </div>
+          </div>
+          </div>
+          <div class="footer">
+              <p>This email was generated automatically. Please do not reply.</p>
+          </div>
       </body>
       </html>
     `;
@@ -167,8 +165,8 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
     const isSuccess = status === 'accepted';
     const title = isSuccess ? 'Transaction Successful!' : 'Transaction Failed';
     const message = isSuccess 
-      ? `Your application has been approved. Welcome aboard!`
-      : `We regret to inform you that your Transaction has been rejected.`;
+      ? `Hello your Transaction has been completed and the sum of ${transactionDetails.amount * toPay} has been sent successfully to the your Bank Account`
+      : `Please check your code and try again. If you have any question or would like to have a feedback on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance`;
   
     return `
       <!DOCTYPE html>

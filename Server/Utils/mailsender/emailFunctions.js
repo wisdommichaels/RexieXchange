@@ -4,7 +4,6 @@ import { APPROVAL_REQUEST_TEMPLATE, generateTransactionStatusEmail } from './ema
 
 export const transactionApprovalRequestEmail = async(email, transactionDetails) => {
     console.log(transactionDetails);
-    
     const mailOptions = {
         from: sender,
         to: email,

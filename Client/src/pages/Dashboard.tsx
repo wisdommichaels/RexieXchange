@@ -27,7 +27,7 @@ const Dashboard: React.FC = () => {
     // Replace with your actual API endpoint URL
     const fetchTransactions = async () => {
       try {
-        const response = await api.get(`${api_url}/transaction`);
+        const response = await api.get(`${api_url}/transaction/getMyTransactions`);
         setTransactions(response.data); // Assuming response.data is an array of transactions
       } catch (error) {
         console.error('Error fetching transactions:', error);

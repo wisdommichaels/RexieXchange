@@ -14,6 +14,10 @@ import { useCardStore } from './store/cardStore'
 import Rates from './pages/Rates'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
+import Signup from './pages/Signup'
+// import { useAuthContext } from './context/AuthContext'
 
 function App() {
   const { getCards, cards } = useCardStore()
@@ -21,12 +25,13 @@ function App() {
     if(!cards)
     getCards()
   })
-
+  // const [authUser] = useAuthContext()
   return (
     <>
       <Routes>
         <Route path='/' element={<HomeRoute/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         {/* <Route path='/landingpage' element={<Landingpage/>}/> */}
         <Route path='/sell' element={<ProtectedRoutes><Sell/></ProtectedRoutes>}/>
         <Route path='/checkrate' element={<Checkrate/>}/>
@@ -35,6 +40,8 @@ function App() {
         <Route path='/settings' element={<ProtectedRoutes><Settings/></ProtectedRoutes>}/>
         <Route path='/aboutpage' element={<ProtectedRoutes><AboutPage/></ProtectedRoutes>}/>
         <Route path='/contactpage' element={<ProtectedRoutes><ContactPage/></ProtectedRoutes>}/>
+        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+        <Route path='/resetpassword' element={<ResetPassword/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       

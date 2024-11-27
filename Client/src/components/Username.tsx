@@ -26,10 +26,10 @@ const Username = () => {
         </svg>
       </div>
     </div>
-      <div className="absolute right-0  bg-[#C9D8F0] dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out w-full opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
+      <div className="absolute right-0 top-10  bg-[#C9D8F0] w-32 dropdown-menu shadow-lg rounded-lg hidden group-hover:block group-hover:transition group-hover:duration-300 group-hover:ease-in-out  opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-3">
         <ul className="py-2">
           <li>
-            <Link to={'/settings'} className="flex gap-3 items-center text-[14px] w-full text-left px-3 py-2  text-[#161D6F] hover:bg-gray-100">
+            <Link to={'/settings'} className="flex gap-3 items-center text-nowrap text-[14px] text-left px-3 py-2  text-[#161D6F] hover:bg-gray-100">
               <img className="w-[20px] h-[20px] text-[#161D6F]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729743643/icons8-user-50_1_n4nhpf.png" alt=""/>
               My Profile
             </Link>

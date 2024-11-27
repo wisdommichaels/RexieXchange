@@ -1,6 +1,9 @@
 import User from "../Models/userModel.js";
 import bcrypt from "bcryptjs";
 import generateTokenAndSetCookie from "../Utils/generateToken.js";
+// import passport from "passport";
+// import GoogleStrategy from "passport-google-oauth20/lib/strategy.js";
+
 
 export const signup = async (req, res) => {
     try {
@@ -92,6 +95,43 @@ export const logout = async (req, res) => {
         res.status(500).json({error:"internal Server Error"}); 
     }
 }
+
+// google login
+
+
+// Set up Google OAuth
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.GOOGLE_CLIENT_ID,
+//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//   callbackURL: "http://localhost:5000/auth/google/callback",
+// },
+// async (accessToken, refreshToken, profile, done) => {
+//   try {
+//     // Handle user info from Google profile
+//     const user = await User.findOne({ googleId: profile.id });
+//     if (!user) {
+//       // If user doesn't exist, create a new one
+//       const newUser = await User.create({
+//         googleId: profile.id,
+//         email: profile.emails[0].value,
+//         name: profile.displayName,
+//         avatar: profile.photos[0].value,
+//       });
+//       return done(null, newUser);
+//     }
+//     return done(null, user); // Existing user
+//   } catch (error) {
+//     return done(error, null);
+//   }
+// }));
+
+// // Serialize and deserialize user
+// passport.serializeUser((user, done) => done(null, user.id));
+// passport.deserializeUser(async (id, done) => {
+//   const user = await User.findById(id);
+//   done(null, user);
+// });
+
 
 export const checkAuth= async (req, res) => {
     try {

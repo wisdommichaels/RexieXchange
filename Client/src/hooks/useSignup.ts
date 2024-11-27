@@ -2,12 +2,24 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { api_url } from '../utils/constants';
+import { useAuthContext } from '../context/AuthContext';
+
+
+
+interface SignupData {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  profilePic: string;
+}
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
+  const { setAuthUser } = useAuthContext();
 
-  const signup = async (username: string, email: string, password: string, confirmPassword: string, profilPic: string) => {
-    const success = handleInputsErrors({ username, email, password, confirmPassword });
+  const signup = async (signupData: SignupData) => {
+    const success = handleInputsErrors(signupData);
     if (!success) return;
     setLoading(true);
     try {
@@ -16,15 +28,17 @@ const useSignup = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password, confirmPassword, profilPic }), 
+        body: JSON.stringify(signupData),
     });
 
     const data = await response.json();
     if(data.error){
       throw new Error(data.error);
     }
-  
-    console.log(data);
+  // localStorage
+  localStorage.setItem('authUser', JSON.stringify(data));
+  // context
+  setAuthUser(data);
 
     } catch (error) {
       toast.error('An error occurred, please try again!', { position: 'top-right' } );
