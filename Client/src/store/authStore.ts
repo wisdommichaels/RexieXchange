@@ -71,7 +71,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
   // Signup function
   signup: async (userData: { username: string; email: string; password: string, confirmPassword: string }) => {
     set({ loading: true, error: null });
-
+    console.log(userData);
+    
     // Validate user data
     const { username, email, password, confirmPassword } = userData;
     if (!username || !email || !password || !confirmPassword) {

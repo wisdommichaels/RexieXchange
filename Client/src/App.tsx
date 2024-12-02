@@ -19,6 +19,8 @@ import ResetPassword from './pages/ResetPassword'
 // import Signup from './pages/Signup'
 import CustomerReviewForm from './components/CustomerReview'
 import LoginSignup from './pages/Login-Signup'
+import Signup from './components/Signup'
+import Login from './pages/Login'
 // import { useAuthContext } from './context/AuthContext'
 
 function App() {
@@ -32,8 +34,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<HomeRoute/>}/>
-        <Route path='/login' element={<LoginSignup/>}/>
-        {/* <Route path='/signup' element={<Signup/>}/> */}
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         {/* <Route path='/landingpage' element={<Landingpage/>}/> */}
         <Route path='/sell' element={<ProtectedRoutes><Sell/></ProtectedRoutes>}/>
         <Route path='/checkrate' element={<Checkrate/>}/>

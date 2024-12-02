@@ -17,7 +17,9 @@ function Signup () {
   
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log({username, email, password, confirmPassword});
     if (!validateSignupForm()) return;
+    
     
     setIsLoading(true);
     try {
@@ -90,7 +92,7 @@ function Signup () {
       const validateSignupForm = () => {
         const newErrors: ErrorType = {};
     
-        if (!username || email || password || confirmPassword ) {
+        if (!username || !email || !password || !confirmPassword ) {
           toast.error('Please fill in all fields!', { position: 'top-right' });
           return false;
         }
