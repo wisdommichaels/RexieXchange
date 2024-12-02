@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Mobilefooter from "../components/Mobilefooter";
 import Footer from "../components/Footer";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/carousel";
 import { useCardStore } from "../store/cardStore";
+import Card from "../components/Card";
 
 const Checkrate: React.FC = () => {
   const { cards, getCards } = useCardStore();
@@ -138,7 +139,7 @@ const Checkrate: React.FC = () => {
           </form>
         </div>
       </section>
-
+<Card />
       <Mobilefooter />
       <div className="hidden sm:block">
         <Footer />
