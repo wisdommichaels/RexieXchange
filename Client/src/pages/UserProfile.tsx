@@ -5,6 +5,7 @@ import { useAuthStore } from "../store/authStore";
 import { ChangeEvent, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
+import { toast } from "react-toastify";
 
 const UserProfile = () => {
   const { user, checkAuth } = useAuthStore();
@@ -77,7 +78,15 @@ const UserProfile = () => {
   // Save Username Function
   const handleUsernameSubmit  = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setNameLoading(true);
+    
+    setTimeout(() => {
+      if (newUsername) {
+        toast.success("Username updated successfully!");
+      } else {
+        toast.error("Failed to update username. Please try again.");
+      }
+      setNameLoading(false);
+    }, 3000); // Wait 3 seconds before showing the toast
     
     const formattedUsername = newUsername.charAt(0).toUpperCase() + newUsername.slice(1);
 
@@ -98,7 +107,15 @@ const UserProfile = () => {
   // Save Account Details Function
   const handleAccountDetailsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setDetailsLoading(true);
+    setTimeout(() => {
+      if (formData.accountName && formData.accountNumber && formData.bankName) {
+        toast.success("Account details updated successfully!");
+      } else {
+        toast.error("Failed to update account details. Please try again.");
+      }
+      setDetailsLoading(false);
+    }, 3000); // Wait 3 seconds before showing the toast
+  
     try {
       console.log(formData);
       await api.post(`${api_url}/auth/updateuserprofile`, formData);
