@@ -96,6 +96,32 @@ export const logout = async (req, res) => {
     }
 }
 
+// update userProfile
+export const updateUserProfile = async (req, res) => {
+    const {profilePic, username, accountName, accountNumber, bankName } = req.body;
+    try {
+        const user = await User.findById(req.userId);
+        if(!user){
+            return res
+            .status(404)
+            .json({ message: "User not found" });
+        }
+        user.profilePic = profilePic === "clear" ? "" : profilePic || user.profilePic;
+        user.username = username || user.username;
+        user.accountDetails.accountName = accountName || user.accountDetails.accountName;
+        user.accountDetails.accountNumber = accountNumber || user.accountDetails.accountNumber;
+        user.accountDetails.bankName = bankName || user.accountDetails.bankName;
+        await user.save();
+        res.status(200).json(user);
+    }
+    catch (error) {
+        console.log("Error in updateUserProfile controller", error.message);
+        res.status(500).json({error:"internal Server Error"});  
+    }
+}
+
+
+
 // google login
 
 

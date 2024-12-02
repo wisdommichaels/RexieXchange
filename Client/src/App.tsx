@@ -17,6 +17,7 @@ import ContactPage from './pages/ContactPage'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import Signup from './pages/Signup'
+import CustomerReviewForm from './components/CustomerReview'
 // import { useAuthContext } from './context/AuthContext'
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     if(!cards)
     getCards()
   })
-  // const [authUser] = useAuthContext()
+
   return (
     <>
       <Routes>
@@ -40,6 +41,7 @@ function App() {
         <Route path='/settings' element={<ProtectedRoutes><Settings/></ProtectedRoutes>}/>
         <Route path='/aboutpage' element={<ProtectedRoutes><AboutPage/></ProtectedRoutes>}/>
         <Route path='/contactpage' element={<ProtectedRoutes><ContactPage/></ProtectedRoutes>}/>
+        <Route path='/customerReview' element={<ProtectedRoutes><CustomerReviewForm/></ProtectedRoutes>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/resetpassword' element={<ResetPassword/>}/>
         <Route path='*' element={<NotFound/>}/>

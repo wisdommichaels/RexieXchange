@@ -83,12 +83,20 @@ function Login() {
 
 
   // rotate form funtion
-  const toggleForms = () => {
-    const container = document.querySelector('.rotate-container') as HTMLElement | null;
-    if (container) {
-      container.classList.toggle('show-signup');
-    }
-  };
+ // rotate form function
+const toggleForms = () => {
+  const container = document.querySelector('.rotate-container') as HTMLElement | null;
+  if (container) {
+    container.classList.toggle('show-signup');
+    // Change the route based on the current form
+    // if (container.classList.contains('show-signup')) {
+    //   navigate('/signup');
+    // } else {
+    //   navigate('/login');
+    // }
+  }
+};
+
   // rotate form funtion ends....
 
 
@@ -118,7 +126,7 @@ function Login() {
                 <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
               </div> */}
               <form onSubmit={handleLogin} className="w-full flex flex-col justify-center items-center">
-                <div className="w-[85%] sm:w-[60%] flex flex-col justify-center items-center">
+                <div className="w-[85%] sm:w-[75%] flex flex-col justify-center items-center">
                   <label className="text-[#161D6F] text-[14px]">Email</label>
                   <input 
                     type="email" 
@@ -129,7 +137,7 @@ function Login() {
                   />
              
                 </div>
-                <div className="w-[85%] sm:w-[60%] flex flex-col justify-center items-center">
+                <div className="w-[85%] sm:w-[75%] flex flex-col justify-center items-center">
                   <label className="text-[#161D6F] text-[14px] mt-2">Password</label>
                   <div className="relative w-full">
                     <input
@@ -155,17 +163,16 @@ function Login() {
                 <Link to={"/forgotpassword"} className="text-[#161D6F] text-[12px] pt-3 hover:underline">
                 Forgot your password?
                 </Link>
-                <button type="submit" className="btnn w-[85%] sm:w-[60%]">Login</button>
+                <button type="submit" className="btnn w-[85%] sm:w-[75%]">Login</button>
                 <span className="text-[12px] text-[#161D6F] font-bold ">OR</span>
-                <div className=" flex justify-center items-center btnnn w-[85%] sm:w-[60%] border-2 border-[#161D6F] hover:border-[#DDE4EF]">
+                <div className=" flex justify-center items-center btnnn w-[85%] sm:w-[75%] border-2 border-[#161D6F] hover:border-[#DDE4EF]">
                 <img className="w-8 h-8" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1730212714/7123025_logo_google_g_icon_x1edae.svg" alt="" />
                 <div>LOGIN WITH GOOGLE</div>
                 </div>
               </form>
               <button onClick={toggleForms} className="mt-4 pb-5 text-[#161D6F] hover:underline">Don't have an account? <span className="font-bold">Sign Up</span></button>
             </div>
-
-             {/* Signup Form */}
+            
              <div className="signup absolute inset-0 flex flex-col justify-center items-center space-y-4">
                <Signup/>
             <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span></button>

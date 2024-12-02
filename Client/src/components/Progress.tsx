@@ -10,9 +10,9 @@ const Progress = () => {
 
   return (
     <div className="">
-      <section className="flex flex-col justify-center items-center sm:mb-24 sm:mt-12">
+      <section className="flex flex-col justify-center items-center h-screen w-screen ">
         <div
-          className={`w-full sm:rounded-lg sm:w-[40%] h-[100vh] flex flex-col justify-center shadow-sm shadow-[#bbd8e6] items-center m-auto bg-[#7E9ECF] 
+          className={`w-full sm:rounded-2xl sm:w-[40%] h-[100vh] sm:h-fit sm:py-10 flex flex-col justify-center shadow-sm shadow-[#bbd8e6] items-center m-auto bg-[#7E9ECF] 
           ${isVisible ? "animate-fadeIn" : "opacity-0"}`} // Animation classes
         >
           <h1 className="p-5 text-[24px] mt-6">Transaction Status</h1>
@@ -22,11 +22,11 @@ const Progress = () => {
           <div className="w-[60%] flex flex-col justify-center items-center mt-10 sm:mt-5">
             <h1 className="text-[20px] font-bold text-center">Order in Progress</h1>
             <p className="text-center text-lg">
-              Dear User, we are working on your order, an email will be sent to you shortly.
+              Dear User, please wait, we are working on your order, an email will be sent to you shortly.
             </p>
           </div>
           <Link
-            to={"/"}
+            to={"/customerReview"}
             className="px-20 py-3 font-bold shadow-sm btnn shadow-[#cff0ff] bg-gradient-to-r from-[#161d6f] to-[#1422bd] hover:bg-[#161d6f] text-white rounded-lg mt-6 mb-8 text-[16px]"
           >
             Ok

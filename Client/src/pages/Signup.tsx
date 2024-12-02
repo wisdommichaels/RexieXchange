@@ -1,45 +1,86 @@
 import React, { useState } from 'react'
-import useSignup from "../hooks/useSignup";
+// import useSignup from "../hooks/useSignup";
 import { toast } from 'react-toastify';
-import Loader from '../components/Loader';
+// import Loader from '../components/Loader';
+import { useAuthStore } from '../store/authStore';
+import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
-    const [errors, setErrors] = useState<ErrorType>({ email: '', password: '',});
-    const [isLoading, setIsLoading] = useState(false);
-    const [inputs, setInputs] = useState({
-        username: "",
-        email: "",
-        password:"",
-        confirmPassword:"",
-        profilePic: ""
-      })
+function Signup () {
+  const {signup, checkAuth} = useAuthStore();
+
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");  // New state for confirm password
+  const [isLoading, setIsLoading] = useState(false); 
+  
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validateSignupForm()) return;
     
-      const {signup, loading} = useSignup()
-    
-      const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!validateSignupForm()) return;
-    
-        setIsLoading(true);
-        try {
-          await signup(inputs);
-          setTimeout(() => {
-            setIsLoading(false);
-            toast.success("Signup successful!", { position: "top-right" });
-          }, 3000);
-          return true;
-        } catch (error) {
-          console.log("Signup error:", error);
-          setIsLoading(false);
+    setIsLoading(true);
+    try {
+      const success = await signup({username, email, password, confirmPassword});
+      setTimeout(() => {
+        setIsLoading(false);
+        if (success) {
+          checkAuth();
+          navigate("/");
+          toast.success("Signup successful!", { position: "top-right" });
+        } else {
+          toast.error("An error occurred, please try again!", { position: "top-right" });
         }
-      };
-      // signup functions ends....
-    
-    
-    
-      // Signup error validation
-      // error interface
-      interface ErrorType {
+      }, 3000);
+    } catch (error) {
+      console.log("Signup error:", error);
+      setIsLoading(false);
+    }
+  }
+  // const {signup, loading} = useSignup()
+  // // const [isLoading, setIsLoading] = useState(false);
+  // const [inputs, setInputs] = useState({
+    //     username: "",
+    //     email: "",
+    //     password:"",
+    //     confirmPassword:"",
+    //     profilePic: ""
+    //   })
+    // const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+      //   e.preventDefault();
+      //   if (!validateSignupForm()) return;
+      
+      //   // setIsLoading(true);
+      //   try {
+        //     await signup(inputs);
+        //     const checkAuth = localStorage.getItem('token');
+        //     setTimeout(() => {
+          //       // setIsLoading(false);
+          //       toast.success("Signup successful!", { position: "top-right" });
+          //       setInputs({
+            //         username: "",
+            //         email: "",
+            //         password:"",
+            //         confirmPassword:"",
+            //         profilePic: ""
+            //       });
+            //     }, 3000);
+            //     return true;
+            //     // reset form fields
+            //   } catch (error) {
+              //     console.log("Signup error:", error);
+              //     // setIsLoading(false);
+             
+          //   }
+          // };
+          // signup functions ends....
+          
+          
+          
+          // Signup error validation
+          // error interface
+          const [errors, setErrors] = useState<ErrorType>({username:'', email: '', password: '', confirmPassword: ''});
+          interface ErrorType {
         username?: string;
         email?: string;
         password?: string;
@@ -49,13 +90,13 @@ const Signup = () => {
       const validateSignupForm = () => {
         const newErrors: ErrorType = {};
     
-        if (!inputs.username || !inputs.email || !inputs.password || !inputs.confirmPassword ) {
+        if (!username || email || password || confirmPassword ) {
           toast.error('Please fill in all fields!', { position: 'top-right' });
           return false;
         }
     
     
-        if (!/\S+@\S+\.\S+/.test(inputs.email)) {
+        if (!/\S+@\S+\.\S+/.test(email)) {
           toast.error('Email format is invalid!', { position: 'top-right' });
           newErrors.email = 'Email format is invalid!';
           setErrors(newErrors);
@@ -63,27 +104,27 @@ const Signup = () => {
     
         }
     
-        if (inputs.password.length < 6) {
+        if (password.length < 6) {
           toast.error('Password must be at least 6 characters!', { position: 'top-right' });
           newErrors.password = 'Password must be at least 6 characters!';
           setErrors(newErrors);
           return false;
         }
     
-        if (inputs.password !== inputs.confirmPassword) {
+        if (password !== confirmPassword) {
           toast.error('Passwords do not match!', { position: 'top-right' });
           newErrors.confirmPassword = 'Passwords do not match';
           setErrors(newErrors);
           return false;
         }
     
-        if (!inputs.password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
+        if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
           toast.error('Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
           return false;
         }
     
     
-        if (inputs.password && inputs.confirmPassword && inputs.password !== inputs.confirmPassword) {
+        if (password && confirmPassword && password !== confirmPassword) {
           toast.error('Passwords do not match!', { position: 'top-right' });
           newErrors.confirmPassword = 'Passwords do not match';
           setErrors(newErrors);
@@ -108,10 +149,11 @@ const Signup = () => {
 //     }
 //   };
   return (
-        <div className=" flex flex-col justify-center items-center space-y-4">
-                    {
-                    isLoading && <Loader/>
-                }
+    <>
+               {/* {
+                isLoading && <Loader/>
+                } */}
+        <div className=" flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
               <h2 className="text-12px text-[#161D6F] pb-3">Please enter your details bellow to get started!</h2>
               {/* <span className="text-[12px] text-[#292a2b] m-5">or Sign Up with</span>  */}
@@ -121,15 +163,15 @@ const Signup = () => {
                 <Link to={'/'} className="media-icons"><i className="fa-brands fa-facebook-f text-white"></i></Link>
               </div> */}
               <form onSubmit={handleSignup}  className="w-full flex flex-col justify-center items-center">
-                <div className="sm:flex justify-center items-center gap-5">
+                <div className="sm:flex justify-center items-center gap-5 w-[90%]">
                   <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
                     <label className="text-[#161D6F] text-[14px]">Username</label>
                     <input 
                       type="text" 
                       placeholder="Enter your Username"  
                       className={`w-full py-3 px-5 inpute ${errors.username ? 'border-red-500' : ''}`}
-                      value={inputs.username}
-                      onChange={(e) => setInputs({...inputs, username: e.target.value})}
+                      value={username}
+                      onChange={(e) => setUsername( e.target.value)}
                     />
                   </div>
                   <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
@@ -138,13 +180,13 @@ const Signup = () => {
                       type="email" 
                       placeholder="Enter your E-mail" 
                       className={`w-full py-3 px-5 inpute ${errors.email ? 'border-red-500' : ''}`} 
-                      value={inputs.email}
-                      onChange={(e) => setInputs({...inputs, email: e.target.value})}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
 
-                <div className="sm:flex justify-center items-center gap-5">
+                <div className="sm:flex justify-center items-center gap-5 w-[90%]">
                   <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
                     <label className="text-[#161D6F] text-[14px]">Password</label>
                     <div className="relative w-full">
@@ -152,8 +194,8 @@ const Signup = () => {
                         type={passwordVisible ? "text" : "password"}
                         className={`focus:outline-none inpute w-full py-3 px-5 ${errors.password ? 'border-red-500' : ''}`}
                         placeholder="Enter your password" 
-                        value={inputs.password}
-                        onChange={(e) => setInputs({...inputs, password: e.target.value})}
+                        value={password}
+                        onChange={(e) => setPassword( e.target.value)}
                       />
                       <div
                         className="absolute inset-y-1 right-0 pr-6 flex items-center cursor-pointer"
@@ -176,8 +218,8 @@ const Signup = () => {
                         type={passwordVisible ? "text" : "password"}
                         className={`focus:outline-none inpute w-full py-3 px-5 ${errors.confirmPassword ? 'border-red-500' : ''}`}
                         placeholder="Confirm your password" 
-                        value={inputs.confirmPassword}
-                      onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value})}
+                        value={confirmPassword}
+                      onChange={(e) => setConfirmPassword( e.target.value)}
                       />
                       <div
                         className="absolute inset-y-1 right-0 pr-6 flex items-center cursor-pointer"
@@ -194,11 +236,11 @@ const Signup = () => {
                   </div>
                 </div>
 
-                <div className={`sm:flex justify-center items-center ${loading && "opacity-25"}`}>
+                <div className={`sm:flex justify-center items-center w-[90%] ${isLoading && "opacity-25"}`}>
                   <button type="submit" className="btnn w-full">Sign Up</button>
                 </div>
                 <span className="text-[12px] py-1 font-bold text-[#161D6F]">OR</span>
-                <div className={`sm:flex justify-center items-center w-full`}>
+                <div className={`sm:flex justify-center items-center w-[90%]`}>
                   <button className="btnnn w-full flex justify-center items-center  border-2 border-[#161D6F] hover:border-[#DDE4EF]">
                     <div className="flex justify-center items-center">
                     <img className="w-8 h-8" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1730212714/7123025_logo_google_g_icon_x1edae.svg" alt="" />
@@ -209,6 +251,7 @@ const Signup = () => {
               </form>
               {/* <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span></button> */}
             </div>
+            </>
   )
 }
 

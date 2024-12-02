@@ -7,7 +7,7 @@ import Mobilefooter from "../components/Mobilefooter";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
-import Carousel from '../components/Carousel.tsx';
+import Carousel from '../components/carousel.tsx';
 import api from '../utils/api.ts';
 import { useCardStore } from '../store/cardStore.ts';
 import Progress from '../components/Progress.tsx';
@@ -217,14 +217,22 @@ const Sell: React.FC = () => {
               onChange={handleInputChange}
               accept="image/*"
               className="custom-select custom-arrow cursor-pointer w-full"
-            />
+              disabled={imgLoader} // Disable file input during upload
+      />
+             {/* {imgLoader && <p className="text-blue-500 mt-2">Uploading...</p>}  */}
           </div>
         </div>
 
         <div className="text-center">
-          <button type="submit" className="btnn text-[14px] sm:text-[18px] w-full">
-            Sell
-          </button>
+        <button
+      type="submit"
+      className={`btnn text-[14px] sm:text-[16px] w-full ${
+        imgLoader ? "opacity-50 cursor-not-allowed" : ""
+      }`}
+      disabled={imgLoader || showLoader} // Disable button if image is uploading
+    >
+      {imgLoader ? "Uploading Image..." : "Sell"}
+    </button>
         </div>
       </form>
     

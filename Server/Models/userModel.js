@@ -16,11 +16,11 @@ const userSchema = new mongoose.Schema({
         required:true,
         minlength:8,
     },
-    accountDetails:{
+    accountDetails:[{
         accountName:String,
-        accountNumber:Number,
+        accountNumber:String,
         bankName:String,
-    },
+    }],
     profilePic:{
         type:String,
         default: ""

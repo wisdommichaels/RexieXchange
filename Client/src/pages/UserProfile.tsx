@@ -1,24 +1,125 @@
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
-// import Username from "../components/Username"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
-import CustomerReviewForm from "../components/CustomerReview";
+import { ChangeEvent, useState } from "react";
+import api from "../utils/api";
+import { api_url } from "../utils/constants";
 
 const UserProfile = () => {
-  const { user} = useAuthStore()
-    const loadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0];
-        if (file) {
-         
-        }
-      };
+  const { user, checkAuth } = useAuthStore();
+  const [loading, setLoading] = useState(false);
+  const [nameloading, setNameLoading] = useState(false);
+  const [detailsloading, setDetailsLoading] = useState(false);
+  const [newImage, setNewImage] = useState("");
+  const [newUsername, setNewUsername] = useState(user?.username || "");
+  const [formData, setFormData] = useState({
+    accountName: user?.accountDetails.accountName || "",
+    accountNumber: user?.accountDetails.accountNumber || "",
+    bankName: user?.accountDetails.bankName || "",
+  });
 
-      const logout = () => {
+  // Save Image Function
+  const saveImage = async () => {
+    setLoading(true);
+    try {
+      await api.post(`${api_url}/auth/updateuserprofile`, {
+        profilePic: newImage,
+      });
+      setNewImage("");
+      await checkAuth();
+    } catch (e) {
+      console.error("Error saving image:", e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleImageUpload = async (file: File) => {
+    setLoading(true);
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", "profilepics");
+    data.append("cloud_name", "duwfbyhyq");
+
+    try {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/duwfbyhyq/image/upload`,
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const res = await response.json();
+      return res.secure_url || null;
+    } catch (error) {
+      console.error("Image upload failed:", error);
+      return null;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.type === "file" && e.target.files?.length) {
+      const imageUrl = await handleImageUpload(e.target.files[0]);
+      if (imageUrl) setNewImage(imageUrl);
+    }
+  };
+
+  const handleAccountDetailsInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const{name, value} = e.target;
+    setFormData({ ...formData, [name]: name === 'accountNumber' ? Number(value) || value : value });
+    console.log(formData); // for testing purposes, remove before production
+    
+  };
+
+  // Save Username Function
+  const handleUsernameSubmit  = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNameLoading(true);
+    
+    const formattedUsername = newUsername.charAt(0).toUpperCase() + newUsername.slice(1);
+
+    try {
+      console.log(newUsername);
+      await api.post(`${api_url}/auth/updateuserprofile`, {
+        username: formattedUsername,
+      });
+
+      await checkAuth();
+    } catch (err) {
+      console.error("Error saving username:", err);
+    } finally {
+      setNameLoading(false);
+    }
+  };
+
+  // Save Account Details Function
+  const handleAccountDetailsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setDetailsLoading(true);
+    try {
+      console.log(formData);
+      await api.post(`${api_url}/auth/updateuserprofile`, formData);
+      await checkAuth();
+    } catch (e) {
+      console.error("Error saving account details:", e);
+    } finally {
+      setDetailsLoading(false);
+    }
+  };
+
+    // logout function starts here
+
+    const logout = () => {
         // Implement logout logic here
-        localStorage.removeItem('token');
-        window.location.reload()
-      }
+      localStorage.removeItem('token');
+      window.location.reload()
+    }
+    // logout function ends here
+
+
   return (
     <div>
    <nav className="bg-[#161D6F] shadow-lg flex gap-5 items-center py-3">
@@ -40,88 +141,182 @@ const UserProfile = () => {
             </p>
         </div>
     </nav>
-      {/* <div className=" hidden sm:flex items-center space-x-1 mt-1">
-        <img id="profile-pic" src="https://via.placeholder.com/50x50" alt="Profile Pic" className="h-12 w-12 mt-2 rounded-full"/>
-        <span className="md:inline text-white pt-3">Wisdom Michael</span>
-      </div> */}
 
-  <section className="flex flex-col md:flex-row justify-center p-3 gap-3">
-    <div className=" m-auto sm:w-[40%] w-full mb-4">
-        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:py-5  sm:rounded-lg rounded-lg">
-          <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
-          <div className="flex justify-center items-center">
-          <img id="profile-pic" className="h-[120px] w-[120px] rounded-full object-cover mb-2" src="https://via.pom/150laceholder.c" alt="Profile Picture"/>
-          </div>
-          <div className="flex justify-center items-center bg-white w-fit mx-auto px-4 py-1 rounded-md">
-            <div className="flex justify-center items-center gap-1">
-            <label htmlFor="profile-pic-upload" className="text-[#161D6F] cursor-pointer">Edit profile picture</label>
-            <img className="w-4 h-4" src="src\assets\editicon.png" alt="" />
-            </div>
-            <input type="file" id="profile-pic-upload" className="hidden underline-offset-0" accept="image/*" onChange={(event: React.ChangeEvent<HTMLInputElement>) => loadFile(event)}/>
-          </div>
-          <div className="flex-col justify-center items-center pb-10 pt-3 m-auto text-center">
-          <h1 id="username" className="font-bold text-[20px] text-[#161D6F]">{user?.username}</h1>
-          <h2 id="email" className="text-[18px] text-[#161D6F] mt-1">{user?.email}</h2>
-          </div>
-        </div>
-        <div className="flex-col justify-center items-center shadow-xl  m-auto w-full text-center mt-4 sm:mt-8  p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
-          <h1 className=" text-2xl text-[#161D6F] pb-4">UPDATE ACCOUNT DETAILS</h1>
-          <div className="mb-4 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="current-password" className="block text-[#161D6F]  text-center">Edit Account Number</label>
-          <input className="p-4 sm:p-3 input" type="text"  placeholder="Enter current password"/>
-        </div>
-  
-        <div className="mb-4 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="new-password" className="block text-[#161D6F] text-center ">Edit Account Name</label>
-          <input className="p-4 sm:p-3 input" type="text"  placeholder="Enter new password"/>
-        </div>
-  
-        <div className="mb-4 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="confirm-password" className="block text-[#161D6F]  text-center">Edit Bank Name</label>
-          <input className="p-4 sm:p-3 input" type="text" placeholder="Confirm new password"/>
-        </div>
-
-        <div className="flex justify-center items-center sm:w-[80%] m-auto">
-          <button className="btn px-3 py-4 w-full">Save Changes</button>
-        </div>
-        </div>
-        </div>
-        
-        
-        <div className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg  w-full sm:w-[60%] pb-8 px-5 flex-col justify-center items-center">
-        
-            <h1 className="text-2xl text-[#161D6F] text-center p-6">EDIT PROFILE</h1>
-        <div className="mb-6 w-full flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="username" className="block text-[#161D6F]   text-center">Edit Username</label>
-            <input className="p-4 sm:p-3 input" type="text" id="username" placeholder="Enter your username"/>
-        </div>
-  
-      
-        <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="current-password" className="block text-[#161D6F]  text-center">Current Password</label>
-          <input className="p-4 sm:p-3 input" type="password" id="current-password" placeholder="Enter current password"/>
-        </div>
-  
-        <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="new-password" className="block text-[#161D6F] text-center ">New Password</label>
-          <input className="p-4 sm:p-3 input" type="password" id="new-password" placeholder="Enter new password"/>
-        </div>
-  
-        <div className="mb-6 flex-col justify-center items-center sm:w-[80%] m-auto">
-          <label htmlFor="confirm-password" className="block text-[#161D6F]  text-center">Confirm New Password</label>
-          <input className="p-4 sm:p-3 input" type="password" id="confirm-password" placeholder="Confirm new password"/>
-        </div>
-  
-      
-        <div className="flex justify-center items-center sm:w-[80%] m-auto">
-          <button className="btn px-3 py-4 w-full">Save Changes</button>
-        </div>
+    <section className="flex flex-col md:flex-row justify-center p-3 gap-3 pb-10">
+  <div className="m-auto sm:w-[40%] w-full mb-1">
+    <div className="flex flex-col justify-center items-center shadow-xl bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:py-5 py-8 sm:rounded-lg rounded-lg">
+      <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
+      <div className="flex justify-center items-center">
+        {loading ? (
+          <div className="loader w-[120px] h-[120px] rounded-full border-4 border-t-4 border-gradient-to-r from-[#a2bae3] to-[#668bc2] animate-spin"></div>
+        ) : (
+          <img
+            className="h-[130px] w-[130px] rounded-full object-cover mb-2"
+            src={
+              newImage
+                ? newImage
+                : user?.profilePic
+                ? user.profilePic
+                : "https://via.placeholder.com/150"
+            }
+            alt="Profile"
+          />
+        )}
+      </div>
+      <div className="flex justify-center items-center bg-white w-fit mx-auto px-4 py-1 rounded-md">
+        <label
+          htmlFor="profile-pic-upload"
+          className="text-[#161D6F] cursor-pointer flex items-center gap-1"
+        >
+          Edit profile picture
+          <img
+            className="w-4 h-4"
+            src="src/assets/editicon.png"
+            alt="Edit Icon"
+          />
+        </label>
+        <input
+          type="file"
+          id="profile-pic-upload"
+          onChange={handleInputChange}
+          className="hidden"
+        />
+      </div>
+      <button
+        onClick={saveImage}
+        className="btn w-[40%] px-2 py-2 mt-2 flex justify-center items-center"
+        disabled={loading}
+      >
+        Save
+      </button>
+      <div className="flex flex-col items-center text-center py-3">
+        <h1 className="text-[18px] text-[#161D6F]">
+          User Name: <span className="font-bold">{user?.username}</span>
+        </h1>
+        <h2 className="text-[18px] text-[#161D6F] mt-1">
+          Email: <span className="font-bold">{user?.email}</span>
+        </h2>
+      </div>
     </div>
-   
-  </section>
-  <section className="mb-[90px] w-[58.3%]  justify-self-end mr-3">
-  <CustomerReviewForm />
-  </section>
+
+    {/* Username Update Section */}
+    <div className="shadow-xl bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:rounded-lg rounded-lg mt-4 sm:mt-8 p-8 text-center">
+      {/* <h1 className="text-2xl text-[#161D6F]">UPDATE NAME</h1> */}
+      <form
+        onSubmit={handleUsernameSubmit}
+        className="mb-6 w-full flex flex-col items-center"
+      >
+        <label htmlFor="username" className="block text-[#161D6F] mt-4 text-[20px] pt-5">
+          Edit Username
+        </label>
+        <input
+          className="p-4 sm:p-3 input sm:w-[80%] mt-2"
+          type="text"
+          id="username"
+          placeholder="Enter your username"
+          value={newUsername}
+          onChange={(e) => setNewUsername(e.target.value)}
+        />
+           <button
+          className="btn px-3 py-3 mt-4 w-[80%]"
+            type="submit"
+          >
+          {nameloading ? (
+            <>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-4 border-t-white animate-spin"></div>
+            <p className="text-[10px]">loading...</p>
+            </>
+          ) : (
+          <p>Save Changes</p>
+        )}
+        </button>
+      </form>
+    </div>
+  </div>
+  <form
+  onSubmit={handleAccountDetailsSubmit}
+  className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg w-full sm:w-[60%] pb-8 px-5 flex flex-col items-center mb-14 sm:mb-0"
+>
+  <h1 className="text-2xl text-[#161D6F] text-center p-6 pt-10">
+    UPDATE ACCOUNT DETAILS
+  </h1>
+ 
+  {/* Account Name */}
+  <div className="mb-4 w-full sm:w-[80%]">
+    <label
+      htmlFor="accountName"
+      className="block text-[#161D6F] text-xl text-center mb-2"
+    >
+      Edit Account Name
+    </label>
+    <input
+      className="p-4 sm:p-3 input w-full"
+      type="text"
+      name="accountName"
+      id="accountName"
+      value={String(formData.accountName || '')}
+      onChange={handleAccountDetailsInputChange}
+      placeholder="Enter Account Name"
+    />
+  </div>
+ {/* Account Number */}
+  <div className="mb-4 w-full sm:w-[80%]">
+    <label
+      htmlFor="accountNumber"
+      className="block text-[#161D6F] text-xl text-center mb-2"
+    >
+      Edit Account Number
+    </label>
+    <input
+      className="p-4 sm:p-3 input w-full"
+      type="text"
+      name="accountNumber"
+      id="accountNumber"
+      value={String(formData.accountNumber || '')} 
+      onChange={handleAccountDetailsInputChange}
+      placeholder="Enter Account Number"
+    />
+  </div>
+
+  {/* Bank Name */}
+  <div className="mb-4 w-full sm:w-[80%]">
+    <label
+      htmlFor="bankName"
+      className="block text-[#161D6F] text-xl text-center mb-2"
+    >
+      Edit Bank Name
+    </label>
+    <input
+      className="p-4 sm:p-3 input w-full"
+      type="text"
+      name="bankName"
+      id="bankName"
+      value={String(formData.bankName || '')}
+      onChange={handleAccountDetailsInputChange}
+      placeholder="Enter Bank Name"
+    />
+  </div>
+
+  {/* Submit Button */}
+  <div className="w-full sm:w-[80%]">
+    <button
+      type="submit"
+      className="btn px-3 py-4 w-full"
+    >
+     {detailsloading ? (
+            <>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-4 border-t-white animate-spin"></div>
+            <p className="text-[12px]">loading...</p>
+            </>
+          ) : (
+          <p>Save Changes</p>
+        )}
+    </button>
+  </div>
+</form>
+
+</section>
+
 
 
   <div className="hidden sm:block">

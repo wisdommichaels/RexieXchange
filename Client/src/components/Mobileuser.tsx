@@ -12,7 +12,7 @@ const Mobileuser = () => {
   <div className="flex items-center gap-2">
     <img
       id="profile-pic"
-      src="https://via.placeholder.com/150"
+      src={user?.profilePic?user.profilePic:"https://via.placeholder.com/150"}
       alt="User Image"
       className="sm:w-12 w-12 sm:h-12 h-12 mt-2 rounded-full object-cover"
     />
@@ -22,7 +22,7 @@ const Mobileuser = () => {
     </span>
   </div>
   <Link to={"/settings"} className="flex flex-col justify-center items-center">
-      <img className="w-[35px] h-[35px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/customericon_gq2lmh.png" alt=""/>
+      <img className="w-[35px] h-[35px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/customericon_gq2lmh.png" alt="profile settings toogle settings"/>
       {/* <p className="  text-[14px] ">My Profile</p> */}
   </Link>
 </div>
