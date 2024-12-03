@@ -12,6 +12,14 @@ import OnscrollHeader from "../components/OnscrollHeader";
 // import Signup from "../components/Signup"
 
 const Rates = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   const { cards } = useCardStore();
   const { name } = useParams();
   const [pageCard, setPageCard] = useState<Card | null>(null); // Define pageCard with the Card interface

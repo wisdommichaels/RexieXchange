@@ -2,12 +2,20 @@ import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import { toast } from "react-toastify";
 
 const UserProfile = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   const { user, checkAuth } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const [nameloading, setNameLoading] = useState(false);
@@ -78,17 +86,21 @@ const UserProfile = () => {
   // Save Username Function
   const handleUsernameSubmit  = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     setTimeout(() => {
       if (newUsername) {
         toast.success("Username updated successfully!");
       } else {
         toast.error("Failed to update username. Please try again.");
       }
-      setNameLoading(false);
-    }, 3000); // Wait 3 seconds before showing the toast
+
+    }, 2000); // Wait 3 seconds before showing the toast
+    setNameLoading(true); //
     
-    const formattedUsername = newUsername.charAt(0).toUpperCase() + newUsername.slice(1);
+    const formattedUsername = newUsername
+    .split(" ") // Split the username into words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
+    .join(" "); // Join the words back together
 
     try {
       console.log(newUsername);
@@ -113,8 +125,8 @@ const UserProfile = () => {
       } else {
         toast.error("Failed to update account details. Please try again.");
       }
-      setDetailsLoading(false);
-    }, 3000); // Wait 3 seconds before showing the toast
+    }, 2000); // Wait 3 seconds before showing the toast
+    setDetailsLoading(true);
   
     try {
       console.log(formData);
@@ -200,12 +212,12 @@ const UserProfile = () => {
         />
       </div>
       <button
-        onClick={saveImage}
-        className="btn w-[40%] px-2 py-2 mt-2 flex justify-center items-center"
-        disabled={loading}
-      >
-        Save
-      </button>
+          onClick={saveImage}
+          className="btn w-[40%] px-2 py-2 mt-2 flex justify-center items-center"
+          disabled={loading}
+            >
+              Save
+            </button>
       <div className="flex flex-col items-center text-center py-3">
         <h1 className="text-[18px] text-[#161D6F]">
           User Name: <span className="font-bold">{user?.username}</span>
@@ -240,7 +252,7 @@ const UserProfile = () => {
           >
           {nameloading ? (
             <>
-            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-4 border-t-white animate-spin"></div>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
             <p className="text-[10px]">loading...</p>
             </>
           ) : (
@@ -322,7 +334,7 @@ const UserProfile = () => {
     >
      {detailsloading ? (
             <>
-            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-4 border-t-white animate-spin"></div>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
             <p className="text-[12px]">loading...</p>
             </>
           ) : (
@@ -340,8 +352,7 @@ const UserProfile = () => {
   <Footer/>
   </div>
   <Mobilefooter/>
-  
-    </div>
+  </div>
   )
 }
 

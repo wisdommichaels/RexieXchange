@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const AboutPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
     return (
         <div>
             <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[90px] items-center py-3">
@@ -34,7 +42,7 @@ const AboutPage = () => {
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
         </div>
-        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING GIFTHUB</p>
+        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING RexieGift</p>
       </section>
       </div>
     );

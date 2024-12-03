@@ -114,7 +114,7 @@ const Footer = () => {
 <div className="flex justify-center items-center border rounded-full border-[#161D6F] w-[90%] mx-auto"></div>
 </section>
 <div className="w-[97%] text-center m-auto sm:flex justify-between items-center bg-[#C9D8F0] sm:pb-10 pb-5 text-[#62686b] pt-3">
-<p className="sm:ml-20">© 2024 Gifthub. All rights reserved.</p>
+<p className="sm:ml-20">© 2024 RexieGift. All rights reserved.</p>
 {/* <div className="flex gap-8 sm:mr-24 justify-center pt-2 ">
 <Link to={'/'}> Terms of Service</Link>
 <Link to={'/'}>Privacy Policy</Link>

@@ -33,7 +33,7 @@ const Carousel:React.FC = () => {
   }, []);
 
   useEffect(() => {
-    slideIntervalRef.current = window.setInterval(nextSlide, 3000);
+    slideIntervalRef.current = window.setInterval(nextSlide, 5000);
     return () => clearInterval(slideIntervalRef.current as number);
   }, [currentSlide]);
 

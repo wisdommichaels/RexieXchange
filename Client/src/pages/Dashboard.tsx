@@ -19,6 +19,14 @@ interface Transaction {
 }
 
 const Dashboard: React.FC = () => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", 
+      });
+    };
+    useEffect(scrollToTop,[])
+
   const { user } = useAuthStore()
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
@@ -68,16 +76,16 @@ const Dashboard: React.FC = () => {
                 </div>
                   <div className="flex justify-center items-center gap-5">
                 <div  className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
-                      <p  className="text-gray-800 sm:text-[18px] text-[10px]">Bank Name</p>
-                      <p  className="font-bold text-white sm:text-[20px] text-[16px]">Access Bank</p>
-                </div>
-                <div  className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                       <p  className="text-gray-800 sm:text-[18px] text-[10px]">Account Name</p>
                       <p  className="font-bold text-white sm:text-[20px] text-[16px]">wisdom michael</p>            
                 </div>
                 <div  className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">                
                       <p  className="text-gray-800 sm:text-[18px] text-[10px]">Account Number</p>
                       <p  className="font-bold text-white sm:text-[20px] text-[16px]">0123456789</p>                 
+                </div>
+                <div  className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
+                      <p  className="text-gray-800 sm:text-[18px] text-[10px]">Bank Name</p>
+                      <p  className="font-bold text-white sm:text-[20px] text-[16px]">Access Bank</p>
                 </div>
                 </div>
             </div>

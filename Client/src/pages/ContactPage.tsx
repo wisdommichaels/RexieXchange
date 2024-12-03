@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 import { toast, ToastContainer } from "react-toastify";
@@ -8,6 +8,14 @@ import axios from "axios";
 
 
 const ContactPage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
     // handle contact form submission
     const [message, setMessage] = useState("");
     const {user} = useAuthStore();

@@ -3,24 +3,43 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import TestimonialCard from "../components/TestimonialCard"
 import Mylogo from "../components/Mylogo";
-import Carousel from "../components/Carousel.tsx";
+import Carousel from "../components/carousel.tsx";
 import { useCardStore } from "../store/cardStore";
 import { useEffect, useState } from "react";
 import api from "../utils/api.ts";
 import OnscrollHeader from "../components/OnscrollHeader.tsx";
+// import Loader from "../components/Loader.tsx";
 
 
 function Landingpage() {
+  const [loading, setLoading] = useState(false)
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   const { cards } = useCardStore()
   const [reviews, setReviews] = useState()
-  useEffect(() => 
-    {
-    const getReviews = async() =>{
-      const response = await api.get("/review/get-review")
-      setReviews(response.data)
-    }
-      getReviews()
-    },[])
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setTimeout(async () => {
+        try {
+          const response = await api.get("/review/get-review");
+          setReviews(response.data);
+        } catch (error) {
+          console.error("Error fetching reviews:", error);
+        } finally {
+          setLoading(false);
+        }
+      }, 3000);
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
         {/* <div className="bg-[#161D6F] px-4 py-6  sm:hidden justify-between items-center">
@@ -53,7 +72,16 @@ function Landingpage() {
        
     {/* header carousel */}
     <Header>
+    {loading ? (
+          <div className="flex-col justify-center items-center mt-24 h-[200px]">
+            <div className="loader w-[20px] h-[20px] flex justify-center items-center mx-auto rounded-full border-2 border-t-white animate-spin"></div>
+            <p className="text-[10px] text-center text-white">loading...</p>
+          </div>
+                ) : (
+                  <>
         <Carousel/>
+         </>
+        )}
     </Header>
 
      {/*mobile carousel  */}
@@ -67,6 +95,13 @@ function Landingpage() {
 
   <section className="flex flex-col">
         <div className="container mx-auto sm:mt-4 bg-[#fff] rounded-none">
+        {loading ? (
+          <div className="flex-col justify-center items-center mt-52">
+            <div className="loader w-[20px] h-[20px] flex justify-center items-center mx-auto rounded-full border-2 border-t-[#161D6F] animate-spin"></div>
+            <p className="text-[10px] text-center">loading...</p>
+          </div>
+                ) : (
+                  <>
             <div className="blur-in-out">
                 <div className="marquee-ltr">
                     <div className="marquee-content">
@@ -96,6 +131,8 @@ function Landingpage() {
                     </div>
                 </div>
             </div>
+            </>
+            )}
         </div>
         <div className="flex justify-end items-end m-5 ">
         <Link to={'/sell'} className="bg-[#161D6F] text-white rounded-md text-center sm:text-[20px] text-[14px] font-[550] py-3 sm:px-7 mb-2 px-5 sm:mr-8 mr-2 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#172297]">Sell Now!</Link>
@@ -172,11 +209,21 @@ function Landingpage() {
             <h1 className="text-white font-normal sm:text-[45px] text-[18px]">Don't just take our word for it</h1>
             <p className="text-[#aeaeb1] font-normal sm:text-[22px] text-[14px]  ">Read what our clients have to say</p>
         </div>
+        {loading ? (
+          <div className="flex-col justify-center items-center mt-24">
+            <div className="loader w-[20px] h-[20px] flex justify-center items-center mx-auto rounded-full border-2 border-t-white animate-spin"></div>
+            <p className="text-[10px] sm:text-[12px] text-center text-white">loading Reviews please wait...</p>
+          </div>
+                ) : (
+                  <>
         {
           reviews && 
           <TestimonialCard/>
        
         }
+
+         </>
+        )}
       </section>
   <Footer/>
     </div>

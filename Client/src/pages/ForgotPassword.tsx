@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
 
 const ForgotPassword = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+  
   const [email, setEmail] = useState("");
 
 //   form validation

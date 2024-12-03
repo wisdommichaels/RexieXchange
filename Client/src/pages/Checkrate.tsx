@@ -7,6 +7,14 @@ import { useCardStore } from "../store/cardStore";
 import Card from "../components/Card";
 
 const Checkrate: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   const { cards, getCards } = useCardStore();
 
   // Load cards on component mount
@@ -74,7 +82,7 @@ const Checkrate: React.FC = () => {
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
             Enter your gift card details in each field below to calculate how much is the value of your gift card in
-            naira on GiftHub.
+            naira on RexieGift.
           </p>
         </div>
 

@@ -15,6 +15,14 @@ import Loader from '../components/Loader.tsx';
 
 
 const Sell: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   // State variables for form inputs
   const [amount, setAmount] = useState<string>('');
   const [cardName, setCardName] = useState<string>('');
@@ -144,7 +152,7 @@ const Sell: React.FC = () => {
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
       </h1>
-      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on GiftHub.</p>
+      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on RexieGift.</p>
     </div>
     
     <div className="sm:w-1/2 mx-auto p-4 sm:pt-4 relative">

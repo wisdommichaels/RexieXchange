@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import { api_url } from '../utils/constants';
@@ -9,6 +9,14 @@ import api from '../utils/api';
 import { Link } from 'react-router-dom';
 
 const CustomerReviewForm: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+  useEffect(scrollToTop,[])
+
   const [rating, setRating] = useState<number>(0);
   const [review, setReview] = useState<string>('');
   const { user } = useAuthStore();
