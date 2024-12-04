@@ -1,13 +1,14 @@
 import  { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 import { toast, ToastContainer } from "react-toastify";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 
 const ContactPage = () => {
+  const navigate = useNavigate(); //
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -15,6 +16,10 @@ const ContactPage = () => {
     });
   };
   useEffect(scrollToTop,[])
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate 1 step back in history
+  };
 
     // handle contact form submission
     const [message, setMessage] = useState("");
@@ -56,12 +61,12 @@ const ContactPage = () => {
   return (
     <div>
          <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[90px] items-center py-3">
-        <Link
-          to={"/"}
+        <button
+          onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
         <img src="src/assets/arrow-.png" alt="" />
-        </Link>
+        </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           Contact

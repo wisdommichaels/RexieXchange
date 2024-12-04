@@ -48,10 +48,10 @@ const OnscrollHeader: React.FC = () => {
           />
           <div className="flex-col justify-center items-center leading-4 pt-3">
             <h1 className="font-bold sm:text-[20px] text-[14] text-white">
-              RexieGift
+              RexieXchange
             </h1>
-            <p className="text-[8px] font-bold text-center text-white">
-              Exchange Made Easy
+            <p className="sm:text-[10px] text-[5.8px] text-white">
+              GiftCard Xchange Made Easy
             </p>
           </div>
         </Link>

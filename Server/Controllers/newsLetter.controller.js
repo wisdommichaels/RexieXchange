@@ -9,6 +9,12 @@ export const postEmails = async (req, res) => {
         if (!email) {
             return res.status(400).json({ error: 'Please Email is required' });
           }
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
           
 
       const newSubscription = new newsLetter({ 

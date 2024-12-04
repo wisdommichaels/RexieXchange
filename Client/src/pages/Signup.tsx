@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 // import Loader from '../components/Loader';
 import { useAuthStore } from '../store/authStore';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 function Signup () {
   const {signup, checkAuth} = useAuthStore();
@@ -152,9 +153,9 @@ function Signup () {
 //   };
   return (
     <>
-               {/* {
+               {
                 isLoading && <Loader/>
-                } */}
+                }
         <div className=" flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
               <h2 className="text-12px text-[#161D6F] pb-3">Please enter your details bellow to get started!</h2>

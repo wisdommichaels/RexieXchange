@@ -142,7 +142,6 @@ const UserProfile = () => {
     // logout function starts here
 
     const logout = () => {
-        // Implement logout logic here
       localStorage.removeItem('token');
       window.location.reload()
     }

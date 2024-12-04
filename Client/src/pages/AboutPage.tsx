@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 const AboutPage = () => {
   const scrollToTop = () => {
@@ -10,15 +9,21 @@ const AboutPage = () => {
     });
   };
   useEffect(scrollToTop,[])
+
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1); // Navigate 1 step back in history
+  };
+
     return (
         <div>
             <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[90px] items-center py-3">
-        <Link
-          to={"/"}
+        <button
+          onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
         <img src="src/assets/arrow-.png" alt="" />
-        </Link>
+        </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           About Us
@@ -42,8 +47,12 @@ const AboutPage = () => {
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
             <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
         </div>
-        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING RexieGift</p>
+        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING REXIEXCHANGE</p>
       </section>
+      {/* leave a review button */}
+      <Link to={"/customerReview"} className="btn w-[20%] py-2 mb-10">
+        <p className="text-center">Please Leave a Review</p>
+      </Link>
       </div>
     );
   };

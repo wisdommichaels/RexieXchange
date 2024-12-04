@@ -103,10 +103,10 @@ const toggleForms = () => {
   return (
     <div>
     <div className="bg-[#101035]">
-      <div className="login-div">
         {
         isLoading && <Loader/>
       }
+      <div className="login-div">
 
         <div className="photo hidden sm:flex">
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
@@ -117,7 +117,7 @@ const toggleForms = () => {
           {/* <div className="rotate-container sm:bg-none bg-[url('https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png')] bg-cover bg-center w-full sm:w-1/2 form-container bg-[#DDE4EF] shadow-lg flex justify-center items-center"> */}
           {/* <div className="absolute inset-0 bg-[#161D6F]  bg-opacity-40 backdrop-blur-sm"></div> */}
             <div className="login relative flex flex-col justify-center items-center space-y-4 w-full">
-              <h1 className="sm:text-2xl text-xl  font-semibold text-[#161D6F] text-center pt-7">Hello, Welcome Back to RexieGift</h1>
+              <h1 className="sm:text-2xl text-xl  font-semibold text-[#161D6F] text-center pt-7">Hello, Welcome Back to RexieXchange</h1>
               <h2 className="text-[16px] text-[#161D6F] pb-3">Please enter your login details to continue!</h2>
               {/* <span className="text-[12px] text-[#292a2b]">or Login with</span> */}
               {/* <div className="social-icons">
@@ -179,9 +179,9 @@ const toggleForms = () => {
             </div>
     </div>
 
-<ToastContainer position="top-right" autoClose={3000}/>
   </div>
 </div>
+<ToastContainer position="top-right" autoClose={3000}/>
 
 </div>
 </div>

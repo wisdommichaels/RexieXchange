@@ -22,12 +22,10 @@ const NewsletterForm = () => {
       toast.error('Please enter a valid email address.');
       return;
     }
-    // check already existing email address
-    // const existingEmail = localStorage.getItem('email');
-    // if (existingEmail === email) {
-    //   toast.error('Email already subscribed');
-    //   return;
-    // }
+    // set timeout for the loading state
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Adjust the timeout value as needed
 
     try {
       setIsLoading(true);
@@ -46,9 +44,14 @@ const NewsletterForm = () => {
       setIsLoading(false);
       if (axios.isAxiosError(error)) {
         const errorMessage = error.response?.data?.message || 'Subscription failed please try again';
-        toast.error(errorMessage);
+        
+        if (errorMessage === 'Email already exists') {
+          toast.error('This email is already subscribed!');
+        } else {
+          toast.error(errorMessage);
+        }
       } else {
-        toast.error('Subscription failed please try again');
+        toast.error('Subscription failed, please try again.');
       }
       console.error('Subscription failed please try again:', error);
     }
@@ -65,7 +68,19 @@ const NewsletterForm = () => {
      className="w-1/2 input"/>
    
    {/* Add loading state */}
-    <button type="submit" className=" bg-[#161D6F] sm:px-5 sm:py-3 px-2 py-3 rounded-lg text- mt-5 sm:ml-6 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center">Subscribe Now</button>
+   {isLoading ? (
+            <>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
+            {/* <p className="text-[10px]">loading...</p> */}
+            </>
+          ) : (
+    <button 
+    type="submit" 
+    className=" bg-[#161D6F] sm:px-5 sm:py-3 px-2  rounded-lg text-[14px] sm:text-[18px] py-4 mt-5 sm:ml-6 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center"
+    >
+      Subscribe Now
+    </button>
+    )}
    </form>
     <ToastContainer position="top-right" autoClose={3000} />
    </div>

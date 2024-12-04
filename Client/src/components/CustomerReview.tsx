@@ -6,7 +6,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuthStore } from "../store/authStore";
 import api from '../utils/api';
-import { Link } from 'react-router-dom';
 
 const CustomerReviewForm: React.FC = () => {
   const scrollToTop = () => {
@@ -16,6 +15,10 @@ const CustomerReviewForm: React.FC = () => {
     });
   };
   useEffect(scrollToTop,[])
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate 1 step back in history
+  };
 
   const [rating, setRating] = useState<number>(0);
   const [review, setReview] = useState<string>('');
@@ -67,12 +70,12 @@ const CustomerReviewForm: React.FC = () => {
   return (
     <>
       <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
-        <Link
-          to={"/"}
+        <button
+          onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
           <img src="src/assets/arrow-.png" alt="" />
-        </Link>
+        </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           Customer Review

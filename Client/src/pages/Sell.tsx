@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Footer from "../components/Footer";
 // import Username from "../components/Username";
@@ -15,6 +15,7 @@ import Loader from '../components/Loader.tsx';
 
 
 const Sell: React.FC = () => {
+  const navigate = useNavigate();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -22,6 +23,10 @@ const Sell: React.FC = () => {
     });
   };
   useEffect(scrollToTop,[])
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate 1 step back in history
+  };
 
   // State variables for form inputs
   const [amount, setAmount] = useState<string>('');
@@ -130,12 +135,12 @@ const Sell: React.FC = () => {
     {!showLoader && !showProgress && (
       <>
       <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
-        <Link
-          to={"/"}
+        <button
+          onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
         <img src="src/assets/arrow-.png" alt="" />
-        </Link>
+        </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           Sell Gift card
@@ -152,7 +157,7 @@ const Sell: React.FC = () => {
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
       </h1>
-      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on RexieGift.</p>
+      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
     </div>
     
     <div className="sm:w-1/2 mx-auto p-4 sm:pt-4 relative">

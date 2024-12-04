@@ -28,6 +28,7 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
               }
               p {
                   color: #555;
+
               }
               .footer {
                   margin-top: 20px;
@@ -40,6 +41,15 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
                   margin: 5px;
                   color: white;
                   background-color: #007bff;
+                  text-decoration: none;
+                  border-radius: 5px;
+              }
+              .buttonRed {
+                  display: inline-block;
+                  padding: 10px 15px;
+                  margin: 5px;
+                  color: white;
+                  background-color: #E60023;
                   text-decoration: none;
                   border-radius: 5px;
               }
@@ -60,9 +70,9 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
                   <li><strong>Account Number</strong> ${account.accountNumber}</li>
               </ul>
               <img src=${cardImage} alt="image of giftcard">
-              <p>Please review the application and approve or reject the registration request:</p>
-              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=accepted&secretkey=benten" class="button">Approve</a>
-              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=rejected&secretkey=benten" class="button">Reject</a>
+              <p>Please review the application and approve or reject the transaction request:</p>
+              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=accepted&secretkey=@rexie105010" class="button">Approve</a>
+              <a href="${baseURL}/api/transaction?transactionId=${transactionDetails._id}&status=rejected&secretkey=@rexie105010" class="buttonRed">Reject</a>
               <p>Thank you!</p>
           </div>
           
@@ -101,8 +111,8 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
             <div className="filled"></div>
             <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="25"
+            height="25"
             fill="currentColor"
             className="bi bi-instagram"
                     viewBox="0 0 18 16"
@@ -136,19 +146,6 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
           </a>
           <div className="tooltip">Twitter</div>
           </li>
-          <li className="icon-content">
-          <a href="https://www.email.com/" aria-label="Email" data-social="email">
-          <div className="filled"></div>
-          <svg
-          viewBox="0 0 2200 1800" 
-          fill="currentColor"
-          className="bi bi-email"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z" fill-rule="evenodd"/>
-          </svg>
-          </a>
-          <div className="tooltip">Email</div>
-          </li>
           </ul>
           </div>
           </div>
@@ -165,8 +162,8 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
     const isSuccess = status === 'accepted';
     const title = isSuccess ? 'Transaction Successful!' : 'Transaction Failed';
     const message = isSuccess 
-      ? `Hello your Transaction has been completed and the sum of ${transactionDetails.amount * toPay} has been sent successfully to the your Bank Account`
-      : `Please check your code and try again. If you have any question or would like to have a feedback on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance`;
+      ? `Hello ${user.accountName} your Transaction has been completed and the sum of ${transactionDetails.amount * toPay} has been sent successfully to your Bank Account`
+      : `Please check your  Gift Card code and try again. If you have any question or would like to have a feedback on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance`;
   
     return `
       <!DOCTYPE html>
@@ -205,7 +202,7 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
           <div class="container">
               <h1>${title}</h1>
               <p>${message}</p>
-              <p>${isSuccess ? `You can now log in to your account and start using our services. with the password below` : 'If you have any questions or would like feedback on your application, please feel free to contact our support team.'}</p>
+              <p>${isSuccess ? `Hello your Transaction has been completed and the sum of ${transactionDetails.amount * toPay} has been sent successfully to your Bank Account` : 'Please check your  Gift Card code and try again. If you have any question or would like to have a feedback on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance.'}</p>
               <p>Best regards,<br>Your App Team</p>
           </div>
           <div class="footer">

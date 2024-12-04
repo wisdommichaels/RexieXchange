@@ -4,7 +4,6 @@ import Mobilefooter from "../components/Mobilefooter";
 import Footer from "../components/Footer";
 import Carousel from "../components/carousel";
 import { useCardStore } from "../store/cardStore";
-import Card from "../components/Card";
 
 const Checkrate: React.FC = () => {
   const scrollToTop = () => {
@@ -82,7 +81,7 @@ const Checkrate: React.FC = () => {
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
             Enter your gift card details in each field below to calculate how much is the value of your gift card in
-            naira on RexieGift.
+            naira on RexieXchange.
           </p>
         </div>
 
@@ -147,7 +146,7 @@ const Checkrate: React.FC = () => {
           </form>
         </div>
       </section>
-<Card />
+
       <Mobilefooter />
       <div className="hidden sm:block">
         <Footer />
