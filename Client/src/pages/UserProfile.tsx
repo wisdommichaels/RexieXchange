@@ -6,6 +6,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import { toast } from "react-toastify";
+import useLogout from "../hooks/useLogOut";
 
 const UserProfile = () => {
   const scrollToTop = () => {
@@ -23,9 +24,9 @@ const UserProfile = () => {
   const [newImage, setNewImage] = useState("");
   const [newUsername, setNewUsername] = useState(user?.username || "");
   const [formData, setFormData] = useState({
-    accountName: user?.accountDetails.accountName || "",
-    accountNumber: user?.accountDetails.accountNumber || "",
-    bankName: user?.accountDetails.bankName || "",
+    accountName: user?.accountDetails?.accountName || "",
+    accountNumber: user?.accountDetails?.accountNumber || "",
+    bankName: user?.accountDetails?.bankName || "",
   });
 
   // Save Image Function
@@ -103,7 +104,6 @@ const UserProfile = () => {
     .join(" "); // Join the words back together
 
     try {
-      console.log(newUsername);
       await api.post(`${api_url}/auth/updateuserprofile`, {
         username: formattedUsername,
       });
@@ -127,10 +127,27 @@ const UserProfile = () => {
       }
     }, 2000); // Wait 3 seconds before showing the toast
     setDetailsLoading(true);
+
+    // Format the `accountName` and `bankName` to capitalize the first letter of each word
+  const formattedAccountName = formData.accountName
+  .split(" ")
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  .join(" ");
+
+const formattedBankName = formData.bankName
+  .split(" ")
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  .join(" ");
+
+// Update the `formData` with formatted values
+const updatedFormData = {
+  ...formData,
+  accountName: formattedAccountName,
+  bankName: formattedBankName,
+};
   
     try {
-      console.log(formData);
-      await api.post(`${api_url}/auth/updateuserprofile`, formData);
+      await api.post(`${api_url}/auth/updateuserprofile`, updatedFormData);
       await checkAuth();
     } catch (e) {
       console.error("Error saving account details:", e);
@@ -140,11 +157,11 @@ const UserProfile = () => {
   };
 
     // logout function starts here
-
-    const logout = () => {
-      localStorage.removeItem('token');
-      window.location.reload()
-    }
+const {logout} = useLogout()
+    // const logout = () => {
+    //   localStorage.removeItem('token');
+    //   window.location.reload()
+    // }
     // logout function ends here
 
 

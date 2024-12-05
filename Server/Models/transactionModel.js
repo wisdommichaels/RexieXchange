@@ -12,6 +12,10 @@ const transactionSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    countryName:{
+        type:String,
+        required:true,
+    },
     countryCode:{
         type:String,
         required:true,

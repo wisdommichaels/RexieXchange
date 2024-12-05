@@ -3,12 +3,13 @@ import User from "../Models/userModel.js";
 import { sendTransactionStatusEmail, transactionApprovalRequestEmail } from "../Utils/mailsender/emailFunctions.js";
 
 export const createTransaction = async (req, res) => {
-  const { amount, cardName, countryCode, cardNumber, cardImage, rate } =
+  const { amount, cardName, countryName, countryCode, cardNumber, cardImage, rate } =
     req.body;
   try {
     if (
       !amount ||
       !cardName ||
+      !countryName ||
       !countryCode ||
       !cardNumber ||
       !cardImage ||
@@ -26,6 +27,7 @@ export const createTransaction = async (req, res) => {
     const newTransaction = new SalesTransaction({
       amount,
       cardName,
+      countryName,
       countryCode,
       cardNumber,
       cardImage,

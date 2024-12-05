@@ -3,7 +3,6 @@ import { APPROVAL_REQUEST_TEMPLATE, generateTransactionStatusEmail } from './ema
 
 
 export const transactionApprovalRequestEmail = async(email, transactionDetails) => {
-    console.log(transactionDetails);
     const mailOptions = {
         from: sender,
         to: email,
@@ -21,6 +20,8 @@ export const transactionApprovalRequestEmail = async(email, transactionDetails) 
 }
 
 export const sendTransactionStatusEmail = async (user, status, transactionDetails) => {
+    // console.log("these are the details", user, status, transactionDetails);
+    
     const subject = status === 'accepted' ? 'Your Transacion is Approved' : 'Your Transacion is Rejected';
     const mailOptions = {
       from: sender,

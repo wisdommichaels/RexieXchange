@@ -84,7 +84,7 @@ const CustomerReviewForm: React.FC = () => {
       <div className="w-full h-screen flex-col items-center p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] overflow-x-hidden">
         <h2 className="text-3xl text-[#161D6F]">We Value Your Feedback!</h2>
         <p className='text-xl'>
-          Thank you for visiting [Your Website Name]! Share your thoughts about our platform below. <br />
+          Thank you for visiting <strong className='text-[#161D6F]'>RexieXchange!</strong>  Share your thoughts about our platform below. <br />
           Was it easy to use? Let us know! Your input is greatly appreciated, <br />
           and we look forward to serving you better.
         </p>

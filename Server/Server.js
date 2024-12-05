@@ -11,6 +11,7 @@ import reviewRoutes from "./routes/review.routes.js";
 import newsLetterRoutes from "./routes/newsLetter.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
 import forgotPasswordRoutes from "./routes/forgotpassword.routes.js";
+import resetPasswordRoutes from "./routes/resetpassword.routes.js";
 
 // import CardRate from "./Models/rateModel.js";
 // import GiftCard from "./Models/giftcardModel.js";
@@ -43,6 +44,7 @@ app.use("/api/review", reviewRoutes);
 app.use("/api/email", newsLetterRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/forgotpassword", forgotPasswordRoutes);
+app.use("/api/resetpassword", resetPasswordRoutes);
 
 // app.use('/transaction', authMiddleware);
 app.listen(PORT, ()=>{

@@ -21,7 +21,7 @@ const Mobileuser = () => {
       {user?.username}
     </span>
   </div>
-  <Link to={"/settings"} className="flex flex-col justify-center items-center">
+  <Link to={"/userprofile"} className="flex flex-col justify-center items-center">
       <img className="w-[35px] h-[35px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/customericon_gq2lmh.png" alt="profile settings toogle settings"/>
       {/* <p className="  text-[14px] ">My Profile</p> */}
   </Link>

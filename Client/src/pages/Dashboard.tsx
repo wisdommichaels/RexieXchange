@@ -83,15 +83,15 @@ const Dashboard: React.FC = () => {
               <div className="flex justify-center items-center gap-5">
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <p className="text-gray-800 sm:text-[18px] text-[10px]">Account Name</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">Wisdom Michael</p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.accountName}</p>
                 </div>
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <p className="text-gray-800 sm:text-[18px] text-[10px]">Account Number</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">0123456789</p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.accountNumber}</p>
                 </div>
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <p className="text-gray-800 sm:text-[18px] text-[10px]">Bank Name</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">Access Bank</p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.bankName}</p>
                 </div>
               </div>
             </div>

@@ -12,17 +12,17 @@ const Mobiledashboard = () => {
           <img className="w-5 h-5" src="src\assets\editicon.png" alt="" />
           </Link>
           </div>
-          <div className="flex  mb-3 gap-3">
-            <p className="text-[#161D6F] ">Account Number :</p>
-            <p className="underline">09967636849</p>
-          </div>
           <div className="flex  items-center mb-3 gap-3">
             <p className="text-[#161D6F]  ">Account Name :</p>
-            <p  className="underline">{user?.username}</p>
+            <p  className="underline">{user?.accountDetails?.accountName}</p>
+          </div>
+          <div className="flex  mb-3 gap-3">
+            <p className="text-[#161D6F] ">Account Number :</p>
+            <p className="underline">{user?.accountDetails?.accountNumber}</p>
           </div>
           <div className="flex items-center gap-3">
             <p className="text-[#161D6F] ">Bank Name  :</p>
-            <p  className="underline">Kuda Bank</p>
+            <p  className="underline">{user?.accountDetails?.bankName}</p>
           </div>
         </div>
                 {/* <div  className="bg-white shadow-lg w-[95%] sm:w-[50%] p-6 sm:m-8 sm:mb-10 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">

@@ -67,7 +67,6 @@ export const login = async (req, res) => {
            return res.status(400).json({ error: "Invalid username or password" });
        }
         // generateTokenAndSetCookie(newUser._id, res);
-        console.log("got here");
         const token = await generateTokenAndSetCookie(user._id, res);
 
         

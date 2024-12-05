@@ -31,10 +31,11 @@ const Sell: React.FC = () => {
   // State variables for form inputs
   const [amount, setAmount] = useState<string>('');
   const [cardName, setCardName] = useState<string>('');
+  const [countryName, setCountryName] = useState<string>('');
   const [countryCode, setCountryCode] = useState<string>('');
   const [cardNumber, setCardNumber] = useState<string>('');
   const [cardImage, setCardImage] = useState<File | null>(null);
-  const { cards, getCards } = useCardStore()
+  const {cards, getCards } = useCardStore()
   const [showLoader, setShowLoader] = useState(false);
   const [imgLoader, setImgLoader] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
@@ -83,7 +84,7 @@ const Sell: React.FC = () => {
     e.preventDefault();
     
     // Check all fields are filled
-    if (!amount || !cardName || !countryCode || !cardNumber || !cardImage ) {
+    if (!amount || !cardName || !countryName || !countryCode || !cardNumber || !cardImage ) {
       toast.error("All fields are required!");
       return;
     }
@@ -96,6 +97,7 @@ const Sell: React.FC = () => {
       const response = await api.post(`${api_url}/transaction`, {
         amount,
         cardName,
+        countryName,
         countryCode,
         cardNumber,
         cardImage,
@@ -112,6 +114,7 @@ const Sell: React.FC = () => {
         // Reset form fields
         setAmount('');
         setCardName('');
+        setCountryName('');
         setCountryCode('');
         setCardNumber('');
         setCardImage(null);
@@ -160,9 +163,10 @@ const Sell: React.FC = () => {
       <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
     </div>
     
-    <div className="sm:w-1/2 mx-auto p-4 sm:pt-4 relative">
+    <div className="sm:w-[70%] mx-auto p-4 sm:pt-4 relative">
       <form onSubmit={handleSubmit} className={`w-full space-y-4 ${showLoader ? 'opacity-80' : ''}`}>
-        <div className="sm:mb-0 mb-1 text-center w-full">
+        <div className="sm:flex justify-center items-center gap-5">
+        <div className="sm:mb-0 mb-4 text-center w-full sm:w-1/2">
           <label htmlFor="amount" className="text-[18px] text-black">Amount</label>
           <input
             type="text"
@@ -174,9 +178,7 @@ const Sell: React.FC = () => {
           />
         </div>
 
-        {/* Category and Country Select */}
-        <div className="sm:flex justify-center items-center gap-5">
-          <div className="text-center sm:w-1/2 mb-4">
+        <div className="text-center sm:w-1/2">
             <label htmlFor="category" className="text-[18px] text-black">Gift Card Category</label>
             <select
               id="category"
@@ -192,17 +194,36 @@ const Sell: React.FC = () => {
             </select>
           </div>
 
+        </div>
+
+        {/* Category and Country Select */}
+        <div className="sm:flex justify-center items-center gap-5">
+          <div className="text-center sm:w-1/2 mb-4">
+            <label htmlFor="countryName" className="text-[18px] text-black">Country Name</label>
+            <select
+              id="countryName"
+              value={countryName}
+              onChange={(e) => setCountryName(e.target.value)}
+              className="custom-select custom-arrow w-full"
+            >
+              <option value="">Select Currency Code</option>
+              { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
+              <option value={card.rateDetails.countryName}> {card.rateDetails.countryName}</option>
+              )}
+            </select>
+          </div>
+
           <div className="text-center sm:w-1/2 mb-4">
             <label htmlFor="country" className="text-[18px] text-black">Country/Currency Code</label>
             <select
-              id="country"
+              id="countryCode"
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
               className="custom-select custom-arrow w-full"
             >
-              <option value="">Select Country</option>
+              <option value="">Select Currency Code</option>
               { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
-              <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode} {card.rateDetails.countryName}</option>
+              <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode}</option>
               )}
             </select>
           </div>

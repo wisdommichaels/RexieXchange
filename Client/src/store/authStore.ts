@@ -62,8 +62,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
       return true;
     } catch (error: any) {
       console.error('Login error:', error);
-      toast.error(error.response?.data?.message || 'An error occurred while logging in.');
-      set({ loading: false, error: error.message });
+           set({ loading: false, error: error.message });
       return false;
     }
   },
