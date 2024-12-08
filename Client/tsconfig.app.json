@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "../store/cloudnary.tsx"]
+  "include": ["src", "../store/cloudnary.tsx", "src/contactEmailFuntion.js"]
 }

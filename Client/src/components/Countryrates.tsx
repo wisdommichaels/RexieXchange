@@ -15,7 +15,7 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
     };
   return (
     <div>
-    <section  className="w-full sm:w-[98%] mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg sm:rounded-b-lg">
+    <section  className="w-[95%]  sm:w-[98%] mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg rounded-b-lg ">
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
@@ -45,7 +45,7 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
 </section>
 
 
-      <div  className="text-center mt-6 mb-5">
+      <div  className="text-center mt-4 mb-24">
         <button 
           id="showMoreButton" onClick={handleToggle}
            className="bg-[#161D6F] text-white sm:px-6 px-3 py-2 rounded-lg hover:bg-[#1522ad] text-[10px] sm:text-[16px]"

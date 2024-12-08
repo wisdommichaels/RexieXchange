@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Mobilefooter from "../components/Mobilefooter";
-import Footer from "../components/Footer";
 import Carousel from "../components/carousel";
 import { useCardStore } from "../store/cardStore";
+import FooterO from "../components/FooterO";
 
 const Checkrate: React.FC = () => {
   const scrollToTop = () => {
@@ -26,6 +26,7 @@ const Checkrate: React.FC = () => {
   // React state to store amount, currency, and result
   const [amount, setAmount] = useState<string>("");
   const [currency, setCurrency] = useState<string>("");
+  const [country, setCountry] = useState<string>("");
   const [result, setResult] = useState<string>("");
   const [showResult, setShowResult] = useState<boolean>(false); // To toggle result visibility
 
@@ -76,7 +77,7 @@ const Checkrate: React.FC = () => {
         <Carousel />
       </div>
 
-      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 rounded-lg sm:rounded-none sm:p-7 pb-16 pt-5 sm:pt-0 sm:pb-9 mx-3 sm:m-0">
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 mb-28 rounded-lg sm:rounded-none sm:p-7 pb-16 pt-5 sm:pt-0 sm:pb-24 mx-3 sm:m-0">
         <div className="p-5 sm:pt-8">
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
@@ -85,9 +86,9 @@ const Checkrate: React.FC = () => {
           </p>
         </div>
 
-        <div className="sm:w-1/2 mx-auto p-4 sm:pt-7 pt-7">
+        <div className="sm:w-[60%] mx-auto p-4 sm:pt-7 pt-7">
           <form onSubmit={handleSubmit} className="space-y-4 w-full">
-            <div className="flex flex-col mb-4">
+            <div className="flex flex-col mb-4 ">
               <label
                 htmlFor="amount"
                 className="mb-1 text-sm m-auto text-black text-[10px] sm:text-[16px]"
@@ -95,7 +96,7 @@ const Checkrate: React.FC = () => {
                 Enter Amount
               </label>
               <input
-                className="custom-select custom-arrow cursor-text w-full sm:w-[80%]"
+                className="custom-select custom-arrow cursor-text w-full"
                 type="text"
                 id="amount"
                 placeholder="Amount in Foreign currency"
@@ -113,7 +114,7 @@ const Checkrate: React.FC = () => {
               </label>
               <select
                 id="currency"
-                className="custom-select custom-arrow w-full sm:w-[80%]"
+                className="custom-select custom-arrow w-full "
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
               >
@@ -122,7 +123,31 @@ const Checkrate: React.FC = () => {
                   cards.flatMap((card) =>
                     card.rates.map((rate) => (
                       <option key={rate.rateDetails.currencyCode} value={rate.rateDetails.currencyCode}>
-                        {rate.rateDetails.currencyCode} - {rate.rateDetails.countryName}
+                        {rate.rateDetails.currencyCode}
+                      </option>
+                    ))
+                  )}
+              </select>
+            </div>
+            <div className="flex flex-col mb-4">
+              <label
+                htmlFor="country"
+                className="mb-1 text-sm m-auto text-black text-[10px] sm:text-[16px]"
+              >
+                Select Country
+              </label>
+              <select
+                id="currency"
+                className="custom-select custom-arrow w-full "
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              >
+                <option value="">Select Country</option>
+                {cards &&
+                  cards.flatMap((card) =>
+                    card.rates.map((rate) => (
+                      <option key={rate.rateDetails.countryName} value={rate.rateDetails.countryName}>
+                        {rate.rateDetails.countryName}
                       </option>
                     ))
                   )}
@@ -131,7 +156,7 @@ const Checkrate: React.FC = () => {
 
             {showResult && (
               <div
-                className="custom-select sm:w-[80%] w-full mt-4 text-md font-semibold text-center text-black"
+                className="custom-select w-full mt-4 text-md font-semibold text-center text-black"
                 id="result"
               >
                 <p>{result}</p>
@@ -139,7 +164,7 @@ const Checkrate: React.FC = () => {
             )}
 
             <div className="text-center">
-              <button className="btnn text-[14px] sm:text-[16px] w-full sm:w-[80%]" type="submit">
+              <button className="btnn text-[14px] sm:text-[16px] w-full" type="submit">
                 Convert to Naira
               </button>
             </div>
@@ -149,7 +174,7 @@ const Checkrate: React.FC = () => {
 
       <Mobilefooter />
       <div className="hidden sm:block">
-        <Footer />
+        <FooterO />
       </div>
     </div>
   );

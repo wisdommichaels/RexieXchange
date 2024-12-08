@@ -5,6 +5,8 @@ import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import FooterO from "../components/FooterO";
+import Mobilefooter from "../components/Mobilefooter";
 
 
 const ContactPage = () => {
@@ -24,6 +26,7 @@ const ContactPage = () => {
     // handle contact form submission
     const [message, setMessage] = useState("");
     const {user} = useAuthStore();
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent): Promise<void> => {
         e.preventDefault();
@@ -35,15 +38,19 @@ const ContactPage = () => {
         // Send the message to the API
         try {
             // Send the message to the API
+            const Message= `${message}\n\nFrom: ${user?.username || "Anonymous"} \n\nEmail: ${user?.email || "No email provided"})`;
+            setLoading(true);
             const response = await api.post(`${api_url}/contacts`, {
-                message,
+              message: Message,
             });
             response.data;
+            setLoading(false);
             toast.success(`Hello ${user?.username} your message was sent successfully!`);
 
              // Reset the form
      
         setMessage("");
+      
 
         } catch (error) {
             // TypeScript error handling for Axios errors
@@ -68,7 +75,7 @@ const ContactPage = () => {
         <img src="src/assets/arrow-.png" alt="" />
         </button>
 
-        <h2 className="sm:text-[20px] text-[18px] text-white text-center">
+        <h2 className="sm:text-[20px] text-[18px] pl-5 text-white text-center">
           Contact
         </h2>
       </nav>
@@ -105,15 +112,26 @@ const ContactPage = () => {
             type="submit"
             className="btn w-full bg-[#161D6F] text-white font-bold py-4"
           >
-            Send Message
+            {loading ? (
+            <>
+            <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
+            <p className="text-[10px]">loading...</p>
+            </>
+          ) : (
+           <p>Send Message</p> 
+          )}
           </button>
         </form>
         <ToastContainer position="top-right" autoClose={3000} />
       </div>
       <p className="text-center text-black mt-4">
-        Or reach us directly at: <a href="mailto:support@giftcardtrading.com" className="text-blue-500 hover:underline">support@giftcardtrading.com</a>
+        Or reach us directly at: <a href="mailto:rexiexchange@gmail.com" className="text-blue-500 hover:underline">rexiexchange@gmail.com</a>
       </p>
     </section>
+    <Mobilefooter />
+    <div className="sm:block hidden">
+      <FooterO />
+    </div>
     </div>
   );
 };

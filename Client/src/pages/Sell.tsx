@@ -12,6 +12,7 @@ import api from '../utils/api.ts';
 import { useCardStore } from '../store/cardStore.ts';
 import Progress from '../components/Progress.tsx';
 import Loader from '../components/Loader.tsx';
+import FooterO from '../components/FooterO.tsx';
 
 
 const Sell: React.FC = () => {
@@ -155,7 +156,7 @@ const Sell: React.FC = () => {
       </div>
       
   
-  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-24 rounded-lg sm:rounded-none sm:p-7">
+  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
     <div className='p-5 sm:mb-5'>
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
@@ -275,7 +276,7 @@ const Sell: React.FC = () => {
 
       <ToastContainer position="top-center" autoClose={3000} />
       <div className="hidden sm:block">
-        <Footer />
+        <FooterO />
       </div>
       <Mobilefooter />
        </>

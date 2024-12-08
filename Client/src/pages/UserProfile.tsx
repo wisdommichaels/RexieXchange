@@ -7,6 +7,7 @@ import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import { toast } from "react-toastify";
 import useLogout from "../hooks/useLogOut";
+import FooterO from "../components/FooterO";
 
 const UserProfile = () => {
   const scrollToTop = () => {
@@ -213,9 +214,9 @@ const {logout} = useLogout()
           htmlFor="profile-pic-upload"
           className="text-[#161D6F] cursor-pointer flex items-center gap-1"
         >
-          Edit profile picture
+          Change Picture
           <img
-            className="w-4 h-4"
+            className="w-3 h-3"
             src="src/assets/editicon.png"
             alt="Edit Icon"
           />
@@ -263,7 +264,7 @@ const {logout} = useLogout()
           onChange={(e) => setNewUsername(e.target.value)}
         />
            <button
-          className="btn px-3 py-3 mt-4 w-[80%]"
+          className="btn px-3 py-3 mt-4 w-full sm:w-[80%]"
             type="submit"
           >
           {nameloading ? (
@@ -365,7 +366,7 @@ const {logout} = useLogout()
 
 
   <div className="hidden sm:block">
-  <Footer/>
+  <FooterO/>
   </div>
   <Mobilefooter/>
   </div>

@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import Mobiledashboard from "../components/Mobiledashboard";
 import Username from "../components/Username";
@@ -9,6 +8,7 @@ import { useEffect, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
 import OnscrollHeader from "../components/OnscrollHeader";
+import FooterO from "../components/FooterO";
 
 interface Transaction {
   cardName: string;
@@ -98,7 +98,7 @@ const Dashboard: React.FC = () => {
           </div>
         </Header>
       </section>
-      <section className="container mx-auto p-4 mb-5">
+      <section className="container mx-auto p-4 mb-5 w-[95%] rounded-lg sm:w-[98%]">
         <h1 className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
 
         <div className="overflow-x-auto rounded-xl">
@@ -146,7 +146,7 @@ const Dashboard: React.FC = () => {
       <Mobilefooter />
 
       <div className="hidden sm:block">
-        <Footer />
+        <FooterO />
       </div>
     </div>
   );

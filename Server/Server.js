@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: ["https://gift-hub-29od.vercel.app", "http://localhost:5173", "http://localhost:5174"],
+        origin: ["https://gift-hub-29od.vercel.app", "http://localhost:5173", "https://gifthub.onrender.com"],
         credentials: true,
     }
 ))

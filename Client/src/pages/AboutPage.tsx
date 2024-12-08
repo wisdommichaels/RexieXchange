@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import FooterO from "../components/FooterO";
+import Mobilefooter from "../components/Mobilefooter";
 
 const AboutPage = () => {
   const scrollToTop = () => {
@@ -29,7 +31,7 @@ const AboutPage = () => {
           About Us
         </h2>
       </nav>
-      <section className=" mx-auto p-10 my-8 w-[70%] bg-[#ffffff] rounded-lg text-center text-lg">
+      <section className=" mx-auto p-10 mt-8 sm:w-[70%] w-[95%] bg-[#ffffff] rounded-lg text-center text-lg">
         <h1 className="text-4xl font-bold text-center mb-6 text-[#161D6F]">About Us</h1>
         <p className=" text-black mb-6 leading-relaxed">
           Welcome to our Gift Card Trading Platform! We are passionate about providing a secure, easy-to-use, and efficient platform for trading gift cards. Whether you're looking to sell your gift card  at a profitable rate, our platform is designed to make the process seamless.
@@ -50,9 +52,14 @@ const AboutPage = () => {
         <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING REXIEXCHANGE</p>
       </section>
       {/* leave a review button */}
-      <Link to={"/customerReview"} className="btn w-[20%] py-2 mb-10">
+      <Link to={"/customerReview"} className="btn sm:w-[20%] w-[80%] py-4 sm:py-3 mb-24 sm:mb-10">
         <p className="text-center">Please Leave a Review</p>
       </Link>
+      <div className="hidden sm:block">
+      <FooterO />
+      </div>
+      <Mobilefooter />
+   
       </div>
     );
   };
