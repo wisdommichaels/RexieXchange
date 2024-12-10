@@ -1,4 +1,3 @@
-import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
