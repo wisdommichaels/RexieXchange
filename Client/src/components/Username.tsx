@@ -2,16 +2,14 @@
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/authStore"
 import useLogout from "../hooks/useLogOut";
-import Loader from "./Loader";
 
 const Username = () => {
   const { user } = useAuthStore()
   
-  const {loading, logout}= useLogout()
+  const {logout}= useLogout()
 
   return (
     <>
-    {loading && <Loader />}
     <div>
         <div className="group logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
   <img id="profile-pic" src={user?.profilePic?user.profilePic:"https://via.placeholder.com/150"} alt="User Image" className="sm:w-10 w-10 sm:h-10 mt-2 h-10 rounded-full" />

@@ -49,7 +49,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   LOGIN
                 </Link>
                 <Link
-                  to={"/login"}
+                  to={"/signup"}
                   className="signup-button text-[#161D6F] bg-[#FFFFFF] font-normal"
                 >
                   SIGN UP

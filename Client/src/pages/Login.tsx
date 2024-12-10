@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from "../components/Loader";
-import Signup from "./Signup";
 
 
 function Login() {
@@ -84,18 +83,18 @@ function Login() {
 
   // rotate form funtion
  // rotate form function
-const toggleForms = () => {
-  const container = document.querySelector('.rotate-container') as HTMLElement | null;
-  if (container) {
-    container.classList.toggle('show-signup');
-    // Change the route based on the current form
-    // if (container.classList.contains('show-signup')) {
-    //   navigate('/signup');
-    // } else {
-    //   navigate('/login');
-    // }
-  }
-};
+// const toggleForms = () => {
+//   const container = document.querySelector('.rotate-container') as HTMLElement | null;
+//   if (container) {
+//     container.classList.toggle('show-signup');
+//     // Change the route based on the current form
+//     // if (container.classList.contains('show-signup')) {
+//     //   navigate('/signup');
+//     // } else {
+//     //   navigate('/login');
+//     // }
+//   }
+// };
 
   // rotate form funtion ends....
 
@@ -170,13 +169,15 @@ const toggleForms = () => {
                 <div>LOGIN WITH GOOGLE</div>
                 </div>
               </form>
-              <button onClick={toggleForms} className="mt-4 pb-5 text-[#161D6F] hover:underline">Don't have an account? <span className="font-bold">Sign Up</span></button>
+              <Link
+                  to={"/signup"} className="mt-4 pb-5 text-[#161D6F] hover:underline">Don't have an account? <span className="font-bold">Sign Up</span>
+                </Link>
             </div>
             
-             <div className="signup absolute inset-0 flex flex-col justify-center items-center space-y-4">
-               <Signup/>
-            <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span></button>
-            </div>
+             
+               {/* <Signup/> */}
+            
+
     </div>
 
   </div>

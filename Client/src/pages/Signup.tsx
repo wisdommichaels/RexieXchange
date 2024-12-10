@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 // import Loader from '../components/Loader';
 import { useAuthStore } from '../store/authStore';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
 
 function Signup () {
@@ -145,17 +145,30 @@ function Signup () {
   };
   // Hide and show password function ends....
 
-//   const toggleForms = () => {
-//     const container = document.querySelector('.rotate-container') as HTMLElement | null;
-//     if (container) {
-//       container.classList.toggle('show-signup');
-//     }
-//   };
+  // const toggleForms = () => {
+  //   const container = document.querySelector('.rotate-container') as HTMLElement | null;
+  //   if (container) {
+  //     container.classList.toggle('show-signup');
+  //     // Change the route based on the current form
+  //     // if (container.classList.contains('show-signup')) {
+  //     //   navigate('/signup');
+  //     // } else {
+  //     //   navigate('/login');
+  //     // }
+  //   }
+  // };
+  
   return (
     <>
                {
                 isLoading && <Loader/>
+
                 }
+                 <div className="flex justify-center items-center">
+                <div className="photo hidden sm:flex">
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
+        </div>
+                <div className="  flex flex-col justify-center items-center space-y-4 w-1/2">
         <div className=" flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
               <h2 className="text-12px text-[#161D6F] pb-3">Please enter your details bellow to get started!</h2>
@@ -252,7 +265,11 @@ function Signup () {
                   </button>
                 </div>
               </form>
-              {/* <button onClick={toggleForms} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span></button> */}
+              <Link
+                  to={"/Login"} className="mt-4 text-[#161D6F] hover:underline">Already have an account? <span className=" hover:underline font-bold">Login</span>
+                </Link>
+            </div>
+            </div>
             </div>
             </>
   )

@@ -17,6 +17,7 @@ import UserProfile from './pages/UserProfile'
 import ProtectedRoutes from './components/ProtectectedRoute'
 import ForgotPassword from './components/ForgotPassword'
 import ResetPassword from './components/ResetPassword'
+import Signup from './pages/Signup'
 // import Signup from './pages/Signup'
 
 
@@ -33,7 +34,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomeRoute/>}/>
         <Route path='/login' element={<Login/>}/>
-        {/* <Route path='/signup' element={<Signup/>}/> */}
+        <Route path='/signup' element={<Signup/>}/>
         <Route path='/landingpage' element={<Landingpage/>}/>
         <Route path='/sell' element={<ProtectedRoutes><Sell/></ProtectedRoutes>}/>
         <Route path='/checkrate' element={<Checkrate/>}/>
