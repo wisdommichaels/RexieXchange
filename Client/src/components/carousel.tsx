@@ -6,7 +6,7 @@ const Carousel:React.FC = () => {
   const slideIntervalRef = useRef<number | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slides = [
-    { src: "src/assets/banner1.png", alt: "Image 1" },
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1733917866/anita1_bh2iwh.png", alt: "Image 1" },
     { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810211/banner2_gekq7z.png", alt: "Image 2" },
     { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810204/banner3_euxdtg.png", alt: "Image 3" }
   ];

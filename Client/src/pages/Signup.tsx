@@ -166,7 +166,7 @@ function Signup () {
                 }
                  <div className="flex justify-center items-center">
                 <div className="photo hidden sm:flex">
-          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733916922/rexie_1_eyuz5r.png" alt=""/>
         </div>
                 <div className="  flex flex-col justify-center items-center space-y-4 w-1/2">
         <div className=" flex flex-col justify-center items-center space-y-4 w-full">

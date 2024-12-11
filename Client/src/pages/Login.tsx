@@ -108,7 +108,7 @@ function Login() {
       <div className="login-div">
 
         <div className="photo hidden sm:flex">
-          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/LOGINPHOTO_kx9dwl.png" alt=""/>
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733916922/rexie_1_eyuz5r.png" alt=""/>
         </div> 
 
         <div className="w-full sm:w-1/2 m-auto flex items-center justify-center">

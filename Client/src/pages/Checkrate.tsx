@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Mobilefooter from "../components/Mobilefooter";
-import Carousel from "../components/carousel";
+import Carousel from "../components/Carousel";
 import { useCardStore } from "../store/cardStore";
 import FooterO from "../components/FooterO";
 
