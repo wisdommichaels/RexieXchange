@@ -39,6 +39,7 @@ const Dashboard: React.FC = () => {
       setTimeout(async () => {
         try {
           const response = await api.get(`${api_url}/transaction/getMyTransactions`);
+          console.log(response)
           setTransactions(response.data); // Assuming response.data is an array of transactions
         } catch (error) {
           console.error("Error fetching transactions:", error);
@@ -126,9 +127,9 @@ const Dashboard: React.FC = () => {
                     <td className="py-3 px-4">
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${
-                          transaction.status === "Completed"
+                          transaction.status === "accepted"
                             ? "bg-green-200 text-green-800"
-                            : transaction.status === "Pending"
+                            : transaction.status === "pending"
                             ? "bg-yellow-200 text-yellow-800"
                             : "bg-red-200 text-red-800"
                         }`}
