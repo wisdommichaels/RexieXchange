@@ -130,10 +130,10 @@ const Dashboard: React.FC = () => {
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${
                           transaction.status === "accepted"
-                            ? "bg-green-200 text-green-800"
+                            ? "bg-green-800 text-white"
                             : transaction.status === "pending"
-                            ? "bg-yellow-200 text-yellow-800"
-                            : "bg-red-200 text-red-800"
+                            ? "bg-yellow-300 text-black"
+                            : "bg-red-600 text-white"
                         }`}
                       >
                         {transaction.status}
