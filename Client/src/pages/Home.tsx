@@ -10,7 +10,7 @@ import Mobilefooter from "../components/Mobilefooter";
 import Mobileuser from "../components/Mobileuser";
 import GiftCardCategories from "../components/Category";
 import { useAuthStore } from "../store/authStore";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/carousel";
 import WhatsAppButton from "../components/WhatsAppButton";
 import SearchBar from "../components/SearchBar";
 import OnscrollHeader from "../components/OnscrollHeader";

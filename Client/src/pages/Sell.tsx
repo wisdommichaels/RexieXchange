@@ -5,7 +5,7 @@ import Mobilefooter from "../components/Mobilefooter";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api_url } from '../utils/constants';
-import Carousel from '../components/Carousel.tsx';
+import Carousel from '../components/carousel.tsx';
 import api from '../utils/api.ts';
 import { useCardStore } from '../store/cardStore.ts';
 import Progress from '../components/Progress.tsx';
