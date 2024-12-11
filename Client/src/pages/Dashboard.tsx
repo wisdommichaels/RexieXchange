@@ -15,6 +15,8 @@ interface Transaction {
   amount: string;
   date: string;
   status: string;
+  createdAt:Date;
+  updatedAt: Date;
 }
 
 const Dashboard: React.FC = () => {
@@ -123,7 +125,7 @@ const Dashboard: React.FC = () => {
                   <tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
                     <td className="py-3 px-4">{transaction.cardName}</td>
                     <td className="py-3 px-4">{transaction.amount}</td>
-                    <td className="py-3 px-4 text-[10px]">{transaction.date}</td>
+                    <td className="py-3 px-4 text-[10px]">{transaction.updatedAt?transaction.updatedAt:transaction.createdAt}</td>
                     <td className="py-3 px-4">
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${
