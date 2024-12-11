@@ -73,12 +73,12 @@ body {
 .card .top-section::before {
   content: "";
   position: absolute;
-  top: 30px;
+  top: 70px;
   left: 0;
   height: 15px;
   width: 15px;
-  border-top-left-radius: 15px;
-  
+  border-top-left-radius: 20px;
+  box-shadow: -5px -5px 0 2px rgb(201, 216, 240);
 }
 
 .card .top-section .icons {

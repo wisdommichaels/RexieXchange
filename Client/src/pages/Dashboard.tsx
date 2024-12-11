@@ -23,6 +23,7 @@ const Dashboard: React.FC = () => {
   const [loading, setLoading] = useState(false); // Loader state
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
+
   const { user } = useAuthStore();
 
   // Scroll to top on load
@@ -121,26 +122,28 @@ const Dashboard: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="text-black text-sm">
-                {transactions.map((transaction, index) => (
-                  <tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
+                {transactions?.map((transaction, index) => {
+                  const tdate = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
+                
+                return (<tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
                     <td className="py-3 px-4">{transaction.cardName}</td>
                     <td className="py-3 px-4">{transaction.amount}</td>
-                    <td className="py-3 px-4 text-[10px]">{transaction.updatedAt?transaction.updatedAt:transaction.createdAt}</td>
+                    <td className="py-3 px-4 text-[14px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()}</td>
                     <td className="py-3 px-4">
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${
                           transaction.status === "accepted"
-                            ? "bg-green-800 text-white"
+                            ? "bg-green-300 text-green-800"
                             : transaction.status === "pending"
-                            ? "bg-yellow-300 text-black"
-                            : "bg-red-600 text-white"
+                            ? "bg-yellow-200 text-black"
+                            : "bg-red-400 text-white"
                         }`}
                       >
                         {transaction.status}
                       </span>
                     </td>
                   </tr>
-                ))}
+)})}
               </tbody>
             </table>
           )}
