@@ -1,1 +1,1 @@
-export const api_url = "http://localhost:4005/api";
+export const api_url = import.meta.env.MODE === 'development'? "http://localhost:4005/api":"https://gifthub.onrender.com/api";

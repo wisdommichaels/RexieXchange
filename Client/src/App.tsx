@@ -18,6 +18,7 @@ import ProtectedRoutes from './components/ProtectectedRoute'
 import ForgotPassword from './components/ForgotPassword'
 import ResetPassword from './components/ResetPassword'
 import Signup from './pages/Signup'
+import { api_url } from './utils/constants'
 // import Signup from './pages/Signup'
 
 
@@ -25,6 +26,7 @@ function App() {
   
   const { getCards, cards } = useCardStore()
   useEffect(() =>{
+    console.log(api_url);
     if(!cards)
     getCards()
   })
