@@ -150,10 +150,10 @@ function Landingpage() {
         </div>
     </section>
 
-    <section className=" bg-[#fff] rounded-b-lg sm:w-[98%] w-[95%] m-auto" >
+    <section className=" bg-[#fff] rounded-b-lg sm:w-[98%] w-[95%] m-auto">
         <div className=" sm:flex justify-center items-center gap-10 pt-5 sm:pt-14 " >
             <div className="sm:w-1/3 w-[90%] mx-auto sm:m-0">
-                <img src="src/assets/SVG/man.svg" alt=""/>
+                <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man_efo4vd.svg" alt=""/>
             </div>
             <div className="flex flex-col justify-center leading-5 items-center">
                 <h2 className="text-[#161D6F] sm:text-[24px] text-[16px] font-semibold text-center">Sell multiple gift cards in one go</h2>
@@ -164,7 +164,7 @@ function Landingpage() {
         </div>
         <div className=" sm:hidden justify-center items-center gap-10 mt-7 pb-7">
           <div className="sm:w-1/3 w-[90%] mx-auto">
-            <img src="src/assets/SVG/man2.svg" alt=""/>
+            <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man2_tfiowr.svg" alt=""/>
         </div>
             <div className="flex flex-col justify-center items-center">
                 <h2 className="text-[#161D6F] text-[14px] font-semibold text-center">Busy? And thinking of where to trade your gift cards</h2>
@@ -179,7 +179,7 @@ function Landingpage() {
                 <Link to={'/sell'} className="bg-[#161D6F] text-white rounded-md sm:mt-4 mt-2 text-center text-[16px] font-[500] py-1 px-4 w-[38%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
             <div className="sm:w-1/3 w-[90%] sm:mb-8">
-              <img src="src/assets/SVG/man2.svg" alt=""/>
+              <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man2_tfiowr.svg" alt=""/>
           </div>
         </div>
 
@@ -192,9 +192,9 @@ function Landingpage() {
         </div>
         <section className="flex-col justify-center items-center ">
           <div className="flex justify-center items-center mx-[24px] sm:gap-[170px] pt-5">
-            <img className="sm:w-[160px] w-[40%]" src="src/assets/SVG/homePageOne.ecc67d9f.png.svg" alt=""/>
-            <img className="sm:w-[140px] w-[40%] pr-5 sm:pr-0" src="src/assets/SVG/homePageTwo.316c82dd.png.svg" alt=""/>
-            <img className="sm:w-[140px] w-[35%]" src="src/assets/SVG/homePageThree.9ffc76ba.png.svg" alt=""/>
+            <img className="sm:w-[160px] w-[40%]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733958603/homePageOne.ecc67d9f.png_tghmdl.svg" alt=""/>
+            <img className="sm:w-[140px] w-[40%] pr-5 sm:pr-0" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733958603/homePageTwo.316c82dd.png_ypvlfv.svg" alt=""/>
+            <img className="sm:w-[140px] w-[35%]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733958604/homePageThree.9ffc76ba.png_wl8dzj.svg" alt=""/>
           </div>
           <div className="flex justify-center items-center sm:gap-40 gap-16  sm:pt-5 pb-5 sm:text-[20px] text-[14px]">
             <p className="sm:ml-[80px] ml-12 text-center">Fast</p>
