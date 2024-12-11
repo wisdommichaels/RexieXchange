@@ -789,7 +789,7 @@ ul {
 .marquee-ltr {
   display: flex;
   white-space: nowrap;
-  animation-duration: 50s;
+  animation-duration: 30s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: running;
@@ -798,7 +798,7 @@ ul {
 .marquee-rtl {
   display: flex;
   white-space: nowrap;
-  animation-duration: 50s;
+  animation-duration: 30s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: running;
