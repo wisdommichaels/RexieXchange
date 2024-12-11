@@ -8,8 +8,8 @@ const Mobiledashboard = () => {
           <div className="flex-col justify-center items-center shadow-xl w-full m-auto p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2]  sm:rounded-lg rounded-lg">
           <div className="flex justify-between">
           <h1 className=" text-2xl text-[#161D6F] pb-5">ACCOUNT DETAILS</h1>
-          <Link to={"/settings"}>
-          <img className="w-5 h-5" src="src\assets\editicon.png" alt="" />
+          <Link to={"/userprofile"}>
+          <img className="w-5 h-5" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733924549/editicon_t86kb0.png" alt="profile edit icon" />
           </Link>
           </div>
           <div className="flex  items-center mb-3 gap-3">
