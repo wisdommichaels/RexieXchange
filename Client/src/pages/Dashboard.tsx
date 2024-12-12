@@ -13,7 +13,6 @@ import FooterO from "../components/FooterO";
 interface Transaction {
   cardName: string;
   amount: string;
-  date: string;
   status: string;
   createdAt:Date;
   updatedAt: Date;
@@ -78,12 +77,22 @@ const Dashboard: React.FC = () => {
         <Header>
           <div className="hidden sm:block">
             <div className="sm:flex-col items-center justify-center my-[75px] w-[85%] mx-auto p-8">
-              <div className="flex-col justify-center items-center ml-8">
+              <div className="flex justify-between items-center ml-8">
                 <h2 className="text-[16px] sm:text-[25px] font-bold pb-12 text-white">
                   Hello, {user?.username}
                 </h2>
-                <h2 className="text-[16px] sm:text-[18px] font-bold pb-2 text-white">Account Details</h2>
+                <div className="flex justify-center items-center gap-2 mb-10 mr-8 py-3 px-5 rounded-lg bg-[#7194C9] hover:bg-[#689ded]">
+                <Link  to={"/userprofile"}>
+                Change Account Details
+                </Link>
+                <img
+                   className="w-4 h-4"
+                   src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961481/editicon_xzstqb.png"
+                   alt="Edit Icon"
+                  />
+                </div>
               </div>
+                <h2 className="text-[16px] sm:text-[18px] font-bold pb-2 text-white ml-8">Account Details</h2>
               <div className="flex justify-center items-center gap-5">
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
                   <p className="text-gray-800 sm:text-[18px] text-[10px]">Account Name</p>
@@ -117,18 +126,21 @@ const Dashboard: React.FC = () => {
                 <tr className="bg-[#668bc2] sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[12px] leading-normal rounded-xl">
                   <th className="py-4 px-4">Gift Card</th>
                   <th className="py-3 px-1">Amount</th>
-                  <th className="py-3 px-8">Date</th>
+                  <th className="py-3 px-8">Date & Time</th>
                   <th className="py-3 px-8">Status</th>
                 </tr>
               </thead>
               <tbody className="text-black text-sm">
                 {transactions?.map((transaction, index) => {
+                  // Convert date to DD/MM/YYYY format
                   const tdate = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
+                  // convert time to DD/MM/YYYY format
+                const ttime = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)  
                 
                 return (<tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
                     <td className="py-3 px-4">{transaction.cardName}</td>
                     <td className="py-3 px-4">{transaction.amount}</td>
-                    <td className="py-3 px-4 text-[14px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()}</td>
+                    <td className="py-3 px-4 text-[14px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()}         {ttime.getHours()} : {ttime.getMinutes()} : {ttime.getSeconds()}</td>
                     <td className="py-3 px-4">
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${

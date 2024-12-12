@@ -168,7 +168,7 @@ function Signup () {
                 <div className="photo hidden sm:flex">
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733916922/rexie_1_eyuz5r.png" alt=""/>
         </div>
-                <div className="  flex flex-col justify-center items-center space-y-4 w-1/2">
+                <div className="  flex flex-col justify-center items-center space-y-4 sm:w-1/2 w-full mt-32 sm:mt-0">
         <div className=" flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
               <h2 className="text-12px text-[#161D6F] pb-3">Please enter your details bellow to get started!</h2>

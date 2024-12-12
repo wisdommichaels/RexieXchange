@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Mobilefooter from "../components/Mobilefooter";
 import { useAuthStore } from "../store/authStore";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -9,6 +9,7 @@ import useLogout from "../hooks/useLogOut";
 import FooterO from "../components/FooterO";
 
 const UserProfile = () => {
+  const navigate = useNavigate(); //
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,6 +17,10 @@ const UserProfile = () => {
     });
   };
   useEffect(scrollToTop,[])
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate 1 step back in history
+  };
 
   const { user, checkAuth } = useAuthStore();
   const [loading, setLoading] = useState(false);
@@ -170,9 +175,10 @@ const {logout} = useLogout()
    <nav className="bg-[#161D6F] shadow-lg flex gap-5 items-center py-3">
    <Link
           to={"/"}
+          onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-        <img src="src/assets/arrow-.png" alt="" />
+        <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="back to home page" />
         </Link>
 
         <h2 className=" sm:text-[20px] text-[18px] text-white pl-12 sm:pl-0 text-center ">
@@ -216,7 +222,7 @@ const {logout} = useLogout()
           Change Picture
           <img
             className="w-3 h-3"
-            src="src/assets/editicon.png"
+            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961481/editicon_xzstqb.png"
             alt="Edit Icon"
           />
         </label>

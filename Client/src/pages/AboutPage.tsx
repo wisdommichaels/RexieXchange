@@ -24,7 +24,7 @@ const AboutPage = () => {
           onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-        <img src="src/assets/arrow-.png" alt="" />
+        <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
