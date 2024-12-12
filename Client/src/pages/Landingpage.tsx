@@ -117,7 +117,7 @@ function Landingpage() {
                 </div>
             </div>
 
-            <div className="blur-in-out mt-10">
+            <div className="blur-in-out mt-10 hidden sm:block">
                 <div className="marquee-rtl">
                     <div className="marquee-content">
                       {cards?.map((card) => 
