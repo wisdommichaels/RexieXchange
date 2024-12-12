@@ -167,7 +167,7 @@ function Landingpage() {
             <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man2_tfiowr.svg" alt=""/>
         </div>
             <div className="flex flex-col justify-center items-center">
-                <h2 className="text-[#161D6F] text-[14px] font-semibold text-center">Busy? And thinking of where to trade your gift cards</h2>
+                <h2 className="text-[#161D6F] text-[14px] font-semibold text-center">Busy? And thinking of where to trade <br /> your gift cards</h2>
                 <p className="text-black text-[14px] text-center leading-5 ">Trade all your gift card in one Platform. <br/> With Gifthub Trading makes super easy!</p>
                 <Link to={'/sell'} className=" flex justify-center items-center bg-[#161D6F] sm:mt-4 mt-2 text-white rounded-md text-center sm:text-[16px] text-[14px] font-[500] sm:py-2 py-2 px-5 sm:mr-5 sm:w-[35%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
