@@ -150,7 +150,7 @@ function Landingpage() {
         </div>
     </section>
 
-    <section className=" bg-[#fff] rounded-b-lg sm:w-[98%] w-[95%] m-auto">
+    <section className=" bg-[#fff] sm:rounded-b-lg rounded-lg sm:w-[98%] w-[95%] m-auto">
         <div className=" sm:flex justify-center items-center gap-10 pt-5 sm:pt-14 " >
             <div className="sm:w-1/3 w-[90%] mx-auto sm:m-0">
                 <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man_efo4vd.svg" alt=""/>
