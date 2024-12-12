@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import useSignup from "../hooks/useSignup";
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 // import Loader from '../components/Loader';
 import { useAuthStore } from '../store/authStore';
 import { Link, useNavigate } from 'react-router-dom';
@@ -140,8 +140,12 @@ function Signup () {
 
        // Hide and show password function
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
   };
   // Hide and show password function ends....
 
@@ -187,7 +191,7 @@ function Signup () {
                       placeholder="Enter your Username"  
                       className={`w-full py-3 px-5 inpute ${errors.username ? 'border-red-500' : ''}`}
                       value={username}
-                      onChange={(e) => setUsername( e.target.value)}
+                      onChange={(e) => setUsername( e.target.value.trim())}
                     />
                   </div>
                   <div className="mb-4 w-full sm:w-1/2 flex flex-col justify-center items-center">
@@ -231,7 +235,7 @@ function Signup () {
                     <label className="text-[#161D6F] text-[14px]">Confirm Password</label>
                     <div className="relative w-full">
                       <input
-                        type={passwordVisible ? "text" : "password"}
+                        type={confirmPasswordVisible ? "text" : "password"}
                         className={`focus:outline-none inpute w-full py-3 px-5 ${errors.confirmPassword ? 'border-red-500' : ''}`}
                         placeholder="Confirm your password" 
                         value={confirmPassword}
@@ -239,9 +243,9 @@ function Signup () {
                       />
                       <div
                         className="absolute inset-y-1 right-0 pr-6 flex items-center cursor-pointer"
-                        onClick={togglePasswordVisibility}
+                        onClick={toggleConfirmPasswordVisibility}
                       >
-                        {passwordVisible ? (
+                        {confirmPasswordVisible ? (
                           <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/showpasswordicon_ifwaqc.png" alt="" />
                         ) : (
                           <img className='w-5 h-5' src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731338477/hidepasswordicon_vyhpyw.png" alt="" />
@@ -271,6 +275,7 @@ function Signup () {
             </div>
             </div>
             </div>
+            <ToastContainer position="top-right" autoClose={3000} />
             </>
   )
 }

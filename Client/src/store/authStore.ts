@@ -10,7 +10,7 @@ interface User {
   username: string;
   profilePic: string;
   email: string;
-  accountDetails: {accountName:String,  accountNumber:String, bankName:String };
+  accountDetails: {accountName:String,  accountNumber:string, bankName:String };
   createdAt: Date;
   updatedAt: Date;
 }

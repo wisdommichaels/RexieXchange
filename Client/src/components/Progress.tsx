@@ -17,7 +17,7 @@ const Progress = () => {
         >
           <h1 className="p-5 text-[24px] mt-6">Transaction Status</h1>
           <div className="bg-[#161D6F] rounded-full p-3 mt-5 sm:mt-10 shadow-md shadow-[#cff0ff]">
-            <img className="w-20 sm:w-10" src="src/assets/progress.png" alt="" />
+            <img className="w-20 sm:w-10" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734016310/progress_osezcy.png" alt="" />
           </div>
           <div className="w-[60%] flex flex-col justify-center items-center mt-10 sm:mt-5">
             <h1 className="text-[20px] font-bold text-center">Order in Progress</h1>

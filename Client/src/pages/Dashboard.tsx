@@ -83,7 +83,7 @@ const Dashboard: React.FC = () => {
                 </h2>
                 <div className="flex justify-center items-center gap-2 mb-10 mr-8 py-3 px-5 rounded-lg bg-[#7194C9] hover:bg-[#689ded]">
                 <Link  to={"/userprofile"}>
-                Change Account Details
+                {user?.accountDetails?.accountName?"Change":"Add"} Account Details
                 </Link>
                 <img
                    className="w-4 h-4"

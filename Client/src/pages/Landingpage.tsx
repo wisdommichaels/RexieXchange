@@ -72,16 +72,8 @@ function Landingpage() {
        
     {/* header carousel */}
     <Header>
-    {loading ? (
-          <div className="flex-col justify-center items-center mt-24 h-[200px]">
-            <div className="loader w-[20px] h-[20px] flex justify-center items-center mx-auto rounded-full border-2 border-t-white animate-spin"></div>
-            <p className="text-[10px] text-center text-white">loading...</p>
-          </div>
-                ) : (
-                  <>
+    
         <Carousel/>
-         </>
-        )}
     </Header>
 
      {/*mobile carousel  */}
@@ -168,14 +160,14 @@ function Landingpage() {
         </div>
             <div className="flex flex-col justify-center items-center">
                 <h2 className="text-[#161D6F] text-[14px] font-semibold text-center p-2">Busy? And thinking of where to trade your gift cards</h2>
-                <p className="text-black text-[14px] text-center leading-5 ">Trade all your gift card in one Platform. <br/> With Gifthub Trading makes super easy!</p>
+                <p className="text-black text-[14px] text-center leading-5 ">Trade all your gift card in one Platform. <br/> With RexieXchange Trading makes super easy!</p>
                 <Link to={'/sell'} className=" flex justify-center items-center bg-[#161D6F] sm:mt-4 mt-2 text-white rounded-md text-center sm:text-[16px] text-[14px] font-[500] sm:py-2 py-2 px-5 sm:mr-5 sm:w-[35%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
         </div>
         <div className=" hidden sm:flex justify-center items-center gap-10 mt-20 pb-7">
             <div className="flex flex-col justify-end leading-7 items-center">
                 <h2 className="text-[#161D6F] text-[24px] font-semibold">Busy? <br/>And thinking of where to <br/>trade your gift cards</h2>
-                <p className="text-black text-[16px] pt-3">Trade all your gift card in one Platform. <br /> With Gifthub Trading makes super easy!</p>
+                <p className="text-black text-[16px] pt-3">Trade all your gift card in one Platform. <br /> With RexieXchange Trading makes super easy!</p>
                 <Link to={'/sell'} className="bg-[#161D6F] text-white rounded-md sm:mt-4 mt-2 text-center text-[16px] font-[500] py-1 px-4 w-[38%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
             <div className="sm:w-1/3 w-[90%] sm:mb-8">
@@ -186,7 +178,7 @@ function Landingpage() {
     </section>
     <section className="bg-[#DDE4EF] ">
         <div className="flex flex-col justify-center items-center m-auto sm:pt-8 pt-5 sm:ml-10">
-          <h1 className="sm:text-2xl text-[16px] font-bold text-[#121c3d]">Why choose Gifthub?</h1>
+          <h1 className="sm:text-2xl text-[16px] font-bold text-[#121c3d]">Why choose RexieXchange?</h1>
           <p className="sm:text-lg text-[13px] font-bold text-[#121c3d]">Platform advantage</p>
             <div className="flex justify-center items-center sm:w-14 w-12 sm:h-1.5 h-1 bg-[#161D6F] mt- rounded-full m-auto"></div>
         </div>

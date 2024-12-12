@@ -272,7 +272,7 @@ const Sell: React.FC = () => {
     </div>
   </section>
 
-      <ToastContainer position="top-center" autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="hidden sm:block">
         <FooterO />
       </div>

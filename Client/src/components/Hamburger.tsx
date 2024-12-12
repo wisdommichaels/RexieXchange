@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useLogout from "../hooks/useLogOut";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +8,8 @@ const HamburgerMenu = () => {
   const toggleMenu = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
+
+  const {logout} = useLogout()
 
   return (
     <div className="relative w-[50%] pt-3 pr-2">
@@ -46,6 +49,12 @@ const HamburgerMenu = () => {
               About Us
             </Link>
           </nav>
+        
+        <p onClick={logout} className="flex justify-center  gap-2 items-center text-[18px] w-full  py-2  text-[#161D6F] cursor-pointer">
+              Logout
+              <img className="w-4 h-4" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734021762/icons8-logout-50_1_wx6589.png" alt="" />
+            </p>
+
         </div>
       )}
     </div>

@@ -58,16 +58,18 @@ const NewsletterForm = () => {
   };
 
   return (
-    <div className='w-full flex justify-center items-center'>
-    <form  onSubmit={handleSubmit} className="subscribe w-full flex justify-center items-center gap-3 sm:gap-0  border-[#99A2A5]">
+    <>
+   {/* <div className='w-full flex flex-col justify-center items-center'> */}
+    <form  onSubmit={handleSubmit} className="subscribe w-full flex flex-col sm:flex-row sm:justify-center px-4 pt-2 sm:items-center sm:gap-  border-[#99A2A5]">
      <input 
      type="email" 
      value={email}
      onChange={(e) => setEmail(e.target.value)}
      placeholder="Enter your Email"
-     className="w-1/2 input"/>
+     className="w-full input mt-0"/>
    
    {/* Add loading state */}
+   <div className='w-[50%] flex sm:justify-center items-center mt-2'>   
    {isLoading ? (
             <>
             <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-[#101035] animate-spin"></div>
@@ -76,14 +78,15 @@ const NewsletterForm = () => {
           ) : (
     <button 
     type="submit" 
-    className=" bg-[#161D6F] sm:px-5 sm:py-3 px-2  rounded-lg text-[14px] sm:text-[18px] py-4 mt-5 sm:ml-6 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac] text-white text-center"
+    className="bg-[#161D6F] w-[80%] sm:w-[80%] text-12 sm:text-14 flex justify-center items-center text-white py-3 mt-2 sm:mt-0 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac]"
     >
       Subscribe Now
     </button>
     )}
+    </div>  
    </form>
     <ToastContainer position="top-right" autoClose={3000} />
-   </div>
+    </>
   );
 };
 

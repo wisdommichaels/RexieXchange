@@ -657,7 +657,6 @@ ul {
   border-radius: 20px;
   box-shadow: #cff0ff 0px 5px 10px -3px;
   border-inline: 2px solid transparent;
-  width: 60%;
   outline: none;
 }
 .searchbar {
@@ -675,7 +674,6 @@ ul {
   border-radius: 10px;
   box-shadow: #cff0ff 0px 14px 10px -3px;
   border-inline: 2px solid transparent;
-  width: 30%;
   outline: none;
 }
 

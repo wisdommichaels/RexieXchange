@@ -4,8 +4,7 @@ import { useAuthStore } from "../store/authStore";
 import { ChangeEvent, useEffect, useState } from "react";
 import api from "../utils/api";
 import { api_url } from "../utils/constants";
-import { toast } from "react-toastify";
-import useLogout from "../hooks/useLogOut";
+import { toast, ToastContainer } from "react-toastify";
 import FooterO from "../components/FooterO";
 
 const UserProfile = () => {
@@ -24,6 +23,7 @@ const UserProfile = () => {
 
   const { user, checkAuth } = useAuthStore();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [nameloading, setNameLoading] = useState(false);
   const [detailsloading, setDetailsLoading] = useState(false);
   const [newImage, setNewImage] = useState("");
@@ -120,49 +120,71 @@ const UserProfile = () => {
       setNameLoading(false);
     }
   };
+  // account number validation
+  const accountNumber = (value: string) => {
+    console.log(value);
+    
+    const regex = /^\d{10}$/;
+    console.log(regex.test(value));
+    
+    return regex.test(value);
+  }
 
   // Save Account Details Function
   const handleAccountDetailsSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setTimeout(() => {
-      if (formData.accountName && formData.accountNumber && formData.bankName) {
-        toast.success("Account details updated successfully!");
-      } else {
-        toast.error("Failed to update account details. Please try again.");
-      }
-    }, 2000); // Wait 3 seconds before showing the toast
+    // setTimeout(() => {
+    //   if (formData.accountName && formData.accountNumber && formData.bankName) {
+    //     toast.success("Account details updated successfully!");
+    //   } else {
+    //     toast.error("Failed to update account details. Please try again.");
+    //   }
+    // }, 2000); // Wait 3 seconds before showing the toast
     setDetailsLoading(true);
-
+    
     // Format the `accountName` and `bankName` to capitalize the first letter of each word
-  const formattedAccountName = formData.accountName
-  .split(" ")
+    const formattedAccountName = formData.accountName
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+    
+    const formattedBankName = formData.bankName
+    .split(" ")
   .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
   .join(" ");
-
-const formattedBankName = formData.bankName
-  .split(" ")
-  .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-  .join(" ");
-
-// Update the `formData` with formatted values
-const updatedFormData = {
+  
+    if(!accountNumber(formData.accountNumber)) {
+      setDetailsLoading(false)
+      setError("Please enter a valid account number (10 digits)")
+      return toast.error("Please enter a valid account number (10 digits)");
+    }
+    if(!formData.accountName || !formData.accountNumber || !formData.bankName) {
+      setDetailsLoading(false)
+      return toast.error("Please fill all fields");
+    }
+  // Update the `formData` with formatted values
+  const updatedFormData = {
   ...formData,
   accountName: formattedAccountName,
   bankName: formattedBankName,
 };
-  
+
     try {
       await api.post(`${api_url}/auth/updateuserprofile`, updatedFormData);
       await checkAuth();
+      toast.success("Account details updated successfully!");
+      
     } catch (e) {
       console.error("Error saving account details:", e);
+      toast.error("Failed to update account details. Please try again.");
     } finally {
       setDetailsLoading(false);
     }
   };
+  
 
     // logout function starts here
-const {logout} = useLogout()
+
     // const logout = () => {
     //   localStorage.removeItem('token');
     //   window.location.reload()
@@ -184,13 +206,6 @@ const {logout} = useLogout()
         <h2 className=" sm:text-[20px] text-[18px] text-white pl-12 sm:pl-0 text-center ">
           Account Settings
         </h2>
-
-        <div className="sm:hidden pl-4">
-        <p onClick={logout} className="flex gap-2 items-center text-[18px] w-full px-4 py-2 text-white hover:bg-gray-100 cursor-pointer">
-              Logout
-              <img className="w-4 h-4" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1731945322/icons8-logout-50_y7a0cu.png" alt="" />
-            </p>
-        </div>
     </nav>
 
     <section className="flex flex-col md:flex-row justify-center p-3 gap-3 pb-10">
@@ -258,7 +273,7 @@ const {logout} = useLogout()
         className="mb-6 w-full flex flex-col items-center"
       >
         <label htmlFor="username" className="block text-[#161D6F] mt-4 text-[20px] pt-5">
-          Edit Username
+        {user?.username? "Edit Username" : "Enter Username"}
         </label>
         <input
           className="p-4 sm:p-3 input sm:w-[80%] mt-2"
@@ -266,7 +281,7 @@ const {logout} = useLogout()
           id="username"
           placeholder="Enter your username"
           value={newUsername}
-          onChange={(e) => setNewUsername(e.target.value)}
+          onChange={(e) => setNewUsername(e.target.value.trim())}
         />
            <button
           className="btn px-3 py-3 mt-4 w-full sm:w-[80%]"
@@ -298,7 +313,7 @@ const {logout} = useLogout()
       htmlFor="accountName"
       className="block text-[#161D6F] text-xl text-center mb-2"
     >
-      Edit Account Name
+      {user?.accountDetails?.accountName? "Edit Account Name" : "Enter Account Name"}
     </label>
     <input
       className="p-4 sm:p-3 input w-full"
@@ -316,17 +331,18 @@ const {logout} = useLogout()
       htmlFor="accountNumber"
       className="block text-[#161D6F] text-xl text-center mb-2"
     >
-      Edit Account Number
+       {user?.accountDetails?.accountNumber? "Edit Account Number" : "Enter Account Number"}
     </label>
     <input
       className="p-4 sm:p-3 input w-full"
-      type="text"
+      type="number"
       name="accountNumber"
       id="accountNumber"
       value={String(formData.accountNumber || '')} 
       onChange={handleAccountDetailsInputChange}
       placeholder="Enter Account Number"
     />
+    {error}
   </div>
 
   {/* Bank Name */}
@@ -335,7 +351,7 @@ const {logout} = useLogout()
       htmlFor="bankName"
       className="block text-[#161D6F] text-xl text-center mb-2"
     >
-      Edit Bank Name
+       {user?.accountDetails?.accountName? "Edit Bank Name" : "Enter Bank Name"}
     </label>
     <input
       className="p-4 sm:p-3 input w-full"
@@ -367,9 +383,7 @@ const {logout} = useLogout()
 </form>
 
 </section>
-
-
-
+<ToastContainer position="top-right" autoClose={3000} />
   <div className="hidden sm:block">
   <FooterO/>
   </div>
