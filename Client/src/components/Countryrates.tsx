@@ -45,7 +45,7 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
 </section>
 
 
-      <div  className="text-center mt-4 mb-24">
+      <div  className="text-center mt-4 mb-24 sm:mb-16">
         <button 
           id="showMoreButton" onClick={handleToggle}
            className="bg-[#161D6F] text-white sm:px-6 px-3 py-2 rounded-lg hover:bg-[#1522ad] text-[10px] sm:text-[16px]"

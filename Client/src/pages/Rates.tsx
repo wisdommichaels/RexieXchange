@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import Countryrates from "../components/Countryrates";
-import Footer from "../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Username from "../components/Username";
 import Mobilefooter from "../components/Mobilefooter";
@@ -9,6 +8,7 @@ import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import CardNotFound from "../components/CardNotFound";
 import OnscrollHeader from "../components/OnscrollHeader";
+import FooterO from "../components/FooterO";
 // import Signup from "../components/Signup"
 
 const Rates = () => {
@@ -59,7 +59,7 @@ const Rates = () => {
       <div>
         <OnscrollHeader />
         <section id="black">
-          <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[65px] items-center py-3">
+          <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[65px] items-center py-3 sm:hidden">
           <button
           onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center text-[11px] p-3 "
@@ -128,7 +128,7 @@ const Rates = () => {
         <Countryrates data={pageCard} />
         <Mobilefooter />
         <div className="hidden sm:block">
-          <Footer />
+          <FooterO />
         </div>
       </div>
     ) : (

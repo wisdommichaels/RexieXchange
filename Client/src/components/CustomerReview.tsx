@@ -139,7 +139,7 @@ const CustomerReviewForm: React.FC = () => {
             >
             {isLoading ? (
               <>
-              <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-[#101035] animate-spin"></div>
+              <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
               {/* <p className="text-[10px]">loading...</p> */}
               </>
             ) : (

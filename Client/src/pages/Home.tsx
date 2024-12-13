@@ -17,6 +17,7 @@ import OnscrollHeader from "../components/OnscrollHeader";
 
 const Home = () => {
   const [loading, setLoading] = useState(true); // Initialize loading state
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -35,6 +36,7 @@ const Home = () => {
   useEffect(() => {
     // Set a 3-second timeout to simulate loading
     const timeout = setTimeout(() => {
+      setIsLoading(false);
       setLoading(false);
     }, 3000);
 
@@ -145,11 +147,18 @@ const Home = () => {
                       <h1 className="text-white text-[14px] ">{card.name} Gift Card</h1>
 
                       <div className="flex items-center pt-2 pb-2">
+                      {isLoading ? (
+                             <>
+                               <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>
+                               {/* <p className="text-[10px]">loading...</p> */}
+                             </>
+                          ) : (
                         <img
                           className="w-5 h-4"
                           src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740810/tag_m6zbjc.png"
                           alt=""
                         />
+                          )}
                         <p className="flex text-white text-[16px]">
                           1{card.rates[0].rateDetails.currencySymbol} = ₦{card.rates[0].rate}
                         </p>

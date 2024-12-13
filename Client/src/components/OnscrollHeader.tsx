@@ -38,19 +38,19 @@ const OnscrollHeader: React.FC = () => {
       <div className="flex justify-between items-center px-6 py-3 shadow-md shadow-transparent">
         {/* Logo Section */}
         <Link
-          to={"/"}
-          className="flex justify-center items-center cursor-pointer"
+          to={"/landingpage"}
+          className="flex justify-center items-center gap-1 cursor-pointer"
         >
           <img
-            className="w-12 "
+            className="w-10 "
             src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734048565/logo_l22er0.webp"
             alt=""
           />
-          <div className="flex-col justify-center items-center leading-4 pt-1">
-            <h1 className="font-bold sm:text-[20px] text-[14] text-white">
+          <div className="flex-col justify-center items-center leading-3 pt-1">
+            <h1 className="font-bold sm:text-[18px] text-[14] text-white">
               RexieXchange
             </h1>
-            <p className="sm:text-[10px] text-[5.8px] text-white">
+            <p className="sm:text-[9px] text-[5.8px] text-white">
               GiftCard Xchange Made Easy
             </p>
           </div>
