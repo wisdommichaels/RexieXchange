@@ -6,9 +6,9 @@ const Carousel:React.FC = () => {
   const slideIntervalRef = useRef<number | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const slides = [
-    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1733917866/anita1_bh2iwh.png", alt: "Image 1" },
-    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810211/banner2_gekq7z.png", alt: "Image 2" },
-    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1729810204/banner3_euxdtg.png", alt: "Image 3" }
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1734047918/anita1_oprpsr.webp", alt: "Image 1" },
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1734049332/anitaee_1_mto9cx.webp", alt: "Image 2" },
+    { src: "https://res.cloudinary.com/duwfbyhyq/image/upload/v1734048380/banner3_ykxr8d.webp", alt: "Image 3" }
   ];
 
   const moveToSlide = (index: number) => {

@@ -211,7 +211,7 @@ const UserProfile = () => {
     <section className="flex flex-col md:flex-row justify-center p-3 gap-3 pb-10">
   <div className="m-auto sm:w-[40%] w-full mb-1">
     <div className="flex flex-col justify-center items-center shadow-xl bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:py-5 py-8 sm:rounded-lg rounded-lg">
-      <h1 className="text-center p-6 text-2xl text-[#161D6F]">MY PROFILE</h1>
+      <h1 className="text-center p-6 sm:text-2xl text-[20px] text-[#161D6F]">MY PROFILE</h1>
       <div className="flex justify-center items-center">
         {loading ? (
           <div className="loader w-[120px] h-[120px] rounded-full border-4 border-t-4 border-gradient-to-r from-[#a2bae3] to-[#668bc2] animate-spin"></div>
@@ -272,7 +272,7 @@ const UserProfile = () => {
         onSubmit={handleUsernameSubmit}
         className="mb-6 w-full flex flex-col items-center"
       >
-        <label htmlFor="username" className="block text-[#161D6F] mt-4 text-[20px] pt-5">
+        <label htmlFor="username" className="block text-[#161D6F] mt-4 sm:text-[20px] pt-5">
         {user?.username? "Edit Username" : "Enter Username"}
         </label>
         <input
@@ -303,7 +303,7 @@ const UserProfile = () => {
   onSubmit={handleAccountDetailsSubmit}
   className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg w-full sm:w-[60%] pb-8 px-5 flex flex-col items-center mb-14 sm:mb-0"
 >
-  <h1 className="text-2xl text-[#161D6F] text-center p-6 pt-10">
+  <h1 className="sm:text-2xl text-[20px] text-[#161D6F] text-center p-6 pt-10">
     UPDATE ACCOUNT DETAILS
   </h1>
  
@@ -311,7 +311,7 @@ const UserProfile = () => {
   <div className="mb-4 w-full sm:w-[80%]">
     <label
       htmlFor="accountName"
-      className="block text-[#161D6F] text-xl text-center mb-2"
+      className="block text-[#161D6F] sm:text-xl text-center sm:mb-2"
     >
       {user?.accountDetails?.accountName? "Edit Account Name" : "Enter Account Name"}
     </label>
@@ -329,7 +329,7 @@ const UserProfile = () => {
   <div className="mb-4 w-full sm:w-[80%]">
     <label
       htmlFor="accountNumber"
-      className="block text-[#161D6F] text-xl text-center mb-2"
+      className="block text-[#161D6F] sm:text-xl text-center sm:mb-2"
     >
        {user?.accountDetails?.accountNumber? "Edit Account Number" : "Enter Account Number"}
     </label>
@@ -349,7 +349,7 @@ const UserProfile = () => {
   <div className="mb-4 w-full sm:w-[80%]">
     <label
       htmlFor="bankName"
-      className="block text-[#161D6F] text-xl text-center mb-2"
+      className="block text-[#161D6F] sm:text-xl text-center sm:mb-2"
     >
        {user?.accountDetails?.accountName? "Edit Bank Name" : "Enter Bank Name"}
     </label>

@@ -31,8 +31,8 @@ const AboutPage = () => {
           About Us
         </h2>
       </nav>
-      <section className=" mx-auto p-10 mt-8 sm:w-[70%] w-[95%] bg-[#ffffff] rounded-lg text-center text-lg">
-        <h1 className="text-4xl font-bold text-center mb-6 text-[#161D6F]">About Us</h1>
+      <section className=" mx-auto sm:p-10 p-5 mt-6 sm:w-[70%] w-[95%] bg-[#ffffff] rounded-lg text-center text-lg">
+        <h1 className="text-2xl font-bold text-center sm:mb-3 mb-2 text-[#161D6F]">About Us</h1>
         <p className=" text-black mb-6 leading-relaxed">
           Welcome to our Gift Card Trading Platform! We are passionate about providing a secure, easy-to-use, and efficient platform for trading gift cards. Whether you're looking to sell your gift card  at a profitable rate, our platform is designed to make the process seamless.
         </p>
@@ -45,15 +45,15 @@ const AboutPage = () => {
         <p className=" text-black  mb-4 leading-relaxed">
           Thank you for choosing us as your go-to platform for gift card trading. We look forward to serving you and making your experience as rewarding as possible.
         </p>
-        <div className="w-[60%] flex justify-center items-center mx-auto gap-10 p-2 mt-6">
-            <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
-            <div className="w-1/2 h-1 bg-[#161D6F] rounded-lg"></div>
+        <div className="sm:w-[60%] w-[90%] flex justify-center items-center mx-auto sm:gap-10 gap-5 p-2 sm:mt-6">
+            <div className="sm:w-1/2 w-[70%] h-1 bg-[#161D6F] rounded-lg"></div>
+            <div className="sm:w-1/2 w-[70%] h-1 bg-[#161D6F] rounded-lg"></div>
         </div>
-        <p className="text-center text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING REXIEXCHANGE</p>
+        <p className="sm:text-center text-[14px] text-[#161D6F] font-bold mt-3">THANKS FOR CHOOSING REXIEXCHANGE</p>
       </section>
       {/* leave a review button */}
       <Link to={"/customerReview"} className="btn sm:w-[20%] w-[80%] py-4 sm:py-3 mb-24 sm:mb-10">
-        <p className="text-center">Please Leave a Review</p>
+        <p className="text-center text-[14px] sm:text-[16px]">Please Leave a Review</p>
       </Link>
       <div className="hidden sm:block">
       <FooterO />

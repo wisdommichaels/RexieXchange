@@ -139,7 +139,7 @@ const Sell: React.FC = () => {
       <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
         <button
           onClick={handleGoBack}
-          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
+          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 items-center gap-2 text-[11px] p-3 "
         >
         <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </button>
@@ -154,12 +154,12 @@ const Sell: React.FC = () => {
       </div>
       
   
-  <section className="h-[90vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
+  <section className="h-[100vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
     <div className='p-5 sm:mb-5'>
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
       </h1>
-      <p className='text-[18px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
+      <p className='text-[16px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
     </div>
     
     <div className="sm:w-[70%] mx-auto p-4 sm:pt-4 relative">
@@ -168,7 +168,7 @@ const Sell: React.FC = () => {
         <div className="sm:mb-0 mb-4 text-center w-full sm:w-1/2">
           <label htmlFor="amount" className="text-[18px] text-black">Amount</label>
           <input
-            type="text"
+            type="number"
             id="amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
@@ -179,6 +179,7 @@ const Sell: React.FC = () => {
 
         <div className="text-center sm:w-1/2">
             <label htmlFor="category" className="text-[18px] text-black">Gift Card Category</label>
+            <div className=''>
             <select
               id="category"
               value={cardName}
@@ -191,6 +192,7 @@ const Sell: React.FC = () => {
               )
               }
             </select>
+            </div>
           </div>
 
         </div>
@@ -205,7 +207,7 @@ const Sell: React.FC = () => {
               onChange={(e) => setCountryName(e.target.value)}
               className="custom-select custom-arrow w-full"
             >
-              <option value="">Select Currency Code</option>
+              <option value="">Select Country </option>
               { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
               <option value={card.rateDetails.countryName}> {card.rateDetails.countryName}</option>
               )}

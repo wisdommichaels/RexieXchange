@@ -19,7 +19,7 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
-        <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] sm:pr-2 pr-6">Gift Card Rate</div>
+        <div  className="font-bold text-gray-600 flex justify-end sm:w-[25%] md:pr-2 pr-2">Gift Card Rate</div>
       </div>
     {data?.rates.slice(0,showMore).map((rate) =>
         <div  className="sm:space-y-4 sm:px-8 lg:px-10 sm:pt-3">

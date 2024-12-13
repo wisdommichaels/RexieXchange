@@ -114,33 +114,33 @@ const Dashboard: React.FC = () => {
       <section className="container mx-auto p-4 mb-5 w-[95%] rounded-lg sm:w-[98%]">
         <h1 className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
 
-        <div className="overflow-x-auto rounded-xl">
+        <div className="w-full flex justify-center rounded-xl  ">
           {loading ? (
             <div className="flex flex-col justify-center items-center mt-10">
               <div className="loader w-[40px] h-[40px] rounded-full border-4 border-t-[#161D6F] animate-spin"></div>
               <p className="text-[14px] text-center mt-2">Loading...</p>
             </div>
           ) : (
-            <table className="min-w-full bg-white border shadow-lg rounded-xl">
+            <table className="w-full bg-white bordershadow-lg">
               <thead>
-                <tr className="bg-[#668bc2] sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[12px] leading-normal rounded-xl">
+                <tr className="bg-[#668bc2] w-full sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[12px] leading-normal">
                   <th className="py-4 px-4">Gift Card</th>
-                  <th className="py-3 px-1">Amount</th>
-                  <th className="py-3 px-8">Date & Time</th>
+                  <th className="py-3 sm:px-1">Amount</th>
+                  <th className="py-3 px-8">Date</th>
                   <th className="py-3 px-8">Status</th>
                 </tr>
               </thead>
-              <tbody className="text-black text-sm">
+              <tbody className="text-black text-sm w-full">
                 {transactions?.map((transaction, index) => {
                   // Convert date to DD/MM/YYYY format
                   const tdate = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
                   // convert time to DD/MM/YYYY format
-                const ttime = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)  
+                // const ttime = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)  
                 
                 return (<tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
                     <td className="py-3 px-4">{transaction.cardName}</td>
                     <td className="py-3 px-4">{transaction.amount}</td>
-                    <td className="py-3 px-4 text-[14px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()}         {ttime.getHours()} : {ttime.getMinutes()} : {ttime.getSeconds()}</td>
+                    <td className="py-3 sm:px-4 text-[12px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()} </td>
                     <td className="py-3 px-4">
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${

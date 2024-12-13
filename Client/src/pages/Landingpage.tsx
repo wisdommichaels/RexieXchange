@@ -60,7 +60,7 @@ function Landingpage() {
                   LOGIN
                 </Link>
                 <Link
-                  to={"/login"}
+                  to={"/signup"}
                   className="signup-button text-[#161D6F] text-[12px] bg-[#FFFFFF] font-normal"
                 >
                   SIGN UP

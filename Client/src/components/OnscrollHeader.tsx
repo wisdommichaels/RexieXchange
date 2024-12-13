@@ -42,11 +42,11 @@ const OnscrollHeader: React.FC = () => {
           className="flex justify-center items-center cursor-pointer"
         >
           <img
-            className="w-12"
-            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740667/mylogo_qxoqqk.png"
+            className="w-12 "
+            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734048565/logo_l22er0.webp"
             alt=""
           />
-          <div className="flex-col justify-center items-center leading-4 pt-3">
+          <div className="flex-col justify-center items-center leading-4 pt-1">
             <h1 className="font-bold sm:text-[20px] text-[14] text-white">
               RexieXchange
             </h1>

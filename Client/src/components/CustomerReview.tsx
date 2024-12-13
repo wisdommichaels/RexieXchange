@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useAuthStore } from "../store/authStore";
 import api from '../utils/api';
+import FooterO from './FooterO';
+import Mobilefooter from './Mobilefooter';
 
 const CustomerReviewForm: React.FC = () => {
   const scrollToTop = () => {
@@ -69,22 +71,22 @@ const CustomerReviewForm: React.FC = () => {
 
   return (
     <>
-      <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
+      <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[70px] items-center py-3">
         <button
           onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-          <img src="src/assets/arrow-.png" alt="" />
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </button>
 
         <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           Customer Review
         </h2>
       </nav>
-      <div className="w-full h-screen flex-col items-center p-8 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] overflow-x-hidden">
-        <h2 className="text-3xl text-[#161D6F]">We Value Your Feedback!</h2>
-        <p className='text-xl'>
-          Thank you for visiting <strong className='text-[#161D6F]'>RexieXchange!</strong>  Share your thoughts about our platform below. <br />
+      <div className="w-full h-screen flex-col items-center sm:p-8 p-4 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] overflow-x-hidden">
+        <h2 className="text-3xl text-[#161D6F] py-2">We Value Your Feedback!</h2>
+        <p className='sm:text-xl'>
+          Thank you for visiting <strong className='text-[#161D6F]'>RexieXchange!</strong>  Share your thoughts so far about our platform below. <br />
           Was it easy to use? Let us know! Your input is greatly appreciated, <br />
           and we look forward to serving you better.
         </p>
@@ -138,6 +140,10 @@ const CustomerReviewForm: React.FC = () => {
         </form>
         <ToastContainer position="top-right" autoClose={3000} />
       </div>
+      <div className="hidden sm:block">
+        <FooterO />
+      </div>
+      <Mobilefooter />
     </>
   );
 };

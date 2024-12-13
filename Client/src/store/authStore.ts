@@ -49,7 +49,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     }
 
     if (password.length < 6) {
-      toast.error('Password must be at least 6 characters long');
+      toast.error('Password must be at least 8 characters long');
       set({ loading: false });
       return false;
     }
@@ -87,7 +87,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
     }
 
     if (password.length < 6) {
-      toast.error('Password must be at least 6 characters long');
+      toast.error('Password must be at least 8 characters long');
       set({ loading: false });
       return false;
     }
@@ -123,7 +123,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
         localStorage.removeItem('token');
         set({ user: null });
         toast.error('Session expired. Please log in again.');
-        window.location.reload();
+        window.location.href = '/login';
       } else {
         console.error('Authentication check error:', error);
         set({ error: error.message });

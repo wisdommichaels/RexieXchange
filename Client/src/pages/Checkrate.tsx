@@ -77,7 +77,7 @@ const Checkrate: React.FC = () => {
         <Carousel />
       </div>
 
-      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:my-0 mb-28 rounded-lg sm:rounded-none sm:p-7 pb-16 pt-5 sm:pt-0 sm:pb-24 mx-3 sm:m-0">
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full mt-5 sm:my-0 mb-28 rounded-lg sm:rounded-none mx-auto">
         <div className="p-5 sm:pt-8">
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
@@ -97,7 +97,7 @@ const Checkrate: React.FC = () => {
               </label>
               <input
                 className="custom-select custom-arrow cursor-text w-full"
-                type="text"
+                type="number"
                 id="amount"
                 placeholder="Amount in Foreign currency"
                 value={amount}

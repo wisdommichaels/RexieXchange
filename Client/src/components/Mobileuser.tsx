@@ -17,8 +17,8 @@ const Mobileuser = () => {
       alt="User Image"
       className="sm:w-12 w-12 sm:h-12 h-12 mt-2 rounded-full object-cover"
     />
-    <span id="username" className="text-white text-[16px] pt-3 leading-4 flex-col">
-     <h1 className="text-[18px]  font-bold "> Hello! </h1>
+    <span id="username" className="text-white text-[12px] pt-3 leading-4 flex-col">
+     <h1 className="text-[14px]  font-bold "> Hello! </h1>
       {user?.username}
     </span>
   </Link>

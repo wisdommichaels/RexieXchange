@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogOut";
+import { ToastContainer } from "react-toastify";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const HamburgerMenu = () => {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="text-white focus:outline-none sm:hidden relative left-44"
+        className="text-white focus:outline-none sm:hidden relative left-[149px]"
         aria-label="Toggle menu"
       >
         <div
@@ -39,7 +40,7 @@ const HamburgerMenu = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div
-          className="absolute top-full left-4 w-[95%] bg-white shadow-md z-50 transition-all duration-300 rounded-lg mt-2"
+          className="absolute top-full left-4 w-[95%] bg-[#C9D8F0] shadow-md z-50 transition-all duration-300 rounded-lg mt-2"
         >
           <nav className="flex flex-col items-center py-4 space-y-4">
             <Link to="/contactpage" className="text-[#161D6F] hover:text-blue-500" onClick={toggleMenu}>
@@ -57,6 +58,7 @@ const HamburgerMenu = () => {
 
         </div>
       )}
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

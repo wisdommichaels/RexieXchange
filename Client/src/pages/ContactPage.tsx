@@ -79,12 +79,12 @@ const ContactPage = () => {
           Contact
         </h2>
       </nav>
-    <section className=" mx-auto p-4 my-8">
-      <h1 className="text-4xl font-bold text-center mb-6 text-[#161D6F]">Contact Us</h1>
-      <p className="text-xl text-black mb-4 leading-relaxed text-center">
-        We value your feedback and inquiries. Whether you have questions, <br />suggestions, or need assistance with our services, feel free to reach out to us.
+    <section className=" mx-auto p-4 sm:my-4 mt-4">
+      <h1 className="sm:text-2xl text-[20px] font-bold text-center sm:mb-3 text-[#161D6F]">Contact Us</h1>
+      <p className="text-[16px] sm:text-xl text-black mb-4 leading-relaxed">
+        We value your feedback and inquiries. Whether you have questions, suggestions, or need assistance with our services, feel free to reach out to us.
       </p>
-      <div className="bg-[#7798CB] shadow-lg rounded-lg p-6">
+      <div className="bg-[#7798CB] shadow-lg rounded-lg sm:px-6 sm:py-8 px-3 py-6">
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* <div>
             <label htmlFor="email" className="block text-lg font-medium text-[#161D6F]">Your Email</label>
@@ -98,7 +98,7 @@ const ContactPage = () => {
             />
           </div> */}
           <div>
-            <label htmlFor="message" className="block text-lg font-medium text-[#161D6F]">Your Message</label>
+            <label htmlFor="message" className="block text-lg font-medium text-[#161D6F]">Write Your Message</label>
             <textarea
               id="message"
               rows={5}

@@ -67,7 +67,7 @@ const Home = () => {
           <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#fbfbfb] to-[#668bc2] text-[16px] font-bold p-2 text-white text-center mb-0">
             Trade your <span className="text-[#161D6F]">Gift Card</span> all in <br /> one place
           </h1>
-          <h1 className="sm:text-[50px] bg-[#161D6F] text-[16px] font-bold p-2 pt-5 text-white text-center mb-0">
+          <h1 className="sm:text-[50px] bg-[#161D6F] text-[14px] font-bold p-2 pt-5 text-white text-center mb-0">
             Trade your Gift Card all in one place
           </h1>
           <div className="flex-col justify-center items-center pb-5 bg-[#161D6F] rounded-b-lg mb-3 ">

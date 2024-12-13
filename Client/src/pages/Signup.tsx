@@ -108,8 +108,8 @@ function Signup () {
         }
     
         if (password.length < 6) {
-          toast.error('Password must be at least 6 characters!', { position: 'top-right' });
-          newErrors.password = 'Password must be at least 6 characters!';
+          toast.error('Password must be at least 8 characters!', { position: 'top-right' });
+          newErrors.password = 'Password must be at least 8 characters!';
           setErrors(newErrors);
           return false;
         }
@@ -122,7 +122,7 @@ function Signup () {
         }
     
         if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
-          toast.error('Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
+          toast.error('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
           return false;
         }
     
@@ -170,9 +170,9 @@ function Signup () {
                 }
                  <div className="flex justify-center items-center">
                 <div className="photo hidden sm:flex">
-          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733916922/rexie_1_eyuz5r.png" alt=""/>
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734046844/anitaw_f0inmb.webp" alt=""/>
         </div>
-                <div className="  flex flex-col justify-center items-center space-y-4 sm:w-1/2 w-full mt-32 sm:mt-0">
+                <div className=" flex flex-col justify-center items-center space-y-4 sm:w-1/2 w-full h-screen sm:mt-0">
         <div className=" flex flex-col justify-center items-center space-y-4 w-full">
               <h1 className="text-2xl font-semibold text-[#161D6F] text-center mt-5">Create Account</h1>
               <h2 className="text-12px text-[#161D6F] pb-3">Please enter your details bellow to get started!</h2>
