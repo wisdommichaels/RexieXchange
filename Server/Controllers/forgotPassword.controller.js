@@ -28,7 +28,7 @@ export const forgotPassword = async (req, res) => {
     }
   });
   
-  const resetUrl = `http://localhost:5173/resetpassword/${user._id}/${token}`;
+  const resetUrl = `https://www.rexiexchange.com.ng/resetpassword/${user._id}/${token}`;
   var mailOptions = {
     from: process.env.COMPANY_EMAIL,
     to: user.email,
