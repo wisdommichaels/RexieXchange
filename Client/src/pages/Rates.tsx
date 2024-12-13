@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Countryrates from "../components/Countryrates";
 import Footer from "../components/Footer";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Username from "../components/Username";
 import Mobilefooter from "../components/Mobilefooter";
 import { Card, useCardStore } from "../store/cardStore";
