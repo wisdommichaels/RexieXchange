@@ -88,9 +88,8 @@ const CustomerReviewForm: React.FC = () => {
       <div className="w-full h-screen flex-col items-center sm:p-8 p-4 bg-gradient-to-r from-[#a2bae3] to-[#668bc2] overflow-x-hidden">
         <h2 className="text-3xl text-[#161D6F] py-2">We Value Your Feedback!</h2>
         <p className='sm:text-xl'>
-          Thank you for visiting <strong className='text-[#161D6F]'>RexieXchange!</strong>  Share your thoughts so far about our platform below. <br />
-          Was it easy to use? Let us know! Your input is greatly appreciated, <br />
-          and we look forward to serving you better.
+          Thank you for visiting <strong className='text-[#161D6F]'>RexieXchange!</strong>  Share your thoughts about our platform  so far below. <br />
+          Was it easy to use? Let us know! Your input is greatly appreciated, and we look forward to serving you better.
         </p>
         <h2 className="text-2xl text-[#161D6F] mt-3 mb-1">Leave a Review</h2>
         <form onSubmit={handleSubmit} className="space-y-4 border-2 border-gray-200 p-5">
