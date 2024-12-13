@@ -26,7 +26,7 @@ const CustomerReviewForm: React.FC = () => {
   const [review, setReview] = useState<string>('');
   const { user } = useAuthStore();
   const navigate = useNavigate(); // Initialize useNavigate
-
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
 
@@ -43,10 +43,12 @@ const CustomerReviewForm: React.FC = () => {
 
     // Send the review to the API
     try {
+      setIsLoading(true);
       const response = await api.post(`${api_url}/review`, {
         rating,
         review,
       });
+      setIsLoading(false);
       response.data;
       toast.success(`Hello ${user?.username}, your review has been submitted successfully!`);
 
@@ -134,8 +136,15 @@ const CustomerReviewForm: React.FC = () => {
           <button
             type="submit"
             className="w-full btnn"
-          >
-            Submit Review
+            >
+            {isLoading ? (
+              <>
+              <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-[#101035] animate-spin"></div>
+              {/* <p className="text-[10px]">loading...</p> */}
+              </>
+            ) : (
+            <p>Submit Review</p>
+          )}
           </button>
         </form>
         <ToastContainer position="top-right" autoClose={3000} />

@@ -159,7 +159,7 @@ const Sell: React.FC = () => {
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
       </h1>
-      <p className='text-[16px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
+      <p className='text-[16px] sm:text-[20px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
     </div>
     
     <div className="sm:w-[70%] mx-auto p-4 sm:pt-4 relative">

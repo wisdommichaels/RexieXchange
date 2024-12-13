@@ -62,7 +62,7 @@ const Dashboard: React.FC = () => {
           to={"/"}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-          <img src="src/assets/arrow-.png" alt="" />
+          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </Link>
 
         <h2 className="sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24">DashBoard</h2>
@@ -111,7 +111,7 @@ const Dashboard: React.FC = () => {
           </div>
         </Header>
       </section>
-      <section className="container mx-auto p-4 mb-5 w-[95%] rounded-lg sm:w-[98%]">
+      <section className="mx-auto p-4 mb-5 w-[95%] rounded-lg sm:w-[98%]">
         <h1 className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
 
         <div className="w-full flex justify-center rounded-xl  ">
