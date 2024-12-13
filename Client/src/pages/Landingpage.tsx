@@ -149,8 +149,8 @@ function Landingpage() {
             </div>
             <div className="flex flex-col justify-center leading-5 items-center">
                 <h2 className="text-[#161D6F] sm:text-[24px] text-[16px] font-semibold text-center">Sell multiple gift cards in one go</h2>
-                <p className="text-black sm:text-[16px] sm:hidden text-[14px] sm:pt-3 text-center px-3">No forms. No fuss. sell all kind of gift cards in one transaction.</p>
-                <p className="text-black sm:block hidden sm:text-[16px] text-[12px] sm:pt-3 px-3">No forms. No fuss. sell all kind of gift cards in <br/> one transaction.</p>
+                <p className="text-black sm:text-[16px] sm:hidden text-[14px] sm:pt-3 text-center px-3">No forms. No fuss. sell all kind of gift cards in one place.</p>
+                <p className="text-black sm:block hidden sm:text-[16px] text-[12px] sm:pt-3 px-3">No forms. No fuss. sell all kind of gift cards in <br/> one place.</p>
                 <Link to={'/sell'} className=" flex justify-center items-center bg-[#161D6F] sm:mt-4 mt-2 text-white rounded-md text-center sm:text-[16px] text-[14px] font-[500] sm:py-2 py-2 px-5 sm:px-0 sm:mr-5 sm:w-[35%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
            </div>
         </div>
