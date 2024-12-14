@@ -144,7 +144,7 @@ const Home = () => {
                   </div>
                   <div className="flex-col sm:hidden justify-center items-center bg-[#161D6F] w-full py-2 px-2 mb-1">
                     <div className="">
-                      <h1 className="text-white text-[14px] ">{card.name} Gift Card</h1>
+                      <h1 className="text-white text-[14px] ">{card.name} Card</h1>
 
                       <div className="flex items-center pt-2 pb-2">
                       {isLoading ? (
