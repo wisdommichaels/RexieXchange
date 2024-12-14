@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <OnscrollHeader />
-      <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3 gap-[85px]">
+      <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3 gap-[75px]">
         <Link
           to={"/"}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
         </Header>
       </section>
       <section className="mx-auto p-3 sm:p-3 sm:mb-8 mb-32 w-full rounded-lg sm:w-[98%] ">
-        <h1 className="sm:text-2xl text-[18px] font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
+        <h1 className="sm:text-2xl text-[18px] font-bold text-center mb- text-[#161D6F]">Transaction History</h1>
 
         <div>
           {loading ? (
@@ -121,16 +121,16 @@ const Dashboard: React.FC = () => {
               <p className="text-[14px] text-center mt-2">Loading...</p>
             </div>
           ) : (
-            <table className="w-full flex-col justify-center items-center  bg-white bordershadow-lg rounded-t-xl">
+            <table className="w-full flex-col justify-center  bg-white bordershadow-lg rounded-t-xl">
               <thead>
                 <tr className="bg-[#668bc2] w-full sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[11px] leading-normal rounded-t-xl">
-                  <th className="w-[25%]  py-4 rounded-tl-xl">Gift Card</th>
-                  <th className="w-[25%]  py-4">Amount</th>
-                  <th className="w-[25%]  py-4 px-4">Date</th>
-                  <th className="w-[25%]  py-4 rounded-tr-xl">Status</th>
+                  <th className="  py-4 rounded-tl-xl">Gift Card</th>
+                  <th className="  py-4">Amount</th>
+                  <th className="py-4 px-4 ">Date</th>
+                  <th className="  py-4 rounded-tr-xl">Status</th>
                 </tr>
               </thead>
-              <tbody className="text-black text-sm w-full">
+              <tbody className="text-black text-[12px] w-full">
                 {transactions?.map((transaction, index) => {
                   // Convert date to DD/MM/YYYY format
                   const tdate = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
@@ -145,7 +145,7 @@ const Dashboard: React.FC = () => {
                       <span
                         className={`text-xs font-semibold px-2 py-1 rounded-lg ${
                           transaction.status === "accepted"
-                            ? "bg-green-300 text-green-800"
+                            ? "bg-green-300 text-black"
                             : transaction.status === "pending"
                             ? "bg-yellow-200 text-black"
                             : "bg-red-400 text-white"

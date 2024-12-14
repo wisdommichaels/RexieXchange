@@ -62,7 +62,7 @@ const Checkrate: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 sm:gap-5 gap-[86px]">
+      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 sm:gap-5 gap-[70px]">
         <Link
           to={"/"}
           className="back-button rounded-full sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3"

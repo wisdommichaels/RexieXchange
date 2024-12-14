@@ -136,7 +136,7 @@ const Sell: React.FC = () => {
     {showProgress && <Progress />}
     {!showLoader && !showProgress && (
       <>
-      <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[90px] items-center py-3">
+      <nav className="bg-[#161D6F] shadow-lg flex sm:gap-5 gap-[73px] items-center py-3">
         <button
           onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 items-center gap-2 text-[11px] p-3 "
@@ -154,7 +154,7 @@ const Sell: React.FC = () => {
       </div>
       
   
-  <section className="h-screen sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
+  <section className=" bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 pb-5 rounded-lg sm:rounded-none sm:p-7">
     <div className='p-5 sm:mb-5 pt-8'>
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS

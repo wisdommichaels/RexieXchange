@@ -15,14 +15,14 @@ const Mobilefooter = () => {
 
 
         <Link to={"/checkrate"} className="flex flex-col justify-center items-center">
-          <img className="w-[28px] h-[28px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729742009/icons8-estimate-50_er6vb4.png" alt=""/>
+          <img className="w-[25px] h-[25px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729742009/icons8-estimate-50_er6vb4.png" alt=""/>
         
             <p className="text-[12px] "> Check Rate </p>
         </Link>
 
         
         <Link to={"/sell"} className="flex flex-col justify-center items-center">
-          <img className="w-[26px] h-[26px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/sellicon_lqtg0t.png" alt=""/>
+          <img className="w-[24px] h-[24px]" src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1729740808/sellicon_lqtg0t.png" alt=""/>
         
             <p className=" text-[12px] "> Sell Card </p>
         </Link>

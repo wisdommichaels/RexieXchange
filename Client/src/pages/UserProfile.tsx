@@ -203,7 +203,7 @@ const UserProfile = () => {
         <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="back to home page" />
         </Link>
 
-        <h2 className=" sm:text-[20px] text-[18px] text-white pl-12 sm:pl-0 text-center ">
+        <h2 className=" sm:text-[20px] text-[18px] text-white pl-8 sm:pl-0 text-center ">
           Account Settings
         </h2>
     </nav>
