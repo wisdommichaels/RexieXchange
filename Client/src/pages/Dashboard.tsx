@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <OnscrollHeader />
-      <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3">
+      <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3 gap-[85px]">
         <Link
           to={"/"}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
@@ -65,7 +65,7 @@ const Dashboard: React.FC = () => {
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </Link>
 
-        <h2 className="sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3 pl-24">DashBoard</h2>
+        <h2 className="sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3">DashBoard</h2>
 
         <div className="hidden sm:block">
           <Username />
@@ -111,23 +111,23 @@ const Dashboard: React.FC = () => {
           </div>
         </Header>
       </section>
-      <section className="mx-auto p-4 mb-5 w-[95%] rounded-lg sm:w-[98%]">
-        <h1 className="text-2xl font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
+      <section className="mx-auto p-3 sm:p-3 sm:mb-8 mb-32 w-full rounded-lg sm:w-[98%] ">
+        <h1 className="sm:text-2xl text-[18px] font-bold text-center mb-4 text-[#161D6F]">Transaction History</h1>
 
-        <div className="w-full flex justify-center rounded-xl  ">
+        <div>
           {loading ? (
             <div className="flex flex-col justify-center items-center mt-10">
               <div className="loader w-[40px] h-[40px] rounded-full border-4 border-t-[#161D6F] animate-spin"></div>
               <p className="text-[14px] text-center mt-2">Loading...</p>
             </div>
           ) : (
-            <table className="w-full bg-white bordershadow-lg">
+            <table className="w-full flex-col justify-center items-center  bg-white bordershadow-lg rounded-t-xl">
               <thead>
-                <tr className="bg-[#668bc2] w-full sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[12px] leading-normal">
-                  <th className="py-4 px-4">Gift Card</th>
-                  <th className="py-3 sm:px-1">Amount</th>
-                  <th className="py-3 px-8">Date</th>
-                  <th className="py-3 px-8">Status</th>
+                <tr className="bg-[#668bc2] w-full sm:bg-[#161D6F] text-[#161D6F] sm:text-white text-center text-[11px] leading-normal rounded-t-xl">
+                  <th className="w-[25%]  py-4 rounded-tl-xl">Gift Card</th>
+                  <th className="w-[25%]  py-4">Amount</th>
+                  <th className="w-[25%]  py-4 px-4">Date</th>
+                  <th className="w-[25%]  py-4 rounded-tr-xl">Status</th>
                 </tr>
               </thead>
               <tbody className="text-black text-sm w-full">

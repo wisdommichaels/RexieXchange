@@ -67,7 +67,7 @@ const ContactPage = () => {
 
   return (
     <div>
-         <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[90px] items-center py-3">
+         <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[82px] items-center py-3">
         <button
           onClick={handleGoBack}
           className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
@@ -75,12 +75,12 @@ const ContactPage = () => {
         <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </button>
 
-        <h2 className="sm:text-[20px] text-[18px] pl-5 text-white text-center">
+        <h2 className="sm:text-[20px] text-[18px] text-white text-center">
           Contact
         </h2>
       </nav>
-    <section className=" mx-auto p-4 sm:my-4 mt-4">
-      <h1 className="sm:text-2xl text-[20px] font-bold text-center sm:mb-3 text-[#161D6F]">Contact Us</h1>
+    <section className=" mx-auto p-4 sm:my-4 mt-4 pb-32">
+      <h1 className="hidden sm:block sm:text-2xl text-[20px] font-bold text-center sm:mb-3 text-[#161D6F]">Contact Us</h1>
       <p className="text-[16px] sm:text-xl text-black mb-4 leading-relaxed">
         We value your feedback and inquiries. Whether you have questions, suggestions, or need assistance with our services, feel free to reach out to us.
       </p>
@@ -124,7 +124,7 @@ const ContactPage = () => {
         </form>
         <ToastContainer position="top-right" autoClose={3000} />
       </div>
-      <p className="text-center text-black mt-4">
+      <p className="text-center text-[14px] sm:text-[16px] text-black mt-4">
         Or reach us directly at: <a href="mailto:rexiexchange@gmail.com" className="text-blue-500 hover:underline">rexiexchange@gmail.com</a>
       </p>
     </section>

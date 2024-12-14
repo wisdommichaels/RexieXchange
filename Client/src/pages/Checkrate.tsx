@@ -62,7 +62,7 @@ const Checkrate: React.FC = () => {
 
   return (
     <div>
-      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 sm:gap-5 gap-[90px]">
+      <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 sm:gap-5 gap-[86px]">
         <Link
           to={"/"}
           className="back-button rounded-full sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3"
@@ -70,15 +70,15 @@ const Checkrate: React.FC = () => {
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="Back" />
         </Link>
 
-        <h2 className="sm:text-[20px] text-[18px] text-white pt-3 text-center">Check Rate</h2>
+        <h2 className="sm:text-[20px] text-[18px] text-white pt-3">Check Rate</h2>
       </nav>
 
       <div className="sm:hidden mx-3">
         <Carousel />
       </div>
 
-      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full mt-5 sm:my-0 mb-28 rounded-lg sm:rounded-none mx-auto">
-        <div className="p-5 sm:pt-8">
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full mt-5 sm:my-0 mb-28 pb-10 sm:pb-0 rounded-lg sm:rounded-none mx-auto">
+        <div className="p-5 pt-8">
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
             Enter your gift card details in each field below to calculate how much is the value of your gift card in

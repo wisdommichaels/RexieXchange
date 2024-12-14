@@ -13,10 +13,10 @@ export const forgotPassword = async (req, res) => {
   
     // Generate a reset token
     const token = jwt.sign({id: user._id},process.env.JWT_SECRET,{
-      expiresIn:'24h'
+      expiresIn:'5m'
   });
     user.resetToken = await bcrypt.hash(token, 10);
-    user.resetTokenExpiry = Date.now() + 3600000; // 1 hour
+    user.resetTokenExpiry = Date.now() + 300000; // 5 minutes
     await user.save();
     
     // Send reset email

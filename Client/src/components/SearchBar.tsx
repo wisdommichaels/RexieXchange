@@ -33,7 +33,7 @@ const navigate = useNavigate()
       <button
         type="submit"
         onClick={handleSearch}
-        className="btnnn bg-[#161D6F] hover:bg-[#1522ad] text-white px-4 sm:px-5 py-1 sm:py-3 rounded-md"
+        className="btnnn bg-[#161D6F] hover:bg-[#1522ad] text-white text-[11px] sm:text-[12px] px-4 sm:px-5 py-1 sm:py-3 rounded-md"
         >
         Search
       </button>

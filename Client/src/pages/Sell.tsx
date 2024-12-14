@@ -154,8 +154,8 @@ const Sell: React.FC = () => {
       </div>
       
   
-  <section className="h-[100vh] sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
-    <div className='p-5 sm:mb-5'>
+  <section className="h-screen sm:h-[60%] bg-gradient-to-r from-[#a2bae3] to-[#668bc2] mb-28 sm:mb-0 sm:flex-col justify-center items-center w-[95%] sm:w-full m-auto mt-5 sm:mt-0 sm:pb-14 rounded-lg sm:rounded-none sm:p-7">
+    <div className='p-5 sm:mb-5 pt-8'>
       <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">
         INPUT YOUR GIFT CARD DETAILS
       </h1>

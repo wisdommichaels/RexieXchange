@@ -55,7 +55,7 @@ const GiftCardCategories = () => {
           <Link 
              key={index} 
              to={`/rate/${category.replace(' ', '')}`}
-            className="flex-none px-4 py-2 bg-[#161D6F] text-white rounded-md shadow-md cursor-pointer hover:bg-[#1522ad] transition"
+            className="flex-none px-4 py-2 bg-[#161D6F] text-white text-[14px] sm:text-[16px] rounded-md shadow-md cursor-pointer hover:bg-[#1522ad] transition"
           >
             {category}
           </Link>

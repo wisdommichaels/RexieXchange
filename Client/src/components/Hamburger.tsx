@@ -17,7 +17,7 @@ const HamburgerMenu = () => {
       {/* Hamburger Icon */}
       <button
         onClick={toggleMenu}
-        className="text-white focus:outline-none sm:hidden relative left-[149px]"
+        className="text-white focus:outline-none sm:hidden relative left-[145px]"
         aria-label="Toggle menu"
       >
         <div

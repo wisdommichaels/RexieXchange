@@ -15,7 +15,7 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
     };
   return (
     <div>
-    <section  className="w-[95%]  sm:w-[98%] mx-auto bg-white p-5 pt-10 sm:p-8 sm:shadow-lg rounded-b-lg ">
+    <section  className="w-[95%]  sm:w-[98%] mx-auto bg-white p-5 pt-5 sm:p-8 sm:shadow-lg rounded-b-lg ">
       <div  className="flex gap-5 justify-between sm:justify-normal items-center sm:mb-4 mb-1 text-[9px] sm:text-[16px] text-center sm:text-left">
         <div  className="font-bold text-gray-600 flex justify-start sm:w-[25%] sm:pl-8 ">Country</div>
         <div  className="font-bold text-gray-600 flex justify-center sm:w-[25%] sm:pl-6 pr-">Currency Code</div>
@@ -29,9 +29,9 @@ const Countryrates: React.FC<{data:Card|null|undefined}> = ({data}) => {
             <img src={rate.rateDetails.flag} alt="" />
             {rate.rateDetails.countryName}
           </div>
-          <div  className="w-1/3 sm:pl-12 pl-14 text-[10px] sm:text-[16px]">{rate.rateDetails.currencyCode}</div>
+          <div  className="w-1/3 sm:pl-12 pl-12 text-[10px] sm:text-[16px]">{rate.rateDetails.currencyCode}</div>
           <div  className="w-1/3 flex justify-between items-center">
-            <span  className="pl-12  text-[10px] sm:text-[16px]">{rate.rateDetails.currencySymbol}1 = ₦{rate.rate}</span>
+            <span  className="pl-10  text-[10px] sm:text-[16px]">{rate.rateDetails.currencySymbol}1 = ₦{rate.rate}</span>
                   <Link to={'/sell'} 
                className="hidden sm:block bg-[#161D6F] text-white sm:px-6   py-2 rounded-lg hover:bg-[#1522ad] ml-4 sm:ml-0 text-[10px] sm:text-[16px]"
               >

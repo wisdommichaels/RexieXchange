@@ -122,7 +122,7 @@ const Rates = () => {
             </Header>
           </div>
         </section>
-        <h2 className="md:text-2xl text-[13px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg rounded-t-lg w-[95%] sm:w-[98%] mx-auto pt-8">
+        <h2 className="md:text-2xl text-[12px] bg-[#FFFFFF] font-bold text-gray-800  text-center sm:shadow-lg rounded-t-lg w-[95%] sm:w-[98%] mx-auto pt-8">
           Countries Trading {pageCard?.name} Gift Cards and Their Rates
         </h2>
         <Countryrates data={pageCard} />

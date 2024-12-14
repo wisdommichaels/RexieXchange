@@ -66,7 +66,7 @@ const Home = () => {
         <OnscrollHeader />
         <Mobileuser />
         <section className="sm:hidden">
-          <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#fbfbfb] to-[#668bc2] text-[16px] font-bold p-2 text-white text-center mb-0">
+          <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#fbfbfb] to-[#668bc2] text-[14px] font-bold p-2 text-white text-center mb-0">
             Trade your <span className="text-[#161D6F]">Gift Card</span> all in <br /> one place
           </h1>
           <h1 className="sm:text-[50px] bg-[#161D6F] text-[14px] font-bold p-2 pt-5 text-white text-center mb-0">
@@ -101,7 +101,7 @@ const Home = () => {
         </div>
       </section>
       <div className="mb-3">
-        <h1 className="px-5 pt-3 pb-1 text-xl sm:text-2xl text-[#161D6F]">Category</h1>
+        <h1 className="px-5 pt-3 pb-1 text-[14px] sm:text-2xl text-[#161D6F]">Category</h1>
         <GiftCardCategories />
       </div>
       <section>
@@ -109,7 +109,7 @@ const Home = () => {
           <h1 className="font-bold text-[12px] sm:text-[14px] text-white">Gift Cards</h1>
         </div>
       </section>
-      <section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto sm:w-[98%] mb-8 pb-14 sm:p-0">
+      <section className="section min-h-screen bg-[#F5F5FA] sm:rounded-[40px] rounded-xl m-auto sm:w-[98%] mb-6 pb-14 sm:p-0">
             <div className="flex flex-wrap sm:justify-evenly justify-center items-center sm:gap-8 gap-5 sm:py-8 py-4 mt-4 ">
         {loading ? (
           <div className="flex-col justify-center items-center mt-52">
@@ -122,8 +122,8 @@ const Home = () => {
                 <div className="w-[45%] sm:w-1/5 bg-[#161D6F] shadow-sm shadow-[#161D6F] rounded-lg overflow-hidden scroll-card">
                   <div className="relative group sm:mt-2 sm:mr-2 p-1 sm:p-0">
                     <img src={card.imageUrl} alt="Product Image" className="w-full h-30 sm:h-42 object-cover sm:rounded-lg" />
-                    <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                      <h1 className="text-white text-[16px] font-semibold">{card.name} Gift Card</h1>
+                    <div className="hidden absolute inset-0 bg-black bg-opacity-90 sm:flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                      <h1 className="text-white sm:text-[16px] text-[14px] font-semibold">{card.name} Gift Card</h1>
                       <div className="flex justify-center items-center">
                         <img
                           className="w-8 pt-2 pr-1"
@@ -170,7 +170,7 @@ const Home = () => {
                   </div>
                 </div>
               ))}
-              <p className="sm:hidden text-5 text-gray-500 pt-2">No More Data</p>
+              <p className="sm:hidden text-[10px]  text-gray-500 pt-2">No More Data</p>
               </>
             )}
             </div>

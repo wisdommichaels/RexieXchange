@@ -10,7 +10,7 @@ const Mobileuser = () => {
     <div>
    <div className="flex justify-between items-center w-full sm:hidden bg-[#161D6F] py-5 px-4">
 
-  <Link to={"/userprofile"} className="flex items-center gap-2">
+  <div className="flex items-center gap-2">
     <img
       id="profile-pic"
       src={user?.profilePic?user.profilePic:"https://via.placeholder.com/150"}
@@ -21,7 +21,7 @@ const Mobileuser = () => {
      <h1 className="text-[14px]  font-bold "> Hello! </h1>
       {user?.username}
     </span>
-  </Link>
+  </div>
  <HamburgerMenu />
 </div>
 </div>
