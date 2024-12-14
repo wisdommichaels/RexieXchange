@@ -67,7 +67,7 @@ const Home = () => {
         <Mobileuser />
         <section className="sm:hidden">
           <h1 className="hidden sm:text-[50px] bg-gradient-to-r from-[#fbfbfb] to-[#668bc2] text-[14px] font-bold p-2 text-white text-center mb-0">
-            Trade your <span className="text-[#161D6F]">Gift Card</span> all in <br /> one place
+            Trade all your <span className="text-[#161D6F]">Gift Card</span>  in <br /> one place
           </h1>
           <h1 className="sm:text-[50px] bg-[#161D6F] text-[14px] font-bold p-2 pt-5 text-white text-center mb-0">
             Trade all your Gift Card in one place
@@ -93,7 +93,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col justify-center items-center w-full p-10 my-14">
               <h1 className="sm:text-[50px] text-[16px] font-bold pt-8 text-white mb-4 text-center">
-                Trade your <span className="text-[#E7500F] underline">Gift Card</span> all in <br /> one place
+                Trade all your <span className="text-[#E7500F] underline">Gift Card</span>  in <br /> one place
               </h1>
               <SearchBar />
             </div>
