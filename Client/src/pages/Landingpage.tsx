@@ -148,8 +148,8 @@ function Landingpage() {
                 <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man_efo4vd.svg" alt=""/>
             </div>
             <div className="flex flex-col justify-center leading-5 items-center">
-                <h2 className="text-[#161D6F] sm:text-[24px] text-[16px] font-semibold text-center">Sell multiple gift cards in one go</h2>
-                <p className="text-black sm:text-[16px] sm:hidden text-[14px] sm:pt-3 text-center px-3">No forms. No fuss. sell all kind of gift cards in one place.</p>
+                <h2 className="text-[#161D6F] sm:text-[24px] text-[12px] font-semibold text-center">Sell multiple gift cards in one go</h2>
+                <p className="text-black sm:text-[16px] sm:hidden text-[12px] sm:pt-3 text-center px-3">No forms. No fuss. sell all kind of gift cards in one place.</p>
                 <p className="text-black sm:block hidden sm:text-[16px] text-[12px] sm:pt-3 px-3">No forms. No fuss. sell all kind of gift cards in <br/> one place.</p>
                 <Link to={'/sell'} className=" flex justify-center items-center bg-[#161D6F] sm:mt-4 mt-2 text-white rounded-md text-center sm:text-[16px] text-[14px] font-[500] sm:py-2 py-2 px-5 sm:px-0 sm:mr-5 sm:w-[35%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
            </div>
@@ -159,8 +159,8 @@ function Landingpage() {
             <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733959754/man2_tfiowr.svg" alt=""/>
         </div>
             <div className="flex flex-col justify-center items-center">
-                <h2 className="text-[#161D6F] text-[14px] font-semibold text-center p-2">Busy? And thinking of where to trade your gift cards</h2>
-                <p className="text-black text-[14px] text-center leading-5 ">Trade all your gift card in one Platform. <br/> With RexieXchange Trading makes super easy!</p>
+                <h2 className="text-[#161D6F] text-[12px] font-semibold text-center p-2">Busy? And thinking of where to trade your gift cards</h2>
+                <p className="text-black text-[12px] text-center leading-5 ">Trade all your gift card in one Platform. <br/> With RexieXchange Trading makes super easy!</p>
                 <Link to={'/sell'} className=" flex justify-center items-center bg-[#161D6F] sm:mt-4 mt-2 text-white rounded-md text-center sm:text-[16px] text-[14px] font-[500] sm:py-2 py-2 px-5 sm:mr-5 sm:w-[35%] transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#232396]">Sell Now!</Link>
             </div>
         </div>

@@ -78,7 +78,7 @@ const NewsletterForm = () => {
           ) : (
     <button 
     type="submit" 
-    className="bg-[#161D6F] w-[80%] sm:w-[80%] text-12 sm:text-14 flex justify-center items-center text-white py-3 mt-2 sm:mt-0 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac]"
+    className="bg-[#161D6F] w-[80%] sm:w-[80%] text-12 sm:text-14 flex justify-center items-center text-white py-3 mt- sm:mt-0 transition-transform duration-200 transform hover:scale-110 hover:shadow-lg hover:bg-[#131fac]"
     >
       Subscribe Now
     </button>

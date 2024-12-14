@@ -14,8 +14,8 @@ const Footer = () => {
 </section>
 
 <section className="sm:flex justify-between items-center bg-[#C9D8F0] sm:pt-5 pb-4 w-[97%] m-auto"> 
-<nav className=" flex sm:justify-center items-center sm:ml-[65px] sm:mb-4 mb-3 pt-3 pl-5 sm:pl-0">
-    <ul className=" flex sm:gap-8 gap-12 text-[#161D6F]">
+<nav className=" flex sm:justify-center items-center sm:ml-[65px] sm:mb-4 mb- pt-3 pl-5 sm:pl-0">
+    <ul className=" flex sm:gap-8 gap-5 text-[#161D6F] ">
     <Link to={'/'} className="hover:text-[#FA4A00]">Home</Link>
     <Link to={'/aboutpage'} className="hover:text-[#FA4A00]">About</Link>
     {/* <Link to={'/blog'}className="hover:text-[#FA4A00]">Blog</Link> */}
@@ -23,10 +23,10 @@ const Footer = () => {
     </ul>
 </nav>
 
-<div className="flex justify-center items-center pt-5">
-<h2 className="text-[#161D6F] sm:text-1xl text-10 text-center sm:text-left sm:pt-0 pl-4">Follow us on</h2>
-<div className="flex justify-center items-center sm:gap-8  sm:mr-[80px] text-white">
-  <ul className="example-2 sm:gap-3">
+<div className="flex flex-col sm:flex-row sm:justify-center sm:items-center pt-5 pl-2 sm:pl-0 pb-4">
+<h2 className="text-[#161D6F] sm:text-1xl text-10 pb-2 sm:pb-0 sm:text-left sm:pt-0 pl-4 ">Follow us on</h2>
+<div className="flex-col sm:flex-row sm:justify-center sm:items-center sm:gap-8  sm:mr-[80px] text-white">
+  <ul className="example-2 sm:gap-3 float-left">
     <li className="icon-content">
       <a
         href="https://facebook.com/"
@@ -113,8 +113,8 @@ const Footer = () => {
 <section className="bg-[#C9D8F0] w-[97%]  m-auto">
 <div className="flex justify-center items-center border rounded-full border-[#161D6F] w-[90%] mx-auto"></div>
 </section>
-<div className="w-[97%] sm:text-center m-auto sm:flex justify-between items-center bg-[#C9D8F0] sm:pb-10 pb-5 text-[#62686b] pt-3">
-<p className="sm:ml-20 text-[14px] text-center">Copyright © 2024 REXIE XCHANGE. All Rights Reserved.</p>
+<div className="w-[97%] sm:text-center m-auto sm:flex justify-between items-center bg-[#C9D8F0] pb-5 text-[#62686b] pt-3">
+<p className="sm:ml-20 text-[12px] sm:text-[14px] text-center">Copyright © 2024 REXIE XCHANGE. All Rights Reserved.</p>
 {/* <div className="flex gap-8 sm:mr-24 justify-center pt-2 ">
 <Link to={'/'}> Terms of Service</Link>
 <Link to={'/'}>Privacy Policy</Link>
