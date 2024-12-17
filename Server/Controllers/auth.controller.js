@@ -174,3 +174,41 @@ export const checkAuth= async (req, res) => {
     }
     
 }
+
+// check if user has account details 
+export const checkAccountDetails = async (req, res) => {
+    try {
+      // Fetch the user
+      const user = await User.findById(req.userId);
+  
+      // Handle user not found
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+  
+      // Destructure accountDetails for clarity
+      const { accountDetails } = user;
+      const { accountName, accountNumber, bankName } = accountDetails || {};
+  
+      // Check if all account details exist
+      if (accountName && accountNumber && bankName) {
+        return res.status(200).json({ message: "User has account details" });
+      }
+  
+      // User missing account details
+      return res.status(400).json({ message: "User has no account details" });
+    } catch (error) {
+      // Log the error with relevant information
+      console.error("Error in checkAccountDetails:", {
+        message: error.message,
+        stack: error.stack,
+      });
+  
+      // Return internal server error response
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  };
+  
+
+
+

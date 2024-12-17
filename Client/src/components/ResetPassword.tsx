@@ -65,8 +65,8 @@ const ResetPassword = () => {
         </button>
         </div>
     </form>
-    </div>
     <ToastContainer position="top-right"/>
+    </div>
     </>
   );
 };

@@ -21,7 +21,8 @@ const Sell: React.FC = () => {
       behavior: "smooth", 
     });
   };
-  useEffect(scrollToTop,[])
+
+ 
 
   const handleGoBack = () => {
     navigate(-1); // Navigate 1 step back in history
@@ -38,7 +39,31 @@ const Sell: React.FC = () => {
   const [showLoader, setShowLoader] = useState(false);
   const [imgLoader, setImgLoader] = useState(false);
   const [showProgress, setShowProgress] = useState(false);
+  const [showBankDetailsPrompt, setShowBankDetailsPrompt] = useState(false);
 
+
+  useEffect(() => {
+    scrollToTop();
+    checkBankDetails();
+  }, []);
+
+
+
+// check user AccountDetails to know if user has added bank details on their profile before selling gift card
+  const checkBankDetails = async () => {
+    try {
+      const response = await api.get(`${api_url}/auth/checkaccountdetails`);
+      if (response.status === 200) {
+        setShowBankDetailsPrompt(false);
+        navigate("/sell");
+      } else {
+        setShowBankDetailsPrompt(true);
+      }
+    } catch (error) {
+      setShowBankDetailsPrompt(true);
+      console.error("Error checking bank details:", error);
+    }
+  };
 
   useEffect(() => {
     if(!cards){
@@ -161,6 +186,34 @@ const Sell: React.FC = () => {
       </h1>
       <p className='text-[16px] sm:text-[20px]'>Enter your gift card details in each field below to sell your gift card on RexieXchange.</p>
     </div>
+
+    {/* create a bank prompt */}
+    <>
+   {/* Bank Details Popup */}
+{showBankDetailsPrompt && (
+  <div
+    className="fixed top-0 left-0 w-full h-full bg-[#668bc2] bg-opacity-60 flex justify-center items-center z-50"
+    // style={{ backdropFilter: "blur(5px)" }}
+  >
+    <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] sm:w-[400px] text-center">
+      <h2 className="text-2xl font-bold text-[#161D6F] mb-4">
+        Bank Details Required
+      </h2>
+      <p className="text-[16px] text-gray-700 mb-6">
+        Please add your bank details to your profile before selling your gift card.
+      </p>
+      <button
+        onClick={() => navigate("/userprofile")}
+        className="bg-[#161D6F] text-white px-4 py-2 rounded-lg hover:bg-[#282f96] transition duration-300"
+      >
+        Add Bank Details
+      </button>
+    </div>
+  </div>
+)}
+
+      </>
+    {/* End of bank prompt */}
     
     <div className="sm:w-[70%] mx-auto p-4 sm:pt-4 relative">
       <form onSubmit={handleSubmit} className={`w-full space-y-4 ${showLoader ? 'opacity-80' : ''}`}>
@@ -188,7 +241,7 @@ const Sell: React.FC = () => {
             >
               <option value="">Select Category</option>
               { cards && cards.length > 0 && cards.map(card =>
-              <option value={card.name}>{card.name} Gift Card</option>
+              <option key={card.name} value={card.name}>{card.name} Gift Card</option>
               )
               }
             </select>
@@ -209,7 +262,7 @@ const Sell: React.FC = () => {
             >
               <option value="">Select Country </option>
               { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
-              <option value={card.rateDetails.countryName}> {card.rateDetails.countryName}</option>
+              <option  key={card.rateDetails.countryName} value={card.rateDetails.countryName}> {card.rateDetails.countryName}</option>
               )}
             </select>
           </div>
@@ -224,7 +277,7 @@ const Sell: React.FC = () => {
             >
               <option value="">Select Currency Code</option>
               { cards && cardName && cards.filter(card=> card.name === cardName)[0].rates.map(card =>
-              <option value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode}</option>
+              <option key={card.rateDetails.currencyCode} value={card.rateDetails.currencyCode}>{card.rateDetails.currencyCode}</option>
               )}
             </select>
           </div>

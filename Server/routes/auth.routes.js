@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkAuth, login, logout, signup, updateUserProfile } from '../Controllers/auth.controller.js'
+import { checkAccountDetails, checkAuth, login, logout, signup, updateUserProfile } from '../Controllers/auth.controller.js'
 import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
@@ -13,6 +13,8 @@ router.post("/login", login);
 
 router.post("/logout", logout);
 
-router.post("/updateuserprofile",verifyToken, updateUserProfile);
+router.post("/updateuserprofile", verifyToken, updateUserProfile);
+
+router.get("/checkaccountdetails", verifyToken,  checkAccountDetails)
 
 export default router;

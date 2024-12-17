@@ -26,7 +26,7 @@ const Progress = () => {
             </p>
           </div>
           <Link
-            to={"/customerReview"}
+            to={"/"}
             className="px-20 py-3 font-bold shadow-sm btnn shadow-[#cff0ff] bg-gradient-to-r from-[#161d6f] to-[#1422bd] hover:bg-[#161d6f] text-white rounded-lg mt-6 mb-8 text-[16px]"
           >
             Ok

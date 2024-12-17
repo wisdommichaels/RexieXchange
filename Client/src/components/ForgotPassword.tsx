@@ -16,16 +16,25 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  // form validation
+  if (email === "") {
+    toast.error("Please enter your email address.");
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    toast.error("Please enter a valid email address.");
+  }
+  
   // handle form submission
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await api.post(`${api_url}/forgotpassword`, 
         { email });
       if (response.status === 200) {
-        toast.success("Reset email sent successfully.");
-        navigate("/login");
+        toast.success("Reset email sent successfully.", {
+        onClose:() => navigate("/login"),
+        });
         } else {
         toast.error("Invalid email address. Please try again.");
         }
@@ -59,8 +68,8 @@ const ForgotPassword = () => {
         </button>
         </div>
     </form>
-    </div>
     <ToastContainer position="top-right"/>
+    </div>
     </>
   );
 };
