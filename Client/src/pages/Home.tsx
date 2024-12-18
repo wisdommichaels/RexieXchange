@@ -146,7 +146,7 @@ const Home = () => {
                     <div className="">
                       <h1 className="text-white text-[14px] font-bold ">{card.name} Card</h1>
 
-                      <div className="flex items-center pt-2 pb-2">
+                      <div className="flex items-center pt-2 pb-2 gap-2">
                       {isLoading ? (
                              <>
                                <div className="loader w-[20px] h-[20px] mx-auto rounded-full border-2 border-t-white animate-spin"></div>

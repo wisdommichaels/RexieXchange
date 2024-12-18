@@ -22,7 +22,7 @@ const AboutPage = () => {
             <nav className="bg-[#161D6F] shadow-lg flex sm:gap-3 gap-[83px] items-center py-3">
         <button
           onClick={handleGoBack}
-          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
+          className="back-button sm:hover:bg-[#668bc2] sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
         <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
         </button>

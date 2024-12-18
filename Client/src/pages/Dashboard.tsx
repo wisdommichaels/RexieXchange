@@ -12,16 +12,16 @@ import FooterO from "../components/FooterO";
 
 interface Transaction {
   cardName: string;
+  countryCode: string;
   amount: string;
   status: string;
-  createdAt:Date;
+  createdAt: Date;
   updatedAt: Date;
 }
 
 const Dashboard: React.FC = () => {
   const [loading, setLoading] = useState(false); // Loader state
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-
 
   const { user } = useAuthStore();
 
@@ -40,8 +40,10 @@ const Dashboard: React.FC = () => {
       setLoading(true); // Start loader
       setTimeout(async () => {
         try {
-          const response = await api.get(`${api_url}/transaction/getMyTransactions`);
-          console.log(response)
+          const response = await api.get(
+            `${api_url}/transaction/getMyTransactions`
+          );
+          console.log(response);
           setTransactions(response.data); // Assuming response.data is an array of transactions
         } catch (error) {
           console.error("Error fetching transactions:", error);
@@ -60,12 +62,17 @@ const Dashboard: React.FC = () => {
       <nav className="bg-[#161D6F] shadow-lg sm:hidden flex sm:justify-between items-center py-3 gap-[75px]">
         <Link
           to={"/"}
-          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
+          className="back-button sm:hover:bg-[#668bc2] sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
-          <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png"
+            alt=""
+          />
         </Link>
 
-        <h2 className="sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3">DashBoard</h2>
+        <h2 className="sm:text-[24px] text-[18px] text-white sm:ml-28 pt-3">
+          DashBoard
+        </h2>
 
         <div className="hidden sm:block">
           <Username />
@@ -82,29 +89,44 @@ const Dashboard: React.FC = () => {
                   Hello, {user?.username}
                 </h2>
                 <div className="flex justify-center items-center gap-2 mb-10 mr-8 py-3 px-5 rounded-lg bg-[#7194C9] hover:bg-[#689ded]">
-                <Link  to={"/userprofile"}>
-                {user?.accountDetails?.accountName?"Change":"Add"} Account Details
-                </Link>
-                <img
-                   className="w-4 h-4"
-                   src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961481/editicon_xzstqb.png"
-                   alt="Edit Icon"
+                  <Link to={"/userprofile"}>
+                    {user?.accountDetails?.accountName ? "Change" : "Add"}{" "}
+                    Account Details
+                  </Link>
+                  <img
+                    className="w-4 h-4"
+                    src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961481/editicon_xzstqb.png"
+                    alt="Edit Icon"
                   />
                 </div>
               </div>
-                <h2 className="text-[16px] sm:text-[18px] font-bold pb-2 text-white ml-8">Account Details</h2>
+              <h2 className="text-[16px] sm:text-[18px] font-bold pb-2 text-white ml-8">
+                Account Details
+              </h2>
               <div className="flex justify-center items-center gap-5">
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
-                  <p className="text-gray-800 sm:text-[18px] text-[10px]">Account Name</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.accountName}</p>
+                  <p className="text-gray-800 sm:text-[18px] text-[10px]">
+                    Account Name
+                  </p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">
+                    {user?.accountDetails?.accountName || "Not Set"}
+                  </p>
                 </div>
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
-                  <p className="text-gray-800 sm:text-[18px] text-[10px]">Account Number</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.accountNumber}</p>
+                  <p className="text-gray-800 sm:text-[18px] text-[10px]">
+                    Account Number
+                  </p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">
+                    {user?.accountDetails?.accountNumber || "Not Set"}
+                  </p>
                 </div>
                 <div className="flex-col justify-center items-center shadow-lg w-[95%] sm:w-[30%] p-8 sm:rounded-lg rounded-lg bg-gradient-to-r from-[#a2bae3] to-[#668bc2]">
-                  <p className="text-gray-800 sm:text-[18px] text-[10px]">Bank Name</p>
-                  <p className="font-bold text-white sm:text-[20px] text-[16px]">{user?.accountDetails?.bankName}</p>
+                  <p className="text-gray-800 sm:text-[18px] text-[10px]">
+                    Bank Name
+                  </p>
+                  <p className="font-bold text-white sm:text-[20px] text-[16px]">
+                    {user?.accountDetails?.bankName || "Not Set"}
+                  </p>
                 </div>
               </div>
             </div>
@@ -112,7 +134,9 @@ const Dashboard: React.FC = () => {
         </Header>
       </section>
       <section className="mx-auto p-3 sm:p-3 sm:mb-8 mb-32 w-full rounded-lg sm:w-[98%] ">
-        <h1 className="sm:text-2xl text-[18px] font-bold text-center mb- text-[#161D6F]">Transaction History</h1>
+        <h1 className="sm:text-2xl text-[18px] font-bold text-center mb- text-[#161D6F]">
+          Transaction History
+        </h1>
 
         <div>
           {loading ? (
@@ -131,31 +155,56 @@ const Dashboard: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="text-black text-[12px] w-full">
-                {transactions?.map((transaction, index) => {
-                  // Convert date to DD/MM/YYYY format
-                  const tdate = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
-                  // convert time to DD/MM/YYYY format
-                // const ttime = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)  
-                
-                return (<tr key={index} className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm">
-                    <td className="py-3 px-4">{transaction.cardName}</td>
-                    <td className="py-3 px-4">{transaction.amount}</td>
-                    <td className="py-3 sm:px-4 text-[12px]">{ tdate.getDate()} / { tdate.getMonth()} / { tdate.getFullYear()} </td>
-                    <td className="py-3 px-4">
-                      <span
-                        className={`text-xs font-semibold px-2 py-1 rounded-lg ${
-                          transaction.status === "accepted"
-                            ? "bg-green-300 text-black"
-                            : transaction.status === "pending"
-                            ? "bg-yellow-200 text-black"
-                            : "bg-red-400 text-white"
-                        }`}
-                      >
-                        {transaction.status}
-                      </span>
+                {transactions.length === 0 ? (
+                  // Render message for no transactions
+                  <tr>
+                    <td
+                      colSpan={4}
+                      className="py-4 text-center sm:text-[16px] text-gray-500"
+                    >
+                      You Have No Available Transactions. <br />
+                      Please initiate a trade to see your transactions.
                     </td>
                   </tr>
-)})}
+                ) : (
+                  // Render transaction rows
+                  transactions.map((transaction, index) => {
+                    // Convert date to DD/MM/YYYY format
+                    const tdate = new Date(
+                      transaction.updatedAt
+                        ? transaction.updatedAt
+                        : transaction.createdAt
+                    );
+                    // convert time to DD/MM/YYYY format
+                    // const ttime = new Date(transaction.updatedAt?transaction.updatedAt:transaction.createdAt)
+                    return (
+                      <tr
+                        key={index}
+                        className="border-b border-gray-200 hover:bg-gray-100 text-center text-sm"
+                      >
+                        <td className="py-3 px-4">{transaction.cardName}</td>
+                        <td className="py-3 px-4">{transaction.countryCode} {transaction.amount}</td>
+                        <td className="py-3 sm:px-4 text-[12px]">
+                          {tdate.getDate()} / {tdate.getMonth() + 1} /{" "}
+                          {tdate.getFullYear()}
+                        </td>
+                        <td className="py-3 px-4">
+                          <span
+                            className={`text-xs font-semibold px-2 py-1 rounded-lg ${
+                              transaction.status === "accepted"
+                                ? "bg-green-300 text-black"
+                                : transaction.status === "pending"
+                                ? "bg-yellow-200 text-black"
+                                : "bg-red-400 text-white"
+                            }`}
+                          >
+                            {transaction.status}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
               </tbody>
             </table>
           )}

@@ -43,8 +43,10 @@ const UserProfile = () => {
       });
       setNewImage("");
       await checkAuth();
+      toast.success("Profile Picture updated successfully!");
     } catch (e) {
       console.error("Error saving image:", e);
+      toast.error("Failed to update profile picture. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -198,13 +200,13 @@ const UserProfile = () => {
    <Link
           to={"/"}
           onClick={handleGoBack}
-          className="back-button sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
+          className="back-button sm:hover:bg-[#668bc2] sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3 "
         >
         <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="back to home page" />
         </Link>
 
-        <h2 className=" sm:text-[20px] text-[18px] text-white pl-8 sm:pl-0 text-center ">
-          Account Settings
+        <h2 className=" sm:text-[20px] text-[18px] text-white pl-20 sm:pl-0 text-center ">
+          Profile
         </h2>
     </nav>
 
@@ -300,11 +302,12 @@ const UserProfile = () => {
     </div>
   </div>
   <form
+  id="edit-account-details"
   onSubmit={handleAccountDetailsSubmit}
   className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] shadow-xl rounded-lg w-full sm:w-[60%] pb-8 px-5 flex flex-col items-center mb-14 sm:mb-0"
 >
   <h1 className="sm:text-2xl text-[20px] text-[#161D6F] text-center p-6 pt-10">
-    UPDATE ACCOUNT DETAILS
+  {user?.accountDetails?.accountName? "UPDATE ACCOUNT DETAILS" : "ADD ACCOUNT DETAILS"}
   </h1>
  
   {/* Account Name */}

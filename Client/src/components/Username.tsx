@@ -11,7 +11,7 @@ const Username = () => {
   return (
     <>
     <div>
-        <div className="group logins hidden  sm:flex justify-between items-center gap-2 sm:mr-6">
+        <div className="group logins hidden  sm:flex justify-between items-center gap-2 sm:mr-14">
   <img id="profile-pic" src={user?.profilePic?user.profilePic:"https://via.placeholder.com/150"} alt="User Image" className="sm:w-10 w-10 sm:h-10 mt-2 h-10 rounded-full" />
   <div className=" relative">
     <div className="group relative dropdown flex">

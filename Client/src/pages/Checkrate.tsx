@@ -65,7 +65,7 @@ const Checkrate: React.FC = () => {
       <nav className="bg-[#161D6F] shadow-lg flex items-center py-3 sm:gap-5 gap-[70px]">
         <Link
           to={"/"}
-          className="back-button rounded-full sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3"
+          className="back-button sm:hover:bg-[#668bc2] rounded-full sm:rounded-2xl sm:px-4 sm:py-1 flex justify-center sm:ml-6 ml-2 items-center gap-2 text-[11px] p-3"
         >
           <img src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1733961385/arrow-_xye6xf.png" alt="Back" />
         </Link>
@@ -77,7 +77,7 @@ const Checkrate: React.FC = () => {
         <Carousel />
       </div>
 
-      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full mt-5 sm:my-0 mb-28 pb-10 sm:pb-0 rounded-lg sm:rounded-none mx-auto">
+      <section className="bg-gradient-to-r from-[#a2bae3] to-[#668bc2] sm:flex-col justify-center items-center w-[95%] sm:w-full mt-5 sm:my-0 mb-28 pb-10  rounded-lg sm:rounded-none mx-auto">
         <div className="p-5 pt-8">
           <h1 className="sm:text-2xl text-[16px] text-[#161D6F] mb-2">CHECK YOUR GIFT CARD RATE</h1>
           <p className="sm:text-[18px] text-14">
