@@ -121,10 +121,10 @@ function Signup () {
           return false;
         }
     
-        if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
-          toast.error('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
-          return false;
-        }
+        // if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/)) {
+        //   toast.error('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character!', { position: 'top-right' });
+        //   return false;
+        // }
     
     
         if (password && confirmPassword && password !== confirmPassword) {
