@@ -1,9 +1,11 @@
+
 import { baseURL } from "../constants.js";
 
 export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
-    const {cardImage, cardNumber, countryName, cardName, amount, rate, countryCode, account} = transactionDetails;
+    const {cardImage, cardNumber, countryName, cardName, amount, rate, countryCode, account, email} = transactionDetails;
     const toPay = amount * rate
-    console.log("For Admin", transactionDetails,  toPay);
+
+    // console.log("For Admin", transactionDetails,  toPay);
     return `
       <!DOCTYPE html>
       <html lang="en">
@@ -60,7 +62,7 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
           <div class="container">
               <h1>New Transaction Request</h1>
               <p>Hello Admin,</p>
-              <p>A user has made a transaction on the platform. Here are the details:</p>
+              <p>A user with has made a transaction on the platform. Here are the details:</p>
               <ul>
                   <li><strong>Card Name:</strong>${cardName} Gift Card</li>
                   <li><strong>Card Number:</strong> ${cardNumber}</li>
@@ -71,6 +73,8 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
                   <li><strong>Bank Branch:</strong> ${account.bankName}</li>
                   <li><strong>Account Name:</strong> ${account.accountName}</li>
                   <li><strong>Account Number:</strong> ${account.accountNumber}</li>
+                  <li><strong>User's Email:</strong> ${email}</li>
+
               </ul>
               <img src=${cardImage} alt="image of giftcard">
               <p>Please review the application and approve or reject the transaction request:</p>
@@ -90,14 +94,14 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
   export const generateTransactionStatusEmail = (user, status, transactionDetails) => {
       const {amount, rate} = transactionDetails;
       const toPay = amount * rate
-      console.log("For users", transactionDetails,  toPay);
+      // console.log("For users", transactionDetails,  toPay);
 
     
     const isSuccess = status === 'accepted';
     const title = isSuccess ? 'Transaction Successful!' : 'Transaction Failed';
     const message = isSuccess 
       ? `Hello ${user.username} your Transaction has been completed and the sum of ₦${toPay} has been sent successfully to your Bank Account`
-      : `Please check your  Gift Card code and try again. If you have any question or would like to have a feedback on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance thanks.`;
+      : `Please an email as been sent to you with reasons for your failed transaction with RexieXchange. If you have any question or more enquiries on your order, please feel free to contact our support team via Whatsapp or Email for futher assistance thanks.`;
   
     return `
       <!DOCTYPE html>

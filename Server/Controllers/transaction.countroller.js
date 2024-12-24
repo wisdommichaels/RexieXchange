@@ -3,7 +3,7 @@ import User from "../Models/userModel.js";
 import { sendTransactionStatusEmail, transactionApprovalRequestEmail } from "../Utils/mailsender/emailFunctions.js";
 
 export const createTransaction = async (req, res) => {
-  const { amount, cardName, countryName, countryCode, cardNumber, cardImage, rate } =
+  const { amount, cardName, countryName, countryCode, cardNumber, cardImage, rate} =
     req.body;
   try {
     if (
@@ -18,6 +18,13 @@ export const createTransaction = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
+    const details = await User.findById(req.userId);
+    if (!details) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const email = details.email;
+
     if (!req.userId) {
       return res
         .status(401)
@@ -25,6 +32,7 @@ export const createTransaction = async (req, res) => {
     }
 
     const newTransaction = new SalesTransaction({
+      email,
       amount,
       cardName,
       countryName,
