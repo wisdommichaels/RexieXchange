@@ -38,7 +38,7 @@ const ContactPage = () => {
         // Send the message to the API
         try {
             // Send the message to the API
-            const Message= `${message}\n\nFrom: ${user?.username || "Anonymous"} \n\nEmail: ${user?.email || "No email provided"})`;
+            const Message= `${message}\n\nFrom: ${user?.username || "Anonymous"} \n\nEmail: ${user?.email || "No email provided"}`;
             setLoading(true);
             const response = await api.post(`${api_url}/contacts`, {
               message: Message,
