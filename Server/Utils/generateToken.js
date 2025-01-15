@@ -9,8 +9,7 @@ const generateTokenAndSetCookie=async(userId,res)=>{
         httpOnly:true,      // this will prevent the cookie from being accessed by javascript
         secure:process.env.NODE_ENV !== "development",        // this will make sure that the cookie is only sent on https
         sameSite:'none',   // this will make sure that the cookie is only sent on the same site
-        maxAge:24 * 60 * 60 * 1000 // 15 days
-        
+        maxAge:30 * 24 * 60 * 60 * 1000, // this will make the cookie expire after 30 days
     })
 
     return token;
