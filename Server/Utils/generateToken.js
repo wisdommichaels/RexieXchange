@@ -15,4 +15,5 @@ const generateTokenAndSetCookie=async(userId,res)=>{
     return token;
 }
 
+
 export default generateTokenAndSetCookie;

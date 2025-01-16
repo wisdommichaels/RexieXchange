@@ -29,7 +29,7 @@ const Footer = () => {
   <ul className="example-2 sm:gap-3 float-left">
     <li className="icon-content">
       <a
-        href="https://facebook.com/"
+        href="https://www.facebook.com/share/15tpfJi4LC/?mibextid=wwXIfr"
         aria-label="facebook"
         data-social="facebook"
       >
@@ -50,7 +50,7 @@ const Footer = () => {
     </li>
     <li className="icon-content">
                 <a
-                  href="https://www.instagram.com/"
+                  href="https://www.instagram.com/rexiexchange?igsh=MXZzdjhsZWlmNmg2Zg=="
                   aria-label="Instagram"
                   data-social="instagram"
                 >
@@ -93,7 +93,7 @@ const Footer = () => {
       <div className="tooltip">Twitter</div>
     </li>
     <li className="icon-content">
-      <a href="https://www.email.com/" aria-label="Email" data-social="email">
+      <a href="mailto:rexiexchange.com" aria-label="Email" data-social="email">
         <div className="filled"></div>
         <svg
            viewBox="0 0 2200 1800" 

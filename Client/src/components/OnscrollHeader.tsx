@@ -43,8 +43,8 @@ const OnscrollHeader: React.FC = () => {
         >
           <img
             className="w-10 "
-            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734048565/logo_l22er0.webp"
-            alt=""
+            src="https://res.cloudinary.com/duwfbyhyq/image/upload/v1734090355/logo_hhzggz.webp" 
+            alt="my logo" 
           />
           <div className="flex-col justify-center items-center leading-3 pt-1">
             <h1 className="font-bold sm:text-[18px] text-[14] text-white">
