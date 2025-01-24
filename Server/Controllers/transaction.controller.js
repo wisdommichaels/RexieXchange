@@ -56,7 +56,7 @@ export const createTransaction = async (req, res) => {
       account: userAccount.accountDetails,
     });
     res.status(201).json();
-    // console.log({ message: 'Transaction submitted successfully', transaction: newTransaction });
+    console.log({ message: 'Transaction submitted successfully', transaction: newTransaction });
   } catch (error) {
     console.error("Error in sell controller", error.message);
     res.status(500).json({ error: "internal Server Error" });
