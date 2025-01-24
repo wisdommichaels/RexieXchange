@@ -64,11 +64,11 @@ export const APPROVAL_REQUEST_TEMPLATE = (transactionDetails) => {
               <p>Hello,</p>
               <p>A user has made a transaction on the platform. Here are the details:</p>
               <ul>
-                  <li><strong>Card Name:</strong>${cardName} Gift Card</li>
+                  <li><strong>Card Name:</strong> ${cardName} Gift Card</li>
                   <li><strong>Card Number:</strong> ${cardNumber}</li>
-                  <li><strong>Gift Card Value:</strong>${amount} ${countryCode}</li>
-                  <li><strong>Country Name:</strong>${countryName}</li>
-                  <li><strong>Amount Payable:</strong>₦ ${toPay}</li>
+                  <li><strong>Gift Card Value:</strong> ${amount} ${countryCode}</li>
+                  <li><strong>Country Name:</strong> ${countryName}</li>
+                  <li><strong>Amount Payable:</strong> ₦ ${toPay}</li>
                   <p>Account Details</p>
                   <li><strong>Bank Branch:</strong> ${account.bankName}</li>
                   <li><strong>Account Name:</strong> ${account.accountName}</li>
