@@ -54,7 +54,7 @@ export const createTransaction = async (req, res) => {
       account: userAccount.accountDetails,
     });
 
-    transactionApprovalRequestEmail("ijarwisdom@gmail.com", {
+    transactionApprovalRequestEmail( process.env.ADMIN_EMAIL, {
       ...newTransaction._doc,
       account: userAccount.accountDetails,
     });
