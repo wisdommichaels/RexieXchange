@@ -1,6 +1,9 @@
 import SalesTransaction from "../Models/transactionModel.js";
 import User from "../Models/userModel.js";
-import { sendTransactionStatusEmail, transactionApprovalRequestEmail } from "../Utils/mailsender/emailFunctions.js";
+import { sendTransactionStatusEmail, transactionApprovalRequestEmail } from "../Utils/mailsender/emailFunctions.js"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const createTransaction = async (req, res) => {
   const { amount, cardName, countryName, countryCode, cardNumber, cardImage, rate} =
